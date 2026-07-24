@@ -1,0 +1,13 @@
+{
+  "week": "2026-W30",
+  "guide": "Posts/2026-W30/CHATGPT-GENERATION-GUIDE.md",
+  "readme": "Posts/2026-W30/README.md",
+  "hero_asset": "Posts/2026-W30/assets/today-home-hero.asset.json",
+  "week_dir": "Posts/2026-W30",
+  "posts": 21,
+  "status": "staged",
+  "updated_at": "2026-07-19T22:13:57Z",
+  "hero_asset_png": "Posts/2026-W30/assets/today-home-hero.png",
+  "hero_asset_format": "split-base64-png",
+  "hero_asset_sha256": "6127a3245d8e59c10a7695d59a2ed4e3aa548f8682feea1d83ce9bbf94d1b5c9"
+}
