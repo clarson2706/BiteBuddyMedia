@@ -1,0 +1,68 @@
+# BiteBuddy Marketing
+
+Everything that gets BiteBuddy in front of people: strategy, research, ideas, the weekly
+production pipeline, and every rendered asset that has been published.
+
+Moved here from `BiteBuddyMVP` on 2026-07-24. Marketing was 56 of that repo's 103 documents and
+most of its 348 MB — working on content meant cloning an iOS codebase. It doesn't any more.
+
+**North star: downloads.** App Store listing:
+https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752
+
+---
+
+## Layout
+
+```
+AUTOMATION-WORKFLOW.md    the weekly operating rhythm — who does what, when. Source of truth.
+Research/                 why the formats work. Read before changing strategy.
+Carousel-Ideas/           developed carousel concepts, ready to produce
+Video-Ideas/              developed video concepts, none produced yet
+UI-Library/               screen-by-screen app footage and screenshots, with inboxes
+Analytics/                performance data. Currently empty — see below.
+Posts/
+  CHATGPT-ROUTINE.md          the Sunday scheduled task that generates the week
+  CHATGPT-AUTOMATION-RULES.md
+  current-week.json
+  2026-W30/
+    manifest.json
+    CHATGPT-GENERATION-GUIDE.md
+    <date>-slot<n>/     prompts.md + rendered PNGs + mp4, together
+.claude/skills/           carousel-week, carousel-publish, carousel-optimize
+```
+
+**Prompts and their output live in the same folder.** Before the move, `prompts.md` sat in the app
+repo while the PNGs it produced sat here. Reviewing a post meant two repos. Now a slot folder is
+the whole post.
+
+## Two generation guides, on purpose
+
+`.claude/skills/carousel-*` and `Posts/2026-W30/CHATGPT-GENERATION-GUIDE.md` cover overlapping
+ground, and that is deliberate, not waste. The skills are loaded by Claude on demand. The guide is
+for the **ChatGPT scheduled task** that runs the Sunday image generation over the GitHub MCP —
+ChatGPT cannot load Claude skills, so it needs the knowledge written out.
+
+Change the strategy and both need updating. That is the cost of running two model vendors in one
+pipeline, and it is a real cost — worth revisiting if the ChatGPT half is ever retired.
+
+## Analytics is empty, and that is the biggest problem here
+
+`Analytics/` expects `performance-log.jsonl`, `leaderboard.json`, and `next-week-directives.json`.
+None exist. `carousel-optimize` is built to score posts and pick next week's direction from that
+data, and it has never had any to read.
+
+Ten slots were published 20–23 July across TikTok, Instagram, and YouTube. **Not one view,
+impression, or click is recorded anywhere.** Five posts went out simultaneously on 22 July and
+Instagram may be throttled as a result — unconfirmed, because nothing measures it.
+
+Any strategy rebuild starts by fixing this. Rewriting hooks without knowing which hooks failed is
+guessing with extra steps.
+
+## Repo map
+
+| Repo | Holds |
+|---|---|
+| `BiteBuddyMVP` | iOS app, backend, canonical legal, product docs |
+| **`bitebuddymedia`** | **this repo — marketing strategy, content, assets** |
+| `bitebuddy-admin` | ops dashboard over production Supabase |
+| `bitebuddy-legal` | published legal mirror. Auto-generated — never edit by hand |

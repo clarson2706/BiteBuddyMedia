@@ -1,0 +1,13 @@
+{
+  "format": "split-base64-png",
+  "original_path": "Posts/2026-W30/assets/today-home-hero.png",
+  "parts": [
+    "Posts/2026-W30/assets/today-home-hero.png.b64.part1",
+    "Posts/2026-W30/assets/today-home-hero.png.b64.part2"
+  ],
+  "reconstruction": "Read both UTF-8 text parts in listed order, concatenate with no whitespace inserted, Base64-decode to bytes, and save as today-home-hero.png. Use the decoded PNG unaltered.",
+  "width": 941,
+  "height": 2048,
+  "byte_length": 1084430,
+  "sha256": "6127a3245d8e59c10a7695d59a2ed4e3aa548f8682feea1d83ce9bbf94d1b5c9"
+}
