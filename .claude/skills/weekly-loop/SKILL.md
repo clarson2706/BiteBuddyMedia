@@ -28,10 +28,17 @@ contract does not apply here), `Content-Engine/DESIGN-SYSTEM.md`,
 
 Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
 
-**Mode check first.** "Wednesday mini mode" → run only: Phase 1 steps 1–2
-(snapshot, no full report), the kill/re-cut pass from `WEEKLY-LOOP.md` §Wednesday,
-Phase 5 (Thu/Fri batches, 40 DMs), and a two-line pulse to Connor. Everything
-below describes the full Sunday mode.
+**Mode check first.**
+- "Wednesday mini mode" → run only: Phase 1 steps 1–2 (snapshot, no full report),
+  the kill/re-cut pass from `WEEKLY-LOOP.md` §Wednesday, Phase 5 step 2 (process
+  creator replies), and a two-line pulse to Connor.
+- **Any off-schedule run** (someone says "run the loop" on a Tuesday, a Saturday,
+  whenever) → run the full Sunday procedure below UNCHANGED, except Phase 2
+  generates only `slots_remaining` posts: the published slots between now and the
+  next Sunday 6:00 PM America/Chicago at 2 posts/day. Sunday regenerates the whole
+  week anyway, so anything beyond that is waste. See `WEEKLY-LOOP.md` §Partial
+  generation for the worked example.
+- Otherwise → the full Sunday mode below.
 
 ## Phase 1 — Analytics (never skip; never reorder)
 
@@ -60,9 +67,11 @@ below describes the full Sunday mode.
 **Gate:** `next-week-directives.json` must carry this run's `generated_at`. If not,
 stop and fix Phase 1. Do not generate from memory of old numbers.
 
-1. Slot template (directives may shift ±2 slots between categories, nothing else):
-   8 series (2 × 3 active series from `SERIES.md`, +2 to the series the directives
-   favor) · 2 winner re-cuts (only if directives name winners) · 4 experiments.
+1. Slot template for a full week (directives may shift ±2 slots between categories,
+   nothing else): 8 series (2 × 3 active series from `SERIES.md`, +2 to the series
+   the directives favor) · 2 winner re-cuts (only if directives name winners) ·
+   4 experiments. **On a partial run, generate only `slots_remaining` posts**, keeping
+   the series rotation proportional (a 3-post batch is series-heavy, not experiment-heavy).
 2. Every post gets: persona (P1–P8), hook family (the 20 codes), visual recipe (the 8
    archetypes), series or `oneoff`, slide-by-slide copy (hook → value slides → CTA),
    caption with one natural search keyword, pinned first comment, 3–5 hashtags,
@@ -114,11 +123,9 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
 
 ## Phase 5 — Outreach (per `Outreach/DM-PLAYBOOK.md`, all hard rules apply)
 
-1. Write the DM batches into `Outreach/batches/` (Sunday: Mon/Tue/Wed = 60 messages;
-   Wednesday mode: Thu/Fri = 40). Each entry: handle, profile link, one-line
-   why-them, and the personalized message. Research every profile for real; replace
-   any creator you cannot personalize for. **No em dashes in any outbound copy.**
-   Skip anyone already in `creators.jsonl` (any status).
+1. Daily DM batches belong to **Routine 3** (daily 8 AM, Sonnet 5), not to loop runs.
+   Here, only verify recent batches exist in `Outreach/batches/` and flag a gap in
+   the report if they do not.
 2. Process whatever Connor forwarded: advance `creators.jsonl` statuses, draft
    stage-appropriate replies from the playbook, generate onboarding packs (unique
    `ct=` link + code + brief) for new "I agree" deals, grant free-Pro entitlements

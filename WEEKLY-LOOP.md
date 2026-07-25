@@ -1,4 +1,4 @@
-# The Weekly Loop — two Routines, zero manual steps
+# The Weekly Loop — three Routines, zero manual steps
 
 *Source of truth for the autonomous weekly content system. Written 2026-07-25;
 upgraded to twice-weekly cadence for the Aug-25 sprint (`SPRINT-AUG25.md`).
@@ -11,26 +11,65 @@ Connor's week: send the day's DM batch, forward replies, veto anything he dislik
 
 ---
 
-## The two Routines
+## The three Routines
 
-Connor creates both in the claude.ai Routines UI (they must be created there so the
-connectors attach; a Routine created from inside a session can only carry that
-session's connectors). Both fire a fresh session in this environment with
-**Upload-Post + Canva** attached.
+All three fire a fresh session in this environment. Routines 1 and 2 need
+**Upload-Post + Canva**; Routine 3 needs neither (it only reads the repo and the web).
+
+### ⚠️ Connector status (verified 2026-07-25)
+
+All three Routines exist and are enabled, but **they were created from a session that
+held no passable connector grants, so they currently store NO connectors.** Their
+fired sessions get the standard toolset (repo, Bash, web search, subagents) but no
+`mcp__*` tools.
+
+| Routine | Needs | Works as created? |
+|---|---|---|
+| 1 Sunday full loop | Upload-Post + Canva | Partly. Analytics from the log, generation, and commits run. **Render and publish do not.** |
+| 2 Wednesday mini loop | Upload-Post + Canva | Partly, same limitation. |
+| 3 Daily DM batch | nothing | **Yes, fully.** It only needs the repo and web search. |
+
+**To fix Routines 1 and 2:** open each in the claude.ai Routines UI and attach
+Upload-Post + Canva, or delete and recreate them there with the prompts below. This
+is required before the first live publish. Until then they degrade as designed:
+everything is generated and committed, nothing is published, and the report says
+exactly what was blocked.
+
+**Model note:** Routine 3 should run cheaply on Sonnet. Setting a Routine's model is
+disabled for this org, so its prompt instead delegates the research and drafting to
+Sonnet subagents.
 
 **Routine 1 — Sunday full loop.** Sundays 6:00 PM America/Chicago. Prompt:
 
 > Run the weekly loop, full Sunday mode. Follow WEEKLY-LOOP.md and the weekly-loop
 > skill end to end: analytics first, then generate, render, and schedule next week,
-> write the Mon/Tue/Wed outreach batches, process creator pipeline updates, commit
-> everything, and send Connor the weekly report and veto window.
+> process creator pipeline updates, commit everything, and send Connor the weekly
+> report and veto window.
 
 **Routine 2 — Wednesday mini loop.** Wednesdays 12:00 PM America/Chicago. Prompt:
 
 > Run the weekly loop, Wednesday mini mode per WEEKLY-LOOP.md: snapshot Mon/Tue
 > numbers, kill or re-cut this week's losers and re-cut the early winner into fresh
-> covers for the Thu-Sun slots, write the Thu/Fri outreach batches, process creator
-> replies, commit, and send Connor a two-line midweek pulse.
+> covers for the Thu-Sun slots, process creator replies, commit, and send Connor a
+> two-line midweek pulse.
+
+**Routine 3 — Daily DM batch.** Every day 8:00 AM America/Chicago. Runs on
+**Sonnet 5** (cheap, and the task is research plus short writing, not strategy).
+Owns creator-batch generation; the loop runs no longer write batches. Prompt:
+
+> Generate today's BiteBuddy creator DM batch per Outreach/DM-PLAYBOOK.md. Find 10
+> Instagram and 10 TikTok nano/micro creators (2k to 60k followers) in our niches who
+> are NOT already in Outreach/creators.jsonl. For each one give me: the handle and
+> profile link, one sentence on who they are and what the account does, one sentence
+> on why they are a good fit for BiteBuddy, and the ready-to-send personalized DM.
+> Follow every hard rule in the playbook, especially: no em dashes anywhere, every
+> message references something specific and real from that creator's content, and
+> never claim we are bigger than we are. Append them to creators.jsonl with status
+> dm_written, write the batch to Outreach/batches/<today>.md, commit, and send Connor
+> the batch in the message so he can copy and send from his phone.
+
+If run off-schedule, it produces only the current day's batch (see Partial
+generation below).
 
 ## The Sunday run, in strict order
 
@@ -81,10 +120,9 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
 3. Record scheduled IDs/URLs in the manifest.
 
 ### Phase 5 — OUTREACH (creator engine, see `Outreach/`)
-1. Write the Mon/Tue/Wed DM batches (60 personalized messages, 10 IG + 10 TikTok per
-   day) into `Outreach/batches/`, each researched against the creator's real profile.
-   Hard rules from `Outreach/DM-PLAYBOOK.md` apply, including: **no em dashes in any
-   outbound copy.**
+1. Daily DM batches are owned by **Routine 3**, not by the loop runs. The loop only
+   sanity-checks that batches exist and flags it in the report if Routine 3 has not
+   been producing them.
 2. Process pipeline updates Connor forwarded (replies, agreements, posted content):
    advance statuses in `creators.jsonl`, generate onboarding packs for new deals,
    grant free-Pro entitlements in RevenueCat.
@@ -99,6 +137,28 @@ scheduled where, what was dropped and why, the Phase-1 report's three headlines
 and the creator-pipeline pulse (sent / replied / deals / posts live). **Posts start
 Monday 8 AM — Sunday night is Connor's standing veto window.** Silence = go. "Pull
 Tuesday's quiz" = I unschedule it.
+
+## Partial generation (any off-schedule run)
+
+**Rule: an off-schedule run is not a special mode. It runs the loop normally and only
+generates enough content to cover the slots between now and the next Sunday run.**
+
+Sunday regenerates the whole week from scratch, so generating more than that is waste
+that would be thrown away.
+
+1. Compute `slots_remaining` = published slots between now and the next Sunday 6:00 PM
+   America/Chicago, at the normal 2 posts/day cadence.
+2. Generate exactly that many posts, drawing from the active series in normal
+   rotation (do not skip series just because the batch is small).
+3. Everything else is unchanged: analytics first, same hard gate, same render, same
+   scheduling with rate limits, same registry appends, same report.
+
+Worked example, a run starting Saturday 01:00: slots left are Saturday (2) and Sunday
+before 18:00 (1, the 12:30 slot), so it generates **3 posts**, schedules them, and the
+Sunday run then produces the full following week as usual.
+
+The same rule applies to the DM routine: an off-schedule run produces only the current
+day's batch, because Sunday's cycle reseeds the pipeline anyway.
 
 ## The Wednesday mini-run
 
