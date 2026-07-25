@@ -49,6 +49,16 @@ $7 MRR. Nothing here was converting.
   show low reach regardless of content quality. Do not read week 1 as a verdict on the
   content; read the trend across weeks 1 to 3.
 
+## Correction, same day
+
+The first Instagram pull showed 4 comments and 1 follower, and an earlier reading of it
+treated Instagram as the more engaged audience. **That was wrong.** Connor confirmed the
+comments were posted by the BiteBuddy account itself and the follower is a personal
+acquaintance. **Organic engagement across every platform is zero.** Nothing in the
+history so far represents a stranger responding to this content, which makes the first
+genuine comment from an unknown viewer the single most meaningful milestone available,
+well before any view-count target.
+
 ## Caveats
 
 - These are **account-level aggregates**, not per-post. The Upload-Post `get_history`

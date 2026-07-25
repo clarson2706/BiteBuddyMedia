@@ -69,12 +69,20 @@ body slides; covers and CTAs are shared across all recipes.
 one visual pattern-interrupt: Buddy pose (small, lower third) OR the subject food photo
 OR a huge number. Optional small "series chip" (peach pill, e.g. `PROTEIN PER $`).
 
-**Shared final slide — CTA-APP** (used when the post's CTA is an App CTA): phone
-silhouette with the Today-home hero (or scan-result screenshot if the post used scans as
-receipts), Buddy celebrating beside it, topic-tied CTA line, then
-`Download BiteBuddy — free on the App Store` and `Search 'BiteBuddy: Ai calorie scanner'`.
-For Follow/Comment/Save CTAs the final slide is a **TYPE-CARD** with the CTA line and
-Buddy — no phone, no App Store block (don't burn app framing on non-app CTAs).
+**Shared final slide — CTA (HARD REQUIREMENT, every carousel, no exceptions):** the last
+slide **always shows the real Today dashboard inside a phone silhouette**, with Buddy
+beside it, the post's topic CTA line above, and `Download BiteBuddy, free on the App
+Store` beneath. The App Store search line appears only on APP-CTA rows, and the renderer
+strips it from the headline when it is already in the CTA text so it never prints twice.
+
+**Never a text-only "it's on the App Store" close.** People need to *see* the product to
+want it: the dashboard, the rings, Buddy's reaction, the real numbers. A sentence about
+an app is not a demo of one. This holds regardless of the post's CTA type, so a FOLLOW or
+SAVE post still shows the phone; only the words above it change.
+
+Implemented by `phone_mock()` in `Content-Engine/render_slides.py`, which crops
+`UI-Library/02-today-home/01-today-home.png` to the dashboard hero so the rings and
+numbers stay legible at feed size. Real screenshot only, never redrawn or mocked.
 
 | Recipe | For | Body-slide layout |
 |---|---|---|

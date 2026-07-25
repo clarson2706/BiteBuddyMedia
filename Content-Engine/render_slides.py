@@ -28,6 +28,9 @@ CHARCOAL = (58, 58, 58)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_DIR = os.path.join(ROOT, "Brand-Assets", "fonts")
 POSE_DIR = os.path.join(ROOT, "Brand-Assets", "buddy-poses", "transparent")
+# The real Today dashboard. HARD REQUIREMENT: the final slide of every carousel shows
+# this screenshot inside a phone silhouette, never a text-only "it's on the App Store".
+TODAY_SHOT = os.path.join(ROOT, "UI-Library", "02-today-home", "01-today-home.png")
 
 # Which Buddy pose hosts the cover and the CTA, by post id. Chosen to match the
 # emotional beat (see Brand-Assets/buddy-poses/README.md).
@@ -80,6 +83,27 @@ def load_pose(name, target_h):
     return im.resize((int(im.width * r), target_h), Image.LANCZOS)
 
 
+def phone_mock(screen_h=690):
+    """The real Today screenshot inside a simple phone silhouette."""
+    shot = Image.open(TODAY_SHOT).convert("RGB")
+    # crop to the dashboard hero so the rings and numbers read at feed size
+    shot = shot.crop((0, 0, shot.width, int(shot.height * 0.72)))
+    sw = int(screen_h * shot.width / shot.height)
+    shot = shot.resize((sw, screen_h), Image.LANCZOS)
+
+    bez, radius = 14, 46
+    pw, ph = sw + bez * 2, screen_h + bez * 2
+    phone = Image.new("RGBA", (pw, ph), (0, 0, 0, 0))
+    pd = ImageDraw.Draw(phone)
+    pd.rounded_rectangle([0, 0, pw - 1, ph - 1], radius=radius, fill=(38, 38, 42, 255))
+
+    mask = Image.new("L", (sw, screen_h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, sw - 1, screen_h - 1],
+                                           radius=radius - bez, fill=255)
+    phone.paste(shot, (bez, bez), mask)
+    return phone
+
+
 def badge(draw, img, text):
     if not text:
         return
@@ -89,6 +113,36 @@ def badge(draw, img, text):
     draw.rounded_rectangle([MARGIN, MARGIN, MARGIN + tw + pad_x * 2, MARGIN + h],
                            radius=h // 2, fill=LAVENDER)
     draw.text((MARGIN + pad_x, MARGIN + pad_y - 2), text, font=f, fill=CHARCOAL)
+
+
+def render_cta(post, img, d, text, cta_pose):
+    """Final slide: topic CTA + the real Today dashboard in a phone + download line."""
+    # the App Store search line lives at the bottom of this slide, so strip it from the
+    # headline when the post's CTA text already carries it
+    headline = text.split("Search '")[0].strip() if "Search '" in text else text
+    f, lines, lh = fit_text(d, headline, "Baloo2.ttf", 62, 34, W - MARGIN * 2, 210, 700)
+    y = 128
+    for line in lines:
+        d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=ORANGE)
+        y += lh
+
+    phone = phone_mock(690)
+    px, py = (W - phone.width) // 2 - 96, y + 34
+    img.paste(phone, (px, py), phone)
+
+    buddy = load_pose(cta_pose, 360)
+    if buddy is not None:
+        img.paste(buddy, (px + phone.width - 44, py + phone.height - buddy.height + 18), buddy)
+
+    fd = font("Baloo2.ttf", 44, 700)
+    dl = "Download BiteBuddy, free on the App Store"
+    d.text(((W - d.textlength(dl, font=fd)) / 2, H - 148), dl, font=fd, fill=CHARCOAL)
+
+    if post.get("cta_type") == "APP":
+        fs = font("Inter.ttf", 30, 500)
+        sl = "Search 'BiteBuddy: Ai calorie scanner'"
+        d.text(((W - d.textlength(sl, font=fs)) / 2, H - 92), sl, font=fs, fill=SAGE)
+    return img
 
 
 def render_slide(post, idx, total, text):
@@ -107,8 +161,11 @@ def render_slide(post, idx, total, text):
 
     badge(d, img, BADGES.get(post.get("series"), ""))
 
-    if is_cover or is_cta:
-        pose = load_pose(cta_pose if is_cta else cover_pose, 470)
+    if is_cta:
+        return render_cta(post, img, d, text, cta_pose)
+
+    if is_cover:
+        pose = load_pose(cover_pose, 470)
         box_h = 620
     else:
         pose = None

@@ -119,7 +119,10 @@ deck by hand; it is not the batch render path.
    `https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/<commit-sha>/Posts/<week>/<post-id>/NN.png`.
    Use the **commit SHA**, not the branch name: it is immutable, so a later push cannot
    change what a scheduled post will publish.
-4. A post that fails to render is dropped from the schedule and named in the report.
+4. **Every carousel's last slide must show the real Today dashboard in a phone
+   silhouette** (`phone_mock()` handles this automatically). Never ship a text-only
+   App Store close. Verify it on every deck before scheduling.
+5. A post that fails to render is dropped from the schedule and named in the report.
 
 **Food photography:** the design system forbids AI-generated food, and this environment
 has no licensed photo source, so keep food-photo recipes for weeks when Connor supplies
