@@ -16,28 +16,36 @@ Connor's week: send the day's DM batch, forward replies, veto anything he dislik
 All three fire a fresh session in this environment. Routines 1 and 2 need
 **Upload-Post + Canva**; Routine 3 needs neither (it only reads the repo and the web).
 
-### ⚠️ Connector status (verified 2026-07-25)
+### Connector / credential status (verified 2026-07-25)
 
-All three Routines exist and are enabled, but **they were created from a session that
-held no passable connector grants, so they currently store NO connectors.** Their
-fired sessions get the standard toolset (repo, Bash, web search, subagents) but no
-`mcp__*` tools.
+**Upload-Post is not a claude.ai connector and cannot be attached to a Routine.** It is
+not in the org's connector directory at all. Publishing therefore uses the **Upload-Post
+REST API with an API key**, which is better for automation anyway: no OAuth to expire,
+no connector inheritance, identical behaviour in every fired session. Setup and usage:
+`Content-Engine/UPLOAD-POST.md`. The one requirement is the environment variable
+`UPLOAD_POST_API_KEY` set in this CCR environment's settings.
 
-| Routine | Needs | Works as created? |
-|---|---|---|
-| 1 Sunday full loop | Upload-Post + Canva | Partly. Analytics from the log, generation, and commits run. **Render and publish do not.** |
-| 2 Wednesday mini loop | Upload-Post + Canva | Partly, same limitation. |
-| 3 Daily DM batch | nothing | **Yes, fully.** It only needs the repo and web search. |
+**Canva is a real connector** and must be attached to Routines 1 and 2 in the claude.ai
+Routines UI (Connor did this on 2026-07-25). Routine 3 needs no connectors.
 
-**To fix Routines 1 and 2:** open each in the claude.ai Routines UI and attach
-Upload-Post + Canva, or delete and recreate them there with the prompts below. This
-is required before the first live publish. Until then they degrade as designed:
-everything is generated and committed, nothing is published, and the report says
-exactly what was blocked.
+| Routine | Repo source | Canva | Needs | Status |
+|---|---|---|---|---|
+| 1 Sunday full loop | ❌ `bitebuddy-admin` | ✅ | `UPLOAD_POST_API_KEY` | **repo must be fixed** |
+| 2 Wednesday mini loop | ✅ `BiteBuddyMedia` | ✅ | `UPLOAD_POST_API_KEY` | waiting on the env var |
+| 3 Daily DM batch | ❌ `bitebuddy-admin` | n/a | nothing | **repo must be fixed** |
+
+**A Routine's repository source cannot be set through the API**, only in the claude.ai
+Routines UI. Routines 1 and 3 are currently pointed at `clarson2706/bitebuddy-admin`
+and must be changed to `clarson2706/BiteBuddyMedia`. Until then both carry a guard as
+their first instruction: verify the repo, and if it is wrong, write nothing anywhere
+and report the misconfiguration instead. So a misfire is loud and harmless, not silent
+and messy.
+
+Until the env var exists, Routines 1 and 2 degrade as designed: analytics, generation,
+and render run and commit; publishing stops and the report says so.
 
 **Model note:** Routine 3 should run cheaply on Sonnet. Setting a Routine's model is
-disabled for this org, so its prompt instead delegates the research and drafting to
-Sonnet subagents.
+disabled for this org, so its prompt delegates research and drafting to Sonnet subagents.
 
 **Routine 1 — Sunday full loop.** Sundays 6:00 PM America/Chicago. Prompt:
 
@@ -109,15 +117,20 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
 3. A post that fails to render is dropped from the schedule and named in the report —
    never published half-made.
 
-### Phase 4 — SCHEDULE (Upload-Post)
-1. Preflight: token valid, plan sufficient, which platforms are actually linked.
-   Anything unlinked is skipped and reported, not guessed at.
+### Phase 4 — SCHEDULE (Upload-Post REST API, see `Content-Engine/UPLOAD-POST.md`)
+1. Preflight via `list_users`: API key valid, plan headroom sufficient, which platforms
+   are actually linked (`social_accounts` entries that are not null). Anything unlinked
+   is skipped and reported, not guessed at.
 2. Schedule every rendered post at its slot, **enforcing the rate rules in code**:
    TikTok ≤3/day · Instagram ≤2/day · never two platforms at the same minute ·
    ≥4h spacing per platform. Slots: TikTok 8:00 AM + 7:00 PM · Instagram 12:30 PM
    (+ 7:30 PM Fri only) · YouTube Short 1/day 5:00 PM · Facebook mirrors Instagram.
    Captions/crops vary per platform (duplicate-content penalty).
-3. Record scheduled IDs/URLs in the manifest.
+3. Submit the whole week in this one run using `scheduled_date` (ISO-8601) +
+   `timezone: America/Chicago`; pass the pinned comment as `first_comment`. Hand Canva
+   export URLs straight to the API rather than downloading media locally. Record the
+   returned `job_id`s and URLs in the manifest for later reconciliation against
+   `get_history`.
 
 ### Phase 5 — OUTREACH (creator engine, see `Outreach/`)
 1. Daily DM batches are owned by **Routine 3**, not by the loop runs. The loop only
@@ -202,8 +215,8 @@ follow-attribution, and a killed series is replaced from the bench, keeping 3 ac
 
 ## Failure handling
 
-- **Upload-Post missing/unauthed at fire time** → full stop after Phase 3: everything
-  staged + committed, nothing published, Connor told exactly what to reconnect.
+- **`UPLOAD_POST_API_KEY` missing or rejected at fire time** → full stop after Phase 3:
+  everything staged + committed, nothing published, Connor told exactly what to set.
 - **Canva missing** → Phases 1–2 still run (analytics + copy committed), render/schedule
   skipped, Connor told.
 - **A publish call fails** → retry ×3 with backoff → mark failed in manifest, continue

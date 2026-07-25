@@ -52,12 +52,14 @@ dry-run. Check what's actually in the session before designing around it.
 
 ## Activation checklist (what still blocks the first live week)
 
-1. **Upload-Post connector** — Connor adds it in claude.ai connector settings, links
-   IG (Business/Creator + FB Page) / TikTok / Facebook / YouTube, paid plan (free tier
-   is 10 uploads/mo; a week is ~40+).
-2. **The two Routines** (Sunday 6 PM full, Wednesday 12 PM mini) — Connor creates
-   both in the claude.ai Routines UI with **Upload-Post + Canva attached** (must be
-   created there so connectors attach). Prompts to paste: `WEEKLY-LOOP.md`.
+1. **`UPLOAD_POST_API_KEY` env var** — Upload-Post is NOT a claude.ai connector and
+   cannot be attached to a Routine. Publishing uses its REST API; Connor sets the key
+   in this environment's variables. Also: link IG (Business/Creator + FB Page) /
+   TikTok / Facebook / YouTube inside Upload-Post, paid plan (free tier is 10
+   uploads/mo; a week is ~40+). See `Content-Engine/UPLOAD-POST.md`.
+2. ~~The Routines~~ **DONE 2026-07-25** — all three exist and are enabled (Sunday 6 PM
+   full, Wednesday 12 PM mini, daily 8 AM creator DM batch). Canva is attached to 1
+   and 2.
 3. **Canva templates** — not yet built; until they exist the render phase builds each
    deck from the archetype specs directly.
 4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in

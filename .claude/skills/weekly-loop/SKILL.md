@@ -42,8 +42,10 @@ Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
 
 ## Phase 1 — Analytics (never skip; never reorder)
 
-1. Load the Upload-Post tools (ToolSearch). If absent → note it, still do steps 3–5
-   from whatever exists in the log, mark `"confidence": "none"`.
+1. Pull metrics via the Upload-Post REST API (`Content-Engine/UPLOAD-POST.md`;
+   `pip install upload-post`, key in `UPLOAD_POST_API_KEY`). If the key is absent →
+   note it, still do steps 3–5 from whatever exists in the log, mark
+   `"confidence": "none"`.
 2. For every post in `Content-Engine/registry.jsonl` posted in the last 14 days, fetch
    per-platform metrics. Append one JSONL snapshot per post×platform to
    `Analytics/performance-log.jsonl` (schema in `Analytics/README.md`). Never
@@ -105,11 +107,14 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
 3. Render failure after 2 attempts → drop the post (status `render-failed`), continue.
    13 good posts beat 14 with one broken deck.
 
-## Phase 4 — Schedule via Upload-Post
+## Phase 4 — Schedule via the Upload-Post REST API
 
-1. Preflight: account/token, plan headroom, linked platforms. Unlinked → skip that
-   platform everywhere + report. No connector → stop here; everything stays committed
-   as `staged`; tell Connor precisely what to connect.
+Read `Content-Engine/UPLOAD-POST.md` first. There is no Upload-Post MCP connector;
+use the API key in `UPLOAD_POST_API_KEY` with the official SDK.
+
+1. Preflight with `list_users`: key valid, plan headroom, which `social_accounts` are
+   non-null. Unlinked → skip that platform everywhere + report. No key → stop here;
+   everything stays committed as `staged`; tell Connor to set the env var.
 2. Rate rules enforced in your scheduling math (never trust the slot plan blindly):
    TikTok ≤3/day · IG ≤2/day · ≥4h between same-platform posts · no simultaneous
    cross-platform publishes of the same deck · captions and crops varied per platform.
@@ -118,8 +123,11 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
    = the hook, keyworded-human).
 4. Append the App Store link in YouTube descriptions + Facebook captions (they allow
    links); IG/TikTok captions carry the search phrase instead.
-5. Write scheduled IDs/URLs + `status: scheduled` into the manifest. Failed publish →
-   3 retries w/ backoff → `status: failed`, continue, report.
+5. Submit the full week in this run via `scheduled_date` + `timezone`, passing the
+   pinned comment as `first_comment` and Canva export URLs as the media (never
+   downloaded locally). Write returned `job_id`s/URLs + `status: scheduled` into the
+   manifest. Failed publish → 3 retries w/ backoff → `status: failed`, continue,
+   report.
 
 ## Phase 5 — Outreach (per `Outreach/DM-PLAYBOOK.md`, all hard rules apply)
 
