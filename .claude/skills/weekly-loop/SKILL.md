@@ -81,6 +81,11 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
 
 ## Phase 3 — Render in Canva
 
+0. Start from the series templates in `Content-Engine/TEMPLATES.md` when one exists
+   for the post's series/recipe (duplicate, swap copy and photos). Note the
+   render-phase constraint in that file: hand Canva export URLs directly to
+   Upload-Post (this environment cannot download export files locally); store
+   design IDs + links in the manifest instead of PNGs.
 1. Load the Canva tools. For each post, build the deck per its recipe in
    `DESIGN-SYSTEM.md`: brand palette, one locked headline font, Buddy **only** from
    `Brand-Assets/buddy-poses/transparent/` (pick the pose matching the emotional beat —
