@@ -32,8 +32,10 @@ draft, show, then post. Both routes end at a review step, never at auto-publish.
 - **Safe margins:** 90 px all sides; nothing critical in the bottom 180 px (platform UI
   overlays).
 - **Buddy:** appears on the **cover and CTA slide only** (transparent-PNG poses from
-  `UI-Library/10-buddy-poses/`, or the MASTER STYLE BLOCK in the app repo's
-  `MASCOT_IMAGE_GEN_PROMPTS.md` when a new pose is needed). Body slides are
+  `Brand-Assets/buddy-poses/transparent/` — the 13 canonical app renders; never
+  generate Buddy with an image model, that is what made him drift. The MASTER STYLE
+  BLOCK in `Brand-Assets/MASCOT_IMAGE_GEN_PROMPTS.md` is only for a genuinely new
+  pose, and match the existing framing). Body slides are
   content-forward. Buddy is small (lower third), a host — never filling the frame. No
   drawn effects; composite sparkles/confetti in the editor if ever needed.
 - **App UI:** real screenshots only, from `UI-Library/` — the standard is the Today-home

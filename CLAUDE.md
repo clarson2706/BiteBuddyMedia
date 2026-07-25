@@ -47,9 +47,9 @@ dry-run. Check what's actually in the session before designing around it.
 1. **Upload-Post is not connected** — nothing can publish until Connor adds it in
    claude.ai connector settings, links IG/TikTok/Facebook/YouTube, and passes the free
    tier (10 uploads/month; a real week is ~84).
-2. **Buddy pose PNGs have never existed** — `UI-Library/10-buddy-poses/` lists 13 target
-   files and contains none. Until exported once, Buddy is AI-regenerated per slide and
-   drifts between posts.
+2. ~~Buddy pose PNGs~~ **RESOLVED 2026-07-25** — all 13 canonical poses are now in
+   `Brand-Assets/buddy-poses/`, with RGBA cutouts in `transparent/` ready to composite.
+   Use them; never generate Buddy with an image model.
 3. **No Canva brand templates** — the brand kit exists, templates do not.
 
 ## Approval gates
