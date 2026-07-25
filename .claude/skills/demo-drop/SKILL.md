@@ -134,22 +134,33 @@ Every demo post is `persona: P1` or `P4`, `hook_family: OUTCOME` or `POV`,
 
 ## 5. Schedule, one per platform per day
 
-Demo slots, chosen to sit clear of the carousel slots already in use:
-
-| Platform | Demo slot | Why |
+| Platform | Demo slot | Adds or replaces |
 |---|---|---|
-| TikTok | **13:00** | third TikTok post of the day; 08:00 / 13:00 / 19:00 keeps 5h+ gaps and stays inside the 3/day band |
-| YouTube | **11:00** | second Short of the day, 6h clear of the 17:00 Short |
-| Instagram | **20:30** | see the note below |
+| TikTok | **13:00** | **replaces** that day's flex-slot carousel |
+| Instagram | **20:30** | **replaces** that day's second carousel |
+| YouTube | **11:00** | **adds** a second Short, 6h clear of the 17:00 one |
 
-**The Instagram exception, and it is deliberate.** Connor asked for one more post
-on each platform. TikTok and YouTube can absorb that. Instagram cannot: our own
-research caps it at 2 feed posts a day, and a third is the pattern that
-pattern-matches to spam and is the suspected cause of the July 22 throttle. So on
-a demo day the demo **takes** the 20:30 Instagram slot instead of adding to it,
-and that day's second carousel runs on TikTok only. Instagram still gets a demo
-every demo day; it just does not get three posts. If this ever needs revisiting,
-revisit the cadence research first, not the rule.
+**A demo does not increase the day's post count on TikTok or Instagram; it
+changes what fills a slot that was already going to publish.** TikTok runs 3/day
+by default (08:00 / 13:00 / 19:00) and 3 is the ceiling in
+`HOOK-INTELLIGENCE-2026.md`, not a target to beat. Instagram's cap is 2. Adding a
+post on top of either is the exact pattern suspected in the July 22 throttle.
+
+**YouTube is the one exception, deliberately.** It has no comparable per-day cap
+in our research, the channel is at 5 subscribers, and it has been reading zero
+daily views since July 23. More uploads there is a cheap test rather than a risk.
+Revisit this if YouTube reach ever becomes something worth protecting.
+
+**Handle the displaced carousel, do not silently drop it.** When a demo takes the
+13:00 TikTok slot:
+
+1. Cancel that carousel's scheduled TikTok job (`cancel_scheduled`).
+2. Set its `registry.jsonl` entry to `status: displaced`.
+3. The next generation run re-slots displaced entries **before** generating new
+   material, so a topic that never published is not burned by the dedupe check.
+
+Say in the report which carousels were displaced and by which demo. A slot that
+quietly swallowed a post is how a content pipeline starts lying about its output.
 
 Schedule with the Upload-Post SDK, media served from the public repo at the
 **commit SHA** (push before scheduling):

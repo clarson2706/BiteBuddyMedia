@@ -3,7 +3,8 @@
 *A series is a repeatable format a viewer can recognize in half a second and follow
 for. Series are how an account becomes followable instead of a pile of one-offs — and
 they're our cleanest A/B unit: same skeleton weekly, so performance differences mean
-something. Three series are **active** at any time; each gets 2 slots/week.*
+something. Three series are **active** at any time; each gets 4 slots/week (12 of the
+week's 21 posts). The remaining 9 are 3 winner re-cuts and 6 experiments.*
 
 ## Active roster (launch)
 
@@ -58,7 +59,9 @@ something. Three series are **active** at any time; each gets 2 slots/week.*
    named weak element — hook wording, cover style, chain choice — one variable at a
    time), **kill** (slot goes to the top bench series; killed series logged in the
    report with the numbers that killed it).
-4. Roster is always exactly 3 active. Experiments (the 4 weekly one-off slots) are
-   where new series ideas earn a bench spot.
+4. Roster is always exactly 3 active. Experiments (the 6 weekly one-off slots) are
+   where new series ideas earn a bench spot. Experiments fill the TikTok-only 13:00
+   flex slot first, so an experiment is the thing a demo video displaces — which is
+   correct, since it is the least-committed content of the week.
 5. Every series post carries its `series` id in the registry + manifest, so the
    analytics tables aggregate automatically.

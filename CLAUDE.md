@@ -97,9 +97,12 @@ canonical search term every CTA must use. Do not restate it here — point at it
   `TARGET-USER-PROFILES.md`).
 - **Buddy stays visually consistent** and does not appear on every slide — he hosts the
   cover and the CTA, the content carries the body.
-- **Platform-safe cadence** — TikTok ≤3/day, Instagram ≤2/day, always spaced, never
-  simultaneous. Five simultaneous posts on 22 July 2026 is the suspected cause of an
-  Instagram throttle. Rate limiting belongs in whatever publishes.
+- **Platform-safe cadence** — TikTok **3/day (08:00 / 13:00 / 19:00), which is the
+  default and also the ceiling**; Instagram ≤2/day; always spaced, never simultaneous.
+  Five simultaneous posts on 22 July 2026 is the suspected cause of an Instagram
+  throttle. Rate limiting belongs in whatever publishes. The 13:00 TikTok slot is the
+  **flex slot**: a demo video *replaces* the carousel there rather than adding a fourth
+  post, and the flex-slot post is TikTok-only so Instagram stays at 2.
 
 ## Conventions
 

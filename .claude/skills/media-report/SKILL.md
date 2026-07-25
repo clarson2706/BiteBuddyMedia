@@ -103,6 +103,9 @@ views, and the report should say so plainly when that happens.
 - `Content-Engine/SERIES.md` — the series under test and their verdict rules
 - `Posts/<week>/manifest.json` — what each post actually was
 - `SPRINT-AUG25.md` — the sprint checkpoints, while the sprint is live
+- **TikTok went from 2 posts/day to 3 on 2026-07-25.** Any comparison straddling
+  that date has cadence as a confounder. If TikTok reach moves after it, say
+  plainly that volume changed too, rather than crediting or blaming the content.
 - YouTube has read zero daily views since 2026-07-23 despite videos publishing.
   Until that resolves, treat YouTube reach numbers as suspect and say so rather
   than averaging them into a healthy-looking total.

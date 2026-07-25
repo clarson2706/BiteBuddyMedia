@@ -100,13 +100,17 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
 1. Hard gate: `next-week-directives.json` must exist with this run's timestamp.
 2. Read the directives + `Content-Engine/registry.jsonl` (everything ever posted —
    the dedupe memory) + the persona/hook/series docs.
-3. Generate **14 posts** (2/day × 7): copy, caption, pinned comment, hashtags,
+3. Generate **21 posts** (3/day × 7): copy, caption, pinned comment, hashtags,
    persona, hook family, visual recipe, series slot, platform plan, time slot.
    Slot template per week (adjustable by directives, never by whim):
-   - 8 series posts: 2 × each active series (see `Content-Engine/SERIES.md`)
-   - 2 re-cuts of last week's winners (fresh cover, same skeleton) — only when
-     directives name winners; otherwise 2 extra experiments
-   - 4 experiments (new hooks/topics/formats to feed the next report)
+   - 12 series posts: 4 × each active series (see `Content-Engine/SERIES.md`)
+   - 3 re-cuts of last week's winners (fresh cover, same skeleton) — only when
+     directives name winners; otherwise 3 extra experiments
+   - 6 experiments (new hooks/topics/formats to feed the next report)
+
+   **Seven of the 21 are TikTok-only** — the 1:00 PM flex slot (see Phase 4). Fill
+   that slot from the experiment pool first: it is the slot a demo video displaces,
+   so it should hold the most expendable content, not a series episode.
 4. Append every post to the registry. Write the week's `manifest.json`.
 
 ### Phase 3 — RENDER (`Content-Engine/render_slides.py`)
@@ -127,9 +131,28 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    is skipped and reported, not guessed at.
 2. Schedule every rendered post at its slot, **enforcing the rate rules in code**:
    TikTok ≤3/day · Instagram ≤2/day · never two platforms at the same minute ·
-   ≥4h spacing per platform. Slots: TikTok 8:00 AM + 7:00 PM · Instagram 12:30 PM
-   (+ 7:30 PM Fri only) · YouTube Short 1/day 5:00 PM · Facebook mirrors Instagram.
-   Captions/crops vary per platform (duplicate-content penalty).
+   ≥4h spacing per platform. Captions/crops vary per platform (duplicate-content
+   penalty).
+
+   | Platform | Slots (America/Chicago) |
+   |---|---|
+   | TikTok | **8:00 AM · 1:00 PM · 7:00 PM** — 3/day, the default |
+   | Instagram | 12:30 PM (+ 7:30 PM Fri only) — stays at 2/day |
+   | YouTube | Short 1/day, 5:00 PM |
+   | Facebook | mirrors Instagram +15 min |
+
+   **The 1:00 PM TikTok slot is the flex slot.** It runs a carousel by default and a
+   demo video whenever one is queued for that day (see the **demo-drop** skill). A
+   demo *replaces* the carousel there rather than adding a fourth post, because
+   3/day is TikTok's ceiling, not a target to exceed.
+
+   **The third slot is TikTok-only.** Instagram stays at 2/day: the cap in
+   `HOOK-INTELLIGENCE-2026.md` is 2, and the July 22 throttle landed on Instagram.
+   Do not fan the flex-slot post out to Instagram to "use" the content.
+
+   Spacing check: 8:00 / 13:00 / 19:00 leaves 5h and 6h gaps. The July 22 incident
+   was five *simultaneous* posts, not five posts in a day. Spacing is the thing that
+   matters, and this keeps it.
 3. Submit the whole week in this one run using `scheduled_date` (ISO-8601) +
    `timezone: America/Chicago`; pass the pinned comment as `first_comment`. Hand Canva
    export URLs straight to the API rather than downloading media locally. Record the
@@ -148,7 +171,7 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    PayPal amounts.
 
 ### Phase 6 — REPORT
-Commit + push everything, then message Connor: the week's 14 titles by day, what got
+Commit + push everything, then message Connor: the week's 21 titles by day, what got
 scheduled where, what was dropped and why, the Phase-1 report's three headlines
 (went well / didn't / changing), sprint checkpoint status (`SPRINT-AUG25.md` table),
 and the creator-pipeline pulse (sent / replied / deals / posts live). **Posts start
@@ -164,7 +187,7 @@ Sunday regenerates the whole week from scratch, so generating more than that is 
 that would be thrown away.
 
 1. Compute `slots_remaining` = published slots between now and **the end of Sunday**
-   (not the 6:00 PM run time), at the normal 2 posts/day cadence. The Sunday run owns
+   (not the 6:00 PM run time), at the normal 3 posts/day cadence. The Sunday run owns
    Monday through Sunday of the *following* week, so the bridge run owns everything up
    to and including Sunday night. Generating a 7:00 PM post at 6:00 PM the same evening
    is a bad seam; this avoids it.
