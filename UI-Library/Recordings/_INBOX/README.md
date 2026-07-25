@@ -1,21 +1,43 @@
-# _INBOX — drop raw screen recordings here
+# Getting screen recordings to Claude
 
-Drop the raw `.mov` / `.mp4` straight off the phone. No editing, no trimming, no
-renaming needed beyond something recognisable (`scan-chicken-bowl.mov`).
+**Do not try to upload videos into this folder from a phone.** GitHub's mobile web
+only offers "create file" for text; there is no binary upload from the photo
+library. That is a GitHub limitation, not a repo one.
 
-**The flow worth recording:** Today dashboard → tap scan → point at food → the
-analysing beat → the result screen with the numbers → save to the log. That whole
-arc is the product demo, and it is the highest-value asset this account has.
+## Route A — Google Drive (works from a phone, recommended)
 
-What happens next: the **demo-drop** skill probes each clip, picks trim points,
-speeds up the analysing wait, pads to 1080x1920 on brand cream, burns in a hook,
-appends the Today-dashboard end card, writes the copy, and schedules one post per
-platform per day for as many days as there are clips. One clip means one day.
-Five clips means five days.
+One-time setup:
+1. In Google Drive, create a folder called **`BiteBuddy Recordings`**
+2. Share it: **Anyone with the link → Viewer**
 
-Tips that make the edit better, none of them required:
-- Start on the dashboard, not on the home screen or an app switcher
-- Let the result screen sit still for ~2 seconds so the numbers are readable
+Then, every time:
+3. Record the flow on your phone
+4. Share sheet → **Save to Drive** → `BiteBuddy Recordings`
+5. Tell Claude **"clips are in Drive"**
+
+Claude finds them through the Drive connector, pulls the bytes down with `curl`
+(outside its context, so a 60 MB clip costs nothing), edits, schedules, and
+commits the finished `demo.mp4` here in the repo.
+
+**On the link-sharing step:** it has to be link-shared because the connector can
+only hand Claude base64 through its context window, which a phone video would
+blow out. Worth noting the exposure is close to zero anyway, since these clips
+are destined to be public posts on TikTok, Instagram and YouTube. Do not put
+anything private in that folder.
+
+## Route B — GitHub upload (desktop browser only)
+
+On a computer: repo → **Add file → Upload files** → drop the clip in this folder →
+commit. Keeps everything private. Not available on mobile.
+
+## What to record
+
+Today dashboard → tap scan → point at food → the analysing beat → the result
+screen with the numbers → save to the log. That arc is the product demo.
+
+Tips that improve the edit, none required:
+- Start on the dashboard, not the home screen or app switcher
+- Let the result screen sit still ~2 seconds so the numbers are readable
 - Scan something recognisable; a burrito bowl reads better than a protein bar
 - Portrait, do not rotate
-- Silent is fine, audio gets stripped anyway
+- Silent is fine, audio is stripped anyway

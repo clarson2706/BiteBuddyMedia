@@ -20,7 +20,33 @@ can write. This skill is the path from a raw phone clip to a scheduled post.
 days. If the inbox is empty, say so and stop; never invent filler to fill a
 schedule.
 
-## 1. Inventory
+## 1. Get the clips
+
+Clips arrive one of two ways (see `UI-Library/Recordings/_INBOX/README.md`).
+GitHub mobile cannot upload binaries, so **Drive is the normal route.**
+
+**Drive.** Find them, then pull the bytes with curl so they never enter context:
+
+```python
+# find: connector call, cheap, metadata only
+mcp__Google_Drive__search_files(query="mimeType contains 'video/' and title contains 'bitebuddy'")
+```
+```bash
+# fetch: bytes go straight to disk, not through the context window
+curl -sSL -o UI-Library/Recordings/_INBOX/<name>.mov \
+  "https://drive.usercontent.google.com/download?id=<FILE_ID>&export=download&confirm=t"
+file UI-Library/Recordings/_INBOX/<name>.mov   # must be video, not HTML
+```
+
+**Never use `download_file_content`** for video. It returns base64 into the
+context window and a phone clip is tens of megabytes of text.
+
+**If curl returns HTML instead of video**, the file is not link-shared. Say so
+plainly and ask Connor to set the Drive folder to "Anyone with the link → Viewer";
+do not try to work around it.
+
+**Repo route.** If Connor uploaded from a desktop browser, the clip is already in
+`UI-Library/Recordings/_INBOX/` and there is nothing to fetch.
 
 ```bash
 ls -la UI-Library/Recordings/_INBOX/
