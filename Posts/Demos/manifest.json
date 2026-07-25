@@ -14,8 +14,13 @@
       "source_clip": "UI-Library/Recordings/clips/2026-07-20-scan-salmon-plate.mp4",
       "source_duration_sec": 30.58,
       "edit": {
-        "start": 0.3, "end": 28.4,
-        "speed_window": [3.0, 15.2], "speed": 2.5,
+        "start": 0.3,
+        "end": 28.4,
+        "speed_window": [
+          3.0,
+          15.2
+        ],
+        "speed": 2.5,
         "why": "Setup ran 15s before the payoff, far too slow for TikTok. Compressing camera-through-analysing to 2.5x lands the 485 cal result at 8s instead of 15s. Cut at 28.4s, just after the logged toast and before iOS Control Center appears."
       },
       "duration_sec": 23.8,
@@ -24,9 +29,33 @@
       "cta": "Know what is on your plate",
       "title": "One photo found all four foods",
       "caption": "Salmon fillet, green beans, crab cake, watermelon. One photo, itemised, 485 calories and 42g protein. The app shows every item it found and every number stays editable before you log it, which is the whole point of an AI calorie scanner: you review the estimate, you are not stuck with it.",
-      "hashtags": ["#BiteBuddy", "#AICalorieCounter", "#CalorieTracking", "#FoodTracker"],
+      "hashtags": [
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#CalorieTracking",
+        "#FoodTracker"
+      ],
       "pinned_comment": "it found the crab cake, which honestly surprised me",
-      "status": "draft"
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "bae2fbe1b5ca4ecfbb834b979a391943",
+          "request_id": "cb952f657b174d55a87aebb26a6f0ccd",
+          "scheduled_local": "2026-07-26T13:00:00"
+        },
+        "youtube": {
+          "job_id": "9d0e9db903324be3b5ed15838dc08ca1",
+          "request_id": "c1a8b03fe99340ffa8babc2425f9a44f",
+          "scheduled_local": "2026-07-26T11:00:00"
+        },
+        "instagram": {
+          "job_id": "57f5badc28394ed694aa8b3a4f940ba3",
+          "request_id": "f691cbf6149c4c99be2257db9537fda9",
+          "scheduled_local": "2026-07-26T20:30:00"
+        }
+      },
+      "media_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/5d0967f9050dd6fdfd66de41a12b3c3e2176563f/Posts/Demos/demo-2026-07-26/demo.mp4",
+      "instagram_note": "Took the 20:30 Instagram slot rather than becoming a third IG post that day; the displaced carousel still runs on TikTok at 19:00."
     }
   ]
 }
