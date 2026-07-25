@@ -7,9 +7,12 @@ and without legalese on purpose; the plain meaning is the intended meaning.*
 
 ## 1. What you get
 
-- **BiteBuddy Pro, free, for as long as the program exists.** We activate it on the
-  account you tell us about. It is a courtesy, not payment, and either of us can end
-  it if the partnership ends.
+- **BiteBuddy Pro, free, for 6 months, renewed for as long as we're actively
+  working together.** We activate it on the account you tell us about. "Actively
+  working together" means you've posted about BiteBuddy at least once since your
+  last renewal, or we're still mid-conversation about an upcoming post. Renewal is
+  automatic on our end, not something you need to ask for. It is a courtesy, not
+  payment, and either of us can end it if the partnership ends.
 - **A commission: 30% of the first payment made by each subscriber attributed to
   you.** Examples at current pricing: an annual subscription ($49.99) earns you
   $15.00. A monthly subscription ($7.99) earns you $2.40. One commission per

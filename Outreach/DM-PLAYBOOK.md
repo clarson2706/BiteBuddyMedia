@@ -5,11 +5,21 @@ presses send. Written 2026-07-25.*
 
 ## THE DEAL (the only version we offer)
 
-> **Free BiteBuddy Pro forever + 30% of each attributed subscriber's FIRST payment
-> only.** Annual sub ($49.99) pays the creator ~$15. Monthly ($7.99) pays ~$2.40.
-> One payment per subscriber, then done. No trailing commission, no retainers,
-> nothing upfront. Paid monthly over PayPal once earnings pass $10 (rolls over
-> below that). Terms: `Outreach/CREATOR-TERMS.md`.
+> **Free BiteBuddy Pro for 6 months, renewed for as long as we're actively working
+> together, + 30% of each attributed subscriber's FIRST payment only.** Annual sub
+> ($49.99) pays the creator ~$15. Monthly ($7.99) pays ~$2.40. One payment per
+> subscriber, then done. No trailing commission, no retainers, nothing upfront.
+> Paid monthly over PayPal once earnings pass $10 (rolls over below that). Terms:
+> `Outreach/CREATOR-TERMS.md`.
+
+**Why 6 months, not forever:** free Pro costs us real AI compute per active user
+(roughly $1-4/month depending on scan volume). Six months keeps that cost bounded
+per creator instead of an open-ended, ever-growing liability as the program scales
+to ~100 DMs/week. "Active partnership" means they've posted about BiteBuddy at
+least once since the last renewal, or a deal is still genuinely in motion (trial,
+recent reply, upcoming post). Renewal is automatic and low-friction, not a
+re-negotiation, unless a creator has gone fully silent (see follow-up discipline
+below), in which case the free tier lapses with the relationship.
 
 Do not improvise other structures in DMs. "Can you pay a flat fee upfront?" gets a
 polite no (canned reply below). Star performers can be renegotiated later by Connor,
@@ -52,8 +62,9 @@ Structure, four beats, 60 to 120 words:
 
 1. **Specific compliment** tied to a real post or series of theirs (proof we looked)
 2. **Who we are, one line:** small AI calorie scanner, photo in, editable estimate out
-3. **The offer, one line:** free Pro forever plus 30% of the first payment from
-   anyone who subscribes through their link
+3. **The offer, one line:** free Pro for 6 months (longer if we keep working
+   together) plus 30% of the first payment from anyone who subscribes through
+   their link
 4. **Low-pressure ask:** want to try it first? (Never "let me know if interested in
    collaborating," which is template language)
 
@@ -63,41 +74,43 @@ Structure, four beats, 60 to 120 words:
 > hey Maya, your dining hall protein bowls series is genuinely smart, the swipe
 > format makes it so easy to actually copy. I work on BiteBuddy, a small new AI
 > calorie scanner (photograph your food, it estimates the macros, you can edit
-> them). We're doing founding partners instead of ads: free Pro forever plus 30% of
-> the first payment from anyone who subscribes through your link. No scripts, no
-> deadlines, post only if you actually like it. Want a code to try it first?
+> them). We're doing founding partners instead of ads: free Pro for 6 months
+> (longer if we keep working together) plus 30% of the first payment from anyone
+> who subscribes through your link. No scripts, no deadlines, post only if you
+> actually like it. Want a code to try it first?
 
 **TikTok, new-lifter bulking creator:**
 > yo, the anabolic french toast with the actual gram breakdown was great, most
 > people skip the numbers. i'm building BiteBuddy, new AI calorie scanner, you
 > snap your food and it does the macros. doing a founding creator thing, free pro
-> forever + 30% of first payments from your link. zero pressure, want to try it
-> free first?
+> for 6 months (longer if we keep working together) + 30% of first payments from
+> your link. zero pressure, want to try it free first?
 
 **Instagram, honest postpartum/busy-mom food creator:**
 > hi Jess, the one handed snack ideas post was so real, the "holding a baby the
 > whole time" framing got me. I'm one of the people behind BiteBuddy, a small AI
 > calorie scanner app (photo, macros, done, no weighing). We're partnering with a
-> few creators early: free Pro forever, plus 30% of the first payment from anyone
-> who subscribes through your link. Would you want to just try it first, no
-> strings?
+> few creators early: free Pro for 6 months (longer if we keep working together),
+> plus 30% of the first payment from anyone who subscribes through your link.
+> Would you want to just try it first, no strings?
 
 ## Conversation flow (what happens after they reply)
 
 **Stage 1, they reply with any interest** → send the try-first pack:
-> awesome. here's the app: [App Store link]. I set you up with Pro free, just tell
-> me the email or Apple ID name you sign up with and it activates within a day. try
-> it on real food for a few days and tell me what it gets wrong, genuinely useful
-> for us either way.
+> awesome. here's the app: [App Store link]. I set you up with Pro free for 6
+> months, just tell me the email or Apple ID name you sign up with and it activates
+> within a day. try it on real food for a few days and tell me what it gets wrong,
+> genuinely useful for us either way.
 (Claude grants the RevenueCat entitlement when Connor forwards the identifier.)
 
 **Stage 2, they like it / ask about the deal** → send terms + link:
-> here's the whole deal in one page: [terms link]. short version: you get a
-> personal link and a code. anyone who subscribes through it, you get 30% of their
-> first payment (that's about $15 per annual sub). paid monthly by PayPal once
-> you're over $10. reply "I agree" and I'll send your link, your code, and a little
-> starter pack. one rule from the lawyers of the internet: tag posts #ad or use the
-> paid partnership label.
+> here's the whole deal in one page: [terms link]. short version: you get 6 months
+> of Pro free, renews as long as we're working together, plus a personal link and a
+> code. anyone who subscribes through it, you get 30% of their first payment
+> (that's about $15 per annual sub). paid monthly by PayPal once you're over $10.
+> reply "I agree" and I'll send your link, your code, and a little starter pack.
+> one rule from the lawyers of the internet: tag posts #ad or use the paid
+> partnership label.
 
 **Stage 3, they agree** → Claude generates their onboarding pack (see below), Connor
 sends it. Status → `deal`.
