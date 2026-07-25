@@ -3,7 +3,7 @@ name: weekly-loop
 description: >-
   Run BiteBuddy's autonomous weekly content cycle end to end: pull last week's
   real per-post metrics from Upload-Post into Analytics/, write the weekly
-  report + next-week directives, generate 14 persona-targeted posts steered by
+  report + next-week directives, generate 21 persona-targeted posts steered by
   those directives, render every deck in Canva from the design system + real
   Buddy/screenshot assets, schedule the full week across TikTok / Instagram /
   Facebook / YouTube via Upload-Post with rate limits enforced, commit
@@ -35,7 +35,7 @@ Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
 - **Any off-schedule run** (someone says "run the loop" on a Tuesday, a Saturday,
   whenever) → run the full Sunday procedure below UNCHANGED, except Phase 2
   generates only `slots_remaining` posts: the published slots between now and the
-  **end of Sunday** at 2 posts/day. The Sunday run owns Mon-to-Sun of the following
+  **end of Sunday** at 3 posts/day. The Sunday run owns Mon-to-Sun of the following
   week, so the bridge owns everything through Sunday night. See `WEEKLY-LOOP.md`
   §Partial generation for the worked example.
 - Otherwise → the full Sunday mode below.
@@ -64,16 +64,18 @@ Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
 5. Write `Analytics/next-week-directives.json` (schema in `Analytics/README.md`) with
    `generated_at` = now. Commit Phase 1 before starting Phase 2.
 
-## Phase 2 — Generate 14 posts
+## Phase 2 — Generate 21 posts
 
 **Gate:** `next-week-directives.json` must carry this run's `generated_at`. If not,
 stop and fix Phase 1. Do not generate from memory of old numbers.
 
 1. Slot template for a full week (directives may shift ±2 slots between categories,
-   nothing else): 8 series (2 × 3 active series from `SERIES.md`, +2 to the series
-   the directives favor) · 2 winner re-cuts (only if directives name winners) ·
-   4 experiments. **On a partial run, generate only `slots_remaining` posts**, keeping
+   nothing else): 12 series (4 × 3 active series from `SERIES.md`, +2 to the series
+   the directives favor) · 3 winner re-cuts (only if directives name winners) ·
+   6 experiments. **On a partial run, generate only `slots_remaining` posts**, keeping
    the series rotation proportional (a 3-post batch is series-heavy, not experiment-heavy).
+   Seven of the 21 fill the TikTok-only 13:00 flex slot; draw those from the
+   experiment pool first, since a demo video displaces that slot.
 2. Every post gets: persona (P1–P8), hook family (the 20 codes), visual recipe (the 8
    archetypes), series or `oneoff`, slide-by-slide copy (hook → value slides → CTA),
    caption with one natural search keyword, pinned first comment, 3–5 hashtags,
@@ -140,9 +142,12 @@ use the API key in `UPLOAD_POST_API_KEY` with the official SDK.
 2. Rate rules enforced in your scheduling math (never trust the slot plan blindly):
    TikTok ≤3/day · IG ≤2/day · ≥4h between same-platform posts · no simultaneous
    cross-platform publishes of the same deck · captions and crops varied per platform.
-3. Slots (America/Chicago): TikTok 08:00 + 19:00 · IG 12:30 (+19:30 Fri) · FB mirrors
-   IG +15 min · YouTube Short 17:00 daily (build 30–40s slideshow from the deck; title
-   = the hook, keyworded-human).
+3. Slots (America/Chicago): TikTok 08:00 + **13:00** + 19:00 · IG 12:30 (+19:30 Fri) ·
+   FB mirrors IG +15 min · YouTube Short 17:00 daily (build 30–40s slideshow from the
+   deck; title = the hook, keyworded-human).
+   **13:00 TikTok is the flex slot**: carousel by default, demo video when one is
+   queued that day (it replaces the carousel, never adds a 4th). The flex-slot post is
+   **TikTok-only** — IG stays at 2/day, do not fan it out there.
 4. Append the App Store link in YouTube descriptions + Facebook captions (they allow
    links); IG/TikTok captions carry the search phrase instead.
 5. Submit the full week in this run via `scheduled_date` + `timezone`, passing the

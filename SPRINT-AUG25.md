@@ -32,10 +32,13 @@ whenever one creator post or organic post hits.
 1. **Creator engine (the volume play).** 100 personalized DMs/week, 10/day/platform,
    weekdays. Deal: free Pro + 30% of first payment. $0 upfront. Target: 10 to 20%
    reply rate, 4+ live creator posts/week by mid-August. See `Outreach/`.
-2. **Organic engine (the lab).** 14 posts/week via the loop. Sprint bias: the 4
-   experiment slots go to APP-CTA proof formats (then-I-tracked-it, scan-as-receipts,
-   best-order-at-chain); extra slots favor P1/P4 personas (they install AND pay);
-   every caption carries a search keyword.
+2. **Organic engine (the lab).** 21 posts/week via the loop (TikTok went to 3/day on
+   2026-07-25; the third is TikTok-only). Sprint bias: the 6 experiment slots go to
+   APP-CTA proof formats (then-I-tracked-it, scan-as-receipts, best-order-at-chain);
+   extra slots favor P1/P4 personas (they install AND pay); every caption carries a
+   search keyword. **Watch the cadence change itself:** TikTok reach before and after
+   2026-07-25 is a confounder in every comparison that straddles it, and the weekly
+   report should say so rather than reading a reach change as a content result.
 3. **Iteration speed.** Loop runs twice weekly (Sunday full + Wednesday mini) = 8
    learning cycles before Aug 25 instead of 4.
 4. **Paid: $0 until earned.** No ad spend until a specific creative shows real
