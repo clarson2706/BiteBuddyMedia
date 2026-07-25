@@ -46,9 +46,9 @@
       "cta": "Which day do you usually stop? Comment below.",
       "status": "scheduled",
       "platforms_scheduled": [
+        "instagram",
         "tiktok",
-        "youtube",
-        "instagram"
+        "youtube"
       ],
       "platforms_skipped": {
         "facebook": "not linked in Upload-Post"
@@ -69,6 +69,24 @@
         "request_id": "ac67e31a8c434f569b4613475bd77fc9",
         "scheduled_local": "2026-07-25T12:30:00",
         "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "instagram": {
+          "job_id": "8fc3181b64504c0f978560a79de8d82a",
+          "scheduled_local": "2026-07-25T12:30:00"
+        },
+        "youtube": {
+          "job_id": "44a05e8d9cf94311a3914c6261d84df4",
+          "request_id": "716d2f61c50d454c8290e97eabae3f2b",
+          "scheduled_local": "2026-07-25T17:00:00"
+        }
+      },
+      "published": {
+        "tiktok": {
+          "at": "2026-07-25T13:03:02Z",
+          "url": "https://www.tiktok.com/@bitebuddyapp/photo/7666450005988871454",
+          "note": "published before the CTA-slide requirement existed, so this one carries the old text-only final slide"
+        }
       }
     },
     {
@@ -102,8 +120,8 @@
       "cta": "Save this before your next grocery run.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok",
-        "instagram"
+        "instagram",
+        "tiktok"
       ],
       "platforms_skipped": {
         "facebook": "not linked in Upload-Post",
@@ -117,6 +135,18 @@
         "request_id": "69cc5d576da74255a349d4947f2a9fa7",
         "scheduled_local": "2026-07-25T20:30:00",
         "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "63eeb5db081b4bdbbdc832e1132a7ec1",
+          "request_id": "1a3be603d94949d5afefd11a8e17359e",
+          "scheduled_local": "2026-07-25T19:00:00"
+        },
+        "instagram": {
+          "job_id": "f205000d5ef64f1cb2129c7bd3271376",
+          "request_id": "d55e6048db5f422789a5c21700ae23b3",
+          "scheduled_local": "2026-07-25T20:30:00"
+        }
       }
     },
     {
@@ -150,9 +180,9 @@
       "cta": "Follow BiteBuddy. No guilt, just numbers.",
       "status": "scheduled",
       "platforms_scheduled": [
+        "instagram",
         "tiktok",
-        "youtube",
-        "instagram"
+        "youtube"
       ],
       "platforms_skipped": {
         "facebook": "not linked in Upload-Post"
@@ -173,6 +203,23 @@
         "request_id": "509ad93660f14ac2929edd43b3665ffe",
         "scheduled_local": "2026-07-26T12:30:00",
         "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "b42ebc693c614074b0abde72848e3bcc",
+          "request_id": "35ac383f67d64bc0a0ac6b07edebbfc7",
+          "scheduled_local": "2026-07-26T08:00:00"
+        },
+        "instagram": {
+          "job_id": "61992dfb849744a0bb8790555bf54191",
+          "request_id": "b3239d0cce364894ab33c826dfce31e9",
+          "scheduled_local": "2026-07-26T12:30:00"
+        },
+        "youtube": {
+          "job_id": "c54a170b88b245c99a4d63d6827f20c2",
+          "request_id": "420ba7a65efa445e8dbed68eb5ded67b",
+          "scheduled_local": "2026-07-26T17:00:00"
+        }
       }
     },
     {
@@ -206,8 +253,8 @@
       "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok",
-        "instagram"
+        "instagram",
+        "tiktok"
       ],
       "platforms_skipped": {
         "facebook": "not linked in Upload-Post",
@@ -221,14 +268,27 @@
         "request_id": "9cafa3d0acd742f0bbbd95a3f04d3aac",
         "scheduled_local": "2026-07-26T20:30:00",
         "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "1792d9e9385f4ddc8c81d48f73629ec6",
+          "request_id": "ff8808f2c05e45638d4f5ac9dfd5c37d",
+          "scheduled_local": "2026-07-26T19:00:00"
+        },
+        "instagram": {
+          "job_id": "2f549bd7a3714749a3575100cc340cec",
+          "request_id": "897bee0d3ce94529ae2651ca7e829016",
+          "scheduled_local": "2026-07-26T20:30:00"
+        }
       }
     }
   ],
-  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/281ab93e79b71a32b57a00e4da3913e9a5010621/Posts/2026-W30",
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/6ee213f22e40c7e24083cfa3512e9b3891cd09d2/Posts/2026-W30",
   "render": {
     "method": "Content-Engine/render_slides.py",
     "size": "1080x1350",
     "font": "Baloo 2 / Inter",
     "note": "Rendered locally rather than in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
-  }
+  },
+  "cta_slide_rule": "HARD REQUIREMENT from 2026-07-25: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py."
 }
