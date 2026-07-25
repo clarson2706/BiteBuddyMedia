@@ -150,6 +150,12 @@ use the API key in `UPLOAD_POST_API_KEY` with the official SDK.
    **TikTok-only** — IG stays at 2/day, do not fan it out there.
 4. Append the App Store link in YouTube descriptions + Facebook captions (they allow
    links); IG/TikTok captions carry the search phrase instead.
+   **The caption kwarg for `upload_photos` is `description`, not `caption`.** Passing
+   `caption` is silently dropped and the post goes out with only its title. Verify
+   `post_caption` is non-empty after publishing, every time.
+   **TikTok pinned comments cannot be posted by the API.** `first_comment` is a no-op
+   there, so list them for Connor to paste by hand and never report them as posted.
+   Both traps are documented in `Content-Engine/UPLOAD-POST.md`.
 5. Submit the full week in this run via `scheduled_date` + `timezone`, passing the
    pinned comment as `first_comment` and Canva export URLs as the media (never
    downloaded locally). Write returned `job_id`s/URLs + `status: scheduled` into the

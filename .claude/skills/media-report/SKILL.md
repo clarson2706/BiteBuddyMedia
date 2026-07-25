@@ -87,6 +87,10 @@ views, and the report should say so plainly when that happens.
   recent per-post average.
 - **Report zeros loudly.** A week of zero comments is the most important sentence
   in the report, not a gap to skim past.
+- **Never call a pinned comment "fired" on TikTok.** TikTok does not support
+  comments through the Upload-Post API, so `first_comment` is a no-op there and
+  no TikTok post has ever carried one. Treat the pinned-comment mechanism as live
+  only where a comment count proves it.
 - **Never fabricate a cause.** "Views rose and the only change was the cover" is
   a hypothesis, not a finding. Say which it is.
 - **Name the source of every account-level number.** Upload-Post's account
