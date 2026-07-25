@@ -16,6 +16,9 @@ https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752
 ```
 AUTOMATION-WORKFLOW.md    the weekly operating rhythm — who does what, when. Source of truth.
 Research/                 why the formats work. Read before changing strategy.
+  TARGET-USER-PROFILES.md   the 8 personas (+1 anti-persona) every post targets
+  HOOK-INTELLIGENCE-2026.md what's working on TikTok/IG/Shorts right now, sourced
+Content-Engine/           the bulk-generation brain: MASTER-PROMPT-V5 + DESIGN-SYSTEM
 Carousel-Ideas/           developed carousel concepts, ready to produce
 Video-Ideas/              developed video concepts, none produced yet
 UI-Library/               screen-by-screen app footage and screenshots, with inboxes

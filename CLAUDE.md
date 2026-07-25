@@ -13,7 +13,10 @@ that does not plausibly drive installs is not worth producing.
 
 ## Before proposing any strategy change
 
-Read `Research/CAROUSEL-MARKETING-PLAYBOOK.md` and `AUTOMATION-WORKFLOW.md` first. There is an
+Read `Research/CAROUSEL-MARKETING-PLAYBOOK.md` and `AUTOMATION-WORKFLOW.md` first.
+For content generation, also read `Research/TARGET-USER-PROFILES.md`,
+`Research/HOOK-INTELLIGENCE-2026.md`, and `Content-Engine/` (the persona-targeted
+bulk-generation system, added 2026-07-25). There is an
 existing system with reasoning behind it. Replacing something deliberate is a different job from
 replacing something accidental, and right now nobody knows which this is — because of the next
 point.
