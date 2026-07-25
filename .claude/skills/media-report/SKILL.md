@@ -89,10 +89,17 @@ views, and the report should say so plainly when that happens.
   in the report, not a gap to skim past.
 - **Never fabricate a cause.** "Views rose and the only change was the cover" is
   a hypothesis, not a finding. Say which it is.
+- **Name the source of every account-level number.** Upload-Post's account
+  aggregates are known to be date-shifted by a day and to under-count likes
+  (`2026-07-25-tiktok-export-reconciliation.md`). Where a platform-native export
+  covers the same window, it wins. Per-post rows via `request_id` are unaffected.
 
 ## Useful context to fold in
 
 - `Analytics/2026-W30-baseline.md` — the zero point every trend is measured from
+  (read its 2026-07-25 correction; the TikTok daily series in the body is wrong)
+- `Analytics/platform-exports/` — native exports Connor drops, ingested by
+  `Analytics/ingest_export.py`. Ground truth wherever they overlap Upload-Post.
 - `Content-Engine/SERIES.md` — the series under test and their verdict rules
 - `Posts/<week>/manifest.json` — what each post actually was
 - `SPRINT-AUG25.md` — the sprint checkpoints, while the sprint is live

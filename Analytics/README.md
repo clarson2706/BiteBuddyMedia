@@ -4,6 +4,18 @@
 here is committed.** The old system gitignored its rollups and its log stayed 0 bytes
 for its entire life. If a number isn't in a file here, it doesn't exist.*
 
+## Rule #2, learned 2026-07-25: platform exports outrank Upload-Post
+
+Where a platform's own export and Upload-Post disagree, **the export wins**. The
+first TikTok export we ingested put the daily view series a full day earlier than
+Upload-Post reported it, and counted 9 likes in a window where Upload-Post's
+lifetime total said 3. See `2026-07-25-tiktok-export-reconciliation.md`.
+
+Upload-Post remains the scheduling layer and the per-post join key (`request_id`),
+and it is still the only source of per-post rows. Its **account aggregates** are
+now known to be date-shifted and under-counted. Any report citing an account-level
+number should name its source.
+
 ## Two ways numbers get here
 
 - **`weekly-loop` Phase 1** writes them as a *gate*: generation cannot start until this
@@ -22,6 +34,22 @@ for its entire life. If a number isn't in a file here, it doesn't exist.*
 | `installs.jsonl` | **Connor, by hand** | optional, ~10 seconds/week — see below |
 | `report.py` | the analysis engine both of the above call | per-post joins + cuts by series/persona/hook/recipe/CTA/platform/slot |
 | `<date>-media-report.md` | media-report skill | any time it is run |
+| `platform-exports/*.csv` | **Connor, by hand** | raw native exports, committed verbatim for provenance |
+| `ingest_export.py` | normalises an export into the log | run whenever Connor drops one |
+
+### Platform exports
+
+Connor pulls these from TikTok Studio → Analytics → Overview (and equivalents
+elsewhere) and drops the zip. Ingest, then commit both the raw CSV and the log:
+
+```bash
+python3 Analytics/ingest_export.py --tiktok <Overview.csv> --year 2026
+```
+
+Rows land in `performance-log.jsonl` as `post_id: ACCOUNT-DAILY`, `source:
+tiktok-export`. Re-running is safe; already-logged dates are skipped. Metrics the
+export does not report (saves, per-post breakdown) stay **null**, never zero.
+
 
 ## `performance-log.jsonl` — one snapshot per line
 

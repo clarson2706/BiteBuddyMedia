@@ -59,6 +59,18 @@ history so far represents a stranger responding to this content, which makes the
 genuine comment from an unknown viewer the single most meaningful milestone available,
 well before any view-count target.
 
+## Correction, 2026-07-25 evening — the TikTok daily series above is wrong
+
+Connor supplied TikTok's own Overview export that evening and it contradicts the
+Upload-Post numbers used here. The real TikTok series is **195 (Jul 21) → 409
+(Jul 22) → 40 (Jul 23) → 33 (Jul 24)**: Upload-Post reported each day's figures
+against the following date. The peak was the day of the five simultaneous posts,
+not the day after, and the collapse follows it by one day.
+
+The export also counts 9 likes across Jul 21 and 22, where Upload-Post reported 3
+lifetime. Full reconciliation in `2026-07-25-tiktok-export-reconciliation.md`.
+The conclusions in this report survive; the dates and the like count do not.
+
 ## Caveats
 
 - These are **account-level aggregates**, not per-post. The Upload-Post `get_history`
