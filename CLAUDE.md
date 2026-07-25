@@ -19,6 +19,8 @@ kill/re-cut, Thu/Fri batches, pulse). Hard gate: generation refuses to run unles
 this run's analytics directives were just written. Contract: `WEEKLY-LOOP.md`.
 Procedure: `.claude/skills/weekly-loop/SKILL.md`. Series: `Content-Engine/SERIES.md`.
 Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl`.
+On-demand performance read (read-only, any time): the **media-report** skill +
+`Analytics/report.py`.
 Creator engine ($0 upfront, 30% of first payment): `Outreach/DM-PLAYBOOK.md` +
 `Outreach/CREATOR-TERMS.md`. House rule: **no em dashes in any outbound copy**
 (DMs, captions, slides, briefs) — AI tell, trust risk.

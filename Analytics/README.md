@@ -4,6 +4,14 @@
 here is committed.** The old system gitignored its rollups and its log stayed 0 bytes
 for its entire life. If a number isn't in a file here, it doesn't exist.*
 
+## Two ways numbers get here
+
+- **`weekly-loop` Phase 1** writes them as a *gate*: generation cannot start until this
+  run's directives exist. That is about steering next week.
+- **`media-report`** (skill) + `Analytics/report.py` answer "how are we doing" on demand,
+  read-only, as often as you like. It appends to the same log, so asking the question
+  more often makes the record better rather than noisier.
+
 ## Files
 
 | File | Written by | When |
@@ -12,6 +20,8 @@ for its entire life. If a number isn't in a file here, it doesn't exist.*
 | `<ISO-week>-report.md` | weekly-loop Phase 1 | every Sunday run |
 | `next-week-directives.json` | weekly-loop Phase 1 | every Sunday run — overwritten weekly (history lives in git) |
 | `installs.jsonl` | **Connor, by hand** | optional, ~10 seconds/week — see below |
+| `report.py` | the analysis engine both of the above call | per-post joins + cuts by series/persona/hook/recipe/CTA/platform/slot |
+| `<date>-media-report.md` | media-report skill | any time it is run |
 
 ## `performance-log.jsonl` — one snapshot per line
 
