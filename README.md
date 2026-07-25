@@ -19,6 +19,11 @@ gone.
 What survived the reset, deliberately:
 
 ```
+WEEKLY-LOOP.md                the autonomous weekly system — one Sunday Routine:
+                              analytics -> generate -> render (Canva) -> schedule
+                              (Upload-Post) -> report. Source of truth.
+.claude/skills/weekly-loop/   the executable procedure the Routine fires
+Analytics/                    append-only performance log + weekly reports + directives
 Research/
   TARGET-USER-PROFILES.md     8 researched personas + 1 anti-persona. Who every post is for.
   HOOK-INTELLIGENCE-2026.md   20-formula hook library, carousel mechanics, cadence
@@ -33,8 +38,9 @@ Brand-Assets/
 UI-Library/                   19 real app screenshots + capture inboxes
 ```
 
-Everything here is research-informed strategy. **Nothing here is a validated result** —
-see "the measurement lesson" below.
+The weekly loop turns the strategy into posts hands-off. Until its first cycles land
+real numbers in `Analytics/`, everything remains research-informed hypothesis — see
+"the measurement lesson" below.
 
 ## What was removed and why
 

@@ -10,7 +10,17 @@ Everything that gets BiteBuddy in front of people. **Cleared and restarted on
 **The app is live on the App Store and has effectively zero users.** Distribution is the
 bottleneck. Content that does not plausibly drive installs is not worth producing.
 
-## Current state: strategy exists, pipeline does not
+## Current state: strategy + autonomous weekly loop, awaiting activation
+
+The operating system is the **weekly loop** — one Sunday Routine that closes last
+week (analytics) and opens next week (generate → render in Canva → schedule via
+Upload-Post), with a hard gate: generation refuses to run unless this run's analytics
+directives were just written. Contract: `WEEKLY-LOOP.md`. Procedure:
+`.claude/skills/weekly-loop/SKILL.md`. Series testing: `Content-Engine/SERIES.md`.
+Schemas + the append-only performance log: `Analytics/README.md`. Dedupe memory:
+`Content-Engine/registry.jsonl`.
+
+## The strategy layer
 
 What's here is the **content intelligence layer** — who we're targeting, which hooks
 work, what slides should look like, and the prompt that generates batches:
@@ -25,11 +35,6 @@ work, what slides should look like, and the prompt that generates batches:
 **Read all four docs before proposing or building anything.** They are recent, sourced,
 and deliberate.
 
-What's **not** here: any production pipeline, any publishing automation, any skills, any
-analytics. Building that is the next job, and it should be designed around what Claude
-can actually do in-session now (design directly in Canva, schedule via connector) rather
-than around manual handoffs.
-
 ## Two rules learned the hard way
 
 **1. Measurement is not a later phase.** The previous system shipped a complete analytics
@@ -42,21 +47,29 @@ recorded number, even a hand-copied one.
 Upload-Post throughout and it was never wired up, so the whole thing ran in permanent
 dry-run. Check what's actually in the session before designing around it.
 
-## Known blockers
+## Activation checklist (what still blocks the first live week)
 
-1. **Upload-Post is not connected** — nothing can publish until Connor adds it in
-   claude.ai connector settings, links IG/TikTok/Facebook/YouTube, and passes the free
-   tier (10 uploads/month; a real week is ~84).
-2. ~~Buddy pose PNGs~~ **RESOLVED 2026-07-25** — all 13 canonical poses are now in
-   `Brand-Assets/buddy-poses/`, with RGBA cutouts in `transparent/` ready to composite.
-   Use them; never generate Buddy with an image model.
-3. **No Canva brand templates** — the brand kit exists, templates do not.
+1. **Upload-Post connector** — Connor adds it in claude.ai connector settings, links
+   IG (Business/Creator + FB Page) / TikTok / Facebook / YouTube, paid plan (free tier
+   is 10 uploads/mo; a week is ~40+).
+2. **The Sunday Routine** — Connor creates it in the claude.ai Routines UI with
+   **Upload-Post + Canva attached** (must be created there so connectors attach).
+   Spec + prompt text: `WEEKLY-LOOP.md`.
+3. **Canva templates** — not yet built; until they exist the render phase builds each
+   deck from the archetype specs directly.
+4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in
+   `Brand-Assets/buddy-poses/`. Use them; never generate Buddy with an image model.
 
 ## Approval gates
 
-Anything published to a social account is **Connor's call, every time.** Draft, show,
-then post — never post directly. Same for anything that spends money or changes App
-Store copy.
+**Updated 2026-07-25 by Connor:** the weekly loop is authorized to schedule and publish
+its carousel posts **without per-post approval**. The Sunday-night report is a standing
+veto window (posts start Monday 8 AM; silence = go; Connor can name any post to pull).
+This authorization covers ONLY the weekly loop's carousels on the linked accounts.
+
+Everything else keeps the strict gate: anything that spends money, changes App Store
+copy, DMs/outreach to real people, or publishes outside the weekly loop is **Connor's
+call, every time** — draft, show, then act.
 
 App Store listing copy lives in `BiteBuddyMVP/APP_STORE_METADATA.md`, including the
 canonical search term every CTA must use. Do not restate it here — point at it.
