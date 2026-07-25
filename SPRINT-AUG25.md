@@ -4,12 +4,21 @@
 sprint ends, this doc gets a retro section and the loop reverts to its steady-state
 cadence unless the numbers say otherwise.*
 
-## Baseline (real numbers, 2026-07-25, from RevenueCat)
+## Baseline (real numbers, 2026-07-25)
 
-- MRR **$7**, 1 active subscriber, 0 active trials
-- 50 new customers last 28 days (~2 installs/day), so observed install→pay ≈ 2%
-- Pricing already live: $7.99/mo, **$49.99/yr, 3-day free trial**
-- $1k MRR needs roughly **125 to 200 paying subscribers** depending on annual/monthly mix
+**Revenue (RevenueCat):** MRR **$7**, 1 active subscriber, 0 active trials. 50 new
+customers last 28 days (~2 installs/day), so observed install→pay ≈ 2%. Pricing live:
+$7.99/mo, $49.99/yr, 3-day trial. $1k MRR needs roughly **125 to 200 subscribers**.
+
+**Social (Upload-Post, see `Analytics/2026-W30-baseline.md`):** TikTok 1 follower, 668
+views over 17 posts, 2 likes, **0 comments, 0 shares**. YouTube 5 subscribers, 433
+views, 3 likes, 0 comments. Both platforms show a hard distribution collapse right after
+the five simultaneous posts on 22 July (YouTube sat at literal zero for three days).
+**Instagram and Facebook are not linked** in Upload-Post.
+
+Implication: the constraint was never volume. It was engagement quality plus a cadence
+that tripped platform limits. Weeks 1 to 3 may show suppressed reach regardless of
+content quality; judge the trend, not week 1.
 
 ## Honest framing
 
@@ -37,7 +46,7 @@ whenever one creator post or organic post hits.
 
 | Week | DMs sent | Deals | Creator posts live | Leading indicator | MRR checkpoint |
 |---|---|---|---|---|---|
-| W31 (Jul 27) | 100 | 3+ | 1+ | first tracked-link installs | $25 |
+| W31 (Jul 27) | 100 | 3+ | 1+ | any comments at all; first tracked-link installs | $25 |
 | W32 (Aug 3) | 100 | 6+ cum. | 4+ cum. | installs/day > 10 | $75 |
 | W33 (Aug 10) | 100 | 10+ cum. | 8+ cum. | a repeatable winner identified | $200 |
 | W34 (Aug 17) | 100 | 15+ cum. | 12+ cum. | double down on winner | $450 |
