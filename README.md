@@ -19,9 +19,11 @@ gone.
 What survived the reset, deliberately:
 
 ```
-WEEKLY-LOOP.md                the autonomous weekly system — one Sunday Routine:
-                              analytics -> generate -> render (Canva) -> schedule
-                              (Upload-Post) -> report. Source of truth.
+WEEKLY-LOOP.md                the autonomous system, twice weekly: Sunday full run
+                              (analytics -> generate -> render -> schedule ->
+                              outreach -> report) + Wednesday mini-run. Source of truth.
+SPRINT-AUG25.md               the 31-day push: checkpoints, levers, $0-ads rule
+Outreach/                     creator engine: DM playbook, terms, pipeline + payout ledgers
 .claude/skills/weekly-loop/   the executable procedure the Routine fires
 Analytics/                    append-only performance log + weekly reports + directives
 Research/

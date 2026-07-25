@@ -12,13 +12,16 @@ bottleneck. Content that does not plausibly drive installs is not worth producin
 
 ## Current state: strategy + autonomous weekly loop, awaiting activation
 
-The operating system is the **weekly loop** — one Sunday Routine that closes last
-week (analytics) and opens next week (generate → render in Canva → schedule via
-Upload-Post), with a hard gate: generation refuses to run unless this run's analytics
-directives were just written. Contract: `WEEKLY-LOOP.md`. Procedure:
-`.claude/skills/weekly-loop/SKILL.md`. Series testing: `Content-Engine/SERIES.md`.
-Schemas + the append-only performance log: `Analytics/README.md`. Dedupe memory:
-`Content-Engine/registry.jsonl`.
+The operating system is the **weekly loop**, now twice weekly for the Aug-25 sprint
+(`SPRINT-AUG25.md`): Sunday full run (analytics → generate → render in Canva →
+schedule via Upload-Post → outreach batches → report) + Wednesday mini-run (snapshot,
+kill/re-cut, Thu/Fri batches, pulse). Hard gate: generation refuses to run unless
+this run's analytics directives were just written. Contract: `WEEKLY-LOOP.md`.
+Procedure: `.claude/skills/weekly-loop/SKILL.md`. Series: `Content-Engine/SERIES.md`.
+Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl`.
+Creator engine ($0 upfront, 30% of first payment): `Outreach/DM-PLAYBOOK.md` +
+`Outreach/CREATOR-TERMS.md`. House rule: **no em dashes in any outbound copy**
+(DMs, captions, slides, briefs) — AI tell, trust risk.
 
 ## The strategy layer
 
@@ -52,9 +55,9 @@ dry-run. Check what's actually in the session before designing around it.
 1. **Upload-Post connector** — Connor adds it in claude.ai connector settings, links
    IG (Business/Creator + FB Page) / TikTok / Facebook / YouTube, paid plan (free tier
    is 10 uploads/mo; a week is ~40+).
-2. **The Sunday Routine** — Connor creates it in the claude.ai Routines UI with
-   **Upload-Post + Canva attached** (must be created there so connectors attach).
-   Spec + prompt text: `WEEKLY-LOOP.md`.
+2. **The two Routines** (Sunday 6 PM full, Wednesday 12 PM mini) — Connor creates
+   both in the claude.ai Routines UI with **Upload-Post + Canva attached** (must be
+   created there so connectors attach). Prompts to paste: `WEEKLY-LOOP.md`.
 3. **Canva templates** — not yet built; until they exist the render phase builds each
    deck from the archetype specs directly.
 4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in

@@ -7,10 +7,14 @@ description: >-
   those directives, render every deck in Canva from the design system + real
   Buddy/screenshot assets, schedule the full week across TikTok / Instagram /
   Facebook / YouTube via Upload-Post with rate limits enforced, commit
-  everything, and send Connor the weekly report. Use whenever the task is to
-  run, stage, or publish a week of BiteBuddy content, when the Sunday Routine
-  fires, or on "run the weekly loop". Analytics ALWAYS run first — generation
-  must refuse to start if this run's directives file was not just written.
+  everything, and send Connor the weekly report. Two modes: full Sunday loop,
+  and Wednesday mini mode (snapshot Mon/Tue numbers, kill losers, re-cut the
+  early winner into fresh covers, Thu/Fri outreach batches, midweek pulse).
+  Both modes write personalized creator-DM batches and process the creator
+  pipeline per Outreach/DM-PLAYBOOK.md. Use whenever the task is to run, stage,
+  or publish a week of BiteBuddy content, when either Routine fires, or on "run
+  the weekly loop". Analytics ALWAYS run first — generation must refuse to
+  start if this run's directives file was not just written.
 ---
 
 # weekly-loop — the whole week in one run
@@ -19,9 +23,15 @@ Read `WEEKLY-LOOP.md` first — it is the contract; this file is the procedure.
 Then read, in order: `Analytics/README.md` (schemas), `Content-Engine/SERIES.md`,
 `Research/TARGET-USER-PROFILES.md`, `Research/HOOK-INTELLIGENCE-2026.md`,
 `Content-Engine/MASTER-PROMPT-V5.md` (sections 4–9 are the copy rules; the CSV
-contract does not apply here), `Content-Engine/DESIGN-SYSTEM.md`.
+contract does not apply here), `Content-Engine/DESIGN-SYSTEM.md`,
+`Outreach/DM-PLAYBOOK.md`, and `SPRINT-AUG25.md` while the sprint is live.
 
 Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
+
+**Mode check first.** "Wednesday mini mode" → run only: Phase 1 steps 1–2
+(snapshot, no full report), the kill/re-cut pass from `WEEKLY-LOOP.md` §Wednesday,
+Phase 5 (Thu/Fri batches, 40 DMs), and a two-line pulse to Connor. Everything
+below describes the full Sunday mode.
 
 ## Phase 1 — Analytics (never skip; never reorder)
 
@@ -97,13 +107,30 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
 5. Write scheduled IDs/URLs + `status: scheduled` into the manifest. Failed publish →
    3 retries w/ backoff → `status: failed`, continue, report.
 
-## Phase 5 — Commit, push, report
+## Phase 5 — Outreach (per `Outreach/DM-PLAYBOOK.md`, all hard rules apply)
 
-1. Commit all of it (analytics, posts, manifest, registry), push the week branch, open
-   a PR titled `Week <ISO-week>: 14 posts + analytics`.
+1. Write the DM batches into `Outreach/batches/` (Sunday: Mon/Tue/Wed = 60 messages;
+   Wednesday mode: Thu/Fri = 40). Each entry: handle, profile link, one-line
+   why-them, and the personalized message. Research every profile for real; replace
+   any creator you cannot personalize for. **No em dashes in any outbound copy.**
+   Skip anyone already in `creators.jsonl` (any status).
+2. Process whatever Connor forwarded: advance `creators.jsonl` statuses, draft
+   stage-appropriate replies from the playbook, generate onboarding packs (unique
+   `ct=` link + code + brief) for new "I agree" deals, grant free-Pro entitlements
+   via RevenueCat (`grant-customer-entitlement`).
+3. Run closest to month end: compute payouts (30% of attributed first payments, $10
+   minimum, roll-forward), append `payouts.jsonl`, draft the payout DMs with the
+   math shown.
+
+## Phase 6 — Commit, push, report
+
+1. Commit all of it (analytics, posts, manifest, registry, outreach), push the week
+   branch, open a PR titled `Week <ISO-week>: posts + analytics + outreach`.
 2. Message Connor: the three report headlines (went well / didn't / changing), the
-   week's schedule by day, anything dropped/failed/unlinked, and the line **"Posts
-   start Monday 8 AM — tonight is the veto window; name any post to pull."**
+   week's schedule by day, sprint checkpoint status vs `SPRINT-AUG25.md`, creator
+   pipeline pulse (sent / replied / deals / posted), anything dropped/failed/
+   unlinked, and the line **"Posts start Monday 8 AM — tonight is the veto window;
+   name any post to pull."**
 
 ## Hard rules
 

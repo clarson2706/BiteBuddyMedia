@@ -1,34 +1,38 @@
-# The Weekly Loop — one Routine, zero manual steps
+# The Weekly Loop — two Routines, zero manual steps
 
-*Source of truth for the autonomous weekly content system. Written 2026-07-25.
-Executed by `.claude/skills/weekly-loop/SKILL.md`; fired by a claude.ai Routine.*
+*Source of truth for the autonomous weekly content system. Written 2026-07-25;
+upgraded to twice-weekly cadence for the Aug-25 sprint (`SPRINT-AUG25.md`).
+Executed by `.claude/skills/weekly-loop/SKILL.md`; fired by claude.ai Routines.*
 
-**Goal:** more people on the App Store page. Every Sunday evening, one run closes last
-week's loop (pull real numbers → write analytics → decide what changes) and opens next
-week's (generate → render in Canva → schedule via Upload-Post for the whole week).
-Connor does nothing during the week.
+**Goal:** more people on the App Store page. Sunday closes last week's loop (real
+numbers → analytics → decisions) and opens next week's (generate → render in Canva →
+schedule via Upload-Post). Wednesday is a mini-run that doubles iteration speed.
+Connor's week: send the day's DM batch, forward replies, veto anything he dislikes.
 
 ---
 
-## The one Routine
+## The two Routines
 
-| | |
-|---|---|
-| **When** | Sundays **6:00 PM America/Chicago** (23:00 UTC in CDT) |
-| **Fires** | a fresh session in this environment, with this repo |
-| **Connectors it must carry** | **Upload-Post** + **Canva** (attach both when creating the Routine in the claude.ai Routines UI — a Routine without them can stage but not render/publish) |
-| **Prompt** | `Run the weekly loop. Follow WEEKLY-LOOP.md and the weekly-loop skill end to end: analytics first, then generate, render, schedule next week, commit everything, and send Connor the weekly report.` |
+Connor creates both in the claude.ai Routines UI (they must be created there so the
+connectors attach; a Routine created from inside a session can only carry that
+session's connectors). Both fire a fresh session in this environment with
+**Upload-Post + Canva** attached.
 
-Connor creates this Routine once in the claude.ai Routines UI (it has to be created
-there so the connectors attach; a Routine created from inside a session can only carry
-that session's connectors).
+**Routine 1 — Sunday full loop.** Sundays 6:00 PM America/Chicago. Prompt:
 
-**Optional hardening (recommended once the loop has run twice):** a second, tiny
-Wednesday-noon Routine — "verify this week's scheduled posts still exist in
-Upload-Post; repair anything missing; say nothing if all fine." Covers the
-run-died-midweek and platform-disconnected failure modes.
+> Run the weekly loop, full Sunday mode. Follow WEEKLY-LOOP.md and the weekly-loop
+> skill end to end: analytics first, then generate, render, and schedule next week,
+> write the Mon/Tue/Wed outreach batches, process creator pipeline updates, commit
+> everything, and send Connor the weekly report and veto window.
 
-## The run, in strict order
+**Routine 2 — Wednesday mini loop.** Wednesdays 12:00 PM America/Chicago. Prompt:
+
+> Run the weekly loop, Wednesday mini mode per WEEKLY-LOOP.md: snapshot Mon/Tue
+> numbers, kill or re-cut this week's losers and re-cut the early winner into fresh
+> covers for the Thu-Sun slots, write the Thu/Fri outreach batches, process creator
+> replies, commit, and send Connor a two-line midweek pulse.
+
+## The Sunday run, in strict order
 
 Each phase gates the next. **Phase 2 must refuse to run if Phase 1 didn't write its
 outputs this run** — that rule is the entire fix for the last system's fatal flaw
@@ -76,11 +80,38 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    Captions/crops vary per platform (duplicate-content penalty).
 3. Record scheduled IDs/URLs in the manifest.
 
-### Phase 5 — REPORT
+### Phase 5 — OUTREACH (creator engine, see `Outreach/`)
+1. Write the Mon/Tue/Wed DM batches (60 personalized messages, 10 IG + 10 TikTok per
+   day) into `Outreach/batches/`, each researched against the creator's real profile.
+   Hard rules from `Outreach/DM-PLAYBOOK.md` apply, including: **no em dashes in any
+   outbound copy.**
+2. Process pipeline updates Connor forwarded (replies, agreements, posted content):
+   advance statuses in `creators.jsonl`, generate onboarding packs for new deals,
+   grant free-Pro entitlements in RevenueCat.
+3. On the run closest to month end: compute creator payouts from attribution data,
+   write `payouts.jsonl` lines, and hand Connor the ready-to-send payout DMs with
+   PayPal amounts.
+
+### Phase 6 — REPORT
 Commit + push everything, then message Connor: the week's 14 titles by day, what got
-scheduled where, what was dropped and why, and the Phase-1 report's three headlines
-(went well / didn't / changing). **Posts start Monday 8 AM — Sunday night is Connor's
-standing veto window.** Silence = go. "Pull Tuesday's quiz" = I unschedule it.
+scheduled where, what was dropped and why, the Phase-1 report's three headlines
+(went well / didn't / changing), sprint checkpoint status (`SPRINT-AUG25.md` table),
+and the creator-pipeline pulse (sent / replied / deals / posts live). **Posts start
+Monday 8 AM — Sunday night is Connor's standing veto window.** Silence = go. "Pull
+Tuesday's quiz" = I unschedule it.
+
+## The Wednesday mini-run
+
+Half the loop, for speed, ~30 minutes of compute not a full regeneration:
+
+1. **Snapshot:** pull Mon/Tue numbers for this week's live posts, append to the log.
+2. **Kill/re-cut:** a post clearly dying (bottom of the week, no saves, no comments)
+   gets its remaining sibling slots re-pointed; the early winner gets 2 or 3 fresh
+   covers (same body, new hook slide) rendered and swapped into Thu-Sun slots.
+   Changes are surgical; no full regeneration midweek.
+3. **Outreach:** write Thu/Fri DM batches (40 messages); process forwarded replies.
+4. **Pulse:** two lines to Connor. What's winning, what changed. No veto ceremony;
+   midweek changes only touch not-yet-published slots.
 
 ## Publishing authority
 
