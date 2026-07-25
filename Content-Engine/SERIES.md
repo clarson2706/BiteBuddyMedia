@@ -30,6 +30,17 @@ something. Three series are **active** at any time; each gets 2 slots/week.*
   the friction fix, never on guilt. This is the series only we can run credibly;
   Cal AI's tone can't go here.
 
+### DEMO — the scan flow itself (video track, not a carousel slot)
+- **Recipe:** DEMO-VIDEO · **Personas:** P1, P4 · **Hooks:** OUTCOME, POV
+- Real screen recordings of dashboard to scan to result to log, edited by
+  `Content-Engine/build_demo.py` and scheduled by the **demo-drop** skill.
+- Runs *alongside* the three carousel series rather than occupying one of their
+  slots, so it does not consume the 2-posts-per-day carousel budget.
+- Why it is worth its own track: every carousel argues the app helps, a demo shows
+  it. This is the format Cal AI built on. If DEMO starts beating the carousel
+  series on saves, follows or app-intent comments, that finding outranks anything
+  else in the weekly report.
+
 ## The bench (next up when a slot opens)
 
 - **S4 — Small Meals, Big Protein** (P2; BUILD-STEP; the uncrowded GLP-1-era angle —

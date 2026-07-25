@@ -20,7 +20,9 @@ this run's analytics directives were just written. Contract: `WEEKLY-LOOP.md`.
 Procedure: `.claude/skills/weekly-loop/SKILL.md`. Series: `Content-Engine/SERIES.md`.
 Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl`.
 On-demand performance read (read-only, any time): the **media-report** skill +
-`Analytics/report.py`.
+`Analytics/report.py`. Video track: Connor drops app screen recordings in
+`UI-Library/Recordings/_INBOX/`, the **demo-drop** skill edits and schedules them
+(one per platform per day, as many days as there are clips).
 Creator engine ($0 upfront, 30% of first payment): `Outreach/DM-PLAYBOOK.md` +
 `Outreach/CREATOR-TERMS.md`. House rule: **no em dashes in any outbound copy**
 (DMs, captions, slides, briefs) — AI tell, trust risk.
