@@ -68,8 +68,19 @@ against the following date. The peak was the day of the five simultaneous posts,
 not the day after, and the collapse follows it by one day.
 
 The export also counts 9 likes across Jul 21 and 22, where Upload-Post reported 3
-lifetime. Full reconciliation in `2026-07-25-tiktok-export-reconciliation.md`.
-The conclusions in this report survive; the dates and the like count do not.
+lifetime, and **Connor confirmed all 9 came from strangers.**
+
+That breaks the central claim in "What this says" above. "2 likes and 0 comments
+across 17 TikTok posts is not a reach problem, it is a content problem" is wrong.
+On the two days this account had reach, the old content converted at ~1.5% likes.
+It then had reach on no other day in the window. The evidence points at
+**distribution**, not at content quality.
+
+It also moves the first-organic-engagement milestone from Jul 25 back to
+**Jul 21**. The "Correction, same day" section below is itself now partly wrong:
+organic engagement across the platforms was not zero, it was 9 likes on TikTok
+that Upload-Post never surfaced. The Instagram half of that correction still
+holds. Full reconciliation in `2026-07-25-tiktok-export-reconciliation.md`.
 
 ## Caveats
 

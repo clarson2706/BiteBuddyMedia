@@ -42,12 +42,48 @@ story has been built on the assumption that near-zero response was the baseline.
 Nine likes in two days is still small, but it is three times what we thought, and
 it lands on the days when reach was highest.
 
-It does not disturb the 2026-07-25 milestone. Connor confirmed the like on the
-Jul 25 post is not his, and that post is a per-post measurement, not part of this
-export window. **Open question for Connor:** were the 9 likes on Jul 21 and 22
-ours, from the account itself or from friends? If any were strangers, the "first
-organic engagement" milestone moves earlier and the account is less cold than the
-baseline concluded.
+**Answered same day: Connor confirms all 9 were strangers.** That resets two
+things.
+
+**The milestone moves to 2026-07-21.** Today's like is the tenth organic like,
+not the first. The claim in `2026-07-25-media-report.md` that the Jul 25 like was
+"the first verified response from a stranger in the project's history" is wrong
+and is corrected there.
+
+**The organic like rate on the old content was ~1.5%, and the new post is at
+0.39%.**
+
+| | Views | Organic likes | Rate |
+|---|---|---|---|
+| Jul 21 (old system) | 195 | 3 | 1.54% |
+| Jul 22 (old system) | 409 | 6 | 1.47% |
+| **Jul 21 to 22 combined** | **604** | **9** | **1.49%** |
+| Jul 25 post, T+9h (new system) | 258 | 1 | **0.39%** |
+
+Handle this carefully in both directions. It is one new post measured against two
+account-days, the old days' likes cannot be attributed to individual posts, and a
+post still accumulating is being compared to closed days. It is not a verdict.
+But it is the first evidence we have that points the opposite way from the reset's
+premise, and it deserves to be watched rather than explained away. By Sunday there
+will be enough new-system posts to compare like rates properly.
+
+## 2b. What this does to the baseline's central conclusion
+
+`2026-W30-baseline.md` said: *"2 likes and 0 comments across 17 TikTok posts is
+not a reach problem, it is a content problem."* With the corrected numbers that
+sentence does not hold. On the two days the account actually had reach, the old
+content converted at roughly 1.5% likes, which is unremarkable but not broken.
+The account then got reach on **zero** other days in the window.
+
+So the honest read flips: this looks more like a **distribution** story than a
+content story. The account got shown to people twice, performed acceptably both
+times, and then stopped being shown to anyone. That is consistent with the
+throttle theory and inconsistent with "even the people who saw it felt nothing."
+
+What survives unchanged: **zero comments and zero shares, across every day and
+every source.** 862 measured views now, still not one comment. That was the
+premise this batch was built on and it is the one finding no correction has
+touched.
 
 ## 3. What the export confirms
 
