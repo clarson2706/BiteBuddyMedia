@@ -86,26 +86,45 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
    `Search 'BiteBuddy: Ai calorie scanner'`).
 4. Factual posts: verify numbers against primary sources during the run; a claim that
    can't be verified gets replaced, not published. Record source URLs in the manifest.
+   **Known blocker (2026-07-25):** this environment's network policy returns 403 for
+   chipotle.com, chick-fil-a.com, mcdonalds.com, starbucks.com and fdc.nal.usda.gov, so
+   chain and label numbers cannot be verified here. While that holds, do NOT generate
+   numeric chain claims: prefer behaviour, psychology, and tracking-craft angles, and
+   say plainly in the report that S1 and S2 are blocked on network access. Never guess a
+   calorie or protein number to fill a slot.
 5. Write `Posts/<week>/manifest.json` (one object per post: id, slot, series, persona,
    hook_family, recipe, slides[], caption, pinned_comment, hashtags, platforms,
    status, sources); append every post to `registry.jsonl`.
 
-## Phase 3 — Render in Canva
+## Phase 3 — Render the slides
 
-0. Start from the series templates in `Content-Engine/TEMPLATES.md` when one exists
-   for the post's series/recipe (duplicate, swap copy and photos). Note the
-   render-phase constraint in that file: hand Canva export URLs directly to
-   Upload-Post (this environment cannot download export files locally); store
-   design IDs + links in the manifest instead of PNGs.
-1. Load the Canva tools. For each post, build the deck per its recipe in
-   `DESIGN-SYSTEM.md`: brand palette, one locked headline font, Buddy **only** from
-   `Brand-Assets/buddy-poses/transparent/` (pick the pose matching the emotional beat —
-   table in `Brand-Assets/buddy-poses/README.md`), app UI **only** real screenshots
-   from `UI-Library/`. Real/stock food photography, never AI-rendered food.
-2. Export each deck as 1080×1350 PNGs → `Posts/<week>/<post-id>/01.png…`. Keep the
-   Canva design links in the manifest so Connor can tweak any deck by hand.
-3. Render failure after 2 attempts → drop the post (status `render-failed`), continue.
-   13 good posts beat 14 with one broken deck.
+**Primary path: `python3 Content-Engine/render_slides.py Posts/<week>/manifest.json`.**
+It reads the manifest and writes `Posts/<week>/<post-id>/NN.png` at 1080x1350 using the
+brand palette, the Baloo 2 rounded brand font in `Brand-Assets/fonts/`, and the real
+Buddy cutouts from `Brand-Assets/buddy-poses/transparent/`.
+
+Why not Canva, despite the connector being attached (learned 2026-07-25): Canva's
+`generate-design` emits **one page per call**, so it cannot build an 8-slide carousel,
+and this environment cannot download Canva exports (`export-download.canva.com` is
+blocked at the proxy). Canva remains useful for one-off polish and for Connor editing a
+deck by hand; it is not the batch render path.
+
+1. Add the post's Buddy poses to the `POSES` map in the script (cover pose, CTA pose),
+   choosing by emotional beat from `Brand-Assets/buddy-poses/README.md`. Add a badge
+   string for any new series in `BADGES`.
+2. Run the script. Eyeball at least one deck by compositing a contact sheet before
+   scheduling; never schedule slides you have not looked at.
+3. **Commit and push the PNGs before scheduling.** The repo is public, so each slide is
+   then served at
+   `https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/<commit-sha>/Posts/<week>/<post-id>/NN.png`.
+   Use the **commit SHA**, not the branch name: it is immutable, so a later push cannot
+   change what a scheduled post will publish.
+4. A post that fails to render is dropped from the schedule and named in the report.
+
+**Food photography:** the design system forbids AI-generated food, and this environment
+has no licensed photo source, so keep food-photo recipes for weeks when Connor supplies
+images. Typographic recipes (STORY-BEAT, TYPE-CARD, RANK-CARD, QUIZ-CARD) need no
+photography and are the default.
 
 ## Phase 4 — Schedule via the Upload-Post REST API
 

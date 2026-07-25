@@ -109,13 +109,17 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    - 4 experiments (new hooks/topics/formats to feed the next report)
 4. Append every post to the registry. Write the week's `manifest.json`.
 
-### Phase 3 — RENDER (Canva)
-1. For each post, build the deck from the archetypes in
-   `Content-Engine/DESIGN-SYSTEM.md`, compositing the real Buddy cutouts
-   (`Brand-Assets/buddy-poses/transparent/`) and real app screenshots (`UI-Library/`).
-2. Export 1080×1350 PNGs into `Posts/<week>/<post-id>/`.
-3. A post that fails to render is dropped from the schedule and named in the report —
-   never published half-made.
+### Phase 3 — RENDER (`Content-Engine/render_slides.py`)
+1. Run the renderer over the week's manifest. It composes 1080×1350 slides from the
+   brand palette, the Baloo 2 brand font, and the real Buddy cutouts.
+2. Canva is **not** the batch render path: `generate-design` emits one page per call so
+   it cannot build a carousel, and this environment cannot download Canva exports. Canva
+   stays available for one-off polish and manual edits.
+3. Commit and push the PNGs, then serve them to Upload-Post from
+   `raw.githubusercontent.com` at the **commit SHA** (the repo is public; the SHA is
+   immutable, so a later push cannot alter a scheduled post).
+4. Eyeball at least one deck before scheduling. A post that fails to render is dropped
+   and named in the report, never published half-made.
 
 ### Phase 4 — SCHEDULE (Upload-Post REST API, see `Content-Engine/UPLOAD-POST.md`)
 1. Preflight via `list_users`: API key valid, plan headroom sufficient, which platforms
