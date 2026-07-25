@@ -7,13 +7,13 @@
   "directives_used": "Analytics/next-week-directives.json (generated_at 2026-07-25T07:20:00Z)",
   "platforms_available": [
     "tiktok",
+    "instagram",
     "youtube"
   ],
   "platforms_unavailable": [
-    "instagram",
     "facebook"
   ],
-  "constraint_note": "All nutrition primary sources (chipotle.com, chick-fil-a.com, mcdonalds.com, starbucks.com, fdc.nal.usda.gov) are blocked by this environment's network policy. Per the loop's verification rule, no numeric chain claims were generated. This batch is behaviour/psychology content, which the baseline data independently supports: 0 comments across 17 posts is an engagement problem, not a reach problem.",
+  "constraint_note": "Nutrition primary sources were blocked at generation time (07:25Z), so this batch carries no numeric chain claims. Network policy was widened later the same day and chipotle.com, chick-fil-a.com and fdc.nal.usda.gov now return 200, so S1 and S2 are unblocked from the Sunday run onward.",
   "posts": [
     {
       "id": "2026-07-25-slot1",
@@ -47,10 +47,10 @@
       "status": "scheduled",
       "platforms_scheduled": [
         "tiktok",
-        "youtube"
+        "youtube",
+        "instagram"
       ],
       "platforms_skipped": {
-        "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post"
       },
       "upload_post_job_id": "1173f16eadaa41e9ab0723560066b638",
@@ -63,6 +63,12 @@
         "short": "short.mp4",
         "duration_sec": 30.07,
         "format": "1080x1920"
+      },
+      "instagram": {
+        "job_id": "033f1a57d3c2400da6befeb137fd2059",
+        "request_id": "ac67e31a8c434f569b4613475bd77fc9",
+        "scheduled_local": "2026-07-25T12:30:00",
+        "caption_variant": true
       }
     },
     {
@@ -96,16 +102,22 @@
       "cta": "Save this before your next grocery run.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok"
+        "tiktok",
+        "instagram"
       ],
       "platforms_skipped": {
-        "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post",
         "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
       },
       "upload_post_job_id": "e4eebc4429bf4ed98c728b392ce5120e",
       "upload_post_request_id": "c3a6809031e0467eb8955f738aff5733",
-      "slides_rendered": 8
+      "slides_rendered": 8,
+      "instagram": {
+        "job_id": "7f96ec9ee97f4f67a8ef9bec99d873cc",
+        "request_id": "69cc5d576da74255a349d4947f2a9fa7",
+        "scheduled_local": "2026-07-25T20:30:00",
+        "caption_variant": true
+      }
     },
     {
       "id": "2026-07-26-slot1",
@@ -139,10 +151,10 @@
       "status": "scheduled",
       "platforms_scheduled": [
         "tiktok",
-        "youtube"
+        "youtube",
+        "instagram"
       ],
       "platforms_skipped": {
-        "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post"
       },
       "upload_post_job_id": "cab0ac8766374ae7b4bc06cdd4a2ad67",
@@ -155,6 +167,12 @@
         "short": "short.mp4",
         "duration_sec": 30.07,
         "format": "1080x1920"
+      },
+      "instagram": {
+        "job_id": "7dc6346655e647e1b9b0e55b2bc1f24d",
+        "request_id": "509ad93660f14ac2929edd43b3665ffe",
+        "scheduled_local": "2026-07-26T12:30:00",
+        "caption_variant": true
       }
     },
     {
@@ -188,16 +206,22 @@
       "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok"
+        "tiktok",
+        "instagram"
       ],
       "platforms_skipped": {
-        "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post",
         "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
       },
       "upload_post_job_id": "d59b9621ab7d4cacbde8b88d54b77c99",
       "upload_post_request_id": "3f77e94b7ee74a469d22448ba9dea5fc",
-      "slides_rendered": 8
+      "slides_rendered": 8,
+      "instagram": {
+        "job_id": "86afca8c2ce04b46895d4a693e6ac894",
+        "request_id": "9cafa3d0acd742f0bbbd95a3f04d3aac",
+        "scheduled_local": "2026-07-26T20:30:00",
+        "caption_variant": true
+      }
     }
   ],
   "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/281ab93e79b71a32b57a00e4da3913e9a5010621/Posts/2026-W30",
