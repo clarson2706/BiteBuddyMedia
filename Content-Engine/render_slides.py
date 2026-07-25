@@ -39,6 +39,7 @@ POSES = {
     "2026-07-25-slot2": ("buddy_warning_check", "buddy_fiber_shield"),
     "2026-07-26-slot1": ("buddy_thinking", "buddy_balanced_glow"),
     "2026-07-26-slot2": ("buddy_warning_check", "buddy_goal_celebration"),
+    "2026-07-25-flex1": ("buddy_thinking", "buddy_goal_celebration"),
 }
 BADGES = {"S3": "WHY TRACKING FAILS", "S1": "GUESS THE CALORIES",
           "S2": "PROTEIN PER DOLLAR", "oneoff": ""}
@@ -104,6 +105,30 @@ def phone_mock(screen_h=690):
     return phone
 
 
+def image_block(rel_path, style, max_w, max_h):
+    """A real photo or a real screenshot, scaled into the slide.
+
+    Never a mock. `photo` gets rounded corners; `phone` gets the same dark
+    silhouette as phone_mock() so app screenshots read as the app.
+    """
+    im = Image.open(os.path.join(ROOT, rel_path)).convert("RGB")
+    bez, radius = (14, 46) if style == "phone" else (0, 40)
+    inner_w, inner_h = max_w - bez * 2, max_h - bez * 2
+    scale = min(inner_w / im.width, inner_h / im.height)
+    iw, ih = int(im.width * scale), int(im.height * scale)
+    im = im.resize((iw, ih), Image.LANCZOS)
+
+    out = Image.new("RGBA", (iw + bez * 2, ih + bez * 2), (0, 0, 0, 0))
+    if bez:
+        ImageDraw.Draw(out).rounded_rectangle([0, 0, out.width - 1, out.height - 1],
+                                              radius=radius, fill=(38, 38, 42, 255))
+    mask = Image.new("L", (iw, ih), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, iw - 1, ih - 1],
+                                           radius=max(radius - bez, 18), fill=255)
+    out.paste(im, (bez, bez), mask)
+    return out
+
+
 def badge(draw, img, text):
     if not text:
         return
@@ -145,7 +170,14 @@ def render_cta(post, img, d, text, cta_pose):
     return img
 
 
-def render_slide(post, idx, total, text):
+def render_slide(post, idx, total, slide):
+    # a slide is either a string or {"text", "image", "style"} when it carries a
+    # real photo or screenshot
+    if isinstance(slide, dict):
+        text, image, style = slide["text"], slide.get("image"), slide.get("style", "photo")
+    else:
+        text, image, style = slide, None, "photo"
+
     img = Image.new("RGB", (W, H), CREAM)
     d = ImageDraw.Draw(img)
     is_cover, is_cta = idx == 0, idx == total - 1
@@ -163,6 +195,28 @@ def render_slide(post, idx, total, text):
 
     if is_cta:
         return render_cta(post, img, d, text, cta_pose)
+
+    if image:
+        # headline on top, the real thing underneath, filling the slide
+        f, lines, lh = fit_text(d, text, "Baloo2.ttf", 74 if is_cover else 60, 34,
+                                W - MARGIN * 2, 250, 700)
+        y = MARGIN + 40
+        for line in lines:
+            d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f,
+                   fill=ORANGE if is_cover else CHARCOAL)
+            y += lh
+
+        block = image_block(image, style, W - MARGIN * 2, H - y - 120)
+        img.paste(block, ((W - block.width) // 2, y + 34), block)
+
+        if is_cover:
+            pose = load_pose(cover_pose, 250)
+            if pose is not None:
+                img.paste(pose, (W - pose.width - 30, H - pose.height - 20), pose)
+        else:
+            fs = font("Inter.ttf", 26, 500)
+            d.text((MARGIN, H - 60), f"{idx + 1}/{total}", font=fs, fill=SAGE)
+        return img
 
     if is_cover:
         pose = load_pose(cover_pose, 470)

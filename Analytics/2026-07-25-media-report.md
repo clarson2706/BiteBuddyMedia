@@ -47,7 +47,12 @@ recipe or the 08:00 slot are good. One post cannot separate those five variables
 
 - 222 views produced **0 comments**, on a post carrying a COMMENT CTA ("Which day do you
   usually stop?") and a pinned prompt ("day 4 for me, every single time. what day gets
-  you?"). Both mechanisms fired and neither converted.
+  you?"). ~~Both mechanisms fired and neither converted.~~ **Wrong, corrected
+  2026-07-25 evening: only one mechanism fired.** TikTok does not support comments
+  through the Upload-Post API, so the pinned prompt was never posted, on this or on any
+  TikTok post this project has made. The 0 comments here is the proof, since our own
+  pinned comment would have counted as 1. Only the in-deck CTA was ever live. See
+  `Content-Engine/UPLOAD-POST.md`.
 - 1 like, **CONFIRMED ORGANIC** (Connor verified it is not his). This is the **first
   verified response from a stranger in the project's history**. Every previous like,
   comment and follow on every platform traced back to us. On the metric ladder this

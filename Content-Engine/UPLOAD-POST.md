@@ -68,8 +68,40 @@ reconcile "scheduled" against "actually published."
 This means Phase 4 submits all of next week's posts in one run and does not need any
 process to stay alive during the week.
 
-**`first_comment` is native**, so our pinned first comment (the swipe-bait line) is
-submitted with the post rather than needing a second manual step.
+## Two traps that cost us a live post on 2026-07-25
+
+**1. `upload_photos` takes `description`, not `caption`.** `caption` is not a
+recognised keyword. It lands in `**kwargs`, is silently dropped, and the post
+publishes with only its `title`. There is no error and `success: true` comes back
+normally. The only way to catch it is that the response and `get_post_analytics`
+both show `post_caption: ""`. **Always check `post_caption` after publishing a
+carousel.**
+
+**2. TikTok does not support comments through this API at all.** `create_comment`
+on TikTok returns `Comments are not supported on TikTok via the API`, and
+`first_comment` is therefore a **no-op on TikTok** even though the parameter is
+accepted without complaint.
+
+This one is worse than it sounds. Every TikTok post this project has ever made was
+submitted with a `first_comment`, and none of them ever got one. The proof is in
+the numbers: the 2026-07-25 08:00 post reached 260 views with **0 comments**, and
+our own pinned comment would have counted as 1. The comment-seeding mechanism that
+`SERIES.md` and the weekly loop depend on has never once fired on our
+highest-reach platform.
+
+**So on TikTok the pinned comment is a manual step for Connor**, or it does not
+happen. `first_comment` still works on the platforms that support it. Do not
+report a pinned comment as "fired" on TikTok without a comment count to prove it.
+
+Also note: `unpublish_post` covers facebook, youtube, x, linkedin and threads.
+**TikTok is not in that list**, so a bad TikTok post cannot be deleted through the
+API. Getting a TikTok post right the first time is the only option available.
+
+## Scheduling notes
+
+**`first_comment` is native** on the platforms that support comments, so the pinned
+line is submitted with the post rather than needing a second manual step. See the
+TikTok exception above.
 
 ## Rules the loop must still enforce itself
 
