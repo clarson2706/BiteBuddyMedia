@@ -30,19 +30,19 @@ Routines UI (Connor did this on 2026-07-25). Routine 3 needs no connectors.
 
 | Routine | Repo source | Canva | Needs | Status |
 |---|---|---|---|---|
-| 1 Sunday full loop | ❌ `bitebuddy-admin` | ✅ | `UPLOAD_POST_API_KEY` | **repo must be fixed** |
-| 2 Wednesday mini loop | ✅ `BiteBuddyMedia` | ✅ | `UPLOAD_POST_API_KEY` | waiting on the env var |
-| 3 Daily DM batch | ❌ `bitebuddy-admin` | n/a | nothing | **repo must be fixed** |
+| 1 Sunday full loop | ✅ `BiteBuddyMedia` | ✅ | `UPLOAD_POST_API_KEY` | ready |
+| 2 Wednesday mini loop | ✅ `BiteBuddyMedia` | ✅ | `UPLOAD_POST_API_KEY` | ready |
+| 3 Daily DM batch | ✅ `BiteBuddyMedia` | n/a | nothing | ready |
 
-**A Routine's repository source cannot be set through the API**, only in the claude.ai
-Routines UI. Routines 1 and 3 are currently pointed at `clarson2706/bitebuddy-admin`
-and must be changed to `clarson2706/BiteBuddyMedia`. Until then both carry a guard as
-their first instruction: verify the repo, and if it is wrong, write nothing anywhere
-and report the misconfiguration instead. So a misfire is loud and harmless, not silent
-and messy.
+All three verified on the correct repo 2026-07-25. Routines 1 and 3 keep a repo guard
+as their first instruction (verify the repo, write nothing if wrong) since a Routine's
+source can only be changed in the claude.ai Routines UI, never through the API.
 
-Until the env var exists, Routines 1 and 2 degrade as designed: analytics, generation,
-and render run and commit; publishing stops and the report says so.
+`UPLOAD_POST_API_KEY` was set in the environment on 2026-07-25. Note that environment
+variables apply at **session start**, so a session already running when the variable is
+added will not see it; only newly fired sessions do. If the key is ever missing or
+rejected, Routines 1 and 2 degrade as designed: analytics, generation, and render run
+and commit; publishing stops and the report says so.
 
 **Model note:** Routine 3 should run cheaply on Sonnet. Setting a Routine's model is
 disabled for this org, so its prompt delegates research and drafting to Sonnet subagents.

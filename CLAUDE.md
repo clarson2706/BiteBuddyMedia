@@ -52,10 +52,10 @@ dry-run. Check what's actually in the session before designing around it.
 
 ## Activation checklist (what still blocks the first live week)
 
-1. **`UPLOAD_POST_API_KEY` env var** — Upload-Post is NOT a claude.ai connector and
-   cannot be attached to a Routine. Publishing uses its REST API; Connor sets the key
-   in this environment's variables. Also: link IG (Business/Creator + FB Page) /
-   TikTok / Facebook / YouTube inside Upload-Post, paid plan (free tier is 10
+1. ~~`UPLOAD_POST_API_KEY` env var~~ **SET 2026-07-25.** Upload-Post is NOT a claude.ai
+   connector; publishing uses its REST API with this key. Still unverified: that the
+   IG (Business/Creator + FB Page) / TikTok / Facebook / YouTube accounts are actually
+   linked *inside* Upload-Post, and that the plan has headroom (free tier is 10
    uploads/mo; a week is ~40+). See `Content-Engine/UPLOAD-POST.md`.
 2. ~~The Routines~~ **DONE 2026-07-25** — all three exist and are enabled (Sunday 6 PM
    full, Wednesday 12 PM mini, daily 8 AM creator DM batch). Canva is attached to 1
