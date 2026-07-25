@@ -46,16 +46,24 @@
       "cta": "Which day do you usually stop? Comment below.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok"
+        "tiktok",
+        "youtube"
       ],
       "platforms_skipped": {
         "instagram": "not linked in Upload-Post",
-        "facebook": "not linked in Upload-Post",
-        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+        "facebook": "not linked in Upload-Post"
       },
       "upload_post_job_id": "1173f16eadaa41e9ab0723560066b638",
       "upload_post_request_id": "f87a45c9dbf84002ab1d87c9ceb96b3a",
-      "slides_rendered": 8
+      "slides_rendered": 8,
+      "youtube": {
+        "job_id": "f40434854a2b4713957f5d4b32c53b50",
+        "request_id": "db83bae0b7df45a3a94fe37a150edd39",
+        "scheduled_local": "2026-07-25T17:00",
+        "short": "short.mp4",
+        "duration_sec": 30.07,
+        "format": "1080x1920"
+      }
     },
     {
       "id": "2026-07-25-slot2",
@@ -93,7 +101,7 @@
       "platforms_skipped": {
         "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post",
-        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+        "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
       },
       "upload_post_job_id": "e4eebc4429bf4ed98c728b392ce5120e",
       "upload_post_request_id": "c3a6809031e0467eb8955f738aff5733",
@@ -130,16 +138,24 @@
       "cta": "Follow BiteBuddy. No guilt, just numbers.",
       "status": "scheduled",
       "platforms_scheduled": [
-        "tiktok"
+        "tiktok",
+        "youtube"
       ],
       "platforms_skipped": {
         "instagram": "not linked in Upload-Post",
-        "facebook": "not linked in Upload-Post",
-        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+        "facebook": "not linked in Upload-Post"
       },
       "upload_post_job_id": "cab0ac8766374ae7b4bc06cdd4a2ad67",
       "upload_post_request_id": "5db8c9724c304c24a32f86bb4e671ae7",
-      "slides_rendered": 8
+      "slides_rendered": 8,
+      "youtube": {
+        "job_id": "9288824939404ba9894d33a216be1799",
+        "request_id": "0dddf08e5824419f9cb962bb398ca5bc",
+        "scheduled_local": "2026-07-26T17:00",
+        "short": "short.mp4",
+        "duration_sec": 30.07,
+        "format": "1080x1920"
+      }
     },
     {
       "id": "2026-07-26-slot2",
@@ -177,14 +193,14 @@
       "platforms_skipped": {
         "instagram": "not linked in Upload-Post",
         "facebook": "not linked in Upload-Post",
-        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+        "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
       },
       "upload_post_job_id": "d59b9621ab7d4cacbde8b88d54b77c99",
       "upload_post_request_id": "3f77e94b7ee74a469d22448ba9dea5fc",
       "slides_rendered": 8
     }
   ],
-  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/d7ba2e17a334ed14670ed9ee8c6951c101972e41/Posts/2026-W30",
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/281ab93e79b71a32b57a00e4da3913e9a5010621/Posts/2026-W30",
   "render": {
     "method": "Content-Engine/render_slides.py",
     "size": "1080x1350",
