@@ -1,744 +1,294 @@
 {
   "week": "2026-W30",
+  "batch": "bridge-2026-07-25",
+  "batch_type": "partial",
   "timezone": "America/Chicago",
-  "generated_at": "2026-07-19T19:07:55",
+  "generated_at": "2026-07-25T07:25:00Z",
+  "directives_used": "Analytics/next-week-directives.json (generated_at 2026-07-25T07:20:00Z)",
+  "platforms_available": [
+    "tiktok",
+    "instagram",
+    "youtube"
+  ],
+  "platforms_unavailable": [
+    "facebook"
+  ],
+  "constraint_note": "Nutrition primary sources were blocked at generation time (07:25Z), so this batch carries no numeric chain claims. Network policy was widened later the same day and chipotle.com, chick-fil-a.com and fdc.nal.usda.gov now return 200, so S1 and S2 are unblocked from the Sunday run onward.",
   "posts": [
-    {
-      "id": "2026-07-20-slot1",
-      "date": "2026-07-20",
-      "time_local": "08:00",
-      "format": "F1-buddys-list",
-      "title": "7 foods sabotaging your protein goal",
-      "slides_dir": "2026-07-20-slot1/slides",
-      "slides_expected": 7,
-      "caption": "the foods quietly sabotaging your protein goal \ud83d\ude29 which one surprised you? I catch these now with an AI calorie counter.",
-      "hashtags": [
-        "#highprotein",
-        "#macrotracking",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "we only fit 4 of the 7 here \u2014 guess the other 3 \ud83d\udc47 (one's in your fridge door)",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "protein-goal",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Know the protein in any meal",
-      "status": "posted",
-      "results": {
-        "instagram": {
-          "request_id": "493065709b494d0baf60a676ced22623",
-          "job_id": "65ba68d08832466f89ea9d54747e6292",
-          "scheduled_date": "2026-07-20T08:00:00-05:00",
-          "status": "posted",
-          "platform_post_id": "18070489337419896",
-          "post_url": "https://www.instagram.com/p/DbBAEz4DMY5/",
-          "posted_at": "2026-07-20T13:02:33.358Z"
-        },
-        "youtube": {
-          "request_id": "37ae6bbd91da4921a6553ca0d1484f32",
-          "job_id": "ef7a37f30c704da68449696b9f030d27",
-          "scheduled_date": "2026-07-20T08:00:00-05:00",
-          "status": "posted",
-          "platform_post_id": "SdALiisRghI",
-          "post_url": "https://www.youtube.com/watch?v=SdALiisRghI",
-          "posted_at": "2026-07-20T13:01:37.067Z"
-        },
-        "note": "v2 \u2014 first jobs cancelled and resubmitted with keyword caption, bridging pinned comment, alt text, and App Store link in the YouTube description. tiktok/facebook not linked; user requested youtube+instagram only."
-      }
-    },
-    {
-      "id": "2026-07-20-slot2",
-      "date": "2026-07-20",
-      "time_local": "12:30",
-      "format": "F2-guess-the-calories",
-      "title": "Guess the calories: fast-food edition",
-      "slides_dir": "2026-07-20-slot2/slides",
-      "slides_expected": 8,
-      "caption": "how'd you do? \ud83d\udc40 drop your score below \u2014 most people miss the smoothie by a mile. (numbers via our calorie scanner app)",
-      "hashtags": [
-        "#caloriecounting",
-        "#whatieatinaday",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "nobody gets the smoothie right \ud83d\ude2d comment your total",
-      "tags": {
-        "hook_type": "guess-the-number",
-        "topic": "fast-food",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Stop guessing \u2014 know any meal in one photo",
-      "status": "scheduled",
-      "results": {
-        "instagram": {
-          "request_id": "7cf7e9df660f4f59858c373bc16b5f78",
-          "job_id": "e6d49ab02b48436f880786b0a693897e",
-          "scheduled_date": "2026-07-20T12:30:00-05:00",
-          "status": "queued"
-        },
-        "youtube": {
-          "request_id": "d28cba860f794e4cbaf65e2443937c78",
-          "job_id": "6d98463459934637bffeca059590ac16",
-          "scheduled_date": "2026-07-20T12:30:00-05:00",
-          "status": "queued"
-        },
-        "note": "tiktok/facebook not linked in Upload-Post profile."
-      }
-    },
-    {
-      "id": "2026-07-20-slot3",
-      "date": "2026-07-20",
-      "time_local": "19:00",
-      "format": "F3-i-was-wrong",
-      "title": "I quit calorie tracking 4 times",
-      "slides_dir": "2026-07-20-slot3/slides",
-      "slides_expected": 6,
-      "caption": "if you've deleted every calorie tracker app after a week \u2014 same. here's what finally stuck.",
-      "hashtags": [
-        "#caloriecounter",
-        "#weightlosstok",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the search-bar typing killed it for me every single time \ud83d\ude2d",
-      "tags": {
-        "hook_type": "confession-awareness",
-        "topic": "habit-forming",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "The tracker that finally sticks",
-      "status": "scheduled",
-      "results": {
-        "instagram": {
-          "request_id": "b9c34750a64141ff9aa8d62ca1163799",
-          "job_id": "66a40632c6c740d4953de197deb674cd",
-          "scheduled_date": "2026-07-20T19:00:00-05:00",
-          "status": "queued"
-        },
-        "youtube": {
-          "request_id": "a7ab31edb72f447fb009cc909d8ace4b",
-          "job_id": "8e7fe4076e254523937eebac47f1bbc5",
-          "scheduled_date": "2026-07-20T19:00:00-05:00",
-          "status": "queued"
-        },
-        "note": "tiktok/facebook not linked in Upload-Post profile."
-      }
-    },
-    {
-      "id": "2026-07-21-slot1",
-      "date": "2026-07-21",
-      "time_local": "08:00",
-      "format": "F4-one-snap-demo",
-      "title": "Why you keep quitting food tracking",
-      "slides_dir": "2026-07-21-slot1/slides",
-      "slides_expected": 6,
-      "caption": "you didn't fail at tracking \u2014 the tracking was just too slow. the fix: a food tracker app that logs from one photo.",
-      "hashtags": [
-        "#foodtracker",
-        "#nutritiontips",
-        "#caloriecounter",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the '10 taps for one meal' thing is exactly why I quit before",
-      "tags": {
-        "hook_type": "nutrition-literacy",
-        "topic": "logging-speed",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Log any meal in about 3 seconds",
-      "status": "scheduled",
-      "results": {
-        "instagram": {
-          "request_id": "3814bc38077a45f4a9d3d7f1f5f863ba",
-          "job_id": "c770bda8a5d742319ffada46ba50179d",
-          "scheduled_date": "2026-07-21T08:00:00-05:00",
-          "status": "queued"
-        },
-        "youtube": {
-          "request_id": "0796d3855d484121823f92f2a25bb264",
-          "job_id": "7649d61ee25849b8aed64f6b7041b4dd",
-          "scheduled_date": "2026-07-21T08:00:00-05:00",
-          "status": "queued"
-        },
-        "note": "tiktok/facebook not linked in Upload-Post profile."
-      }
-    },
-    {
-      "id": "2026-07-21-slot2",
-      "date": "2026-07-21",
-      "time_local": "12:30",
-      "format": "F1-buddys-list",
-      "title": "5 reasons calorie tracking fails (and the fix)",
-      "slides_dir": "2026-07-21-slot2/slides",
-      "slides_expected": 7,
-      "caption": "reasons calorie tracking fails by Thursday \u2014 and the fix for each \ud83d\ude43 which one's yours? (a faster calorie tracker app is one)",
-      "hashtags": [
-        "#caloriecounting",
-        "#nutritiontips",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "we only fit 4 \u2014 drop YOUR #5 below and I'll reply with the fix \ud83d\udc47",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "tracking-habits",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Make tracking take 5 seconds, not 5 minutes",
-      "status": "verified",
-      "results": {
-        "note": "upload_photos and upload_video both failed: \"would exceed your monthly limit of 10 uploads. 0 remaining this period.\" Nothing was sent for this post on either platform. Upgrade the Upload-Post plan, then reschedule.",
-        "quota_blocked": true
-      }
-    },
-    {
-      "id": "2026-07-21-slot3",
-      "date": "2026-07-21",
-      "time_local": "19:00",
-      "format": "F2-guess-the-calories",
-      "title": "Guess the calories: coffee shop edition \u2615",
-      "slides_dir": "2026-07-21-slot3/slides",
-      "slides_expected": 8,
-      "caption": "coffee-run calories are sneakier than they look \u2615 how close was your guess? (checked with an AI calorie counter)",
-      "hashtags": [
-        "#whatieatinaday",
-        "#healthyswaps",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the pumpkin spice one is a trap every year \ud83c\udf83",
-      "tags": {
-        "hook_type": "guess-the-number",
-        "topic": "coffee-shop",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Know your order before you sip",
-      "status": "verified",
-      "results": {}
-    },
-    {
-      "id": "2026-07-22-slot1",
-      "date": "2026-07-22",
-      "time_local": "08:00",
-      "format": "F3-i-was-wrong",
-      "title": "I thought I ate 1,500 calories",
-      "slides_dir": "2026-07-22-slot1/slides",
-      "slides_expected": 6,
-      "caption": "I was ~900 calories off every day and had no idea \ud83d\ude33 an AI calorie scanner finally showed me my real gap. anyone else's this big?",
-      "hashtags": [
-        "#caloriedeficit",
-        "#caloriecounting",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the 'little bites' are always the ones that get you",
-      "tags": {
-        "hook_type": "confession-awareness",
-        "topic": "awareness-gap",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "See your real number, no guessing",
-      "status": "verified",
-      "results": {}
-    },
-    {
-      "id": "2026-07-22-slot2",
-      "date": "2026-07-22",
-      "time_local": "12:30",
-      "format": "F4-one-snap-demo",
-      "title": "5 ways to actually know what's in your food",
-      "slides_dir": "2026-07-22-slot2/slides",
-      "slides_expected": 7,
-      "caption": "5 ways to actually know what's in your food \u2014 no calorie-memorizing required. which do you already do? (#5 = our AI calorie scanner)",
-      "hashtags": [
-        "#nutritiontips",
-        "#foodtracker",
-        "#healthyswaps",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "way #5 is the one-photo trick on the last slide \ud83d\udc40 (our AI calorie scanner does it)",
-      "tags": {
-        "hook_type": "nutrition-literacy",
-        "topic": "food-literacy",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "One photo does all five",
-      "status": "verified",
-      "results": {}
-    },
-    {
-      "id": "2026-07-22-slot3",
-      "date": "2026-07-22",
-      "time_local": "19:00",
-      "format": "F1-buddys-list",
-      "title": "6 'diet' drinks with more sugar than soda",
-      "slides_dir": "2026-07-22-slot3/slides",
-      "slides_expected": 7,
-      "caption": "6 'diet' drinks hiding more sugar than a soda \ud83d\ude33 which one caught you off guard? (I scan mine with an AI calorie counter now)",
-      "hashtags": [
-        "#healthyswaps",
-        "#caloriecounting",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "only 4 fit in one post \u2014 guess the other 2 \ud83d\udc40 the kombucha one broke my heart",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "diet-drinks",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "See the sugar before you sip",
-      "status": "verified",
-      "results": {}
-    },
-    {
-      "id": "2026-07-23-slot1",
-      "date": "2026-07-23",
-      "time_local": "08:00",
-      "format": "F2-guess-the-calories",
-      "title": "Guess the calories: 'healthy' snacks that aren't",
-      "slides_dir": "2026-07-23-slot1/slides",
-      "slides_expected": 8,
-      "caption": "'healthy' snacks that quietly aren't \ud83d\udc40 which one got you? (real numbers from a calorie scanner app)",
-      "hashtags": [
-        "#healthyswaps",
-        "#caloriecounting",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the veggie chips one is a scam and I said what I said",
-      "tags": {
-        "hook_type": "guess-the-number",
-        "topic": "healthy-snacks",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "See the real number on any snack",
-      "status": "verified",
-      "results": {}
-    },
-    {
-      "id": "2026-07-23-slot2",
-      "date": "2026-07-23",
-      "time_local": "12:30",
-      "format": "F3-i-was-wrong",
-      "title": "The real reason you quit calorie apps",
-      "slides_dir": "2026-07-23-slot2/slides",
-      "slides_expected": 6,
-      "caption": "the real reason people quit calorie apps? the typing. how long did your last app last? (mine's a photo-first food tracker app now)",
-      "hashtags": [
-        "#foodtracker",
-        "#caloriecounter",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "'extra rice, light sauce' is a personality trait at this point \ud83d\ude02",
-      "tags": {
-        "hook_type": "confession-awareness",
-        "topic": "ease-of-logging",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Skip the typing entirely",
-      "status": "images-ready",
-      "results": {}
-    },
-    {
-      "id": "2026-07-23-slot3",
-      "date": "2026-07-23",
-      "time_local": "19:00",
-      "format": "F4-one-snap-demo",
-      "title": "How to read a nutrition label in 10 seconds",
-      "slides_dir": "2026-07-23-slot3/slides",
-      "slides_expected": 6,
-      "caption": "how to read a nutrition label in 10 seconds \u23f1\ufe0f save this for your next grocery run. (or let an AI calorie scanner read it for you)",
-      "hashtags": [
-        "#nutritiontips",
-        "#healthyswaps",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the 'servings per container' trap gets everyone",
-      "tags": {
-        "hook_type": "nutrition-literacy",
-        "topic": "label-reading",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Skip the label math \u2014 scan it instead",
-      "status": "draft",
-      "results": {}
-    },
-    {
-      "id": "2026-07-24-slot1",
-      "date": "2026-07-24",
-      "time_local": "08:00",
-      "format": "F1-buddys-list",
-      "title": "7 late-night snacks bigger than you think",
-      "slides_dir": "2026-07-24-slot1/slides",
-      "slides_expected": 9,
-      "caption": "7 late-night snacks that are bigger than they look \ud83d\udc40 no judgment \u2014 what's your 11pm move? (I log mine in a calorie tracker app, zero shame)",
-      "hashtags": [
-        "#whatieatinaday",
-        "#nutritiontips",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the peanut butter spoon is a lifestyle, not a snack \ud83d\ude02",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "portions",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "No shame, just numbers \u2014 snap the midnight snack too",
-      "status": "draft",
-      "results": {}
-    },
-    {
-      "id": "2026-07-24-slot2",
-      "date": "2026-07-24",
-      "time_local": "12:30",
-      "format": "F2-guess-the-calories",
-      "title": "Guess the protein \ud83d\udcaa",
-      "slides_dir": "2026-07-24-slot2/slides",
-      "slides_expected": 8,
-      "caption": "guess the protein \ud83d\udcaa most people miss the shake \u2014 how'd you score? (checked with our AI calorie counter)",
-      "hashtags": [
-        "#highprotein",
-        "#macrotracking",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the store-bought shake number surprised me too",
-      "tags": {
-        "hook_type": "guess-the-number",
-        "topic": "protein",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Know the protein on every plate",
-      "status": "draft",
-      "results": {}
-    },
-    {
-      "id": "2026-07-24-slot3",
-      "date": "2026-07-24",
-      "time_local": "19:00",
-      "format": "F3-i-was-wrong",
-      "title": "POV: a calorie app that's actually kind",
-      "slides_dir": "2026-07-24-slot3/slides",
-      "slides_expected": 6,
-      "caption": "POV: your calorie tracker app is finally nice to you \ud83e\udd79 anyone else switch for this reason?",
-      "hashtags": [
-        "#weightlosstok",
-        "#caloriecounting",
-        "#nutritiontips",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the streaks genuinely make me want to log, no cap",
-      "tags": {
-        "hook_type": "confession-awareness",
-        "topic": "positive-framing",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Tracking that's actually kind",
-      "status": "draft",
-      "results": {}
-    },
     {
       "id": "2026-07-25-slot1",
       "date": "2026-07-25",
       "time_local": "08:00",
-      "format": "F4-one-snap-demo",
-      "title": "Portion size: the #1 thing people get wrong",
-      "slides_dir": "2026-07-25-slot1/slides",
-      "slides_expected": 6,
-      "caption": "portion size is the #1 thing people get wrong \ud83c\udf7d\ufe0f save this one \u2014 an AI calorie counter fine-tunes the rest.",
-      "hashtags": [
-        "#nutritiontips",
-        "#macrotracking",
-        "#healthyswaps",
-        "#bitebuddy"
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "RIGHTWRONG",
+      "visual_recipe": "STORY-BEAT",
+      "title": "You didn't quit tracking because you're lazy",
+      "slides": [
+        "You didn't quit tracking because you're lazy. You quit on day 4.",
+        "Day 1 to 3 is easy. You log everything. It feels good.",
+        "Day 4 is the first messy day. A meal out. A snack you didn't plan.",
+        "So you skip logging that one. Just that one.",
+        "Now the log is wrong. And a wrong log feels pointless.",
+        "That is the whole failure. Not willpower. One unlogged meal.",
+        "The fix is boring: log the messy day too. Ugly data still counts.",
+        "Follow BiteBuddy for tracking that sticks."
       ],
-      "pinned_comment": "the pasta one genuinely reset my expectations",
-      "tags": {
-        "hook_type": "nutrition-literacy",
-        "topic": "portions",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
+      "caption": "The day-4 pattern is the most common reason a calorie tracker app stops getting opened. It is not motivation, it is one unlogged meal that makes the rest of the log feel useless. Logging the messy day is what keeps it going. Which day do you usually stop on?",
+      "pinned_comment": "day 4 for me, every single time. what day gets you?",
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodTracker",
+        "#HabitBuilding"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Which day do you usually stop? Comment below.",
+      "status": "scheduled",
+      "platforms_scheduled": [
         "instagram",
         "tiktok",
-        "facebook",
         "youtube"
       ],
-      "cta": "Get portions right \u2014 then fine-tune the estimate",
-      "status": "draft",
-      "results": {}
+      "platforms_skipped": {
+        "facebook": "not linked in Upload-Post"
+      },
+      "upload_post_job_id": "1173f16eadaa41e9ab0723560066b638",
+      "upload_post_request_id": "f87a45c9dbf84002ab1d87c9ceb96b3a",
+      "slides_rendered": 8,
+      "youtube": {
+        "job_id": "f40434854a2b4713957f5d4b32c53b50",
+        "request_id": "db83bae0b7df45a3a94fe37a150edd39",
+        "scheduled_local": "2026-07-25T17:00",
+        "short": "short.mp4",
+        "duration_sec": 30.07,
+        "format": "1080x1920"
+      },
+      "instagram": {
+        "job_id": "033f1a57d3c2400da6befeb137fd2059",
+        "request_id": "ac67e31a8c434f569b4613475bd77fc9",
+        "scheduled_local": "2026-07-25T12:30:00",
+        "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "instagram": {
+          "job_id": "8fc3181b64504c0f978560a79de8d82a",
+          "scheduled_local": "2026-07-25T12:30:00"
+        },
+        "youtube": {
+          "job_id": "44a05e8d9cf94311a3914c6261d84df4",
+          "request_id": "716d2f61c50d454c8290e97eabae3f2b",
+          "scheduled_local": "2026-07-25T17:00:00"
+        }
+      },
+      "published": {
+        "tiktok": {
+          "at": "2026-07-25T13:03:02Z",
+          "url": "https://www.tiktok.com/@bitebuddyapp/photo/7666450005988871454",
+          "note": "published before the CTA-slide requirement existed, so this one carries the old text-only final slide"
+        }
+      }
     },
     {
       "id": "2026-07-25-slot2",
       "date": "2026-07-25",
-      "time_local": "12:30",
-      "format": "F1-buddys-list",
-      "title": "Why your calorie app makes you miserable",
-      "slides_dir": "2026-07-25-slot2/slides",
-      "slides_expected": 8,
-      "caption": "5 reasons calorie apps make you miserable \u2014 and the fix for each \ud83d\ude43 which is your dealbreaker? (a kinder food tracker app exists)",
-      "hashtags": [
-        "#caloriecounting",
-        "#nutritiontips",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "the guilt-trip notifications are why I deleted my last three apps",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "app-friction",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Tracking that doesn't feel like a chore",
-      "status": "draft",
-      "results": {}
-    },
-    {
-      "id": "2026-07-25-slot3",
-      "date": "2026-07-25",
       "time_local": "19:00",
-      "format": "F2-guess-the-calories",
-      "title": "Same dish, restaurant vs homemade",
-      "slides_dir": "2026-07-25-slot3/slides",
-      "slides_expected": 8,
-      "caption": "same dish, wildly different numbers depending who cooked it \ud83d\udc40 which gap surprised you? (real numbers from a calorie scanner app)",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "MISTAKE",
+      "visual_recipe": "PHOTO-FACT",
+      "title": "5 things people forget to log",
+      "slides": [
+        "5 things almost nobody logs. Number 2 is in most of your meals.",
+        "1. Cooking oil. It goes in the pan, not on the plate, so it disappears.",
+        "2. What you drink. Juice, soda, the oat milk latte. Liquids get a pass.",
+        "3. Sauces and dressing. Measured by pour, never by spoon.",
+        "4. Bites while cooking. The taste test is a real meal by the end.",
+        "5. The second helping. Logged as one serving, eaten as two.",
+        "None of these make you bad at this. They are just invisible by default.",
+        "Save this before your next grocery run."
+      ],
+      "caption": "The gaps in most food tracker app logs are not the big meals, they are the invisible ones: cooking oil, drinks, sauces, kitchen bites, and second helpings. Noticing them is most of the work. A photo makes four of the five obvious, because you see the plate instead of remembering it.",
+      "pinned_comment": "number 2 is the one nobody wants to hear",
       "hashtags": [
-        "#whatieatinaday",
-        "#caloriedeficit",
-        "#nutritiontips",
-        "#bitebuddy"
+        "#BiteBuddy",
+        "#CalorieCounting",
+        "#FoodTracker",
+        "#Macros"
       ],
-      "pinned_comment": "the alfredo gap is why I started cooking more \ud83d\ude2d",
-      "tags": {
-        "hook_type": "guess-the-number",
-        "topic": "restaurant-vs-homemade",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next grocery run.",
+      "status": "scheduled",
+      "platforms_scheduled": [
         "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
+        "tiktok"
       ],
-      "cta": "Know the real number, eating out or in",
-      "status": "draft",
-      "results": {}
+      "platforms_skipped": {
+        "facebook": "not linked in Upload-Post",
+        "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
+      },
+      "upload_post_job_id": "e4eebc4429bf4ed98c728b392ce5120e",
+      "upload_post_request_id": "c3a6809031e0467eb8955f738aff5733",
+      "slides_rendered": 8,
+      "instagram": {
+        "job_id": "7f96ec9ee97f4f67a8ef9bec99d873cc",
+        "request_id": "69cc5d576da74255a349d4947f2a9fa7",
+        "scheduled_local": "2026-07-25T20:30:00",
+        "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "63eeb5db081b4bdbbdc832e1132a7ec1",
+          "request_id": "1a3be603d94949d5afefd11a8e17359e",
+          "scheduled_local": "2026-07-25T19:00:00"
+        },
+        "instagram": {
+          "job_id": "f205000d5ef64f1cb2129c7bd3271376",
+          "request_id": "d55e6048db5f422789a5c21700ae23b3",
+          "scheduled_local": "2026-07-25T20:30:00"
+        }
+      }
     },
     {
       "id": "2026-07-26-slot1",
       "date": "2026-07-26",
       "time_local": "08:00",
-      "format": "F3-i-was-wrong",
-      "title": "3 years of failed tracking",
-      "slides_dir": "2026-07-26-slot1/slides",
-      "slides_expected": 6,
-      "caption": "3 years of quitting calorie tracker apps, fixed in a week \ud83d\ude2e\u200d\ud83d\udca8 what finally worked for you?",
-      "hashtags": [
-        "#caloriedeficit",
-        "#foodtracker",
-        "#weightlosstok",
-        "#bitebuddy"
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "POV",
+      "visual_recipe": "STORY-BEAT",
+      "title": "POV: the app made you feel worse than the food did",
+      "slides": [
+        "POV: your calorie app made you feel worse than the food did.",
+        "You go over. The number turns red.",
+        "Red does not tell you anything useful. It just tells you off.",
+        "So the next time you go over, you skip logging it.",
+        "Now the app only knows your good days. It is a highlight reel, not a log.",
+        "And a highlight reel cannot help you change anything.",
+        "A log you are not afraid of is worth more than a perfect one.",
+        "Follow BiteBuddy. No guilt, just numbers."
       ],
-      "pinned_comment": "3 years is not an exaggeration, I have the receipts",
-      "tags": {
-        "hook_type": "confession-awareness",
-        "topic": "quick-win",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
+      "caption": "A calorie tracker app that punishes you for a high day teaches you to hide the high days. That is how logs get corrupted and why people quit. The number is information, not a verdict. Numbers you can edit and a log you are not scared of beat a perfect streak every time.",
+      "pinned_comment": "the red number thing is so real",
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodFreedom",
+        "#TrackingHonestly"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy. No guilt, just numbers.",
+      "status": "scheduled",
+      "platforms_scheduled": [
         "instagram",
         "tiktok",
-        "facebook",
         "youtube"
       ],
-      "cta": "The one that finally clicks",
-      "status": "draft",
-      "results": {}
+      "platforms_skipped": {
+        "facebook": "not linked in Upload-Post"
+      },
+      "upload_post_job_id": "cab0ac8766374ae7b4bc06cdd4a2ad67",
+      "upload_post_request_id": "5db8c9724c304c24a32f86bb4e671ae7",
+      "slides_rendered": 8,
+      "youtube": {
+        "job_id": "9288824939404ba9894d33a216be1799",
+        "request_id": "0dddf08e5824419f9cb962bb398ca5bc",
+        "scheduled_local": "2026-07-26T17:00",
+        "short": "short.mp4",
+        "duration_sec": 30.07,
+        "format": "1080x1920"
+      },
+      "instagram": {
+        "job_id": "7dc6346655e647e1b9b0e55b2bc1f24d",
+        "request_id": "509ad93660f14ac2929edd43b3665ffe",
+        "scheduled_local": "2026-07-26T12:30:00",
+        "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "b42ebc693c614074b0abde72848e3bcc",
+          "request_id": "35ac383f67d64bc0a0ac6b07edebbfc7",
+          "scheduled_local": "2026-07-26T08:00:00"
+        },
+        "instagram": {
+          "job_id": "61992dfb849744a0bb8790555bf54191",
+          "request_id": "b3239d0cce364894ab33c826dfce31e9",
+          "scheduled_local": "2026-07-26T12:30:00"
+        },
+        "youtube": {
+          "job_id": "c54a170b88b245c99a4d63d6827f20c2",
+          "request_id": "420ba7a65efa445e8dbed68eb5ded67b",
+          "scheduled_local": "2026-07-26T17:00:00"
+        }
+      }
     },
     {
       "id": "2026-07-26-slot2",
       "date": "2026-07-26",
-      "time_local": "12:30",
-      "format": "F4-one-snap-demo",
-      "title": "What actually matters on a nutrition label",
-      "slides_dir": "2026-07-26-slot2/slides",
-      "slides_expected": 6,
-      "caption": "what actually matters on a nutrition label (it's not just calories) \ud83c\udff7\ufe0f save this \u2014 or let an AI calorie scanner do the reading.",
-      "hashtags": [
-        "#nutritiontips",
-        "#healthyswaps",
-        "#foodtracker",
-        "#bitebuddy"
-      ],
-      "pinned_comment": "protein being the 'most under-eaten' number is so true",
-      "tags": {
-        "hook_type": "nutrition-literacy",
-        "topic": "label-priorities",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
-        "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
-      ],
-      "cta": "Know what matters \u2014 let AI do the reading",
-      "status": "draft",
-      "results": {}
-    },
-    {
-      "id": "2026-07-26-slot3",
-      "date": "2026-07-26",
       "time_local": "19:00",
-      "format": "F1-buddys-list",
-      "title": "6 restaurant meals hiding a full day of calories",
-      "slides_dir": "2026-07-26-slot3/slides",
-      "slides_expected": 8,
-      "caption": "6 restaurant meals hiding a full day of calories \ud83d\ude33 which one gets you? (I snap the plate with an AI calorie counter now)",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "TRACKED",
+      "visual_recipe": "STORY-BEAT",
+      "title": "Most people think they eat the same every day",
+      "slides": [
+        "Most people think they eat about the same every day. A week of photos usually says otherwise.",
+        "Monday looks planned. You made it yourself. You remember all of it.",
+        "Wednesday is half desk food. You remember about two thirds of it.",
+        "Friday is eaten out. You remember the main thing and none of the sides.",
+        "Saturday barely gets recorded at all.",
+        "The week is not the same. It is one good day repeated in your memory.",
+        "You do not need perfect numbers. You need the days you usually skip.",
+        "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "Memory is the weak link in food tracking, not math. The days people forget to log are the ones that differ most from their idea of a normal day. Photographing a meal takes a second and removes the recall problem, which is the whole point of an AI calorie scanner. Estimates are editable, so you stay in control of the number.",
+      "pinned_comment": "saturday is the one that gets everyone",
       "hashtags": [
-        "#whatieatinaday",
-        "#caloriedeficit",
-        "#foodtracker",
-        "#bitebuddy"
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#FoodTracker",
+        "#CalorieTracking"
       ],
-      "pinned_comment": "the poke bowl one felt personal ngl",
-      "tags": {
-        "hook_type": "educational-listicle",
-        "topic": "restaurant",
-        "cover_style": "buddy-host-small"
-      },
-      "tiktok_sound": "SET_AT_POST_TIME",
-      "platforms": [
+      "cta_type": "APP",
+      "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
+      "status": "scheduled",
+      "platforms_scheduled": [
         "instagram",
-        "tiktok",
-        "facebook",
-        "youtube"
+        "tiktok"
       ],
-      "cta": "Eat out without flying blind \u2014 snap the plate",
-      "status": "draft",
-      "results": {}
+      "platforms_skipped": {
+        "facebook": "not linked in Upload-Post",
+        "youtube": "YouTube slot is 1/day; this post's sibling holds the day's slot"
+      },
+      "upload_post_job_id": "d59b9621ab7d4cacbde8b88d54b77c99",
+      "upload_post_request_id": "3f77e94b7ee74a469d22448ba9dea5fc",
+      "slides_rendered": 8,
+      "instagram": {
+        "job_id": "86afca8c2ce04b46895d4a693e6ac894",
+        "request_id": "9cafa3d0acd742f0bbbd95a3f04d3aac",
+        "scheduled_local": "2026-07-26T20:30:00",
+        "caption_variant": true
+      },
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "1792d9e9385f4ddc8c81d48f73629ec6",
+          "request_id": "ff8808f2c05e45638d4f5ac9dfd5c37d",
+          "scheduled_local": "2026-07-26T19:00:00"
+        },
+        "instagram": {
+          "job_id": "2f549bd7a3714749a3575100cc340cec",
+          "request_id": "897bee0d3ce94529ae2651ca7e829016",
+          "scheduled_local": "2026-07-26T20:30:00"
+        }
+      }
     }
-  ]
+  ],
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/6ee213f22e40c7e24083cfa3512e9b3891cd09d2/Posts/2026-W30",
+  "render": {
+    "method": "Content-Engine/render_slides.py",
+    "size": "1080x1350",
+    "font": "Baloo 2 / Inter",
+    "note": "Rendered locally rather than in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
+  },
+  "cta_slide_rule": "HARD REQUIREMENT from 2026-07-25: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py."
 }

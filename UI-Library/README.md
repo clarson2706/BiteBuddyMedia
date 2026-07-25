@@ -60,7 +60,7 @@ NN-screen-name--state.png          e.g.  02-today-home--rings-full.png
 | [`07-reports/`](./07-reports/) | Weekly + monthly reports |
 | [`08-profile-settings/`](./08-profile-settings/) | Profile, personal plan editor, account |
 | [`09-paywall-pro/`](./09-paywall-pro/) | Pro paywall + Pro-active state |
-| [`10-buddy-poses/`](./10-buddy-poses/) | The 14 mascot poses (transparent PNGs) for overlays |
+| ~~`10-buddy-poses/`~~ | Moved to [`Brand-Assets/buddy-poses/`](../Brand-Assets/buddy-poses/) — 13 poses, source + RGBA cutouts |
 
 ---
 
