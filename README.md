@@ -1,72 +1,81 @@
 # BiteBuddy Marketing
 
-Everything that gets BiteBuddy in front of people: strategy, research, ideas, the weekly
-production pipeline, and every rendered asset that has been published.
+Everything that gets BiteBuddy in front of people.
 
-Moved here from `BiteBuddyMVP` on 2026-07-24. Marketing was 56 of that repo's 103 documents and
-most of its 348 MB — working on content meant cloning an iOS codebase. It doesn't any more.
-
-**North star: downloads.** App Store listing:
+**North star: downloads.** The app is live and has effectively no users, so distribution
+is the whole problem. App Store listing:
 https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752
 
 ---
 
-## Layout
+## Status: rebuilt from scratch, 2026-07-25
+
+This repo was cleared and restarted. The previous version was designed around
+constraints that no longer apply — ChatGPT generated every slide image, Connor dropped
+PNGs into folders by hand, two parallel generation guides had to be kept in sync, and
+publishing depended on a connector that was never actually wired up. All of that is
+gone.
+
+What survived the reset, deliberately:
 
 ```
-AUTOMATION-WORKFLOW.md    the weekly operating rhythm — who does what, when. Source of truth.
-Research/                 why the formats work. Read before changing strategy.
-  TARGET-USER-PROFILES.md   the 8 personas (+1 anti-persona) every post targets
-  HOOK-INTELLIGENCE-2026.md what's working on TikTok/IG/Shorts right now, sourced
-Content-Engine/           the bulk-generation brain: MASTER-PROMPT-V5 + DESIGN-SYSTEM
-Carousel-Ideas/           developed carousel concepts, ready to produce
-Video-Ideas/              developed video concepts, none produced yet
-UI-Library/               screen-by-screen app footage and screenshots, with inboxes
-Analytics/                performance data. Currently empty — see below.
-Posts/
-  CHATGPT-ROUTINE.md          the Sunday scheduled task that generates the week
-  CHATGPT-AUTOMATION-RULES.md
-  current-week.json
-  2026-W30/
-    manifest.json
-    CHATGPT-GENERATION-GUIDE.md
-    <date>-slot<n>/     prompts.md + rendered PNGs + mp4, together
-.claude/skills/           carousel-week, carousel-publish, carousel-optimize
+Research/
+  TARGET-USER-PROFILES.md     8 researched personas + 1 anti-persona. Who every post is for.
+  HOOK-INTELLIGENCE-2026.md   20-formula hook library, carousel mechanics, cadence
+                              limits, 2026 anti-patterns. All sourced.
+Content-Engine/
+  MASTER-PROMPT-V5.md         the 50-post CSV generation prompt (persona-targeted)
+  DESIGN-SYSTEM.md            brand tokens, 8 slide archetypes, render routes
+  README.md                   how the pieces fit together
+UI-Library/                   19 real app screenshots + capture inboxes
 ```
 
-**Prompts and their output live in the same folder.** Before the move, `prompts.md` sat in the app
-repo while the PNGs it produced sat here. Reviewing a post meant two repos. Now a slot folder is
-the whole post.
+Everything here is research-informed strategy. **Nothing here is a validated result** —
+see "the measurement lesson" below.
 
-## Two generation guides, on purpose
+## What was removed and why
 
-`.claude/skills/carousel-*` and `Posts/2026-W30/CHATGPT-GENERATION-GUIDE.md` cover overlapping
-ground, and that is deliberate, not waste. The skills are loaded by Claude on demand. The guide is
-for the **ChatGPT scheduled task** that runs the Sunday image generation over the GitHub MCP —
-ChatGPT cannot load Claude skills, so it needs the knowledge written out.
+| Removed | Why |
+|---|---|
+| `Posts/` (145 rendered slides, 10 Shorts, week scaffolding) | ChatGPT-era assets that won't be reused under a new render pipeline |
+| `.claude/skills/` (carousel-week, carousel-publish, carousel-optimize) | Built around the old manual workflow; the new pipeline needs its own |
+| `AUTOMATION-WORKFLOW.md` | Described a rhythm that depended on the manual image step |
+| `Carousel-Ideas/`, `Video-Ideas/` | Concept templates superseded by the persona + hook system |
+| `Analytics/` | Scaffolding for a log that never received a single line |
+| `Research/CAROUSEL-MARKETING-PLAYBOOK.md`, `VIDEO-MARKETING-RESEARCH.md` | Superseded by `HOOK-INTELLIGENCE-2026.md` (fresher research, same ground) |
 
-Change the strategy and both need updating. That is the cost of running two model vendors in one
-pipeline, and it is a real cost — worth revisiting if the ChatGPT half is ever retired.
+**All of it is recoverable from git history** — history was deliberately preserved. If
+you ever need to know which topics already went live, they're in the deleted
+`Posts/2026-W30/manifest.json`.
 
-## Analytics is empty, and that is the biggest problem here
+## The measurement lesson (do not repeat it)
 
-`Analytics/performance-log.jsonl` exists and is **0 bytes**. Everything downstream of it —
-`leaderboard.json`, `next-week-directives.*` — is a gitignored rollup generated by `analyze.py`
-from that log, so none of it can exist either. `carousel-optimize` is built to score posts and
-pick next week's direction from this data and has never had a line of it to read.
+The old system had a full analytics pipeline — a JSONL log, a scoring script, a
+leaderboard, next-week directives — and the log was **0 bytes** the entire time it
+existed. Ten posts went live across three platforms and not one view, impression, or
+click was ever recorded. Every "optimization" the system could do was reading from an
+empty file.
 
-Ten slots were published 20–23 July across TikTok, Instagram, and YouTube. **Not one view,
-impression, or click is recorded anywhere.** Five posts went out simultaneously on 22 July and
-Instagram may be throttled as a result — unconfirmed, because nothing measures it.
+The rebuilt pipeline must capture real numbers from its very first post, even if that
+means Connor pasting them in by hand. Measurement is not a later phase.
 
-Any strategy rebuild starts by fixing this. Rewriting hooks without knowing which hooks failed is
-guessing with extra steps.
+## Known blockers for the rebuild
+
+1. **Upload-Post is not connected.** Without it, content can be staged and a schedule
+   can be shown, but nothing can actually publish. Connor adds it in claude.ai
+   connector settings, links Instagram (Business/Creator + FB Page), TikTok, Facebook,
+   and YouTube, and moves past the free tier (10 uploads/month).
+2. **Buddy pose PNGs do not exist.** `UI-Library/10-buddy-poses/README.md` lists 13
+   target files; the folder has never contained any. Until they're exported once, Buddy
+   gets regenerated by AI on every slide, which is why he drifts between posts.
+3. **No Canva templates yet.** The brand kit exists; there are zero brand templates, so
+   Bulk Create has nothing to merge into.
 
 ## Repo map
 
 | Repo | Holds |
 |---|---|
-| `BiteBuddyMVP` | iOS app, backend, canonical legal, product docs |
+| `BiteBuddyMVP` | iOS app, backend, canonical legal, product docs, App Store metadata |
 | **`bitebuddymedia`** | **this repo — marketing strategy, content, assets** |
 | `bitebuddy-admin` | ops dashboard over production Supabase |
 | `bitebuddy-legal` | published legal mirror. Auto-generated — never edit by hand |

@@ -1,67 +1,85 @@
 # CLAUDE.md — BiteBuddy marketing
 
-Loaded automatically at session start in this repo. Last verified: 2026-07-24.
+Loaded automatically at session start in this repo. Last verified: 2026-07-25.
 
 ## What this repo is
 
-Everything that gets BiteBuddy in front of people. Strategy, research, ideas, the weekly
-production pipeline, and every rendered asset published so far. Moved out of `BiteBuddyMVP` on
-2026-07-24 — see `README.md` for the layout.
+Everything that gets BiteBuddy in front of people. **Cleared and restarted on
+2026-07-25** — see `README.md` for what was removed and why.
 
-**The app is live on the App Store and has zero users.** Distribution is the bottleneck. Content
-that does not plausibly drive installs is not worth producing.
+**The app is live on the App Store and has effectively zero users.** Distribution is the
+bottleneck. Content that does not plausibly drive installs is not worth producing.
 
-## Before proposing any strategy change
+## Current state: strategy exists, pipeline does not
 
-Read `Research/CAROUSEL-MARKETING-PLAYBOOK.md` and `AUTOMATION-WORKFLOW.md` first.
-For content generation, also read `Research/TARGET-USER-PROFILES.md`,
-`Research/HOOK-INTELLIGENCE-2026.md`, and `Content-Engine/` (the persona-targeted
-bulk-generation system, added 2026-07-25). There is an
-existing system with reasoning behind it. Replacing something deliberate is a different job from
-replacing something accidental, and right now nobody knows which this is — because of the next
-point.
+What's here is the **content intelligence layer** — who we're targeting, which hooks
+work, what slides should look like, and the prompt that generates batches:
 
-## The measurement gap is the main problem
+- `Research/TARGET-USER-PROFILES.md` — 8 personas + 1 anti-persona. Every post names one.
+- `Research/HOOK-INTELLIGENCE-2026.md` — hook library, carousel mechanics, per-platform
+  cadence limits, 2026 anti-patterns.
+- `Content-Engine/MASTER-PROMPT-V5.md` — the 50-post CSV generation prompt.
+- `Content-Engine/DESIGN-SYSTEM.md` — brand tokens, 8 slide archetypes, render routes.
+- `UI-Library/` — 19 real app screenshots.
 
-`Analytics/performance-log.jsonl` exists and is **0 bytes**. The rollups built from it
-(`leaderboard.json`, `next-week-directives.*`) are gitignored generated outputs, so they cannot
-exist either. `carousel-optimize` and its `analyze.py` are built to score posts and set next
-week's direction from that log, and it has never had a single line in it.
+**Read all four docs before proposing or building anything.** They are recent, sourced,
+and deliberate.
 
-Ten slots were published 20–23 July across TikTok, Instagram, and YouTube. Not one view,
-impression, or click is recorded anywhere. Five went out simultaneously on 22 July and Instagram
-may be throttled as a result — unconfirmed, because nothing measures it.
+What's **not** here: any production pipeline, any publishing automation, any skills, any
+analytics. Building that is the next job, and it should be designed around what Claude
+can actually do in-session now (design directly in Canva, schedule via connector) rather
+than around manual handoffs.
 
-**Do not design a new content strategy on top of this.** Get the numbers first, even by hand from
-each platform's native analytics. Rewriting hooks without knowing which hooks failed is guessing.
+## Two rules learned the hard way
 
-## Skills
+**1. Measurement is not a later phase.** The previous system shipped a complete analytics
+pipeline — log, scoring script, leaderboard, directives — and the log stayed 0 bytes
+forever. Ten posts went live and nothing was ever recorded. Do not build a content
+pipeline whose feedback loop is "we'll wire it up after." The first post should produce a
+recorded number, even a hand-copied one.
 
-`carousel-week` generates a week of slots. `carousel-publish` handles platform specs and the
-Upload-Post mapping. `carousel-optimize` scores performance. They reference paths inside this repo
-(`Posts/`, `Analytics/`, `Carousel-Ideas/`) — those were rewritten during the move, so if a path
-does not resolve, that is a move artifact worth fixing rather than working around.
+**2. Don't build around a connector that isn't connected.** The old workflow assumed
+Upload-Post throughout and it was never wired up, so the whole thing ran in permanent
+dry-run. Check what's actually in the session before designing around it.
 
-**Add a rate limit before the next automated run.** Five simultaneous posts is what likely got
-Instagram flagged. `carousel-publish` is where that belongs.
+## Known blockers
 
-## Two generation guides, deliberately
-
-`.claude/skills/carousel-*` is for Claude. `Posts/2026-W30/CHATGPT-GENERATION-GUIDE.md` is for the
-ChatGPT scheduled task that runs Sunday image generation over the GitHub MCP — ChatGPT cannot load
-Claude skills, so the knowledge is written out there. Changing strategy means updating both. That
-duplication is a real maintenance cost and worth revisiting if the ChatGPT half is retired.
+1. **Upload-Post is not connected** — nothing can publish until Connor adds it in
+   claude.ai connector settings, links IG/TikTok/Facebook/YouTube, and passes the free
+   tier (10 uploads/month; a real week is ~84).
+2. **Buddy pose PNGs have never existed** — `UI-Library/10-buddy-poses/` lists 13 target
+   files and contains none. Until exported once, Buddy is AI-regenerated per slide and
+   drifts between posts.
+3. **No Canva brand templates** — the brand kit exists, templates do not.
 
 ## Approval gates
 
-Anything published to a social account is **Connor's call, every time.** Draft, show, then post —
-never post directly. Same for anything that spends money or changes App Store copy.
+Anything published to a social account is **Connor's call, every time.** Draft, show,
+then post — never post directly. Same for anything that spends money or changes App
+Store copy.
 
-App Store listing copy lives in `BiteBuddyMVP/APP_STORE_METADATA.md`, including the canonical
-search term every carousel CTA must use. Do not restate it here — point at it.
+App Store listing copy lives in `BiteBuddyMVP/APP_STORE_METADATA.md`, including the
+canonical search term every CTA must use. Do not restate it here — point at it.
+
+## Content guardrails (non-negotiable, survive any pipeline rebuild)
+
+- **No medical or outcome claims.** Never "lose X lbs," "guaranteed," "burns fat," or
+  crash-diet / disordered-eating framing. Calorie *facts* are fine; health
+  *prescriptions* are not.
+- **Never feature the Meal Advisor** — it ships as "Coming Soon" / disabled.
+- **Real screenshots only** for app slides, from `UI-Library/`. Never redraw, mock, or
+  invent UI or numbers.
+- **App numbers are AI estimates the user reviews** — keep that honesty visible. Never
+  claim scan precision; claim consistency (see the anti-persona in
+  `TARGET-USER-PROFILES.md`).
+- **Buddy stays visually consistent** and does not appear on every slide — he hosts the
+  cover and the CTA, the content carries the body.
+- **Platform-safe cadence** — TikTok ≤3/day, Instagram ≤2/day, always spaced, never
+  simultaneous. Five simultaneous posts on 22 July 2026 is the suspected cause of an
+  Instagram throttle. Rate limiting belongs in whatever publishes.
 
 ## Conventions
 
 - Branch as `claude/<short-description>`. Never commit to `main`.
-- Rendered assets and their `prompts.md` live in the same slot folder. Keep it that way.
 - This repo holds binaries. Do not add build tooling or app code to it.
+- Keep rendered assets alongside the copy/prompts that produced them.
