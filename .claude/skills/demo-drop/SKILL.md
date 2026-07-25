@@ -16,6 +16,11 @@ description: >-
 The scan flow is the product demo, and a real recording of it beats anything we
 can write. This skill is the path from a raw phone clip to a scheduled post.
 
+**Read `Content-Engine/DEMO-EDIT-SPEC.md` before cutting anything.** This file is
+the procedure: find the clips, run the build, schedule the slots. That one is the
+craft: the 8-second payoff rule, the always-cut list, the privacy scrub, speed
+ramp limits, hook rules, and what makes a clip unusable. Both apply to every edit.
+
 **Scale to what exists.** One clip is one day of demo posts. Five clips is five
 days. If the inbox is empty, say so and stop; never invent filler to fill a
 schedule.
@@ -76,7 +81,10 @@ Then read a contact sheet of them. You are looking for four timestamps:
 - **end** — a beat or two after the food is saved to the log
 
 Never guess these. A demo whose payoff is buried behind four seconds of a
-spinner is a wasted asset.
+spinner is a wasted asset. Then run a precision pass at 0.3 to 0.5s intervals
+around each boundary, and walk the privacy scrub checklist in `DEMO-EDIT-SPEC.md`
+before you build. Control Center, notification banners and other people's data
+are all things a phone recording will hand you if you do not look for them.
 
 ## 3. Build
 
@@ -94,9 +102,15 @@ Target **12 to 25 seconds** for TikTok and Instagram. YouTube Shorts want 30 to
 either use a longer trim or slow the end card, and say in the report if a clip
 was too short to make a good Short.
 
+**The payoff must land under 8 seconds in the finished cut.** That is the one
+rule the whole edit serves; see `DEMO-EDIT-SPEC.md` for why and for the worked
+example. Speed the setup, never the result screen.
+
 **Always extract a frame from the finished file and look at it** before
 scheduling. The hook overlay and the end card are both burned in; a bad one is
-only visible if you look.
+only visible if you look. Run the full QA checklist at the end of
+`DEMO-EDIT-SPEC.md`, and if a clip fails it, say so and stop rather than
+shipping a weak demo to fill a slot.
 
 ## 4. Write the copy
 

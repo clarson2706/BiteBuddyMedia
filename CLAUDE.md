@@ -22,7 +22,8 @@ Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl
 On-demand performance read (read-only, any time): the **media-report** skill +
 `Analytics/report.py`. Video track: Connor drops app screen recordings in
 `UI-Library/Recordings/_INBOX/`, the **demo-drop** skill edits and schedules them
-(one per platform per day, as many days as there are clips).
+(one per platform per day, as many days as there are clips); the editing standard
+is `Content-Engine/DEMO-EDIT-SPEC.md`.
 Creator engine ($0 upfront, 30% of first payment): `Outreach/DM-PLAYBOOK.md` +
 `Outreach/CREATOR-TERMS.md`. House rule: **no em dashes in any outbound copy**
 (DMs, captions, slides, briefs) — AI tell, trust risk.
