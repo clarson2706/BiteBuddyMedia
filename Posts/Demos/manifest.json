@@ -1,0 +1,32 @@
+{
+  "track": "DEMO",
+  "timezone": "America/Chicago",
+  "note": "Video track. Runs alongside the carousel track. One clip = one day of demo posts.",
+  "demos": [
+    {
+      "id": "demo-2026-07-26",
+      "date": "2026-07-26",
+      "series": "DEMO",
+      "persona": "P4",
+      "hook_family": "OUTCOME",
+      "visual_recipe": "DEMO-VIDEO",
+      "cta_type": "APP",
+      "source_clip": "UI-Library/Recordings/clips/2026-07-20-scan-salmon-plate.mp4",
+      "source_duration_sec": 30.58,
+      "edit": {
+        "start": 0.3, "end": 28.4,
+        "speed_window": [3.0, 15.2], "speed": 2.5,
+        "why": "Setup ran 15s before the payoff, far too slow for TikTok. Compressing camera-through-analysing to 2.5x lands the 485 cal result at 8s instead of 15s. Cut at 28.4s, just after the logged toast and before iOS Control Center appears."
+      },
+      "duration_sec": 23.8,
+      "format": "1080x1920",
+      "hook": "One photo found all four foods",
+      "cta": "Know what is on your plate",
+      "title": "One photo found all four foods",
+      "caption": "Salmon fillet, green beans, crab cake, watermelon. One photo, itemised, 485 calories and 42g protein. The app shows every item it found and every number stays editable before you log it, which is the whole point of an AI calorie scanner: you review the estimate, you are not stuck with it.",
+      "hashtags": ["#BiteBuddy", "#AICalorieCounter", "#CalorieTracking", "#FoodTracker"],
+      "pinned_comment": "it found the crab cake, which honestly surprised me",
+      "status": "draft"
+    }
+  ]
+}
