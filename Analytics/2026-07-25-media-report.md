@@ -6,7 +6,9 @@ not verdict.*
 
 ## 1. Headline
 
-The first post of the new system is doing **5.6× the account's lifetime per-post reach**
+**A stranger liked the post.** That is the first verified organic engagement this
+project has ever recorded, and on the metric ladder it matters more than any view
+count here. Beyond that: the first post of the new system is doing **5.6× the account's lifetime per-post reach**
 (222 views against a 39-views-per-post average across the prior 17 posts), which means
 TikTok is not suppressing this account the way the baseline collapse suggested. But it
 has produced **zero comments on a post explicitly built to earn comments**, so the
@@ -38,8 +40,11 @@ recipe or the 08:00 slot are good. One post cannot separate those five variables
 - 222 views produced **0 comments**, on a post carrying a COMMENT CTA ("Which day do you
   usually stop?") and a pinned prompt ("day 4 for me, every single time. what day gets
   you?"). Both mechanisms fired and neither converted.
-- 1 like, **unverified** — it may be ours. Per the honesty rule added this morning, it is
-  not counted as audience response until confirmed.
+- 1 like, **CONFIRMED ORGANIC** (Connor verified it is not his). This is the **first
+  verified response from a stranger in the project's history**. Every previous like,
+  comment and follow on every platform traced back to us. On the metric ladder this
+  single like outranks all 895 TikTok views, because it is the first evidence that the
+  content can move somebody who does not know us.
 - 0 shares, 0 saves, 0 new followers.
 
 This is **weak content, not weak distribution**. 222 people saw it; the ceiling on

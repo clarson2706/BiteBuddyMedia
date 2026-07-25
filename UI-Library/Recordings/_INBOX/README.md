@@ -1,10 +1,21 @@
-# _INBOX — drop raw recordings here
+# _INBOX — drop raw screen recordings here
 
-Drop your full-UI walkthrough recordings here (any filenames). Video files are
-tracked by Git LFS automatically (see `../README.md`).
+Drop the raw `.mov` / `.mp4` straight off the phone. No editing, no trimming, no
+renaming needed beyond something recognisable (`scan-chicken-bowl.mov`).
 
-Then tell me "recording is in the inbox" and I'll segment it into per-screen
-clips under `../clips/`, pull freeze-frames into the screenshot folders, and map
-everything to the video concepts.
+**The flow worth recording:** Today dashboard → tap scan → point at food → the
+analysing beat → the result screen with the numbers → save to the log. That whole
+arc is the product demo, and it is the highest-value asset this account has.
 
-**This folder should be empty of raw dumps once I've processed and segmented them.**
+What happens next: the **demo-drop** skill probes each clip, picks trim points,
+speeds up the analysing wait, pads to 1080x1920 on brand cream, burns in a hook,
+appends the Today-dashboard end card, writes the copy, and schedules one post per
+platform per day for as many days as there are clips. One clip means one day.
+Five clips means five days.
+
+Tips that make the edit better, none of them required:
+- Start on the dashboard, not on the home screen or an app switcher
+- Let the result screen sit still for ~2 seconds so the numbers are readable
+- Scan something recognisable; a burrito bowl reads better than a protein bar
+- Portrait, do not rotate
+- Silent is fine, audio gets stripped anyway
