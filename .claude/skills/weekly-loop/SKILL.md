@@ -35,9 +35,9 @@ Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
 - **Any off-schedule run** (someone says "run the loop" on a Tuesday, a Saturday,
   whenever) → run the full Sunday procedure below UNCHANGED, except Phase 2
   generates only `slots_remaining` posts: the published slots between now and the
-  next Sunday 6:00 PM America/Chicago at 2 posts/day. Sunday regenerates the whole
-  week anyway, so anything beyond that is waste. See `WEEKLY-LOOP.md` §Partial
-  generation for the worked example.
+  **end of Sunday** at 2 posts/day. The Sunday run owns Mon-to-Sun of the following
+  week, so the bridge owns everything through Sunday night. See `WEEKLY-LOOP.md`
+  §Partial generation for the worked example.
 - Otherwise → the full Sunday mode below.
 
 ## Phase 1 — Analytics (never skip; never reorder)

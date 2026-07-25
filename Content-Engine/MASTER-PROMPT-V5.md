@@ -255,7 +255,8 @@ Distribution across 50 rows: 18 FOLLOW, 12 COMMENT, 10 SAVE_OR_SHARE, 10 APP.
 FOLLOW (attach to recognizable recurring series):
 "Follow BiteBuddy for daily macro rankings." / "Follow BiteBuddy for smarter
 restaurant orders." / "Follow BiteBuddy for food facts worth saving." / "Follow
-BiteBuddy. The next ranking is coming."
+BiteBuddy. The next ranking is coming." / "Follow BiteBuddy for tracking that
+sticks." / "Follow BiteBuddy. No guilt, just numbers."
 
 COMMENT (attach to posts with a specific, easy response; comment CTAs maximize reach
 but not installs — use on discovery posts):

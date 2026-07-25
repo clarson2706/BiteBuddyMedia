@@ -159,16 +159,19 @@ generates enough content to cover the slots between now and the next Sunday run.
 Sunday regenerates the whole week from scratch, so generating more than that is waste
 that would be thrown away.
 
-1. Compute `slots_remaining` = published slots between now and the next Sunday 6:00 PM
-   America/Chicago, at the normal 2 posts/day cadence.
+1. Compute `slots_remaining` = published slots between now and **the end of Sunday**
+   (not the 6:00 PM run time), at the normal 2 posts/day cadence. The Sunday run owns
+   Monday through Sunday of the *following* week, so the bridge run owns everything up
+   to and including Sunday night. Generating a 7:00 PM post at 6:00 PM the same evening
+   is a bad seam; this avoids it.
 2. Generate exactly that many posts, drawing from the active series in normal
    rotation (do not skip series just because the batch is small).
 3. Everything else is unchanged: analytics first, same hard gate, same render, same
    scheduling with rate limits, same registry appends, same report.
 
-Worked example, a run starting Saturday 01:00: slots left are Saturday (2) and Sunday
-before 18:00 (1, the 12:30 slot), so it generates **3 posts**, schedules them, and the
-Sunday run then produces the full following week as usual.
+Worked example, a run starting Saturday 02:00: slots left are Saturday (2) and Sunday
+(2), so it generates **4 posts**, schedules them, and the Sunday 6:00 PM run then
+produces the full Monday-to-Sunday week as usual.
 
 The same rule applies to the DM routine: an off-schedule run produces only the current
 day's batch, because Sunday's cycle reseeds the pipeline anyway.

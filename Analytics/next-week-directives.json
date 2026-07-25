@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-25T07:20:00Z",
+  "week_analyzed": "2026-W30-baseline",
+  "confidence": "low",
+  "basis": "Account-level aggregates only (get_history returns 400, so no per-post rows). Directives below are traceable to the baseline report but rest on a small, coarse sample.",
+  "lean_into": {
+    "series": ["S1", "S2"],
+    "hook_families": ["GUESS", "LIST", "RIGHTWRONG", "COMPARE"],
+    "personas": ["P5", "P3", "P1", "P4"],
+    "topics": ["restaurant-macros", "protein-per-dollar", "tracking-friction", "same-calorie-comparison"],
+    "slots": ["08:00", "19:00"]
+  },
+  "dial_back": {
+    "series": [],
+    "hook_families": [],
+    "topics": ["generic-nutrition-trivia"]
+  },
+  "recut_winners": [],
+  "experiments": [
+    "Comment-first CTAs on the majority of posts until comment count is non-zero",
+    "COMPARE-SPLIT same-calorie post as the save/share test"
+  ],
+  "series_verdicts": { "S1": "hold", "S2": "hold", "S3": "hold" },
+  "notes": "Baseline: TikTok 668 views / 17 posts / 2 likes / 0 comments / 0 shares; YouTube 433 views / 3 likes / 0 comments. Zero comments across 17 posts is the headline problem and it is a content signal, not an algorithm signal, so weight this batch toward comment-earning formats (GUESS quizzes, ranking debates). Both platforms show a hard distribution collapse right after five simultaneous posts on 22 July, so hold cadence at 2 posts/day with wide spacing and do not chase volume. Instagram and Facebook are unlinked, so this batch is TikTok plus YouTube only."
+}
