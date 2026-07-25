@@ -1,0 +1,51 @@
+{
+  "week": "2026-W30",
+  "batch": "flex-2026-07-25",
+  "batch_type": "manual-flex",
+  "timezone": "America/Chicago",
+  "generated_at": "2026-07-25T21:00:00Z",
+  "note": "Manual flex-slot post, requested by Connor and published immediately rather than scheduled. First S1 episode: the series was blocked at the Sunday bridge run because nutrition primary sources returned 403, and it is unblocked now. Every number on the reveal slides is the app's own output from the 2026-07-20 salmon-plate recording, not a claim we authored: 260 + 25 + 140 + 60 = 485.",
+  "posts": [
+    {
+      "id": "2026-07-25-flex1",
+      "date": "2026-07-25",
+      "time_local": "16:15",
+      "slot": "flex",
+      "series": "S1",
+      "persona": "P5",
+      "hook_family": "GUESS",
+      "visual_recipe": "QUIZ-CARD",
+      "cta_type": "APP",
+      "platform_plan": ["tiktok"],
+      "title": "Guess the calories: salmon, green beans, crab cake, watermelon",
+      "source_recording": "UI-Library/Recordings/clips/2026-07-20-scan-salmon-plate.mp4",
+      "slides": [
+        {
+          "text": "Guess the calories.",
+          "image": "UI-Library/Recordings/stills/2026-07-20-salmon-plate.jpg",
+          "style": "photo"
+        },
+        "Comment your number before you swipe. One guess, no editing after.",
+        "Salmon fillet. Green beans. Crab cake. Watermelon. Nothing hidden, nothing off the plate.",
+        {
+          "text": "485.",
+          "image": "UI-Library/Recordings/stills/2026-07-20-salmon-result.jpg",
+          "style": "phone"
+        },
+        {
+          "text": "Here is where it came from.",
+          "image": "UI-Library/Recordings/stills/2026-07-20-salmon-items.jpg",
+          "style": "phone"
+        },
+        "Most people guess high on the salmon and forget the crab cake entirely. That is 140 on its own.",
+        "That number is an estimate you can edit, not a verdict. Consistency beats precision.",
+        "Stop guessing what is on your plate."
+      ],
+      "caption": "One photo, four foods, 485 calories. The crab cake is the one almost everyone forgets, and it is 140 by itself. Comment your guess before you swipe to the answer. This is a real scan from the BiteBuddy calorie tracker app, estimate included, editable before it gets logged.",
+      "pinned_comment": "drop your guess before you swipe. no cheating.",
+      "hashtags": ["#BiteBuddy", "#GuessTheCalories", "#CalorieTracking", "#FoodTracker"],
+      "app_numbers_verified": "Sum of the four items in the app's own result screen equals the 485 total shown: salmon 260, green beans 25, crab cake 140, watermelon 60.",
+      "why_this_post": "The 2026-07-25 media report found zero comments across 862 measured views on posts carrying open-ended reflective comment CTAs, and recommended testing a smaller, dumber ask. A numeric guess is the lowest-effort comment there is."
+    }
+  ]
+}
