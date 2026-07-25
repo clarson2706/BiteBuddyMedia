@@ -5,8 +5,14 @@
   "timezone": "America/Chicago",
   "generated_at": "2026-07-25T07:25:00Z",
   "directives_used": "Analytics/next-week-directives.json (generated_at 2026-07-25T07:20:00Z)",
-  "platforms_available": ["tiktok", "youtube"],
-  "platforms_unavailable": ["instagram", "facebook"],
+  "platforms_available": [
+    "tiktok",
+    "youtube"
+  ],
+  "platforms_unavailable": [
+    "instagram",
+    "facebook"
+  ],
   "constraint_note": "All nutrition primary sources (chipotle.com, chick-fil-a.com, mcdonalds.com, starbucks.com, fdc.nal.usda.gov) are blocked by this environment's network policy. Per the loop's verification rule, no numeric chain claims were generated. This batch is behaviour/psychology content, which the baseline data independently supports: 0 comments across 17 posts is an engagement problem, not a reach problem.",
   "posts": [
     {
@@ -30,10 +36,26 @@
       ],
       "caption": "The day-4 pattern is the most common reason a calorie tracker app stops getting opened. It is not motivation, it is one unlogged meal that makes the rest of the log feel useless. Logging the messy day is what keeps it going. Which day do you usually stop on?",
       "pinned_comment": "day 4 for me, every single time. what day gets you?",
-      "hashtags": ["#BiteBuddy", "#CalorieTracking", "#FoodTracker", "#HabitBuilding"],
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodTracker",
+        "#HabitBuilding"
+      ],
       "cta_type": "COMMENT",
       "cta": "Which day do you usually stop? Comment below.",
-      "status": "draft"
+      "status": "scheduled",
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked in Upload-Post",
+        "facebook": "not linked in Upload-Post",
+        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+      },
+      "upload_post_job_id": "1173f16eadaa41e9ab0723560066b638",
+      "upload_post_request_id": "f87a45c9dbf84002ab1d87c9ceb96b3a",
+      "slides_rendered": 8
     },
     {
       "id": "2026-07-25-slot2",
@@ -56,10 +78,26 @@
       ],
       "caption": "The gaps in most food tracker app logs are not the big meals, they are the invisible ones: cooking oil, drinks, sauces, kitchen bites, and second helpings. Noticing them is most of the work. A photo makes four of the five obvious, because you see the plate instead of remembering it.",
       "pinned_comment": "number 2 is the one nobody wants to hear",
-      "hashtags": ["#BiteBuddy", "#CalorieCounting", "#FoodTracker", "#Macros"],
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieCounting",
+        "#FoodTracker",
+        "#Macros"
+      ],
       "cta_type": "SAVE_OR_SHARE",
       "cta": "Save this before your next grocery run.",
-      "status": "draft"
+      "status": "scheduled",
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked in Upload-Post",
+        "facebook": "not linked in Upload-Post",
+        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+      },
+      "upload_post_job_id": "e4eebc4429bf4ed98c728b392ce5120e",
+      "upload_post_request_id": "c3a6809031e0467eb8955f738aff5733",
+      "slides_rendered": 8
     },
     {
       "id": "2026-07-26-slot1",
@@ -82,10 +120,26 @@
       ],
       "caption": "A calorie tracker app that punishes you for a high day teaches you to hide the high days. That is how logs get corrupted and why people quit. The number is information, not a verdict. Numbers you can edit and a log you are not scared of beat a perfect streak every time.",
       "pinned_comment": "the red number thing is so real",
-      "hashtags": ["#BiteBuddy", "#CalorieTracking", "#FoodFreedom", "#TrackingHonestly"],
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodFreedom",
+        "#TrackingHonestly"
+      ],
       "cta_type": "FOLLOW",
       "cta": "Follow BiteBuddy. No guilt, just numbers.",
-      "status": "draft"
+      "status": "scheduled",
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked in Upload-Post",
+        "facebook": "not linked in Upload-Post",
+        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+      },
+      "upload_post_job_id": "cab0ac8766374ae7b4bc06cdd4a2ad67",
+      "upload_post_request_id": "5db8c9724c304c24a32f86bb4e671ae7",
+      "slides_rendered": 8
     },
     {
       "id": "2026-07-26-slot2",
@@ -108,10 +162,33 @@
       ],
       "caption": "Memory is the weak link in food tracking, not math. The days people forget to log are the ones that differ most from their idea of a normal day. Photographing a meal takes a second and removes the recall problem, which is the whole point of an AI calorie scanner. Estimates are editable, so you stay in control of the number.",
       "pinned_comment": "saturday is the one that gets everyone",
-      "hashtags": ["#BiteBuddy", "#AICalorieCounter", "#FoodTracker", "#CalorieTracking"],
+      "hashtags": [
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#FoodTracker",
+        "#CalorieTracking"
+      ],
       "cta_type": "APP",
       "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
-      "status": "draft"
+      "status": "scheduled",
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked in Upload-Post",
+        "facebook": "not linked in Upload-Post",
+        "youtube": "needs slideshow video assembly; no local ffmpeg, deferred to the Sunday run"
+      },
+      "upload_post_job_id": "d59b9621ab7d4cacbde8b88d54b77c99",
+      "upload_post_request_id": "3f77e94b7ee74a469d22448ba9dea5fc",
+      "slides_rendered": 8
     }
-  ]
+  ],
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/d7ba2e17a334ed14670ed9ee8c6951c101972e41/Posts/2026-W30",
+  "render": {
+    "method": "Content-Engine/render_slides.py",
+    "size": "1080x1350",
+    "font": "Baloo 2 / Inter",
+    "note": "Rendered locally rather than in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
+  }
 }
