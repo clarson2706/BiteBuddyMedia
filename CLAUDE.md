@@ -24,8 +24,11 @@ On-demand performance read (read-only, any time): the **media-report** skill +
 `UI-Library/Recordings/_INBOX/`, the **demo-drop** skill edits and schedules them
 (one per platform per day, as many days as there are clips); the editing standard
 is `Content-Engine/DEMO-EDIT-SPEC.md`.
-Creator engine ($0 upfront, 30% of first payment): `Outreach/DM-PLAYBOOK.md` +
-`Outreach/CREATOR-TERMS.md`. House rule: **no em dashes in any outbound copy**
+Creator engine ($0 upfront, 6 months free Pro renewable + 30% of first payment,
+US-based creators only 2k-50k followers): `Outreach/DM-PLAYBOOK.md` +
+`Outreach/CREATOR-TERMS.md`. **Changed 2026-07-26:** research now happens once a
+week (Sunday, 140 creators staged into `Outreach/queue/`), delivered daily; see
+the **creator-pipeline** skill. House rule: **no em dashes in any outbound copy**
 (DMs, captions, slides, briefs) — AI tell, trust risk.
 
 ## The strategy layer
@@ -69,6 +72,15 @@ dry-run. Check what's actually in the session before designing around it.
    deck from the archetype specs directly.
 4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in
    `Brand-Assets/buddy-poses/`. Use them; never generate Buddy with an image model.
+5. **Gmail-sending connector — not yet connected (as of 2026-07-26).** The
+   `creator-pipeline` skill needs this to actually email Connor the daily creator-DM
+   batch; until it's connected, the skill falls back to presenting the batch directly
+   in the routine's response, same as the manual runs on 2026-07-25/26. Also worth
+   checking whether the claude.ai Routines product already emails a digest on
+   completion, which could make a dedicated connector unnecessary. Once connected,
+   Routine 3 (daily creator-DM batch) should be re-pointed at the `creator-pipeline`
+   skill instead of its current raw research-every-day prompt, and its fire time
+   moved to ~7 AM if daily email delivery is the goal.
 
 ## Approval gates
 

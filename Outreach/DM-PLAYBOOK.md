@@ -48,13 +48,18 @@ from a position of data.
 
 ## Who we target
 
-Nano and micro creators (2k to 60k followers) in: macro-friendly recipes, budget
-meals, college food, new-lifter fitness, honest weight-loss journeys, busy-parent
-meals, dietitian students. Engagement over follower count: real comments, replies to
-their commenters, a consistent format. Skip: anyone selling crash diets or detoxes,
-anyone whose content violates our guardrails, mega accounts (they want retainers),
-and medication-focused accounts (we serve that audience by situation, never by
-prescription, and partner content must do the same).
+**US-based creators only** (updated 2026-07-26; international creators are out of
+scope for now), nano and micro (2k to 50k followers, tightened down from 60k), in:
+macro-friendly recipes, budget meals, college food, new-lifter fitness, honest
+weight-loss journeys, busy-parent meals, dietitian students. Engagement over
+follower count: real comments, replies to their commenters, a consistent format.
+Skip: anyone selling crash diets or detoxes, anyone whose content violates our
+guardrails, mega accounts (they want retainers), and medication-focused accounts
+(we serve that audience by situation, never by prescription, and partner content
+must do the same). If a creator's follower count can't be confirmed, or a specific
+platform's number is confirmed but their footprint elsewhere is clearly much
+larger (e.g. a small Instagram but a six-figure YouTube), flag it rather than
+silently including or excluding them, Connor's call.
 
 ## The first message
 
@@ -159,7 +164,8 @@ IG). Claude logs the post, tracks it in analytics with `source: creator`. Status
 |---|---|
 | `Outreach/creators.jsonl` | one line per creator, append-only status updates |
 | `Outreach/payouts.jsonl` | one line per payout, the ledger behind every PayPal send |
-| `Outreach/batches/YYYY-MM-DD.md` | that day's 20 ready-to-send DMs (10 IG + 10 TikTok), written by the loop runs |
+| `Outreach/batches/YYYY-MM-DD.md` | archived record of what was actually generated/sent for a given day |
+| `Outreach/queue/YYYY-MM-DD.md` | a day's staged, not-yet-delivered batch, written by the Sunday research run, consumed and archived by the daily email step (see below) |
 
 `creators.jsonl` line:
 ```json
@@ -174,12 +180,26 @@ IG). Claude logs the post, tracks it in analytics with `source: creator`. Status
  "gross_attributed":107.97,"payout":32.39,"method":"paypal","status":"sent","note":""}
 ```
 
-## Batch generation (how the 100/week happens)
+## Batch generation (how the 140/week happens) — updated 2026-07-26
 
-- **Sunday run** writes Monday, Tuesday, Wednesday batches (60 DMs)
-- **Wednesday run** writes Thursday, Friday batches (40 DMs)
-- Each batch file: 10 Instagram + 10 TikTok, each entry = handle, one-line why-them,
-  the personalized message ready to copy, and the profile link
-- Claude researches every profile before writing; a creator we can't personalize for
-  gets replaced in the batch, not templated at
-- Connor's job: copy, paste, send, spread through the day; forward replies back
+**All research happens once a week, Sunday morning.** This replaced the old
+twice-weekly (Sunday + Wednesday) cadence. Full procedure: see the
+`creator-pipeline` skill (`.claude/skills/creator-pipeline/SKILL.md`). Summary:
+
+- **Sunday:** research and write 140 creators total (10 Instagram + 10 TikTok x 7
+  days), US-only, 2k-50k followers, split into 7 staged files:
+  `Outreach/queue/YYYY-MM-DD.md` for Monday through the following Sunday. Every
+  creator gets appended to `creators.jsonl` with `status: dm_written`.
+- **Every day (including Sunday):** the day's queued file is delivered (email, once
+  a sending connector is set up; until then, presented in the routine's own output)
+  and archived to `Outreach/batches/YYYY-MM-DD.md` so there's a permanent record of
+  what actually went out, distinct from what's still queued.
+- Each batch entry: handle, profile link, one-line who-they-are, one-line why-fit,
+  and the ready-to-copy personalized DM.
+- Claude researches every profile before writing; a creator who can't be
+  personalized for gets replaced, not templated at. If Sunday's research falls
+  short of 140 (this has happened, TikTok in particular can be a hard search
+  surface some weeks), the shortfall is documented honestly in that day's file
+  rather than padded with weak or unverifiable leads.
+- Connor's job: each day, copy, paste, send, spread through the day (10/day/platform
+  cap still applies); forward replies back.
