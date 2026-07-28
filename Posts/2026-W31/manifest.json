@@ -52,7 +52,23 @@
       "sources": [
         "https://www.chick-fil-a.com/nutrition-allergens"
       ],
-      "verified_on": "2026-07-28"
+      "verified_on": "2026-07-28",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "4ba42e9811c649ad8b3b38e549f53934",
+          "request_id": "4dcaaf35e89e473486b28ba03cfbedf6",
+          "scheduled_local": "2026-07-28T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-28-slot2",
@@ -86,7 +102,23 @@
       "cta": "Follow BiteBuddy for tracking that sticks.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "2a9845b7eb4b496f98ea01a4ff3a7daf",
+          "request_id": "c0d7693779f54ed89d5ee5fd3db1d405",
+          "scheduled_local": "2026-07-28T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-29-slot1",
@@ -126,7 +158,29 @@
         "tiktok",
         "youtube"
       ],
-      "app_numbers_verified": "Real BiteBuddy AI-estimate scan result, screenshot UI-Library/04-food-result/01-food-result--turkey-impact.png: 720 cal, 38g protein, 82g carbs, 24g fat, high confidence."
+      "app_numbers_verified": "Real BiteBuddy AI-estimate scan result, screenshot UI-Library/04-food-result/01-food-result--turkey-impact.png: 720 cal, 38g protein, 82g carbs, 24g fat, high confidence.",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "88510662d2e641aebca454c31500894c",
+          "request_id": "81112ed2d566441da737a4842f195b6e",
+          "scheduled_local": "2026-07-29T08:00:00"
+        },
+        "youtube": {
+          "job_id": "e822899a04b5402c8858efa01235d0b8",
+          "request_id": "630af6fa55654a37be2064e4d0a64210",
+          "scheduled_local": "2026-07-29T17:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok",
+        "youtube"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-29-flex1",
@@ -160,7 +214,23 @@
       "cta": "Follow BiteBuddy for tracking that sticks.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "1c91544049f44f8ca93792bed4ec3b61",
+          "request_id": "10d30bd6f27a4dd8834bafa51015ae41",
+          "scheduled_local": "2026-07-29T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-29-slot2",
@@ -194,7 +264,23 @@
       "cta": "Save this BiteBuddy guide for your next attempt.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "296021d945d14bcf9b6b0cb942d893c0",
+          "request_id": "dd21f6abbf304541933c641dc8aeabb4",
+          "scheduled_local": "2026-07-29T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-30-slot1",
@@ -237,7 +323,29 @@
         "https://www.chick-fil-a.com/menu/salads/market-salad"
       ],
       "verified_on": "2026-07-28",
-      "constraint_note": "No per-dollar price claim: this environment's fetch tool cannot execute the ordering flow needed to verify current per-location pricing, so this is a protein ranking, not the series' usual protein-per-dollar framing. See Analytics/next-week-directives.json network_note."
+      "constraint_note": "No per-dollar price claim: this environment's fetch tool cannot execute the ordering flow needed to verify current per-location pricing, so this is a protein ranking, not the series' usual protein-per-dollar framing. See Analytics/next-week-directives.json network_note.",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "c3671997a9aa4583b5295d01ea9557dc",
+          "request_id": "37db814c2dbe4e1c8529e6e7178f84a1",
+          "scheduled_local": "2026-07-30T08:00:00"
+        },
+        "youtube": {
+          "job_id": "c953ed1739144cde868fe59a5632f9b9",
+          "request_id": "3bf564774a854b46b042a671f655ac8e",
+          "scheduled_local": "2026-07-30T17:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok",
+        "youtube"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-30-flex1",
@@ -271,7 +379,23 @@
       "cta": "Follow BiteBuddy for tracking that sticks.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "c7b4c71daadd41a9be508349afd7abcf",
+          "request_id": "1c998d6d31b443c9bec4df4598a85ba1",
+          "scheduled_local": "2026-07-30T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-30-slot2",
@@ -305,7 +429,23 @@
       "cta": "Which day do you usually restart on? Comment below.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "4b896d6e7a7d401b8c9a80901f51f048",
+          "request_id": "516b1e50d51142698ca153cebf35c877",
+          "scheduled_local": "2026-07-30T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-31-slot1",
@@ -340,7 +480,29 @@
       "platforms_planned": [
         "tiktok",
         "youtube"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "3cf7e939502047c5ba1409bcc919ce68",
+          "request_id": "0f79b7e4c9084625b7af08bc51a9d5a5",
+          "scheduled_local": "2026-07-31T08:00:00"
+        },
+        "youtube": {
+          "job_id": "9374a13bfb59402a91ab85f0b2de6b82",
+          "request_id": "c94e1a9202164798a159228c7fb17f8a",
+          "scheduled_local": "2026-07-31T17:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok",
+        "youtube"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-31-flex1",
@@ -374,7 +536,23 @@
       "cta": "Which would you actually keep doing? Comment below.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "01f50c807ef240448dc83b17ac19c47a",
+          "request_id": "e64d0908c5c54c12802a3d1c694e503d",
+          "scheduled_local": "2026-07-31T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-07-31-slot2",
@@ -408,7 +586,23 @@
       "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "560e2ea2725c452ea7b9b127df567dd1",
+          "request_id": "9e13c3c00f564fa399d59e864896bec6",
+          "scheduled_local": "2026-07-31T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-01-slot1",
@@ -448,7 +642,29 @@
         "tiktok",
         "youtube"
       ],
-      "app_numbers_verified": "Real BiteBuddy AI-estimate scan result, screenshot UI-Library/04-food-result/01-food-result.png: 580 cal, 48g protein, 32g carbs, 28g fat, high confidence."
+      "app_numbers_verified": "Real BiteBuddy AI-estimate scan result, screenshot UI-Library/04-food-result/01-food-result.png: 580 cal, 48g protein, 32g carbs, 28g fat, high confidence.",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "1bc57322fbae483a94cf51c4403a8b27",
+          "request_id": "52ccaea7287e4e69a0f38b12a103531a",
+          "scheduled_local": "2026-08-01T08:00:00"
+        },
+        "youtube": {
+          "job_id": "ddfc7fc902904b5ab55cfa48d9759ad6",
+          "request_id": "da6947d3e48f4feeb150f26f1540acd4",
+          "scheduled_local": "2026-08-01T17:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok",
+        "youtube"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-01-flex1",
@@ -482,7 +698,23 @@
       "cta": "Which one would you add? Comment below.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "3899293abcf34d25a77867fbd77f89ae",
+          "request_id": "92448986a28d447592a28301501e6e02",
+          "scheduled_local": "2026-08-01T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-01-slot2",
@@ -516,7 +748,23 @@
       "cta": "Save this if red numbers ever stopped your logging.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "26d0ac0ef9884d0191d2e5449635a5c3",
+          "request_id": "ce5fb7e93d4341a4ae85f8afdcf2d445",
+          "scheduled_local": "2026-08-01T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-02-slot1",
@@ -551,7 +799,29 @@
       "platforms_planned": [
         "tiktok",
         "youtube"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "67c7de077e1f46a4a54baafb5b4abece",
+          "request_id": "b6cbfaab5d894b429fc02aa7735a4c4b",
+          "scheduled_local": "2026-08-02T08:00:00"
+        },
+        "youtube": {
+          "job_id": "2fb1725dcf76446393016452c3c14a92",
+          "request_id": "c02f59b4e89045f387f14174f7385c20",
+          "scheduled_local": "2026-08-02T17:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok",
+        "youtube"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-02-flex1",
@@ -585,7 +855,23 @@
       "cta": "Follow BiteBuddy. No guilt, just numbers.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "6d3ebc48db904dac9bec397620959068",
+          "request_id": "3a8c4ed4fb16418fa788600af64ebee0",
+          "scheduled_local": "2026-08-02T13:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     },
     {
       "id": "2026-08-02-slot2",
@@ -619,10 +905,26 @@
       "cta": "See your week with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
       "platforms_planned": [
         "tiktok"
-      ]
+      ],
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "8924f2801bb64acbb11a5c194563f783",
+          "request_id": "88189fa839464823933e082fffc4c423",
+          "scheduled_local": "2026-08-02T19:00:00"
+        }
+      },
+      "platforms_scheduled": [
+        "tiktok"
+      ],
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
     }
   ],
-  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/80bd1f95a8f1f47a4e201329a1bab9afb004830b/Posts/2026-W31",
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/971cf13bba6a9bf7682063a6abe4e65a0f9ad8a1/Posts/2026-W31",
   "render": {
     "method": "Content-Engine/render_slides.py",
     "size": "1080x1350",
