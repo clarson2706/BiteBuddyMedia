@@ -622,7 +622,7 @@
       ]
     }
   ],
-  "media_base_url": "PENDING_COMMIT_SHA",
+  "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/80bd1f95a8f1f47a4e201329a1bab9afb004830b/Posts/2026-W31",
   "render": {
     "method": "Content-Engine/render_slides.py",
     "size": "1080x1350",
