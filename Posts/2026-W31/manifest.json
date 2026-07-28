@@ -109,10 +109,17 @@
           "job_id": "2a9845b7eb4b496f98ea01a4ff3a7daf",
           "request_id": "c0d7693779f54ed89d5ee5fd3db1d405",
           "scheduled_local": "2026-07-28T19:00:00"
+        },
+        "youtube": {
+          "job_id": "ff16edb8ced34f85b58ffe831f1bdfbb",
+          "request_id": "f40a4e87198644a0ad27279835935990",
+          "scheduled_local": "2026-07-28T17:00:00",
+          "note": "Added after the run's initial report, per Connor's request to add a YouTube post for today. This was the only non-flex TikTok slot on 2026-07-28, so it's the natural pairing."
         }
       },
       "platforms_scheduled": [
-        "tiktok"
+        "tiktok",
+        "youtube"
       ],
       "platforms_skipped": {
         "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
