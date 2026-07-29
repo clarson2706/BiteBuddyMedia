@@ -57,6 +57,8 @@ POSES = {
     "2026-08-02-slot1": ("buddy_thinking", "buddy_goal_celebration"),
     "2026-08-02-flex1": ("buddy_warning_check", "buddy_level_up"),
     "2026-08-02-slot2": ("buddy_thinking", "buddy_goal_celebration"),
+    "2026-07-30-slot2-recut": ("buddy_thinking", "buddy_protein_powerup"),
+    "2026-08-02-flex1-recut": ("buddy_thinking", "buddy_protein_powerup"),
 }
 BADGES = {"S3": "WHY TRACKING FAILS", "S1": "GUESS THE CALORIES",
           "S2": "PROTEIN PER DOLLAR", "oneoff": ""}
