@@ -15,6 +15,7 @@
     "facebook": "never linked in Upload-Post"
   },
   "constraint_note": "S2 (Protein Per Dollar) content this cycle carries no price-per-item claim: this environment's fetch tool cannot execute the JS ordering flows needed for live per-location pricing. It ships as a verified protein ranking instead (chick-fil-a.com primary sources, cited per post). See Analytics/next-week-directives.json network_note for what is and isn't blocked.",
+  "wed_mini_run_2026-07-29": "Snapshotted the 4 posts published Tue 07-28 through Wed 07-29 08:00 (see Analytics/performance-log.jsonl, 2026-07-29T17:10:00Z rows). Winner: 2026-07-28-flex1 (293 views, 6 likes, best of the cycle). Dying: 2026-07-28-slot2 (104 views, 0 likes/comments on TikTok, 6 views on YouTube) \u2014 a restart-shame/streak-repair message that got zero response. Two not-yet-published slots carrying the same message a second and third time (2026-07-30-slot2 'Stop starting over every Monday', 2026-08-02-flex1 'Stop deleting the app after one bad day') were cancelled and replaced with fresh-cover recuts of the winner (2026-07-30-slot2-recut, 2026-08-02-flex1-recut): same verified Chick-fil-A protein-per-calorie body, new hook slide each. No other slot touched. Full week not regenerated.",
   "posts": [
     {
       "id": "2026-07-28-flex1",
@@ -437,11 +438,67 @@
       "platforms_planned": [
         "tiktok"
       ],
-      "status": "scheduled",
+      "status": "superseded",
+      "superseded_by": "2026-07-30-slot2-recut",
+      "superseded_why": "Wed mini-run 2026-07-29: this is a near-verbatim theme repeat of 2026-07-28-slot2 ('I stopped quitting my tracker... restart vs repair'), which published to 104 views / 0 likes / 0 comments, the weakest of the three fully-measured posts this cycle. Re-pointed to the recut of the cycle's early winner instead of publishing the same losing theme a second time. Original job cancelled before it fired; never published.",
       "scheduled_jobs": {
         "tiktok": {
           "job_id": "4b896d6e7a7d401b8c9a80901f51f048",
           "request_id": "516b1e50d51142698ca153cebf35c877",
+          "scheduled_local": "2026-07-30T19:00:00",
+          "note": "CANCELLED via cancel_scheduled in the Wed 2026-07-29 mini-run, replaced by 2026-07-30-slot2-recut at the same slot."
+        }
+      },
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
+    },
+    {
+      "id": "2026-07-30-slot2-recut",
+      "date": "2026-07-30",
+      "time_local": "19:00",
+      "slot": "standard",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "MISTAKE",
+      "visual_recipe": "COMPARE-SPLIT",
+      "title": "The Chick-fil-A breakfast everyone assumes is the protein winner isn't",
+      "recut_of": "2026-07-28-flex1",
+      "recut_why": "Wed 2026-07-29 mini-run: 2026-07-28-flex1 was the early winner of this cycle's fully-measured posts (293 views, 6 likes vs. 104 views/0 likes and 293 views/2 likes for the other two). Same body (the verified Chick-fil-A protein-per-calorie comparison), new cover hook, swapped into a slot that was about to repeat an already-dead theme.",
+      "slides": [
+        "Most people assume the bigger Chick-fil-A breakfast has more protein. It does not, per calorie.",
+        "Egg White Grill: 300 calories, 27g protein. That is 9g of protein per 100 calories.",
+        "Hash Brown Scramble Burrito: 700 calories, 34g protein. That is under 5g per 100 calories.",
+        "More total protein does not always mean more protein per calorie.",
+        "If your goal is a set calorie budget, the smaller order can be the more efficient one.",
+        "Neither order is wrong. They just solve different problems.",
+        "A calorie tracker app makes the tradeoff visible instead of a guess.",
+        "Save this before your next breakfast order."
+      ],
+      "caption": "Most people assume the bigger Chick-fil-A breakfast order has more protein. Per calorie, it does not: the Egg White Grill (300 cal, 27g protein) beats the Hash Brown Scramble Burrito (700 cal, 34g protein) on protein-per-100-calories, verified on chick-fil-a.com/nutrition-allergens. A calorie tracker app that shows both numbers side by side makes the tradeoff obvious instead of a guess.",
+      "pinned_comment": "wait, the burrito loses?",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#BreakfastMacros",
+        "#ChickFilA"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next breakfast order.",
+      "platforms_planned": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://www.chick-fil-a.com/nutrition-allergens"
+      ],
+      "verified_on": "2026-07-28",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "b0ac3cde5bc04931891c412c87d9c392",
+          "request_id": "7b75b8313b9346b19d5e6591f4ea243a",
           "scheduled_local": "2026-07-30T19:00:00"
         }
       },
@@ -863,11 +920,67 @@
       "platforms_planned": [
         "tiktok"
       ],
-      "status": "scheduled",
+      "status": "superseded",
+      "superseded_by": "2026-08-02-flex1-recut",
+      "superseded_why": "Wed mini-run 2026-07-29: another near-verbatim theme repeat of the dying 2026-07-28-slot2 ('delete the app after a bad day' = the same restart-shame message as 'stopped quitting my tracker'), which published to 104 views / 0 likes / 0 comments. Re-pointed to the recut of the cycle's early winner. Original job cancelled before it fired; never published.",
       "scheduled_jobs": {
         "tiktok": {
           "job_id": "6d3ebc48db904dac9bec397620959068",
           "request_id": "3a8c4ed4fb16418fa788600af64ebee0",
+          "scheduled_local": "2026-08-02T13:00:00",
+          "note": "CANCELLED via cancel_scheduled in the Wed 2026-07-29 mini-run, replaced by 2026-08-02-flex1-recut at the same slot."
+        }
+      },
+      "platforms_skipped": {
+        "instagram": "not linked / account restricted, see next-week-directives.json platform_status",
+        "facebook": "not linked in Upload-Post"
+      },
+      "tiktok_pinned_comment_note": "first_comment sent via API but TikTok does not support comments through Upload-Post; treat as unposted until confirmed via a manual check or analytics."
+    },
+    {
+      "id": "2026-08-02-flex1-recut",
+      "date": "2026-08-02",
+      "time_local": "13:00",
+      "slot": "flex",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "RIGHTWRONG",
+      "visual_recipe": "COMPARE-SPLIT",
+      "title": "Two normal Chick-fil-A orders. One is twice as protein-efficient.",
+      "recut_of": "2026-07-28-flex1",
+      "recut_why": "Wed 2026-07-29 mini-run: second fresh cover on this cycle's early winner (293 views, 6 likes), same body, swapped into a slot that was about to repeat the already-dead restart-shame theme.",
+      "slides": [
+        "Nothing here looks unhealthy. One of these orders is still twice as protein-efficient as the other.",
+        "Egg White Grill: 300 calories, 27g protein. That is 9g of protein per 100 calories.",
+        "Hash Brown Scramble Burrito: 700 calories, 34g protein. That is under 5g per 100 calories.",
+        "More total protein does not always mean more protein per calorie.",
+        "If your goal is a set calorie budget, the smaller order can be the more efficient one.",
+        "Neither order is wrong. They just solve different problems.",
+        "A calorie tracker app makes the tradeoff visible instead of a guess.",
+        "Save this before your next breakfast order."
+      ],
+      "caption": "Two real Chick-fil-A breakfast orders, both verified on chick-fil-a.com/nutrition-allergens: the Egg White Grill (300 cal, 27g protein) and the Hash Brown Scramble Burrito (700 cal, 34g protein). Neither one looks unhealthy on its own, but one is twice as protein-efficient per calorie as the other. A calorie tracker app that shows both numbers side by side makes the tradeoff obvious instead of a guess.",
+      "pinned_comment": "which one do you actually order",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#BreakfastMacros",
+        "#ChickFilA"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next breakfast order.",
+      "platforms_planned": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://www.chick-fil-a.com/nutrition-allergens"
+      ],
+      "verified_on": "2026-07-28",
+      "status": "scheduled",
+      "scheduled_jobs": {
+        "tiktok": {
+          "job_id": "86c81980a1b7430da7f2e371b905d791",
+          "request_id": "1b94f6056cd544c89f1fe2634e9be3ec",
           "scheduled_local": "2026-08-02T13:00:00"
         }
       },
@@ -938,5 +1051,6 @@
     "font": "Baloo 2 / Inter",
     "note": "Rendered locally, not in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
   },
-  "cta_slide_rule": "HARD REQUIREMENT: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py."
+  "cta_slide_rule": "HARD REQUIREMENT: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py.",
+  "media_base_url_recuts": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/9138285bdcde84f74f6ec520d1f41117f8995e54/Posts/2026-W31"
 }
