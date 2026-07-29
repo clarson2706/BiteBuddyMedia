@@ -60,16 +60,16 @@ still has exactly 1 follower. The comment-earning premise of this batch
 Note: the 7/26 POV post reads 0 views — the same post did 33 on YouTube, so
 treat that row as a possible API miss, not proof of suppression.
 
-**Instagram — linked, and restricted by Instagram. Resolved later the same day.**
-This section originally read "dark, link state unverified." A live test that
-afternoon settled it: the OAuth link is healthy (`bitebuddy_app`,
-`reauth_required: false`), but a publish attempt returns
-`error_code: account_restricted` — "Action suspected as spam. Activity is
-restricted." Every Instagram post this project has ever submitted, including
-all four `2026-W30` posts, failed the same silent way; their analytics objects
-are empty, meaning the posts do not exist rather than that they got no
-engagement. Instagram publishing is blocked until Connor clears the
-restriction in-app. Full detail and the ramp plan:
+**Instagram — it publishes; our measurement of it does not work.**
+This section originally read "dark, link state unverified," and a first
+correction wrongly called the account spam-restricted. What a live test plus a
+look at the actual profile established: a carousel published successfully to
+`bitebuddy_app` on 2026-07-29, while Upload-Post recorded it as failed
+(`account_restricted`, null `post_url`) and no verification prompt ever appeared
+for Connor. The Instagram link then emptied to `instagram: ""` and needs
+reconnecting. Net: Instagram reach is real but invisible to this pipeline, and
+whether the four `2026-W30` posts are live remains unresolved pending a look at
+the profile grid. Full timeline and the corrected conclusion:
 `Analytics/2026-07-29-instagram-restriction.md`.
 
 **YouTube — partially recovered from the anomaly, still small.** Per-post rows

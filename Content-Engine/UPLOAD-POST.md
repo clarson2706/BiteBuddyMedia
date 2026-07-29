@@ -97,28 +97,36 @@ Also note: `unpublish_post` covers facebook, youtube, x, linkedin and threads.
 **TikTok is not in that list**, so a bad TikTok post cannot be deleted through the
 API. Getting a TikTok post right the first time is the only option available.
 
-## A third trap, found 2026-07-29: "scheduled to Instagram" never meant published
+## A third trap, found 2026-07-29: on Instagram, `success: false` can still mean published
 
-A linked account can still refuse to publish, and the failure is invisible unless
-you go looking for it. All four `2026-W30` posts were submitted to Instagram and
-recorded Instagram `request_id`s in their manifest. None ever published. Instagram
-returns `error_code: account_restricted` ("Action suspected as spam"), which the
-submit call does not surface, because submission succeeds and the platform
-rejection happens later in the worker.
+Upload-Post reported a carousel as failed with
+`error_code: account_restricted` ("Action suspected as spam"),
+`platform_post_id: null` and `post_url: null`. **The post was live on the
+Instagram profile anyway**, and Connor got no verification prompt of the kind
+Instagram shows for a real account restriction. Minutes later the profile's
+Instagram link emptied to `instagram: ""`, so the likeliest mechanic is that the
+media published and then a follow-up call or the token itself failed, with the
+whole request attributed to failure.
 
-**How to tell the difference:**
+Two rules follow, and they cut in opposite directions from the obvious reading:
 
-| Check | Published | Never published |
-|---|---|---|
-| `get_status(request_id)` → `results[].success` | `true` with a `post_url` | `false` with `error_code` |
-| `get_post_analytics(request_id)` | populated `platforms` object | `{"post": {}, "platforms": {}}` |
+- **A failure record is not proof of absence.** Before writing "did not post,"
+  look at the profile. This applies with force to the four `2026-W30` Instagram
+  jobs, whose empty analytics were once read as "never published"; that claim is
+  unproven either way.
+- **An empty `get_post_analytics` object is not "zero engagement."** It means
+  Upload-Post has no `platform_post_id` to query with. The post may exist and be
+  earning reach that this pipeline cannot see. Never average an empty result into
+  a total, and never write `status: scheduled` into a manifest as proof of
+  delivery.
 
-An empty analytics object is **not** "zero engagement." It means the post does not
-exist. Never average an empty result into a reach total, and never write
-`status: scheduled` into a manifest as if it were proof of delivery.
+Practical consequence: **a post published this way is permanently unmeasurable
+through `request_id`.** Instagram reach has to come from a native export, the same
+rule `Analytics/README.md` already applies to TikTok.
 
-**Always poll `get_status` to a terminal state and record `success` per platform**
-before treating any post as live. See `Analytics/2026-07-29-instagram-restriction.md`.
+Still poll `get_status` to a terminal state and record `success` per platform —
+just treat an Instagram `false` as "verify against the profile," not as settled.
+See `Analytics/2026-07-29-instagram-restriction.md`.
 
 ## Scheduling notes
 
