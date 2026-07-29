@@ -64,11 +64,14 @@ the conversion rate to the next stage, and the week-over-week delta:
     ↓                                    ┌─ App Store impressions
   Store funnel   installs.jsonl ────────┼─ product page views
     ↓ page conversion                    └─ downloads
-  Activation     Supabase: signed up, completed first scan
+  Signup         Supabase: account created, first scan completed (usage, not activation)
     ↓ trial start rate
   Trial          RevenueCat: active trials, trial→paid conversion
     ↓
-  Paid           MRR, subscribers, churn
+  Activated      = PAYING user, monthly or annual (Connor's definition, 2026-07-29).
+                 Excludes manually granted premium (testers) — RevenueCat marks
+                 those as promotional entitlements, so filter store == "promotional"
+                 out of every subscriber count. MRR, subscribers, churn live here.
 ```
 
 **The report's most important output is naming the current bottleneck stage in
@@ -94,10 +97,10 @@ leak: 400 page views → 6 downloads").
    layer, it consumes it), a verdict (working / not working / can't tell yet +
    why), and a data-quality note (e.g. YouTube's zero-views anomaly, Facebook
    unlinked). "Can't tell yet" is a legitimate verdict and often the honest one.
-5. **Product & retention** (Supabase). Signups, activation rate (first scan
-   completed), D1/D7 retention, scans/user. This section answers whether
-   marketing is pouring water into a leaky bucket — nothing else in the repo
-   can.
+5. **Product & retention** (Supabase). Signups, first-scan completion rate,
+   D1/D7 retention, scans/user. These are *usage* metrics — activation itself
+   is defined as paying (see funnel) — but they answer whether marketing is
+   pouring water into a leaky bucket, which nothing else in the repo can.
 6. **Revenue** (RevenueCat). MRR, ARR run rate, subs, trial funnel, churn,
    observed install→pay rate, and estimated net earnings (after Apple's cut and
    the 30% creator first-payment share where applicable).
@@ -173,15 +176,18 @@ fiction. So the projections are rule-bound:
 
 ## Gaps and open questions for Connor
 
-1. **App Store Connect stays manual.** No API/connector in this session.
-   Options: (a) keep the weekly hand-paste ritual as-is, (b) have the skill
-   *begin* each run by asking Connor for the three numbers if stale (10
-   seconds, then the funnel is complete), or (c) explore App Store Connect API
-   keys later. **Recommendation: (b)** — the report is dramatically better with
-   a complete funnel, and the prompt makes the ritual self-enforcing.
-2. **Activation definition.** Proposal: "completed first scan" = activated.
-   Needs a look at the actual Supabase schema during the build to confirm the
-   event exists and pick the exact query.
+1. **App Store Connect stays manual — DECIDED 2026-07-29: option (b).** The
+   skill begins each run by checking `installs.jsonl` freshness; if stale it
+   prompts Connor for the three numbers (impressions, product page views,
+   downloads — ~10 seconds), writes the line, and proceeds with a complete
+   funnel. If Connor declines or is unavailable, the store stage renders STALE
+   and the run continues.
+2. **Activation definition — DECIDED 2026-07-29: activation = paying user**,
+   monthly or annual, NOT counting manually granted premium (Connor's
+   testers). Implementation: count only RevenueCat subscriptions with a real
+   store purchase; exclude promotional/granted entitlements from every
+   subscriber, conversion, and activation number. First-scan and retention
+   stay in the report as usage metrics, not activation.
 3. **Attribution honesty.** We mostly cannot prove which post produced which
    install (no per-post tracking links today). The report will correlate
    ("installs rose the week X ran") and label it correlation. If Connor wants
