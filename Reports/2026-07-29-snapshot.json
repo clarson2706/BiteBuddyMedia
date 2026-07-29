@@ -1,0 +1,365 @@
+{
+ "schema": 1,
+ "date": "2026-07-29",
+ "generated_at": "2026-07-29T16:25:15+00:00",
+ "flags": [
+  "store: Analytics/installs.jsonl missing/empty \u2014 App Store stage is DARK; funnel below Reach is unanchored",
+  "revenue: RevenueCat says 1 active sub(s) but Supabase mirror says 2 production paying row(s) \u2014 likely app_user_id aliasing; RevenueCat is authoritative for subscriber count, report the discrepancy",
+  "projections: installs/day is a proxy from RevenueCat new-customers; paste App Store numbers to replace it"
+ ],
+ "sources": {
+  "mcp_pulled_at": "2026-07-29T16:20:00Z",
+  "social_file": true,
+  "installs_stale": true
+ },
+ "social": {
+  "window_days": 30,
+  "posts_with_data": 6,
+  "totals": {
+   "views": 1139,
+   "likes": 8,
+   "comments": 0,
+   "shares": 0,
+   "saves": 0
+  },
+  "by_platform": {
+   "youtube": {
+    "views": 86,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "posts": 2,
+    "followers": 5
+   },
+   "tiktok": {
+    "views": 1053,
+    "likes": 7,
+    "comments": 0,
+    "shares": 0,
+    "saves": 0,
+    "posts": 4,
+    "followers": 1
+   },
+   "instagram": {
+    "followers": null
+   },
+   "facebook": {
+    "followers": null
+   }
+  }
+ },
+ "store": {
+  "week": null,
+  "impressions": null,
+  "product_page_views": null,
+  "downloads": null,
+  "age_days": null,
+  "stale": true
+ },
+ "product": {
+  "users_total": 13,
+  "signups_7d": 7,
+  "signups_28d": 13,
+  "onboarded_total": 12,
+  "first_scan_users": 8,
+  "wau": 5,
+  "scans_7d": 16,
+  "logs_7d": 8,
+  "excluded_testers": 6,
+  "d1": {
+   "cohort": 10,
+   "retained": 2
+  },
+  "d7": {
+   "eligible": 5,
+   "retained": 1
+  }
+ },
+ "revenue": {
+  "mrr_gross": 7,
+  "revenue_28d": 7,
+  "active_subscriptions_rc": 1,
+  "active_trials_rc": 1,
+  "new_customers_28d": 56,
+  "active_users_28d": 56,
+  "paying_subs_supabase": 2,
+  "trial_subs_supabase": 1,
+  "apple_cut": 0.15,
+  "arpu_gross": 7.0,
+  "mrr_net_est": 5.95
+ },
+ "outreach": {
+  "creators_tracked": 20,
+  "by_status": {
+   "dm_written": 20
+  },
+  "deals": 0,
+  "live_posts": 0,
+  "batches": 1,
+  "payout_rows": 0
+ },
+ "funnel": {
+  "stages": [
+   {
+    "name": "reach (views, window)",
+    "count": 1139,
+    "conv_to_next": 0.007
+   },
+   {
+    "name": "engagement (likes+comments+shares+saves)",
+    "count": 8,
+    "conv_to_next": null
+   },
+   {
+    "name": "store page views (wk)",
+    "count": null,
+    "conv_to_next": null
+   },
+   {
+    "name": "downloads (wk)",
+    "count": null,
+    "conv_to_next": null
+   },
+   {
+    "name": "signups (7d)",
+    "count": 7,
+    "conv_to_next": 0.1429
+   },
+   {
+    "name": "active trials",
+    "count": 1,
+    "conv_to_next": 1.0
+   },
+   {
+    "name": "PAYING = activated",
+    "count": 1,
+    "conv_to_next": null
+   }
+  ],
+  "bottleneck_hint": "DATA GAP at 'store page views (wk)' \u2014 fix measurement before tactics"
+ },
+ "projections": {
+  "horizon_days": [
+   30,
+   60,
+   90
+  ],
+  "scenarios": {
+   "current": {
+    "label": "current trajectory, nothing changes",
+    "confidence": "low",
+    "assumptions": [
+     "installs/day source: PROXY: RevenueCat new_customers_28d/28",
+     "observed pay rate 1/56 = 1.8%, 90% interval [0.4%, 7.6%] (n=56 is small; treat the width seriously)",
+     "ARPU $7.00/mo gross; net = gross x 0.85 (Apple Small Business Program)",
+     "churn assumed 0 over the horizon \u2014 the assumption most likely to break; one cancel changes everything at this n",
+     "creator 30% first-payment share not modelled (no attributed creator installs yet)",
+     "flat 2.00 installs/day"
+    ],
+    "downloads": [
+     60,
+     120,
+     180
+    ],
+    "subs": [
+     [
+      1.2,
+      2.1,
+      5.6
+     ],
+     [
+      1.5,
+      3.1,
+      10.1
+     ],
+     [
+      1.7,
+      4.2,
+      14.7
+     ]
+    ],
+    "mrr_gross": [
+     [
+      9,
+      14,
+      39
+     ],
+     [
+      10,
+      22,
+      71
+     ],
+     [
+      12,
+      29,
+      103
+     ]
+    ],
+    "mrr_net": [
+     [
+      7,
+      12,
+      33
+     ],
+     [
+      9,
+      19,
+      60
+     ],
+     [
+      10,
+      25,
+      87
+     ]
+    ]
+   },
+   "sprint": {
+    "label": "SPRINT-AUG25 plan lands",
+    "confidence": "low",
+    "assumptions": [
+     "installs/day source: PROXY: RevenueCat new_customers_28d/28",
+     "observed pay rate 1/56 = 1.8%, 90% interval [0.4%, 7.6%] (n=56 is small; treat the width seriously)",
+     "ARPU $7.00/mo gross; net = gross x 0.85 (Apple Small Business Program)",
+     "churn assumed 0 over the horizon \u2014 the assumption most likely to break; one cancel changes everything at this n",
+     "creator 30% first-payment share not modelled (no attributed creator installs yet)",
+     "10 installs/day from day 8 (W32 checkpoint) and 2% install\u2192pay held, both per SPRINT-AUG25.md \u2014 plan numbers, not observations"
+    ],
+    "downloads": [
+     244,
+     544,
+     844
+    ],
+    "subs": [
+     [
+      5.9,
+      5.9,
+      5.9
+     ],
+     [
+      11.9,
+      11.9,
+      11.9
+     ],
+     [
+      17.9,
+      17.9,
+      17.9
+     ]
+    ],
+    "mrr_gross": [
+     [
+      41,
+      41,
+      41
+     ],
+     [
+      83,
+      83,
+      83
+     ],
+     [
+      125,
+      125,
+      125
+     ]
+    ],
+    "mrr_net": [
+     [
+      35,
+      35,
+      35
+     ],
+     [
+      71,
+      71,
+      71
+     ],
+     [
+      106,
+      106,
+      106
+     ]
+    ]
+   },
+   "breakout": {
+    "label": "one post/creator hits",
+    "confidence": "low",
+    "assumptions": [
+     "installs/day source: PROXY: RevenueCat new_customers_28d/28",
+     "observed pay rate 1/56 = 1.8%, 90% interval [0.4%, 7.6%] (n=56 is small; treat the width seriously)",
+     "ARPU $7.00/mo gross; net = gross x 0.85 (Apple Small Business Program)",
+     "churn assumed 0 over the horizon \u2014 the assumption most likely to break; one cancel changes everything at this n",
+     "creator 30% first-payment share not modelled (no attributed creator installs yet)",
+     "week 1 installs x5.5 (account's own best-post reach vs its average), then a sustained 2x baseline"
+    ],
+    "downloads": [
+     169,
+     289,
+     409
+    ],
+    "subs": [
+     [
+      1.7,
+      4.0,
+      13.8
+     ],
+     [
+      2.2,
+      6.2,
+      22.9
+     ],
+     [
+      2.6,
+      8.3,
+      32.0
+     ]
+    ],
+    "mrr_gross": [
+     [
+      12,
+      28,
+      97
+     ],
+     [
+      15,
+      43,
+      161
+     ],
+     [
+      18,
+      58,
+      224
+     ]
+    ],
+    "mrr_net": [
+     [
+      10,
+      24,
+      82
+     ],
+     [
+      13,
+      37,
+      136
+     ],
+     [
+      16,
+      49,
+      191
+     ]
+    ]
+   }
+  },
+  "pay_rate_interval_90": [
+   0.004008952705285292,
+   0.017857142857142856,
+   0.07589617529013468
+  ],
+  "installs_per_day": 2.0,
+  "installs_per_day_source": "PROXY: RevenueCat new_customers_28d/28"
+ },
+ "deltas": {
+  "vs": null
+ }
+}
