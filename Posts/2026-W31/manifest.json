@@ -15,7 +15,7 @@
     "facebook": "never linked in Upload-Post"
   },
   "constraint_note": "S2 (Protein Per Dollar) content this cycle carries no price-per-item claim: this environment's fetch tool cannot execute the JS ordering flows needed for live per-location pricing. It ships as a verified protein ranking instead (chick-fil-a.com primary sources, cited per post). See Analytics/next-week-directives.json network_note for what is and isn't blocked.",
-  "wed_mini_run_2026-07-29": "Snapshotted the 4 posts published Tue 07-28 through Wed 07-29 08:00 (see Analytics/performance-log.jsonl, 2026-07-29T17:10:00Z rows). Winner: 2026-07-28-flex1 (293 views, 6 likes, best of the cycle). Dying: 2026-07-28-slot2 (104 views, 0 likes/comments on TikTok, 6 views on YouTube) — a restart-shame/streak-repair message that got zero response. Two not-yet-published slots carrying the same message a second and third time (2026-07-30-slot2 'Stop starting over every Monday', 2026-08-02-flex1 'Stop deleting the app after one bad day') were cancelled and replaced with fresh-cover recuts of the winner (2026-07-30-slot2-recut, 2026-08-02-flex1-recut): same verified Chick-fil-A protein-per-calorie body, new hook slide each. No other slot touched. Full week not regenerated.",
+  "wed_mini_run_2026-07-29": "Snapshotted the 4 posts published Tue 07-28 through Wed 07-29 08:00 (see Analytics/performance-log.jsonl, 2026-07-29T17:10:00Z rows). Winner: 2026-07-28-flex1 (293 views, 6 likes, best of the cycle). Dying: 2026-07-28-slot2 (104 views, 0 likes/comments on TikTok, 6 views on YouTube) \u2014 a restart-shame/streak-repair message that got zero response. Two not-yet-published slots carrying the same message a second and third time (2026-07-30-slot2 'Stop starting over every Monday', 2026-08-02-flex1 'Stop deleting the app after one bad day') were cancelled and replaced with fresh-cover recuts of the winner (2026-07-30-slot2-recut, 2026-08-02-flex1-recut): same verified Chick-fil-A protein-per-calorie body, new hook slide each. No other slot touched. Full week not regenerated.",
   "posts": [
     {
       "id": "2026-07-28-flex1",
@@ -497,8 +497,8 @@
       "status": "scheduled",
       "scheduled_jobs": {
         "tiktok": {
-          "job_id": "PENDING",
-          "request_id": "PENDING",
+          "job_id": "b0ac3cde5bc04931891c412c87d9c392",
+          "request_id": "7b75b8313b9346b19d5e6591f4ea243a",
           "scheduled_local": "2026-07-30T19:00:00"
         }
       },
@@ -979,8 +979,8 @@
       "status": "scheduled",
       "scheduled_jobs": {
         "tiktok": {
-          "job_id": "PENDING",
-          "request_id": "PENDING",
+          "job_id": "86c81980a1b7430da7f2e371b905d791",
+          "request_id": "1b94f6056cd544c89f1fe2634e9be3ec",
           "scheduled_local": "2026-08-02T13:00:00"
         }
       },
@@ -1051,5 +1051,6 @@
     "font": "Baloo 2 / Inter",
     "note": "Rendered locally, not in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
   },
-  "cta_slide_rule": "HARD REQUIREMENT: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py."
+  "cta_slide_rule": "HARD REQUIREMENT: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py.",
+  "media_base_url_recuts": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/9138285bdcde84f74f6ec520d1f41117f8995e54/Posts/2026-W31"
 }
