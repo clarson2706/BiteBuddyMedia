@@ -68,7 +68,10 @@
         "job_id": "033f1a57d3c2400da6befeb137fd2059",
         "request_id": "ac67e31a8c434f569b4613475bd77fc9",
         "scheduled_local": "2026-07-25T12:30:00",
-        "caption_variant": true
+        "caption_variant": true,
+        "delivered": false,
+        "verified_at": "2026-07-29T19:30:00Z",
+        "error_code": "account_restricted"
       },
       "scheduled_jobs": {
         "instagram": {
@@ -134,7 +137,10 @@
         "job_id": "7f96ec9ee97f4f67a8ef9bec99d873cc",
         "request_id": "69cc5d576da74255a349d4947f2a9fa7",
         "scheduled_local": "2026-07-25T20:30:00",
-        "caption_variant": true
+        "caption_variant": true,
+        "delivered": false,
+        "verified_at": "2026-07-29T19:30:00Z",
+        "error_code": "account_restricted"
       },
       "scheduled_jobs": {
         "tiktok": {
@@ -202,7 +208,10 @@
         "job_id": "7dc6346655e647e1b9b0e55b2bc1f24d",
         "request_id": "509ad93660f14ac2929edd43b3665ffe",
         "scheduled_local": "2026-07-26T12:30:00",
-        "caption_variant": true
+        "caption_variant": true,
+        "delivered": false,
+        "verified_at": "2026-07-29T19:30:00Z",
+        "error_code": "account_restricted"
       },
       "scheduled_jobs": {
         "tiktok": {
@@ -267,7 +276,10 @@
         "job_id": "86afca8c2ce04b46895d4a693e6ac894",
         "request_id": "9cafa3d0acd742f0bbbd95a3f04d3aac",
         "scheduled_local": "2026-07-26T20:30:00",
-        "caption_variant": true
+        "caption_variant": true,
+        "delivered": false,
+        "verified_at": "2026-07-29T19:30:00Z",
+        "error_code": "account_restricted"
       },
       "scheduled_jobs": {
         "tiktok": {
@@ -290,5 +302,12 @@
     "font": "Baloo 2 / Inter",
     "note": "Rendered locally rather than in Canva: generate-design emits one page per call and this environment cannot download Canva exports. Served to Upload-Post as public raw.githubusercontent.com URLs."
   },
-  "cta_slide_rule": "HARD REQUIREMENT from 2026-07-25: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py."
+  "cta_slide_rule": "HARD REQUIREMENT from 2026-07-25: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. See Content-Engine/DESIGN-SYSTEM.md and phone_mock() in render_slides.py.",
+  "instagram_delivery_verified": {
+    "checked_at": "2026-07-29T19:30:00Z",
+    "published": 0,
+    "submitted": 4,
+    "error_code": "account_restricted",
+    "note": "2026-07-29 verification: every Instagram job below FAILED at the platform. get_post_analytics returns an empty object for all four Instagram request_ids, and a live retest returned error_code=account_restricted ('Action suspected as spam'). No Instagram post from this batch ever published. See Analytics/2026-07-29-instagram-restriction.md."
+  }
 }

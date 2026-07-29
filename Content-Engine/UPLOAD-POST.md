@@ -97,6 +97,29 @@ Also note: `unpublish_post` covers facebook, youtube, x, linkedin and threads.
 **TikTok is not in that list**, so a bad TikTok post cannot be deleted through the
 API. Getting a TikTok post right the first time is the only option available.
 
+## A third trap, found 2026-07-29: "scheduled to Instagram" never meant published
+
+A linked account can still refuse to publish, and the failure is invisible unless
+you go looking for it. All four `2026-W30` posts were submitted to Instagram and
+recorded Instagram `request_id`s in their manifest. None ever published. Instagram
+returns `error_code: account_restricted` ("Action suspected as spam"), which the
+submit call does not surface, because submission succeeds and the platform
+rejection happens later in the worker.
+
+**How to tell the difference:**
+
+| Check | Published | Never published |
+|---|---|---|
+| `get_status(request_id)` → `results[].success` | `true` with a `post_url` | `false` with `error_code` |
+| `get_post_analytics(request_id)` | populated `platforms` object | `{"post": {}, "platforms": {}}` |
+
+An empty analytics object is **not** "zero engagement." It means the post does not
+exist. Never average an empty result into a reach total, and never write
+`status: scheduled` into a manifest as if it were proof of delivery.
+
+**Always poll `get_status` to a terminal state and record `success` per platform**
+before treating any post as live. See `Analytics/2026-07-29-instagram-restriction.md`.
+
 ## Scheduling notes
 
 **`first_comment` is native** on the platforms that support comments, so the pinned

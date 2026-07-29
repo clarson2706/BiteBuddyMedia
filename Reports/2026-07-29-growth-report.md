@@ -60,10 +60,17 @@ still has exactly 1 follower. The comment-earning premise of this batch
 Note: the 7/26 POV post reads 0 views — the same post did 33 on YouTube, so
 treat that row as a possible API miss, not proof of suppression.
 
-**Instagram — dark.** Zero per-post rows and an empty account object from
-Upload-Post. Whether the IG account is actually linked inside Upload-Post is
-still unverified (flagged since 7/25). Two of our four organic channels are
-producing no measurable anything.
+**Instagram — linked, and restricted by Instagram. Resolved later the same day.**
+This section originally read "dark, link state unverified." A live test that
+afternoon settled it: the OAuth link is healthy (`bitebuddy_app`,
+`reauth_required: false`), but a publish attempt returns
+`error_code: account_restricted` — "Action suspected as spam. Activity is
+restricted." Every Instagram post this project has ever submitted, including
+all four `2026-W30` posts, failed the same silent way; their analytics objects
+are empty, meaning the posts do not exist rather than that they got no
+engagement. Instagram publishing is blocked until Connor clears the
+restriction in-app. Full detail and the ramp plan:
+`Analytics/2026-07-29-instagram-restriction.md`.
 
 **YouTube — partially recovered from the anomaly, still small.** Per-post rows
 now register (53 and 33 views on the two S3 posts) where daily account views
@@ -155,9 +162,11 @@ loop itself) both stalled on 2026-07-25.**
    pre-committed: if a full batch still showed zero comments, drop open-ended
    reflective questions for one-word / A-or-B asks. That condition has now
    been met — ~1,139 views, 0 comments. Execute the change in the next batch.
-4. **Verify IG and Facebook inside Upload-Post** (attacks: reach). Two of four
-   channels report nothing; either they're not linked (fix in Upload-Post
-   dashboard) or they're posting into the void unmeasured.
+4. **Clear the Instagram restriction, then Facebook** (attacks: reach).
+   *Updated 2026-07-29 PM:* Instagram is linked but spam-restricted by
+   Instagram, so it cannot publish at all — Connor has to open the account and
+   resolve the prompt; no API work substitutes. Facebook remains unlinked.
+   Two of four channels are unusable until both are fixed.
 5. **Watch the live trial** (attacks: paying). One trial converts or expires
    within days; it is the single nearest MRR movement and worth a check in the
    next report.
