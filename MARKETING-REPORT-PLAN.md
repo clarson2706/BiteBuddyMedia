@@ -1,8 +1,10 @@
 # Plan: the full marketing report skill (brainstorm, not built yet)
 
-*Written 2026-07-29 at Connor's request. This is the design document for a new
-skill. The skill does NOT exist yet — nothing here is wired up. Connor reviews
-this, edits or approves, and only then does it get built.*
+*Written 2026-07-29 at Connor's request; approved and **BUILT the same day**.
+The living pieces are `.claude/skills/growth-report/SKILL.md`,
+`Analytics/growth.py`, and `Reports/README.md` — they win over this document
+wherever they differ. Kept as the design rationale. Per Connor: the skill runs
+on Opus 5.*
 
 ## The question this report answers
 
