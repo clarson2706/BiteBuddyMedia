@@ -60,11 +60,16 @@ dry-run. Check what's actually in the session before designing around it.
 1. ~~`UPLOAD_POST_API_KEY` env var~~ **SET 2026-07-25.** Upload-Post is NOT a claude.ai
    connector; publishing uses its REST API with this key. Still unverified: that the
    IG (Business/Creator + FB Page) / TikTok / Facebook / YouTube accounts are actually
-   linked *inside* Upload-Post, and that the plan has headroom (free tier is 10
-   uploads/mo; a week is ~40+). See `Content-Engine/UPLOAD-POST.md`.
-2. ~~The Routines~~ **DONE 2026-07-25** — all three exist and are enabled (Sunday 6 PM
-   full, Wednesday 12 PM mini, daily 8 AM creator DM batch). Canva is attached to 1
-   and 2.
+   linked *inside* Upload-Post. Plan headroom **verified 2026-07-30: the account is on
+   the Basic (paid) plan**, not free tier. See `Content-Engine/UPLOAD-POST.md`.
+   **KNOWN ISSUE 2026-07-22 → :** the Instagram account is spam-restricted; every IG
+   publish since 2026-07-22 22:43 has failed ("action suspected as spam / log in to
+   Instagram directly to resolve"). TikTok and YouTube publish fine. Only Connor can
+   clear it, by logging into Instagram directly. A separate session re-checks status.
+2. ~~The Routines~~ **PARTIAL as of 2026-07-30** — Sunday full loop and Wednesday mini
+   are enabled (Canva attached to both). The **daily 8 AM creator DM batch is PAUSED**
+   (last fired 2026-07-25, nothing scheduled). If that pause wasn't deliberate, Connor
+   re-enables it in the claude.ai Routines UI.
 3. **Canva templates** — not yet built; until they exist the render phase builds each
    deck from the archetype specs directly.
 4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in
