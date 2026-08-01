@@ -28,7 +28,9 @@ Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl
 Gate before any phase: `Content-Engine/preflight.py`. Guardrails in code:
 `Content-Engine/copy_lint.py`. Standing list of what is broken: `SYSTEM-AUDIT.md`.
 On-demand performance read (read-only, any time): the **media-report** skill +
-`Analytics/report.py`. Video track: Connor drops app screen recordings in
+`Analytics/report.py`. Full-business read (funnel, revenue, product usage,
+projections; runs on Opus 5): the **growth-report** skill + `Analytics/growth.py`,
+dated reports in `Reports/`; activation = paying subscriber, testers excluded. Video track: Connor drops app screen recordings in
 `UI-Library/Recordings/_INBOX/`, the **demo-drop** skill edits and schedules them
 (one per platform per day, as many days as there are clips); the editing standard
 is `Content-Engine/DEMO-EDIT-SPEC.md`.
@@ -89,7 +91,7 @@ dry-run. Check what's actually in the session before designing around it.
 4. **The conversion layer** — the tracked bio link, the pinned conversion post and the
    first `installs.jsonl` line are still Connor's ~15 minutes, and they are what stands
    between real reach and a measurable install. See `Analytics/CONVERSION.md`.
-4. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in
+5. ~~Buddy poses~~ **RESOLVED 2026-07-25** — 13 canonical renders + RGBA cutouts in
    `Brand-Assets/buddy-poses/`. Use them; never generate Buddy with an image model.
 
 ## Approval gates

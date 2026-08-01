@@ -1,7 +1,8 @@
-# Publishing via Upload-Post (API key, not a connector)
+# Publishing via Upload-Post
 
-*Written 2026-07-25 after verifying that Upload-Post is not available as a claude.ai
-connector. This is the publishing transport for the weekly loop.*
+*Written 2026-07-25, corrected 2026-08-01. This is the publishing transport for the
+weekly loop. The original title said "not a connector"; see the first section for why
+that is no longer accurate and what it does and does not change.*
 
 ## REST API, and also an MCP tool set
 
@@ -73,9 +74,12 @@ reconcile "scheduled" against "actually published."
 This means Phase 4 submits all of next week's posts in one run and does not need any
 process to stay alive during the week.
 
-## Three traps on TikTok, the platform that matters most
+## Four traps in this transport
 
-**3. TikTok photo posts cannot carry a sound through this API** (added 2026-08-01).
+Every one of these was found the hard way, on a live post. Numbered 1 to 4 across the
+three sections below; read all of them before writing publishing code.
+
+**Trap 3. TikTok photo posts cannot carry a sound through this API** (added 2026-08-01).
 Music is a video-only field in TikTok's Content Posting API; photo posts use a
 different content model that has no music parameter. Upload-Post cannot work around it.
 
@@ -91,16 +95,16 @@ around, and it has three consequences worth acting on:
 - The single highest-value post of a week is worth Connor posting by hand in the app,
   with a sound picked there. Everything else stays automated.
 
-## Two traps that cost us a live post on 2026-07-25
+## Traps 1 and 2, which cost us a live post on 2026-07-25
 
-**1. `upload_photos` takes `description`, not `caption`.** `caption` is not a
+**Trap 1. `upload_photos` takes `description`, not `caption`.** `caption` is not a
 recognised keyword. It lands in `**kwargs`, is silently dropped, and the post
 publishes with only its `title`. There is no error and `success: true` comes back
 normally. The only way to catch it is that the response and `get_post_analytics`
 both show `post_caption: ""`. **Always check `post_caption` after publishing a
 carousel.**
 
-**2. TikTok does not support comments through this API at all.** `create_comment`
+**Trap 2. TikTok does not support comments through this API at all.** `create_comment`
 on TikTok returns `Comments are not supported on TikTok via the API`, and
 `first_comment` is therefore a **no-op on TikTok** even though the parameter is
 accepted without complaint.
@@ -119,6 +123,37 @@ report a pinned comment as "fired" on TikTok without a comment count to prove it
 Also note: `unpublish_post` covers facebook, youtube, x, linkedin and threads.
 **TikTok is not in that list**, so a bad TikTok post cannot be deleted through the
 API. Getting a TikTok post right the first time is the only option available.
+
+## Trap 4, found 2026-07-29: on Instagram, `success: false` can still mean published
+
+Upload-Post reported a carousel as failed with
+`error_code: account_restricted` ("Action suspected as spam"),
+`platform_post_id: null` and `post_url: null`. **The post was live on the
+Instagram profile anyway**, and Connor got no verification prompt of the kind
+Instagram shows for a real account restriction. Minutes later the profile's
+Instagram link emptied to `instagram: ""`, so the likeliest mechanic is that the
+media published and then a follow-up call or the token itself failed, with the
+whole request attributed to failure.
+
+Two rules follow, and they cut in opposite directions from the obvious reading:
+
+- **A failure record is not proof of absence.** Before writing "did not post,"
+  look at the profile. This applies with force to the four `2026-W30` Instagram
+  jobs, whose empty analytics were once read as "never published"; that claim is
+  unproven either way.
+- **An empty `get_post_analytics` object is not "zero engagement."** It means
+  Upload-Post has no `platform_post_id` to query with. The post may exist and be
+  earning reach that this pipeline cannot see. Never average an empty result into
+  a total, and never write `status: scheduled` into a manifest as proof of
+  delivery.
+
+Practical consequence: **a post published this way is permanently unmeasurable
+through `request_id`.** Instagram reach has to come from a native export, the same
+rule `Analytics/README.md` already applies to TikTok.
+
+Still poll `get_status` to a terminal state and record `success` per platform —
+just treat an Instagram `false` as "verify against the profile," not as settled.
+See `Analytics/2026-07-29-instagram-restriction.md`.
 
 ## Scheduling notes
 

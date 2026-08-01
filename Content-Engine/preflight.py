@@ -99,27 +99,45 @@ def check_stranded_branches():
     sh("git", "fetch", "-q", "origin")
     heads = sh("git", "for-each-ref", "--format=%(refname:short)", "refs/remotes/origin/claude") or ""
     current = sh("git", "rev-parse", "--abbrev-ref", "HEAD")
-    stranded = []
+
+    def is_ancestor(ref, of):
+        return subprocess.run(["git", "merge-base", "--is-ancestor", ref, of],
+                              cwd=ROOT, capture_output=True).returncode == 0
+
+    stranded, pending = [], []
     for branch in [b for b in heads.splitlines() if b.strip()]:
         if branch.replace("origin/", "") == current:
             continue  # the branch this run is working on is allowed to be ahead
-        merged = subprocess.run(["git", "merge-base", "--is-ancestor", branch, "origin/main"],
-                                cwd=ROOT, capture_output=True)
-        if merged.returncode == 0:
+        if is_ancestor(branch, "origin/main"):
             continue
         touched = sh("git", "diff", "--name-only", f"origin/main...{branch}") or ""
         memory = [f for f in touched.splitlines()
                   if re.search(r"registry\.jsonl|performance-log\.jsonl|^Posts/|^Analytics/", f)]
-        if memory:
-            stranded.append((branch.replace("origin/", ""), len(memory)))
+        if not memory:
+            continue
+        name = branch.replace("origin/", "")
+        # Already merged into the branch this run is on, just not into main yet. The
+        # content memory exists here, so generation is safe; the risk is only that the
+        # PR never lands.
+        (pending if is_ancestor(branch, "HEAD") else stranded).append((name, len(memory)))
+
     if stranded:
         listing = "; ".join(f"{b} ({n} memory files)" for b, n in stranded)
         record("FAIL", "stranded-branches",
-               f"{len(stranded)} unmerged branch(es) carry content memory main lacks: {listing}",
+               f"{len(stranded)} unmerged branch(es) carry content memory neither main nor "
+               f"this branch has: {listing}",
                "merge or explicitly abandon them before generating; otherwise the registry "
                "will duplicate topics and the analytics join will drop posts")
-    else:
+    elif not pending:
         record("PASS", "stranded-branches", "every claude/* branch is merged into main")
+
+    # Reported independently of `stranded`: "three branches are pending" is useful even
+    # on a run where a fourth is still genuinely stranded.
+    if pending:
+        listing = "; ".join(b for b, _ in pending)
+        record("WARN", "stranded-branches",
+               f"merged into this branch but not yet into main: {listing}. Generation is "
+               f"safe here; the run is not finished until this branch lands on main")
 
 
 def _load_registry():
