@@ -2,9 +2,18 @@
 
 Everything that gets BiteBuddy in front of people.
 
-**North star: downloads.** The app is live and has effectively no users, so distribution
-is the whole problem. App Store listing:
+**North star: downloads.** App Store listing:
 https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752
+
+> ### Read `START-HERE.md` first
+> It is loaded automatically by the SessionStart hook and it is what is true today.
+> This README describes how the repo was rebuilt in July; START-HERE describes the
+> state of the system now, and the two will diverge as the system moves.
+>
+> **The headline as of 2026-08-01: distribution is no longer the problem.** TikTok went
+> from zero to 1,700 views a day in two weeks. Those 4,408 lifetime views produced 1
+> follower, 0 profile views, 0 comments and 0 shares, so the bottleneck moved from
+> reach to **profile conversion**. See `Analytics/CONVERSION.md` and `SYSTEM-AUDIT.md`.
 
 ---
 

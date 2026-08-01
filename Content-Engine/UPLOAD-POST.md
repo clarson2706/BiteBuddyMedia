@@ -3,17 +3,22 @@
 *Written 2026-07-25 after verifying that Upload-Post is not available as a claude.ai
 connector. This is the publishing transport for the weekly loop.*
 
-## Why not the MCP connector
+## REST API, and also an MCP tool set
 
-Upload-Post is not in the claude.ai connector directory (verified: the org has Base44,
-Canva, Github, Google Drive, Higgsfield, Notion, RevenueCat, Stripe, Supabase, Vercel,
-Zapier and nothing else). A locally added developer MCP server lives only on the
-machine that added it, so it never reaches claude.ai Routines or this remote
-environment.
+**Corrected 2026-08-01.** This file used to state flatly that Upload-Post "is not in
+the claude.ai connector directory" and cannot reach a Routine session. That is no
+longer true: an **Upload-Post MCP tool set is available in-session**
+(`list_users`, `list_scheduled`, `get_analytics`, `upload_photos`, and the rest), and
+it was used to verify every live number in this repo's 2026-08-01 audit.
 
-**Using the REST API instead is strictly better for a scheduled system:**
-no OAuth to expire, no connector grants to inherit, works identically in every fired
-Routine session, and it exposes scheduling and analytics directly.
+**The REST API remains the transport the loop should schedule through**, for the
+original reasons and they still hold: no OAuth to expire, no connector grant to
+inherit, identical behaviour in every fired Routine session, and it works from a plain
+`requests` call in a script (`preflight.py` uses exactly that). Use the MCP tools for
+interactive inspection; use the REST API for anything a Routine depends on.
+
+Do not write new code that assumes the MCP tools are absent, and do not write code that
+assumes they are present either. The key is the dependable path.
 
 ## Setup (one time, Connor)
 
@@ -67,6 +72,24 @@ reconcile "scheduled" against "actually published."
 
 This means Phase 4 submits all of next week's posts in one run and does not need any
 process to stay alive during the week.
+
+## Three traps on TikTok, the platform that matters most
+
+**3. TikTok photo posts cannot carry a sound through this API** (added 2026-08-01).
+Music is a video-only field in TikTok's Content Posting API; photo posts use a
+different content model that has no music parameter. Upload-Post cannot work around it.
+
+So **every carousel this system has ever published to TikTok went out silent**, while
+sound is a genuine distribution lever on Photo Mode and TikTok's own composer requires
+one when you post by hand. This is not a bug to fix, it is a constraint to design
+around, and it has three consequences worth acting on:
+
+- Slide 1 carries the entire hook. There is no audio to help it.
+- **Demo videos are the only format in this system that gets audio distribution at
+  all**, because the video path does accept a sound. That is an argument for running
+  more of them, independent of how they score on saves.
+- The single highest-value post of a week is worth Connor posting by hand in the app,
+  with a sound picked there. Everything else stays automated.
 
 ## Two traps that cost us a live post on 2026-07-25
 

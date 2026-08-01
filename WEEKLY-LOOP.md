@@ -85,6 +85,23 @@ Each phase gates the next. **Phase 2 must refuse to run if Phase 1 didn't write 
 outputs this run** — that rule is the entire fix for the last system's fatal flaw
 (a full analytics pipeline whose log stayed 0 bytes forever).
 
+### Phase 0 — PREFLIGHT (added 2026-08-01, runs before everything)
+
+```bash
+python3 Content-Engine/preflight.py
+```
+
+**A non-zero exit stops the run.** It is not advisory and it is not to be worked
+around; if a check is wrong, fix the check in the same commit as the run. It verifies
+dependencies (a fresh Routine session has neither pillow nor upload-post installed),
+render assets, **unmerged branches carrying content memory**, registry sanity,
+directive freshness, the copy guardrails, which platforms are actually linked, whether
+the live schedule matches the registry, and whether the queued cadence is legal.
+
+Phase 0 exists because two runs in a row failed in ways it would have caught in five
+seconds: a full week of posts stranded on an unmerged branch, and nine posts scheduled
+on the live account that appear nowhere in the repo.
+
 ### Phase 1 — CLOSE the loop (analytics)
 1. Pull per-post metrics from Upload-Post analytics for every post published in the
    last 14 days (views, likes, comments, shares, saves, completion where available).
@@ -114,8 +131,12 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
 4. Append every post to the registry. Write the week's `manifest.json`.
 
 ### Phase 3 — RENDER (`Content-Engine/render_slides.py`)
-1. Run the renderer over the week's manifest. It composes 1080×1350 slides from the
-   brand palette, the Baloo 2 brand font, and the real Buddy cutouts.
+1. Run the renderer over the week's manifest. It writes **two sets**: `tiktok/` at
+   1080×1920 (the primary set, TikTok's native carousel size) and `ig/` at 1080×1350,
+   from the brand palette, the Baloo 2 brand font, and the real Buddy cutouts. Hand the
+   TikTok set to TikTok: 4:5 letterboxes there and throws away a third of the screen on
+   the platform that matters most. Buddy poses come from each post's `poses` field in
+   the manifest, never from a table inside the script.
 2. Canva is **not** the batch render path: `generate-design` emits one page per call so
    it cannot build a carousel, and this environment cannot download Canva exports. Canva
    stays available for one-off polish and manual edits.
@@ -170,8 +191,21 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    write `payouts.jsonl` lines, and hand Connor the ready-to-send payout DMs with
    PayPal amounts.
 
-### Phase 6 — REPORT
-Commit + push everything, then message Connor: the week's 21 titles by day, what got
+### Phase 6 — REPORT, AND MERGE
+
+**Merging is part of the run, not an afterthought.** Commit, push the week branch, open
+the PR, and then **merge it to `main`** (or leave it open only if a human veto is
+genuinely pending, and say so explicitly in the report). A run that ends on an unmerged
+branch has thrown away its own memory: the registry cannot dedupe against it, the
+analytics join cannot resolve its posts, and the next run will regenerate topics that
+are already scheduled. This happened three times between 07-25 and 07-30.
+
+The report opens with the **conversion scorecard** from `Analytics/CONVERSION.md` —
+views, profile views, follows, saves and shares, product page views, downloads, and
+views-per-profile-view — because reach stopped being the constraint on 2026-07-31 and
+profile conversion became it.
+
+Then message Connor: the week's 21 titles by day, what got
 scheduled where, what was dropped and why, the Phase-1 report's three headlines
 (went well / didn't / changing), sprint checkpoint status (`SPRINT-AUG25.md` table),
 and the creator-pipeline pulse (sent / replied / deals / posts live). **Posts start
@@ -225,6 +259,12 @@ weekly carousels still require explicit approval. Guardrails in `CLAUDE.md` appl
 every slide, always.
 
 ## What "success" means (metric ladder)
+
+**Updated 2026-08-01.** Reach is no longer the constraint: TikTok went from 0 to 1,700
+views a day in two weeks. The constraint is that 4,408 views produced 1 follower and 0
+profile views, so **the primary optimization target is now profile conversion** — the
+one action a TikTok viewer can take that leads anywhere. `Analytics/CONVERSION.md` is
+the diagnosis and the setup; the weekly report leads with its scorecard.
 
 We optimize the closest measurable proxy to App Store installs, in this order:
 1. **Installs** — only if Connor pastes App Store Connect numbers into

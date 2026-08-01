@@ -27,10 +27,21 @@ draft, show, then post. Both routes end at a review step, never at auto-publish.
   Baloo 2 / Fredoka — pick ONE and lock it), a clean sans for body (Inter / Poppins
   Regular). Headline is always the biggest element on the slide. Minimum body size
   ~36pt at 1080×1350 — legible at feed size.
-- **Canvas:** master ratio **4:5, 1080×1350 px**, PNG, under 8 MB. (TikTok accepts 4:5
-  with light letterboxing; a 9:16 variant set is an optional later upgrade.)
-- **Safe margins:** 90 px all sides; nothing critical in the bottom 180 px (platform UI
-  overlays).
+- **Canvas (changed 2026-08-01): TikTok 9:16, 1080×1920 px, is the master.** Instagram
+  and Facebook get a 1080×1350 set rendered from the same manifest. Both are PNG, under
+  8 MB. The old "4:5 master, TikTok accepts it with light letterboxing" position was
+  wrong in practice: TikTok is the primary channel, letterboxing surrenders roughly a
+  third of the screen there, and the hook shrinks with it. `render_slides.py` emits both
+  sets in one pass, so there is no cost to doing it properly.
+- **Safe areas, per format** (encoded as `Spec` objects in `render_slides.py`):
+
+  | Format | Size | Margin | Bottom reserved | Right rail |
+  |---|---|---|---|---|
+  | TikTok | 1080×1920 | 80 | **420 px** (caption + username overlay) | **150 px** (like/comment/share) |
+  | Instagram | 1080×1350 | 90 | 180 px | none |
+
+  Nothing that has to be read may sit in a reserved band. Buddy hosts the **bottom
+  left** of covers, not the right, so he does not sit under TikTok's action rail.
 - **Buddy:** appears on the **cover and CTA slide only** (transparent-PNG poses from
   `Brand-Assets/buddy-poses/transparent/` — the 13 canonical app renders; never
   generate Buddy with an image model, that is what made him drift. The MASTER STYLE
@@ -71,9 +82,20 @@ OR a huge number. Optional small "series chip" (peach pill, e.g. `PROTEIN PER $`
 
 **Shared final slide — CTA (HARD REQUIREMENT, every carousel, no exceptions):** the last
 slide **always shows the real Today dashboard inside a phone silhouette**, with Buddy
-beside it, the post's topic CTA line above, and `Download BiteBuddy, free on the App
-Store` beneath. The App Store search line appears only on APP-CTA rows, and the renderer
-strips it from the headline when it is already in the CTA text so it never prints twice.
+beside it, the post's topic CTA line above, and beneath it, in this order:
+
+1. `Download BiteBuddy, free on the App Store`
+2. `Search 'BiteBuddy: Ai calorie scanner'`
+3. **`Follow @bitebuddyapp for more`** on a lavender chip
+
+**All three appear on every carousel, whatever the post's `cta_type` is** (changed
+2026-08-01). The follow ask is not decoration and not optional: on TikTok a post cannot
+link out, so the profile tap is the only action a viewer can take that leads anywhere,
+and 4,408 views have so far produced one follower. See `Analytics/CONVERSION.md`.
+
+The renderer strips the search line from the headline when the CTA text already carries
+it, so it never prints twice, and it shrinks each line to fit rather than letting it run
+off the canvas.
 
 **Never a text-only "it's on the App Store" close.** People need to *see* the product to
 want it: the dashboard, the rings, Buddy's reaction, the real numbers. A sentence about
@@ -98,6 +120,27 @@ numbers stay legible at feed size. Real screenshot only, never redrawn or mocked
 Rules of thumb: one idea per slide; the changing element (rank, step, reveal) should be
 the visually loudest element; by slide 3 the viewer must have received real value (IG
 re-serves carousels when viewers reach slide 3+).
+
+### What the renderer actually implements (`render_slides.py`, 2026-08-01)
+
+The archetypes above are the vocabulary; these are the layout functions, selected by a
+`kind` field on the slide. Reference decks for every one live in `Posts/_TEMPLATES/` —
+render them and look at the result after any change to the renderer.
+
+| `kind` | Layout | Serves |
+|---|---|---|
+| *(none, plain string)* | Left-aligned type card with a coloured accent rule | TYPE-CARD, STORY-BEAT |
+| `rank` | Huge `#N` numeral, item name, stat chip, note beneath | **RANK-CARD** — the workhorse for the ranked series |
+| `grid` | Rows of white cards, name left, stat right, sized to fit | **CHEAT-GRID** — the screenshot-me slide |
+| `compare` | Two stacked coloured panels with a shared banner between them | COMPARE-SPLIT. Stacked, not side-by-side: on 9:16 a vertical split gives each side a readable half |
+| `big` | One enormous number, explanation beneath | QUIZ-CARD reveal, outcome showcase |
+| `step` | Step chip, instruction, running total in the corner | **BUILD-STEP** — the running total is the retention device |
+| `image` / `style: phone` | Headline over a real photo or a real screenshot | PHOTO-FACT, receipts |
+
+Progress is drawn as a **dot row**, not "3/8": a filling dot row reads as "nearly there"
+and pulls the next swipe, and slide completion is the primary ranking signal on both
+platforms. Background accent shapes rotate through four positions so consecutive slides
+do not share a silhouette, which is the template variation the anti-slop rules require.
 
 ---
 

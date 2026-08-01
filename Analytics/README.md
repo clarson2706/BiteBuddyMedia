@@ -28,6 +28,7 @@ number should name its source.
 
 | File | Written by | When |
 |---|---|---|
+| `CONVERSION.md` | **read this first** | why 4,408 views produced 0 installs, and the setup that fixes it |
 | `performance-log.jsonl` | weekly-loop Phase 1 | every Sunday run — append-only, never edited |
 | `<ISO-week>-report.md` | weekly-loop Phase 1 | every Sunday run |
 | `next-week-directives.json` | weekly-loop Phase 1 | every Sunday run — overwritten weekly (history lives in git) |
@@ -82,13 +83,24 @@ export does not report (saves, per-post breakdown) stay **null**, never zero.
 
 Generation (Phase 2) refuses to run unless `generated_at` matches the current run.
 
-## `installs.jsonl` — Connor's 10-second job (optional but decisive)
+## `installs.jsonl` — Connor's 10-second job (no longer optional)
 
-One line per week from App Store Connect (App Store → Analytics → Metrics):
+**Promoted from "optional but decisive" to required, 2026-08-01.** Reach is solved and
+conversion is not, so this file is now the only thing that can tell the difference
+between a post that works and a post that is merely seen. It has still never been
+created. See `CONVERSION.md` for the full diagnosis.
+
+One line per week from App Store Connect (App Store → Analytics → Metrics), now with a
+campaign breakdown so surfaces can be compared:
 
 ```json
-{"week":"2026-W31","impressions":0,"product_page_views":0,"downloads":0}
+{"week":"2026-W31","impressions":0,"product_page_views":0,"downloads":0,
+ "by_campaign":{"tiktok_bio":0,"ig_bio":0,"yt_desc":0},"source":"app-store-connect"}
 ```
+
+`by_campaign` keys are the `ct=` campaign tokens on the tracked App Store links
+(`CONVERSION.md` §3.2). `product_page_views` is the most responsive number: it moves
+within a day of a profile-tap change, where downloads take a week.
 
 Without it, the loop optimizes engagement proxies (saves, shares, link clicks,
 app-comments). With it, the weekly report can say the only sentence that matters:

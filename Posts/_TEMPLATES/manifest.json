@@ -1,0 +1,171 @@
+{
+  "week": "_TEMPLATES",
+  "batch": "template-reference",
+  "batch_type": "reference",
+  "generated_at": "2026-08-01T00:30:00Z",
+  "purpose": "Reference decks for every slide archetype the renderer supports. These are NOT scheduled and NOT in registry.jsonl. Render them after any change to render_slides.py and look at the output before touching a real week: python3 Content-Engine/render_slides.py Posts/_TEMPLATES/manifest.json --contact-sheet",
+  "posts": [
+    {
+      "id": "T1-ranked",
+      "series": "S2",
+      "persona": "P3",
+      "hook_family": "LIST",
+      "visual_recipe": "RANK-CARD",
+      "cta_type": "APP",
+      "poses": [
+        "buddy_thinking",
+        "buddy_protein_powerup"
+      ],
+      "title": "Every Chick-fil-A chicken entree, ranked by protein per 100 calories",
+      "status": "template-reference",
+      "slides": [
+        "Every Chick-fil-A chicken entree, ranked by protein per 100 calories.",
+        {
+          "kind": "rank",
+          "rank": 1,
+          "name": "Grilled Nuggets, 8 count",
+          "stat": "19.2g protein per 100 cal",
+          "note": "130 calories, 25g protein. Nothing else on the menu is close, and it is not a diet item, it is just chicken with no breading and no bun."
+        },
+        {
+          "kind": "rank",
+          "rank": 2,
+          "name": "Grilled Chicken Sandwich",
+          "stat": "7.2g protein per 100 cal",
+          "note": "390 calories, 28g protein. The bun costs most of the density, and it is still the best sandwich on the board."
+        },
+        {
+          "kind": "rank",
+          "rank": 3,
+          "name": "Chick-fil-A Chicken Sandwich",
+          "stat": "6.9g protein per 100 cal",
+          "note": "420 calories, 29g protein. The most protein of any single item here, and third once you divide by calories."
+        },
+        {
+          "kind": "rank",
+          "rank": 4,
+          "name": "Spicy Chicken Sandwich",
+          "stat": "6.2g protein per 100 cal",
+          "note": "450 calories, 28g protein. Thirty more calories than the classic for the same protein."
+        },
+        {
+          "kind": "grid",
+          "text": "The whole table. Screenshot this one.",
+          "rows": [
+            {
+              "name": "Grilled Nuggets, 8 ct",
+              "stat": "130 cal / 25g"
+            },
+            {
+              "name": "Grilled Chicken Sandwich",
+              "stat": "390 cal / 28g"
+            },
+            {
+              "name": "Chicken Sandwich",
+              "stat": "420 cal / 29g"
+            },
+            {
+              "name": "Spicy Chicken Sandwich",
+              "stat": "450 cal / 28g"
+            }
+          ]
+        },
+        "Know the number before you order it."
+      ],
+      "caption": "Every Chick-fil-A chicken entree ranked by protein per 100 calories, with every number taken straight from chick-fil-a.com. Grilled nuggets are not close to the rest of the board. Which chain should I rank next? BiteBuddy is the calorie tracker app I use to check a plate I did not order from a menu. Search 'BiteBuddy: Ai calorie scanner'.",
+      "pinned_comment": "which chain should I rank next?",
+      "hashtags": [
+        "#BiteBuddy",
+        "#ChickFilA",
+        "#HighProtein",
+        "#ProteinRanked"
+      ],
+      "cta": "Know the number before you order it.",
+      "sources": [
+        "https://www.chick-fil-a.com/menu/grilled-nuggets",
+        "https://www.chick-fil-a.com/menu/grilled-chicken-sandwich",
+        "https://www.chick-fil-a.com/menu/chick-fil-a-chicken-sandwich",
+        "https://www.chick-fil-a.com/menu/spicy-chicken-sandwich"
+      ],
+      "sources_verified_at": "2026-08-01",
+      "note": "Every figure here was read off the chain's own nutrition page during the run on 2026-08-01. Protein per 100 calories is arithmetic on those two published numbers, not a claim we authored.",
+      "series_badge": "RANKED: PROTEIN"
+    },
+    {
+      "id": "T2-gallery",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "OUTCOME",
+      "visual_recipe": "MIXED",
+      "cta_type": "FOLLOW",
+      "poses": [
+        "buddy_warning_check",
+        "buddy_goal_celebration"
+      ],
+      "title": "Archetype gallery: big, compare, step, grid",
+      "status": "template-reference",
+      "slides": [
+        "One plate. Four foods. Guess before you swipe.",
+        {
+          "kind": "big",
+          "value": "485",
+          "text": "Salmon, green beans, a crab cake and watermelon. Most people guess high on the salmon and forget the crab cake entirely."
+        },
+        {
+          "kind": "compare",
+          "banner": "BOTH 500 CALORIES",
+          "a": {
+            "name": "A smoothie bowl",
+            "stat": "drunk in four minutes"
+          },
+          "b": {
+            "name": "Chicken, rice and vegetables",
+            "stat": "keeps you full for hours"
+          }
+        },
+        {
+          "kind": "step",
+          "step": 1,
+          "text": "Start with the grilled entree instead of the breaded one.",
+          "running": "390 cal"
+        },
+        {
+          "kind": "step",
+          "step": 2,
+          "text": "Swap the fries for the fruit cup. Same hand, different side.",
+          "running": "450 cal"
+        },
+        {
+          "kind": "grid",
+          "text": "The whole build, on one screen.",
+          "rows": [
+            {
+              "name": "Grilled entree",
+              "stat": "390 cal"
+            },
+            {
+              "name": "Fruit cup",
+              "stat": "60 cal"
+            },
+            {
+              "name": "Unsweet tea",
+              "stat": "0 cal"
+            },
+            {
+              "name": "Total",
+              "stat": "450 cal"
+            }
+          ]
+        },
+        "Follow for a new chain every week."
+      ],
+      "caption": "A reference deck showing every slide layout the renderer can produce. Not a scheduled post.",
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodTracker"
+      ],
+      "cta": "Follow for a new chain every week."
+    }
+  ]
+}

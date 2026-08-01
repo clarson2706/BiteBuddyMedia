@@ -4,10 +4,11 @@ description: >-
   Run BiteBuddy's autonomous weekly content cycle end to end: pull last week's
   real per-post metrics from Upload-Post into Analytics/, write the weekly
   report + next-week directives, generate 21 persona-targeted posts steered by
-  those directives, render every deck in Canva from the design system + real
-  Buddy/screenshot assets, schedule the full week across TikTok / Instagram /
-  Facebook / YouTube via Upload-Post with rate limits enforced, commit
-  everything, and send Connor the weekly report. Two modes: full Sunday loop,
+  those directives, render every deck locally at TikTok-native 1080x1920 plus a
+  1080x1350 Instagram set from the design system + real Buddy/screenshot assets,
+  schedule the full week across TikTok / Instagram / Facebook / YouTube via
+  Upload-Post with rate limits enforced, commit and merge everything, and send
+  Connor the weekly report. Two modes: full Sunday loop,
   and Wednesday mini mode (snapshot Mon/Tue numbers, kill losers, re-cut the
   early winner into fresh covers, Thu/Fri outreach batches, midweek pulse).
   Both modes write personalized creator-DM batches and process the creator
@@ -19,16 +20,33 @@ description: >-
 
 # weekly-loop — the whole week in one run
 
-Read `WEEKLY-LOOP.md` first — it is the contract; this file is the procedure.
-Then read, in order: `Analytics/README.md` (schemas), `Content-Engine/SERIES.md`,
+Read `START-HERE.md` first — it is what is true today and it outranks every other doc.
+Then `WEEKLY-LOOP.md`, which is the contract; this file is the procedure.
+Then read, in order: `Analytics/CONVERSION.md` (the thing the loop is now optimizing),
+`Analytics/README.md` (schemas), `Content-Engine/SERIES.md`,
 `Research/TARGET-USER-PROFILES.md`, `Research/HOOK-INTELLIGENCE-2026.md`,
 `Content-Engine/MASTER-PROMPT-V5.md` (sections 4–9 are the copy rules; the CSV
 contract does not apply here), `Content-Engine/DESIGN-SYSTEM.md`,
 `Outreach/DM-PLAYBOOK.md`, and `SPRINT-AUG25.md` while the sprint is live.
 
-Work on a `claude/week-<ISO-week>` branch. Never commit to `main`.
+Work on a `claude/week-<ISO-week>` branch. Never commit to `main` directly — and
+**merge the branch before the run ends** (Phase 6). An unmerged branch is a discarded
+run: the registry cannot dedupe against it and the analytics join cannot resolve its
+posts.
 
-**Mode check first.**
+## Phase 0 — Preflight. Run it first, every mode, no exceptions.
+
+```bash
+python3 Content-Engine/preflight.py
+```
+
+**Non-zero exit stops the run.** Do not work around it, do not "note it and continue."
+Fix what it names, or stop and tell Connor exactly what is blocking. It catches the two
+failures that have actually happened (stranded branches, live posts missing from the
+registry) plus missing deps, unlinked platforms, stale directives, guardrail violations
+and illegal cadence. If a check is itself wrong, fix the check in this run's commit.
+
+**Mode check next.**
 - "Wednesday mini mode" → run only: Phase 1 steps 1–2 (snapshot, no full report),
   the kill/re-cut pass from `WEEKLY-LOOP.md` §Wednesday, Phase 5 step 2 (process
   creator replies), and a two-line pulse to Connor.
@@ -87,23 +105,31 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
    ~3 comment, ~3 save/share, ~3 app (exact App Store line only on app CTAs:
    `Search 'BiteBuddy: Ai calorie scanner'`).
 4. Factual posts: verify numbers against primary sources during the run; a claim that
-   can't be verified gets replaced, not published. Record source URLs in the manifest.
-   **Known blocker (2026-07-25):** this environment's network policy returns 403 for
-   chipotle.com, chick-fil-a.com, mcdonalds.com, starbucks.com and fdc.nal.usda.gov, so
-   chain and label numbers cannot be verified here. While that holds, do NOT generate
-   numeric chain claims: prefer behaviour, psychology, and tracking-craft angles, and
-   say plainly in the report that S1 and S2 are blocked on network access. Never guess a
-   calorie or protein number to fill a slot.
+   can't be verified gets replaced, not published. Record source URLs and a
+   `sources_verified_at` date in the manifest.
+   **Unblocked 2026-08-01:** chick-fil-a.com, chipotle.com, starbucks.com, wendys.com
+   and fdc.nal.usda.gov all return 200. The July note saying they 403 is stale. This is
+   what makes the ranked series possible, so use it — and still never guess a calorie
+   or protein number to fill a slot.
 5. Write `Posts/<week>/manifest.json` (one object per post: id, slot, series, persona,
-   hook_family, recipe, slides[], caption, pinned_comment, hashtags, platforms,
-   status, sources); append every post to `registry.jsonl`.
+   hook_family, recipe, `poses`, `series_badge` if it differs from the series default,
+   slides[], caption, pinned_comment, hashtags, platforms, cta_type, status, sources);
+   append every post to `registry.jsonl`.
+6. Lint before rendering: `python3 Content-Engine/copy_lint.py Posts/<week>/manifest.json`.
+   A FAIL is a rewrite, not a warning.
 
 ## Phase 3 — Render the slides
 
 **Primary path: `python3 Content-Engine/render_slides.py Posts/<week>/manifest.json`.**
-It reads the manifest and writes `Posts/<week>/<post-id>/NN.png` at 1080x1350 using the
-brand palette, the Baloo 2 rounded brand font in `Brand-Assets/fonts/`, and the real
-Buddy cutouts from `Brand-Assets/buddy-poses/transparent/`.
+It writes two sets per post: `Posts/<week>/<post-id>/tiktok/NN.png` at **1080x1920**
+(primary) and `.../ig/NN.png` at 1080x1350, using the brand palette, the Baloo 2 brand
+font in `Brand-Assets/fonts/`, and the real Buddy cutouts from
+`Brand-Assets/buddy-poses/transparent/`. Give TikTok the 9:16 set: 4:5 letterboxes
+there and shrinks the hook on the platform that matters most.
+
+Slide kinds available: `rank`, `compare`, `grid`, `big`, `step`, an image/screenshot
+slide, and the default type card. Reference decks for all of them are in
+`Posts/_TEMPLATES/` — render them and look at the output after any renderer change.
 
 Why not Canva, despite the connector being attached (learned 2026-07-25): Canva's
 `generate-design` emits **one page per call**, so it cannot build an 8-slide carousel,
@@ -175,11 +201,19 @@ use the API key in `UPLOAD_POST_API_KEY` with the official SDK.
    minimum, roll-forward), append `payouts.jsonl`, draft the payout DMs with the
    math shown.
 
-## Phase 6 — Commit, push, report
+## Phase 6 — Commit, push, MERGE, report
 
 1. Commit all of it (analytics, posts, manifest, registry, outreach), push the week
-   branch, open a PR titled `Week <ISO-week>: posts + analytics + outreach`.
-2. Message Connor: the three report headlines (went well / didn't / changing), the
+   branch, open a PR titled `Week <ISO-week>: posts + analytics + outreach`, **and
+   merge it to `main`.** The merge is the step that makes the run real. Leaving the PR
+   open is only acceptable when a human decision is genuinely pending, and then the
+   report must say so in its own line so it does not get forgotten for a week.
+2. Re-run `python3 Content-Engine/preflight.py` after the merge. It should come back
+   clean; if it still reports drift, the run did not finish.
+3. Lead the report with the **conversion scorecard** (`Analytics/CONVERSION.md`):
+   views, profile views, follows, saves and shares, product page views, downloads, and
+   views per profile view. Reach is not the constraint any more; this is.
+4. Message Connor: the three report headlines (went well / didn't / changing), the
    week's schedule by day, sprint checkpoint status vs `SPRINT-AUG25.md`, creator
    pipeline pulse (sent / replied / deals / posted), anything dropped/failed/
    unlinked, and the line **"Posts start Monday 8 AM — tonight is the veto window;

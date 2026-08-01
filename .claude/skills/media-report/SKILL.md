@@ -39,7 +39,15 @@ metadata, prints the cuts, and appends everything to
 ## Then write the report
 
 Save to `Analytics/<YYYY-MM-DD>-media-report.md` and put the same thing in your
-message to Connor. Four sections, in this order.
+message to Connor. Five sections, in this order.
+
+**0. The conversion scorecard** (added 2026-08-01, and it goes first). Views, profile
+views, follows, saves and shares, product page views and downloads from
+`installs.jsonl`, and **views per profile view**. Reach stopped being the constraint on
+2026-07-31: TikTok reached 4,408 lifetime views with 1 follower and 0 profile views, so
+profile conversion is what the report is now for. If views per profile view is still
+undefined because the denominator is zero, say that in those words. See
+`Analytics/CONVERSION.md`.
 
 **1. Headline.** Two or three sentences. What changed since the last report and
 what it means. Lead with the thing that would change a decision, not the biggest

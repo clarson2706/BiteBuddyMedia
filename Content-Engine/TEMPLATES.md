@@ -1,7 +1,15 @@
 # Canva template registry
 
-*Where the series templates live in Canva. Created 2026-07-25. The weekly-loop
-render phase starts from these instead of building every deck from scratch.*
+> **This documents a road not taken. Superseded 2026-08-01.**
+> The render path is `Content-Engine/render_slides.py`, not Canva. Canva's
+> `generate-design` emits one page per call so it cannot build a carousel, and this
+> environment cannot download Canva exports (`export-download.canva.com` is 403 at the
+> proxy). The designs below are single-page AI starters that were never used to render
+> a live post. Canva remains useful for one-off polish and for Connor editing a deck by
+> hand. The slide layouts that actually ship are described in `DESIGN-SYSTEM.md` §2 and
+> demonstrated in `Posts/_TEMPLATES/`.
+
+*Where the series templates live in Canva. Created 2026-07-25.*
 
 Folder: **BiteBuddy Templates** — https://www.canva.com/folder/FAHQXmgVxy0
 
