@@ -33,14 +33,24 @@ MEDICAL_CLAIMS = [
     (r"\b(guaranteed|guarantee)\b", "outcome claim: guarantee language"),
     (r"\bburns?\s+fat\b", "outcome claim: fat-burning"),
     (r"\bmelts?\s+(away\s+)?(fat|pounds|weight)\b", "outcome claim: melting fat or weight"),
-    (r"\b(cures?|treats?|heals?|reverses?)\s+\w+", "medical claim: cure, treat, heal or reverse"),
-    (r"\b(prevents?|stops?)\s+(diabetes|cancer|disease|illness)\b", "medical claim: disease prevention"),
+    # Scoped to an actual condition. A bare /treats?\s+\w+/ matched "treat a broken
+    # streak as a repair" and "treats one rough weekend as a reason", which are exactly
+    # the empathetic framing this series is supposed to use. A linter that cries wolf
+    # gets ignored, and an ignored linter enforces nothing.
+    (r"\b(cures?|treats?|heals?|reverses?|prevents?)\s+(your\s+|the\s+)?"
+     r"(diabetes|prediabetes|cancer|disease|illness|obesity|inflammation|ibs|pcos|"
+     r"cholesterol|blood\s+pressure|a1c|insulin\s+resistance)\b",
+     "medical claim: curing, treating or preventing a condition"),
     (r"\bdoctor\s+recommended\b", "medical claim: implied clinical endorsement"),
     (r"\b(detox|cleanse)\b", "pseudo-medical framing"),
     (r"\b(starve|starving|starvation)\b", "disordered-eating framing"),
     (r"\bcrash\s+diet\b", "disordered-eating framing"),
     (r"\bnever\s+eat\s+\w+\s+again\b", "restriction framing"),
-    (r"\b(bad|forbidden|off-limits|clean\s+only)\s+foods?\b", "moralizing food framing; no food is bad"),
+    # Plural "foods" only, plus the explicit predicate form. "One bad food day" is a
+    # day that went badly, not a claim that a food is bad, and it is legitimate copy.
+    (r"\b(bad|forbidden|off-limits|clean\s+only)\s+foods\b", "moralizing food framing; no food is bad"),
+    (r"\b(this|that|these|those|\w+)\s+(food|foods)\s+(is|are)\s+bad\b",
+     "moralizing food framing; no food is bad"),
     (r"\bcalorie\s+deficit\s+guarantee", "outcome claim"),
     (r"\bdrop\s+\d+\s*(lbs?|pounds?)\b", "outcome claim: a specific weight-loss promise"),
 ]

@@ -67,6 +67,10 @@
         "Caption body did not land. upload_photos takes description, not caption; the caption kwarg was silently dropped and the post carries only its title. The in-deck comment ask (slide 2) and App Store search line (slide 8) are unaffected because they are rendered into the slides.",
         "Pinned comment did not land. TikTok does not support comments through the Upload-Post API, so first_comment is a no-op there. This is not specific to this post: no TikTok post this project has made has ever carried its pinned comment.",
         "Neither is repairable through the API. unpublish_post does not support TikTok, so the post cannot be deleted and reposted programmatically."
+      ],
+      "poses": [
+        "buddy_thinking",
+        "buddy_goal_celebration"
       ]
     }
   ]

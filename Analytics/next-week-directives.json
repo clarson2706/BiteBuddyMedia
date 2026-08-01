@@ -1,25 +1,32 @@
 {
-  "generated_at": "2026-07-25T07:20:00Z",
-  "week_analyzed": "2026-W30-baseline",
+  "generated_at": "2026-07-28T15:10:00Z",
+  "week_analyzed": "2026-W31-partial",
   "confidence": "low",
-  "basis": "Account-level aggregates only (get_history returns 400, so no per-post rows). Directives below are traceable to the baseline report but rest on a small, coarse sample.",
+  "basis": "Real per-post rows via get_post_analytics for every registry post from the last 14 days (first time this has been possible), plus account-level get_analytics aggregates. Still a very small sample (1 TikTok follower, posts 1-4 days old) and one known internal inconsistency (07-26 per-post rows vs. account daily total). See Analytics/2026-W31-report.md.",
   "lean_into": {
-    "series": ["S1", "S2"],
-    "hook_families": ["GUESS", "LIST", "RIGHTWRONG", "COMPARE"],
-    "personas": ["P5", "P3", "P1", "P4"],
-    "topics": ["restaurant-macros", "protein-per-dollar", "tracking-friction", "same-calorie-comparison"],
-    "slots": ["08:00", "19:00"]
+    "series": ["S2"],
+    "hook_families": ["MISTAKE", "TRACKED", "RIGHTWRONG"],
+    "personas": ["P4", "P1"],
+    "topics": ["tracking-friction", "verified-chain-protein-ranking"],
+    "slots": ["19:00"]
   },
   "dial_back": {
     "series": [],
     "hook_families": [],
-    "topics": ["generic-nutrition-trivia"]
+    "topics": ["unverifiable-chain-pricing"]
   },
   "recut_winners": [],
   "experiments": [
-    "Comment-first CTAs on the majority of posts until comment count is non-zero",
-    "COMPARE-SPLIT same-calorie post as the save/share test"
+    "Keep testing low-friction comment asks (numeric guess, one-word reply) but stop treating zero comments as a verdict on the format at this reach",
+    "Protein-per-100-calories comparisons (efficiency framing) as a substitute for protein-per-dollar where live pricing can't be verified"
   ],
   "series_verdicts": { "S1": "hold", "S2": "hold", "S3": "hold" },
-  "notes": "Baseline: TikTok 668 views / 17 posts / 2 likes / 0 comments / 0 shares; YouTube 433 views / 3 likes / 0 comments. Zero comments across 17 posts is the headline problem and it is a content signal, not an algorithm signal, so weight this batch toward comment-earning formats (GUESS quizzes, ranking debates). Both platforms show a hard distribution collapse right after five simultaneous posts on 22 July, so hold cadence at 2 posts/day with wide spacing and do not chase volume. Instagram and Facebook are unlinked, so this batch is TikTok plus YouTube only."
+  "platform_status": {
+    "instagram": "blocked: social_accounts entry empty in list_users; 4/4 publish attempts since 2026-07-25 failed with 'Action suspected as spam. Activity is restricted.' Do not schedule to Instagram until Connor clears this manually.",
+    "facebook": "still not linked",
+    "tiktok": "linked, publishing normally",
+    "youtube": "linked, publishing normally, but flat zero views 07-26 through 07-28 despite 2 fresh videos"
+  },
+  "network_note": "chipotle.com and fdc.nal.usda.gov both reachable and rendering content as of 2026-07-28 (the 2026-07-25 blocker note is stale for these two). chick-fil-a.com's per-item menu pages and /nutrition-allergens render real structured nutrition data via this environment's fetch tool. Chipotle's own nutrition calculator is JS-rendered and did not yield data through this tool (a tool limitation, not a network block). No live per-location pricing source was found for any chain, so protein-per-dollar claims are still not verifiable this run; protein-only rankings and protein-per-100-calorie efficiency comparisons are.",
+  "notes": "Every entry above traces to a number in Analytics/2026-W31-report.md. This run is off-schedule (fired Tuesday, not Sunday); Phase 2 generates only the slots remaining through end-of-day Sunday 2026-08-02 per WEEKLY-LOOP.md's partial-generation rule, not a full 21-post week."
 }

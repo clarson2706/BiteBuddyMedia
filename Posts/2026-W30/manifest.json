@@ -87,7 +87,11 @@
           "url": "https://www.tiktok.com/@bitebuddyapp/photo/7666450005988871454",
           "note": "published before the CTA-slide requirement existed, so this one carries the old text-only final slide"
         }
-      }
+      },
+      "poses": [
+        "buddy_thinking",
+        "buddy_level_up"
+      ]
     },
     {
       "id": "2026-07-25-slot2",
@@ -147,7 +151,11 @@
           "request_id": "d55e6048db5f422789a5c21700ae23b3",
           "scheduled_local": "2026-07-25T20:30:00"
         }
-      }
+      },
+      "poses": [
+        "buddy_warning_check",
+        "buddy_fiber_shield"
+      ]
     },
     {
       "id": "2026-07-26-slot1",
@@ -220,7 +228,11 @@
           "request_id": "420ba7a65efa445e8dbed68eb5ded67b",
           "scheduled_local": "2026-07-26T17:00:00"
         }
-      }
+      },
+      "poses": [
+        "buddy_thinking",
+        "buddy_balanced_glow"
+      ]
     },
     {
       "id": "2026-07-26-slot2",
@@ -280,7 +292,11 @@
           "request_id": "897bee0d3ce94529ae2651ca7e829016",
           "scheduled_local": "2026-07-26T20:30:00"
         }
-      }
+      },
+      "poses": [
+        "buddy_warning_check",
+        "buddy_goal_celebration"
+      ]
     }
   ],
   "media_base_url": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/6ee213f22e40c7e24083cfa3512e9b3891cd09d2/Posts/2026-W30",
