@@ -4,7 +4,7 @@
 automatically by the SessionStart hook in `.claude/settings.json`; if you are reading the
 repo some other way, read it anyway before you write anything.**
 
-*Last verified: 2026-07-31. Whoever changes the system updates this file in the same
+*Last verified: 2026-08-01. Whoever changes the system updates this file in the same
 commit. A stale START-HERE is worse than none.*
 
 ---
@@ -60,12 +60,15 @@ fix what it names. `--json` for machine output, `--skip-network` when offline.
 These are not style preferences. Each one exists because it was violated once.
 
 1. **Never commit to `main` directly, and never leave a loop run stranded on a branch.**
-   Every run ends with a pushed branch **and an open PR**, and the next run's preflight
-   refuses to generate while an unmerged loop branch exists. Content memory that is not
-   on `main` does not exist. This has already broken once: three separate branches
-   (`tender-bardeen`, `jolly-bardeen`, `marketing-report-brainstorm`) carry a whole week
-   of posts, a Wednesday mini-run, a `Reports/` tree, a new skill and a `report.py` bug
-   fix that `main` has never seen.
+   Every run ends with a pushed branch, a PR, **and the merge**. Content memory that is
+   not on `main` does not exist, and preflight refuses to generate while a branch
+   carries memory neither `main` nor the current branch has.
+   *This broke once already:* three branches (`tender-bardeen`, `jolly-bardeen`,
+   `marketing-report-brainstorm`) accumulated a whole week of posts, a Wednesday
+   mini-run, a `Reports/` tree, a new skill and a `report.py` bug fix that `main` never
+   saw, while nine posts sat scheduled on the live account matching nothing in the repo.
+   **All three were merged on 2026-08-01** and the registry went from 6 posts to 25.
+   They are on this branch and land on `main` when it does.
 2. **Measurement is not a later phase.** If a number is not a line in
    `Analytics/performance-log.jsonl`, it does not exist and may not be cited.
 3. **Guardrails outrank every directive, trend and growth tactic.** No medical or

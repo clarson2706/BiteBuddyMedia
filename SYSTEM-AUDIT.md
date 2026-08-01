@@ -41,11 +41,21 @@ shows a week that is not the week that is scheduled.
 The loop's Phase 6 says "open a PR" and nothing says "merge it," so every run since
 07-25 has quietly written to a dead end.
 
-*Fixed here:* `preflight.py` fails the run when an unmerged branch touches content
-memory, the SessionStart hook warns about it before any work begins, and
-`WEEKLY-LOOP.md` now requires the merge, not just the PR. *Still open:* somebody has to
-actually merge those three branches. Preflight will keep failing until they do, which
-is the intended behaviour.
+*Fixed:* `preflight.py` fails the run when a branch carries content memory neither
+`main` nor the current branch has, the SessionStart hook warns before any work begins,
+and `WEEKLY-LOOP.md` now requires the merge, not just the PR.
+
+**All three branches were merged on 2026-08-01.** The registry went from 6 posts to 25
+and `schedule-drift` now passes. Two conflicts, both resolved without losing data:
+
+- `render_slides.py` — the hardcoded `POSES` table that `jolly-bardeen` extended versus
+  this branch's removal of it. Resolved toward the manifest-driven version, and all 24
+  pose assignments were migrated into the manifests rather than dropped. Every post in
+  W30, W30-flex and W31 now carries its own `poses` field, which is the fix the conflict
+  was pointing at: patching a Python dict per post is what made the branch diverge.
+- `performance-log.jsonl` — append-only history, so the union is the only correct
+  resolution. 48 lines and 35 lines reconciled to 58 distinct snapshots with 25 exact
+  duplicates dropped, every surviving line re-parsed as JSON before writing.
 
 ### A3. Nine posts are scheduled that exist nowhere in the repo. FIXED (guard added).
 `list_scheduled` returns 9 queued posts for Aug 1 to 3. Zero appear in
@@ -53,8 +63,9 @@ is the intended behaviour.
 the 2026-07-25 rebuild was written to prevent, one level up: the old system's log was
 0 bytes, this system's log is fine but points at a branch nobody merged.
 
-*Fixed here:* preflight cross-checks the live schedule against the registry and fails
-on drift.
+*Fixed:* preflight cross-checks the live schedule against the registry and fails on
+drift. After the A2 merges it reports `all 8 scheduled posts are present in the
+registry`.
 
 ---
 
