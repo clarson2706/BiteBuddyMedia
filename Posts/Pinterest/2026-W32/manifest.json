@@ -1,0 +1,713 @@
+{
+ "track": "PINTEREST",
+ "week": "2026-W32",
+ "timezone": "America/Chicago",
+ "generated_at": "2026-08-02T21:50:38Z",
+ "account": "cbusinessshop",
+ "served_from_sha": "c89362bfb3689d4b74b961dfe2a85be370dad00d",
+ "app_store_link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+ "note": "25 evergreen pins cut from the W32 carousels rather than re-posting the decks. Pinterest is a search engine, so titles lead with the phrase somebody would type and every pin carries a real App Store link, which TikTok and Instagram both de-weight. Slide 1 (HOOK) is the pin image by default because it is the only slide designed to win a thumbnail; two posts pin their PROOF slide instead because it carries real food photography. KNOWN GAP: all 25 land on the default 'Quick Saves' board because no topical boards exist yet. Board topic is a Pinterest ranking signal, so moving these to intent-named boards is worth doing; pins keep their URL and stats when moved. KNOWN GAP: images are 4:5 (1080x1350). Pinterest favours 2:3 (1000x1500), so these will render smaller in feed than a native pin would.",
+ "pins": [
+  {
+   "id": "pin-2026-08-03-morning",
+   "source_post": "2026-08-03-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-03-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Calorie tracking tips: why under-counting beats overeating as the real problem",
+   "description": "Most people who think they are overeating are actually under-counting. The calories that go missing are the handful while cooking, the last third of someone else's plate, and the oil the pan absorbed. Photo based food logging catches the whole plate at once. Calorie tracking tips for people who keep quitting. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "You are not overeating, you are under-counting",
+   "date": "2026-08-03",
+   "time_local": "10:00",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "5a396270706841f49e1060a81434d379",
+    "request_id": "101b084984924a43b43149549636d0f3",
+    "scheduled_local": "2026-08-03T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-03-midday",
+   "source_post": "2026-08-03-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-03-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Guess the calories: what a salmon, green beans and crab cake dinner really costs",
+   "description": "A full dinner plate came to 485 calories and 42g of protein. Most people guess high, and they guess wrong on the same item every time. A calorie counting quiz that shows the real itemised scan. Learn to eyeball portions better. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Guess the calories: salmon, green beans, crab cake, watermelon",
+   "date": "2026-08-03",
+   "time_local": "14:00",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "series": "S1",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "85f5ebe6bdc7484892a992dc5d6c3462",
+    "request_id": "a3a2f48d854d4ba599c2d6c33e91db47",
+    "scheduled_local": "2026-08-03T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-03-afternoon",
+   "source_post": "2026-08-03-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-03-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "4 foods people always underestimate when counting calories",
+   "description": "The foods people misjudge are almost never the obvious ones. They are the sides, the cooking oil, and anything eaten standing up in the kitchen. Save this list of calorie counting blind spots for the next time you log a meal. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The four foods people always guess wrong",
+   "date": "2026-08-03",
+   "time_local": "18:00",
+   "persona": "P4",
+   "hook_family": "MISTAKE",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "d49a8010155345d79c132bac9d321d0c",
+    "request_id": "e7c93eaca8a84e3db1a3e107eabee3d4",
+    "scheduled_local": "2026-08-03T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-03-evening",
+   "source_post": "2026-08-03-evening",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-03-evening/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Why calorie tracking fails on day 4, and how to get past it",
+   "description": "Almost nobody quits tracking on day one. They quit on day four, when one meal is awkward to log and skipping it is easier. The fix is not more willpower, it is making the awkward meal take five seconds. Habit tips for anyone who has started tracking food and stopped. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Day four is when tracking dies",
+   "date": "2026-08-03",
+   "time_local": "22:00",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "c9e1cab5dbdf47c9a8a1d5ade440aef6",
+    "request_id": "91cf42e07fa74531a6bd37facedc0c39",
+    "scheduled_local": "2026-08-03T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-04-morning",
+   "source_post": "2026-08-04-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-04-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Tracking food badly beats tracking nothing: consistency over accuracy",
+   "description": "The people who get results from food logging are not the accurate ones, they are the ones who never stopped. A rough estimate you logged is worth more than a perfect number you skipped. Calorie tracking for beginners who are tired of starting over. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Tracking badly beats tracking nothing",
+   "date": "2026-08-04",
+   "time_local": "10:00",
+   "persona": "P1",
+   "hook_family": "RIGHTWRONG",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "412600b9e6d148508517f8bd601ee0bf",
+    "request_id": "4a8f6736dce4407790e9d6782a415bfc",
+    "scheduled_local": "2026-08-04T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-04-midday",
+   "source_post": "2026-08-04-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-04-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Calorie quiz: which item on this plate is 140 calories?",
+   "description": "Four foods on one dinner plate. The smallest one by weight turned out to be the second largest by calories. Test how well you estimate portions, then see the real itemised breakdown from a photo scan. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The crab cake question",
+   "date": "2026-08-04",
+   "time_local": "14:00",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "series": "S1",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "1dfa332cfd414fe181f843148bf429fa",
+    "request_id": "13fd17771d48445a9f4dfbc864ec56c3",
+    "scheduled_local": "2026-08-04T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-04-afternoon",
+   "source_post": "2026-08-04-afternoon",
+   "source_slide": 6,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-04-afternoon/06.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Why your weekend ruins your calorie tracking week",
+   "description": "Weekday eating is repeatable so it is easy to log. Weekend eating is social, unmeasured and cooked by someone else, which is exactly why it goes untracked. Two unlogged days is not two missing days, it is a whole week you cannot read. Weekend food tracking tips. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Why the weekend breaks your week",
+   "date": "2026-08-04",
+   "time_local": "18:00",
+   "persona": "P3",
+   "hook_family": "TRACKED",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "be79dc45ab6f4a71b41c2483b330295a",
+    "request_id": "84b6c7647eb14071aafd2046d17a39db",
+    "scheduled_local": "2026-08-04T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-05-morning",
+   "source_post": "2026-08-05-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-05-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "How to track protein without weighing food or looking anything up",
+   "description": "Protein is the macro people misjudge most, usually downward. One photo of a dinner plate itemised it at 42 grams across four foods against a 135 gram daily target. No food scale, no database search, no mental arithmetic. High protein tracking made simple. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "One photo, four foods, 42g protein",
+   "date": "2026-08-04",
+   "time_local": "22:00",
+   "persona": "P4",
+   "hook_family": "OUTCOME",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "aae49d46fb4c462b9b338986132211bf",
+    "request_id": "76a3f03fcba845d1848d24532551f856",
+    "scheduled_local": "2026-08-04T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-05-midday",
+   "source_post": "2026-08-05-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-05-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "The log of shame spiral: why one missed meal ends your food diary",
+   "description": "Nobody quits food logging because the food was bad. They quit because one unlogged meal made the day incomplete, and an incomplete day makes the whole week feel pointless. The meal you do not want to log is the exact one worth logging. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The log of shame spiral",
+   "date": "2026-08-05",
+   "time_local": "10:00",
+   "persona": "P1",
+   "hook_family": "MISTAKE",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "99a5e04af4cb4936b72bfbdaf99ec5ff",
+    "request_id": "579c605a26e64c1a8805746590a23c68",
+    "scheduled_local": "2026-08-05T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-05-afternoon",
+   "source_post": "2026-08-05-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-05-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "What happens when you stop estimating calories and start reading them",
+   "description": "The plate looked like 700 calories. It was 485. Nothing about the meal changed, only whether the number came from a guess or from a scan. That gap is the whole reason estimating portions by eye does not work. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "POV: you stopped estimating",
+   "date": "2026-08-05",
+   "time_local": "14:00",
+   "persona": "P5",
+   "hook_family": "POV",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "67828ff4219f4ac8a0f52c4465b34977",
+    "request_id": "b594b71cebf74075895470c40014a894",
+    "scheduled_local": "2026-08-05T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-05-evening",
+   "source_post": "2026-08-05-evening",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-05-evening/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Guess the protein, not the calories: a harder macro quiz",
+   "description": "Calories get all the attention and protein is the number people actually misjudge. Same dinner plate, harder question. Test your macro estimating, then see the real itemised numbers. High protein meal tracking. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Guess the protein, not the calories",
+   "date": "2026-08-05",
+   "time_local": "18:00",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "series": "S1",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "92d4386210e646aba9f1437a3338eb3c",
+    "request_id": "eac92b4d72a748e0a8856d9d346f887b",
+    "scheduled_local": "2026-08-05T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-06-morning",
+   "source_post": "2026-08-06-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-06-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Food tracking is a receipt, not a diet",
+   "description": "A receipt does not tell you off, it tells you what happened. People who last at calorie tracking read the number the way they read a bank statement, then adjust. People who quit treat it as a grade. A gentler way to think about food logging. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Tracking is not a diet, it is a receipt",
+   "date": "2026-08-05",
+   "time_local": "22:00",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "a59d11e7526f4a8d850568106b3d804c",
+    "request_id": "ebcb2d85b90149c6bb2b97bd23f5d922",
+    "scheduled_local": "2026-08-05T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-06-midday",
+   "source_post": "2026-08-06-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-06-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "3 ways to log a meal badly and still get results",
+   "description": "There is no version of food logging so sloppy that it loses to not logging at all. Photograph it and fix the details later, log the closest match, or log half of it now. All three keep your week readable. Calorie tracking tips for real life. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Three ways to log a meal badly and still win",
+   "date": "2026-08-06",
+   "time_local": "10:00",
+   "persona": "P3",
+   "hook_family": "RIGHTWRONG",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "c6664ef013a74653a3503d0a1633f749",
+    "request_id": "03f5af6e5edb4f338aff7c1febd9e3b9",
+    "scheduled_local": "2026-08-06T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-06-afternoon",
+   "source_post": "2026-08-06-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-06-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "AI calorie estimates are not precise, and that is the point",
+   "description": "Estimates get treated as a weakness in calorie tracking apps. They are the feature. A precise number you never write down is worth nothing next to a rough one you log every day, because only the trend has ever changed how anyone eats. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The number is an estimate, that is the point",
+   "date": "2026-08-06",
+   "time_local": "14:00",
+   "persona": "P4",
+   "hook_family": "OUTCOME",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "b055253207a24088866a05529b0f798f",
+    "request_id": "80227b55e50f4f22aea36f61a718b4a9",
+    "scheduled_local": "2026-08-06T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-07-morning",
+   "source_post": "2026-08-07-morning",
+   "source_slide": 6,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-07-morning/06.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "The cooking oil calories that never make it into your food log",
+   "description": "Cooking oil is the most commonly missed number in home cooking, because it goes into the pan before the food does and never feels like eating. Photographing the finished plate catches what the recipe in your head left out. Hidden calories at home. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The oil the pan drank",
+   "date": "2026-08-06",
+   "time_local": "18:00",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "b620c06edcb848b6b0ab6f3f8a26864a",
+    "request_id": "90c28becc04946fe97203b478c5f05b6",
+    "scheduled_local": "2026-08-06T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-07-midday",
+   "source_post": "2026-08-07-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-07-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Watermelon vs crab cake: which has more calories?",
+   "description": "One of these weighs more and one of these has more than double the calories, and they are not the same food. Weight and calories are different questions. A quick portion size quiz with the real itemised numbers. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Watermelon versus crab cake",
+   "date": "2026-08-06",
+   "time_local": "22:00",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "8c2280e754434ed6a99f956841edafd4",
+    "request_id": "c39fb38ef3e347039d20b4967b56c336",
+    "scheduled_local": "2026-08-06T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-07-afternoon",
+   "source_post": "2026-08-07-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-07-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Friday is the day your healthy week is decided",
+   "description": "Monday is where habits start and Friday is where they hold or fall apart. The novelty is gone, the plan is somebody else's, and whatever you do this Friday is what you will do next Friday. Save this and read it on a Friday. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Friday decides your week",
+   "date": "2026-08-07",
+   "time_local": "10:00",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "b304ce4675b8487cb69589bd6f749d1a",
+    "request_id": "cdc873bf592b465a9d853de7a06b1990",
+    "scheduled_local": "2026-08-07T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-07-evening",
+   "source_post": "2026-08-07-evening",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-07-evening/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Photograph your food before you eat it: the whole method",
+   "description": "One photo at the table before the first bite. No weighing, no database search, no reconstructing the meal from memory three hours later. That is the entire food logging method. Photo calorie tracking for beginners. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Photograph it before you eat it",
+   "date": "2026-08-07",
+   "time_local": "14:00",
+   "persona": "P4",
+   "hook_family": "POV",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "a0ebd0446fc54d7e9136252462c0504c",
+    "request_id": "61e83dc1f5424a86a9cfed1a9467f11e",
+    "scheduled_local": "2026-08-07T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-08-morning",
+   "source_post": "2026-08-08-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-08-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "You did not fall off your diet, you stopped measuring",
+   "description": "There is a difference between your eating changing and your record stopping, and from the inside they feel identical. Most people who think they failed just went quiet. Restarting costs one photo. Getting back into food tracking after a break. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "You did not fall off, you stopped measuring",
+   "date": "2026-08-07",
+   "time_local": "18:00",
+   "persona": "P1",
+   "hook_family": "MISTAKE",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "1c1470272581450fba97d768a3e07f73",
+    "request_id": "1f4dcddc0ad14ad29ff5dd524bd0c9a6",
+    "scheduled_local": "2026-08-07T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-08-midday",
+   "source_post": "2026-08-08-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-08-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "What 485 calories actually looks like on a real dinner plate",
+   "description": "A real dinner, not a diagram. Salmon, green beans, crab cake and watermelon came to 485 calories and 42 grams of protein. Full plates and modest calorie numbers are not opposites. Portion size reference for calorie counting. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "What 485 calories actually looks like",
+   "date": "2026-08-07",
+   "time_local": "22:00",
+   "persona": "P5",
+   "hook_family": "OUTCOME",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "c9ef77f3697e4e1e8880f66e12059328",
+    "request_id": "659e601e5db94dbfad47bb607cf5d602",
+    "scheduled_local": "2026-08-07T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-08-afternoon",
+   "source_post": "2026-08-08-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-08-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "The weekend gap: you are missing 30% of your food data",
+   "description": "Skipping Saturday and Sunday removes thirty percent of your week, and it is the thirty percent that describes you rather than your work schedule. Same photo, same five seconds. Weekend calorie tracking. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "The weekend gap",
+   "date": "2026-08-08",
+   "time_local": "10:00",
+   "persona": "P3",
+   "hook_family": "HABIT",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "5e23b68be2c24790bd3f4ed9e5e354c5",
+    "request_id": "619a4a63f49a4b698a64834fdda8cd34",
+    "scheduled_local": "2026-08-08T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-09-morning",
+   "source_post": "2026-08-09-morning",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-09-morning/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Stop treating Sunday as a diet reset",
+   "description": "Reset thinking is what makes the next seven days fragile, because if last week can be written off then so can this one. Nothing that resets weekly ever compounds. A better way to think about your food log on a Sunday. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Sunday is a data point, not a reset",
+   "date": "2026-08-08",
+   "time_local": "14:00",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "series": "S3",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "3d041ec63b154d4da92881c7567ea9ac",
+    "request_id": "e52f33f9ef99485aa3d12b096671fadf",
+    "scheduled_local": "2026-08-08T14:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-09-midday",
+   "source_post": "2026-08-09-midday",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-09-midday/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Consistency beats precision in calorie counting, and it is not close",
+   "description": "A ten percent error logged every single day still shows you the trend. A perfect number logged twice a week shows you nothing. The whole category obsesses over precision and it is the wrong variable. Calorie tracking for beginners. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Consistency beats precision",
+   "date": "2026-08-08",
+   "time_local": "18:00",
+   "persona": "P4",
+   "hook_family": "RIGHTWRONG",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "d1259ffe8a7d499b9946ad83670d44e4",
+    "request_id": "106f30b0461a4e23b255e3d27c19d12e",
+    "scheduled_local": "2026-08-08T18:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-09-afternoon",
+   "source_post": "2026-08-09-afternoon",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-09-afternoon/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "Calorie math: what one 485 calorie dinner does to your day",
+   "description": "680 calories already logged, then a 485 calorie dinner. Guess where the day lands. A calorie tracker that does the addition and shows the running total against your targets, so a full plate stops feeling like a guess about the rest of the day. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "Guess what this adds to your day",
+   "date": "2026-08-08",
+   "time_local": "22:00",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "bcdef4c3bfde4da1a0301cce7e374eea",
+    "request_id": "e2156ece0b45445bb4f54359a8c6cfce",
+    "scheduled_local": "2026-08-08T22:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "pin-2026-08-09-evening",
+   "source_post": "2026-08-09-evening",
+   "source_slide": 1,
+   "image": "https://raw.githubusercontent.com/clarson2706/BiteBuddyMedia/c89362bfb3689d4b74b961dfe2a85be370dad00d/Posts/2026-W32/2026-08-09-evening/01.png",
+   "board_id": "1101482090053876832",
+   "board_name": "Quick Saves",
+   "link": "https://apps.apple.com/us/app/bitebuddy-ai-calorie-scanner/id6787834752?ct=pinterest-organic&mt=8",
+   "title": "One week of not guessing what you eat",
+   "description": "No diet and no rules, only a record. Photograph the plate before the first bite, read the number instead of estimating it, and after seven days you have a week you can actually read. Starting a food diary that survives. #CalorieTracking #FoodTracker #MacroTracking #HealthyHabits #CalorieCounting",
+   "alt_text": "One week of not guessing",
+   "date": "2026-08-09",
+   "time_local": "10:00",
+   "persona": "P1",
+   "hook_family": "OUTCOME",
+   "series": "oneoff",
+   "cta_type": "LINK",
+   "platform_plan": [
+    "pinterest"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "a58e342d11584753bbbc709cdef96c3f",
+    "request_id": "f3c7bc9496854b65b7039aba260ad9ee",
+    "scheduled_local": "2026-08-09T10:00:00",
+    "timezone": "America/Chicago"
+   }
+  }
+ ],
+ "scheduled_at": "2026-08-02T22:05:00Z"
+}
