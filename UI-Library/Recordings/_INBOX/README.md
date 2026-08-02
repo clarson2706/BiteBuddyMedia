@@ -1,5 +1,9 @@
 # Getting screen recordings to Claude
 
+**This folder means "not done yet."** Once a clip has been posted from, it moves to
+[`../_USED/`](../_USED/) in the same run, so whatever is sitting here is always work
+still waiting on an edit. You never need to clear it out yourself.
+
 **Do not try to upload videos into this folder from a phone.** GitHub's mobile web
 only offers "create file" for text; there is no binary upload from the photo
 library. That is a GitHub limitation, not a repo one.
@@ -16,8 +20,9 @@ Then, every time:
 5. Tell Claude **"clips are in Drive"**
 
 Claude finds them through the Drive connector, pulls the bytes down with `curl`
-(outside its context, so a 60 MB clip costs nothing), edits, schedules, and
-commits the finished `demo.mp4` here in the repo.
+(outside its context, so a 60 MB clip costs nothing), edits, schedules, commits the
+finished `demo.mp4`, harvests stills for the carousel track, and files the raw clip in
+`../_USED/`.
 
 **On the link-sharing step:** it has to be link-shared because the connector can
 only hand Claude base64 through its context window, which a phone video would

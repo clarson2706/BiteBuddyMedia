@@ -38,10 +38,17 @@ work, what slides should look like, and the prompt that generates batches:
   cadence limits, 2026 anti-patterns.
 - `Content-Engine/MASTER-PROMPT-V5.md` — the 50-post CSV generation prompt.
 - `Content-Engine/DESIGN-SYSTEM.md` — brand tokens, 8 slide archetypes, render routes.
-- `UI-Library/` — 19 real app screenshots.
+- `Content-Engine/CAROUSEL-CONVERSION-SPEC.md` — what a deck has to *do*: the 9 slide
+  roles, the CTA ladder, the 2026 benchmarks, and asset autonomy.
+- `UI-Library/` — 19 real app screenshots, plus `Recordings/stills/` harvested from
+  screen recordings by `harvest_frames.py`.
 
-**Read all four docs before proposing or building anything.** They are recent, sourced,
+**Read all five docs before proposing or building anything.** They are recent, sourced,
 and deliberate.
+
+**Asset autonomy:** generation never asks Connor for a screenshot. App imagery comes from
+`UI-Library/**`, from recording stills, or it renders typographic. Used recordings are
+archived to `UI-Library/Recordings/_USED/` in the same run that posts from them.
 
 ## Two rules learned the hard way
 

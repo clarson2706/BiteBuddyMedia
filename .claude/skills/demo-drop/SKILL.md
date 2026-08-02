@@ -173,7 +173,35 @@ c.upload_video(video_path=f"{BASE}/Posts/Demos/{pid}/demo.mp4", title=..., user=
 YouTube descriptions and Facebook captions take the clickable App Store link;
 TikTok and Instagram carry the search phrase instead.
 
-## 6. Record and report
+## 6. Archive the clip you just used
+
+**In the same run that schedules the post, never later.** A clip that published from
+stays in the inbox only if someone forgets, and the cost of forgetting is re-cutting
+footage that already went out.
+
+```bash
+git mv "UI-Library/Recordings/_INBOX/<raw name>" \
+       "UI-Library/Recordings/_USED/<YYYY-MM-DD>-<what-it-shows>.mp4"
+```
+
+Then append one line to `UI-Library/Recordings/_USED/used.jsonl` naming the clip, the
+post ids that consumed it, and the stills harvested from it. Full convention in
+`UI-Library/Recordings/_USED/README.md`.
+
+Before archiving, **harvest the screens the demo did not use**, because those frames are
+what keeps the carousel track from ever needing a screenshot from Connor:
+
+```bash
+python3 Content-Engine/harvest_frames.py --input <clip> --sheet /tmp/sheet.jpg   # look
+python3 Content-Engine/harvest_frames.py --input <clip> --auto --prefix <YYYY-MM-DD>-<subject>
+```
+
+Look at the sheet before keeping anything: the privacy scrub in `DEMO-EDIT-SPEC.md`
+applies to a still exactly as it does to a frame of video. Archived clips stay
+re-harvestable forever; what they must not do is get cut into a second demo without the
+report saying so.
+
+## 7. Record and report
 
 - Write `Posts/Demos/manifest.json` with one entry per demo: id, source clip,
   hook, cta, caption, duration, per-platform job ids and request ids. The
@@ -181,7 +209,8 @@ TikTok and Instagram carry the search phrase instead.
   invisible to analytics forever.
 - Append each to `Content-Engine/registry.jsonl` with `series: DEMO`.
 - Commit everything, push, then tell Connor: how many clips came in, how many
-  days they cover, the slots used, and anything a clip was too short or too messy
+  days they cover, the slots used, which clips were archived to `_USED/`, how many
+  new stills were harvested, and anything a clip was too short or too messy
   to support.
 
 ## Why this track matters

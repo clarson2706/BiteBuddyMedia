@@ -1,0 +1,1921 @@
+{
+ "week": "2026-W32",
+ "covers": "2026-08-03 to 2026-08-09",
+ "timezone": "America/Chicago",
+ "generated_at": "2026-08-02T21:17:07Z",
+ "directives": "Analytics/next-week-directives.json",
+ "cadence": {
+  "tiktok_per_day": 4,
+  "tiktok_slots": [
+   "08:00",
+   "12:00",
+   "16:00",
+   "20:00"
+  ],
+  "youtube": "brand films only, 17:00",
+  "instagram": "not linked in Upload-Post",
+  "facebook": "not linked in Upload-Post"
+ },
+ "note": "25 carousels + 3 brand films = 28 TikTok posts, 4/day. Cadence raised from the 3/day ceiling by Connor on 2026-08-02; spacing held at 4h. S2 is absent because chain and USDA sources are still 403 from this environment and the guardrails forbid guessing a number. Every figure quoted in a deck is legible in the real screenshot on that deck's PROOF slide. Films run as a stated experiment against a 287-view photo median and a 1-view video sample; see Analytics/2026-08-02-per-post-analysis.md.",
+ "posts": [
+  {
+   "id": "2026-08-03-morning",
+   "date": "2026-08-03",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "You are not overeating, you are under-counting",
+   "slides": [
+    {
+     "text": "You are not overeating. You are under-counting.",
+     "role": "HOOK"
+    },
+    {
+     "text": "The gap is almost never the meal you remember.",
+     "role": "STAKE"
+    },
+    {
+     "text": "It is the handful while you are cooking.",
+     "role": "VALUE"
+    },
+    {
+     "text": "It is the last third of someone else's plate.",
+     "role": "VALUE"
+    },
+    {
+     "text": "It is the oil the pan drank.",
+     "role": "VALUE"
+    },
+    {
+     "text": "One photo. Four items. Nothing skipped.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-items.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Photograph it before you eat it. That is the entire habit.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Stop guessing what is on your plate.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "The meals people forget to log are almost never the big ones. It is the handful while cooking, the last third of a plate, the oil in the pan. None of it feels like eating, all of it counts. One photo catches the whole plate at once so nothing quietly goes missing.",
+   "pinned_comment": "what is the one thing you always forget to log",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "6dde036dfb60413aac5eab028ab3ffe9",
+    "request_id": "85b6e447b4b04151b90d15eeb5bf6a32",
+    "scheduled_local": "2026-08-03T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-03-midday",
+   "date": "2026-08-03",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "S1",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "visual_recipe": "QUIZ-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Guess the calories: salmon, green beans, crab cake, watermelon",
+   "slides": [
+    {
+     "text": "Guess the calories on this plate.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Comment your number before you swipe. One guess, no editing.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Salmon fillet. Green beans. Crab cake. Watermelon.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Nothing hidden. Nothing off the plate.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Most people go low, and they go low on the same item.",
+     "role": "VALUE"
+    },
+    {
+     "text": "485.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-result.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Salmon 260. Green beans 25. Crab cake 140. Watermelon 60.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Stop guessing what is on your plate.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "One photo, four foods, 485 calories. The crab cake is the item almost everyone forgets and it is 140 on its own. Comment your guess before you swipe. This is a real scan, estimate included, editable before it gets logged.",
+   "pinned_comment": "drop your guess before you swipe. no cheating.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "eb80e9cf586f43fb9fc8f68dcaf6e6f0",
+    "request_id": "97aaaf7361324e4db041e463b2cf640f",
+    "scheduled_local": "2026-08-03T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-03-afternoon",
+   "date": "2026-08-03",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P4",
+   "hook_family": "MISTAKE",
+   "visual_recipe": "PHOTO-FACT",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The four foods people always guess wrong",
+   "slides": [
+    {
+     "text": "Four foods almost everybody guesses wrong.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Not because they are unhealthy. Because they are invisible.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Anything fried in a pan you did not measure.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Anything described as a side.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Anything you ate standing up.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The app itemises the plate instead of totalling it.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-items-detail.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Sides, oils, and standing-up food. Those are the three blind spots.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "See the number before you eat it.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "The foods people misjudge are rarely the obvious ones. They are the sides, the cooking oil, and anything eaten standing up in the kitchen. Itemising a plate rather than totalling it is what makes those visible.",
+   "pinned_comment": "which one of these three is your blind spot",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "43829b4e990e4361910072360a189853",
+    "request_id": "6eecdf49a4144fbdbfa07104e21d73fc",
+    "scheduled_local": "2026-08-03T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-03-evening",
+   "date": "2026-08-03",
+   "time_local": "20:00",
+   "slot": "evening",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Day four is when tracking dies",
+   "slides": [
+    {
+     "text": "Day four is when tracking dies.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Not day one. Day one is easy, day one is motivated.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Day two you log everything.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Day three you log most of it.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Day four you eat something awkward and skip it, and skipping once is the whole thing.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Logging a meal takes one photo, not a form.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-camera-aimed.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "The fix is not discipline. It is making day four take five seconds.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Make day four easy.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Almost nobody quits tracking on day one. They quit on day four, when a meal is awkward to enter and skipping it is easier than logging it. The fix is not more discipline, it is making the awkward meal take five seconds.",
+   "pinned_comment": "what day do you usually stop",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "122ed374282b47acbe3f293410e02956",
+    "request_id": "e4665bda34864ca2846ebaa80c19c970",
+    "scheduled_local": "2026-08-03T20:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-04-morning",
+   "date": "2026-08-04",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "oneoff",
+   "persona": "P1",
+   "hook_family": "RIGHTWRONG",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "FOLLOW",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Tracking badly beats tracking nothing",
+   "slides": [
+    {
+     "text": "Tracking badly beats tracking nothing.",
+     "role": "HOOK"
+    },
+    {
+     "text": "The people who get results are not the accurate ones.",
+     "role": "STAKE"
+    },
+    {
+     "text": "They are the ones who never stopped.",
+     "role": "VALUE"
+    },
+    {
+     "text": "An estimate you logged is data. A perfect number you skipped is not.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Ninety percent logged every day outperforms one hundred percent logged twice.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Log it rough, correct it later. The edit button exists for that.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-items-detail.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Rough and daily beats perfect and occasional. Every time.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Log it rough. Just log it.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "The people who get somewhere with tracking are not the precise ones, they are the ones who never stopped. An estimate you actually logged is worth more than the perfect number you skipped. Follow for one of these every week.",
+   "pinned_comment": "rough and daily, or perfect and occasional. which are you",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "8ad088f0f2e6444ca2513763a4d14aad",
+    "request_id": "0a4bcc922b744e35ae1f69e5a83fbe3a",
+    "scheduled_local": "2026-08-04T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-04-midday",
+   "date": "2026-08-04",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "S1",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "visual_recipe": "QUIZ-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The crab cake question",
+   "slides": [
+    {
+     "text": "Which item on this plate is 140 calories?",
+     "role": "HOOK"
+    },
+    {
+     "text": "Comment your answer before you swipe.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Salmon fillet, 115 grams.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Green beans, 80 grams.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Crab cake, 60 grams. Watermelon, 80 grams.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The crab cake. 60 grams, 140 calories, 10g protein.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-items.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "The smallest item on the plate was the second biggest number.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Know what is on your plate.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Four items on one plate. The smallest of them by weight turned out to be the second largest by calories. Comment your guess before you swipe to the itemised breakdown.",
+   "pinned_comment": "guess first. which item is 140.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "93273ac6b3e945409f672cd4592aa8a4",
+    "request_id": "b5d4d063d84c47bc8b20b3345da7933c",
+    "scheduled_local": "2026-08-04T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-04-afternoon",
+   "date": "2026-08-04",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "S3",
+   "persona": "P3",
+   "hook_family": "TRACKED",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Why the weekend breaks your week",
+   "slides": [
+    {
+     "text": "Your week does not break on Wednesday.",
+     "role": "HOOK"
+    },
+    {
+     "text": "It breaks on Saturday, and quietly.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Weekday eating is repeatable, so it is easy to log.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Weekend eating is social, unmeasured, and someone else cooked it.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Two unlogged days is not two days of data. It is a week you cannot read.",
+     "role": "VALUE"
+    },
+    {
+     "text": "One photo works on a restaurant plate too.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-plate.jpg",
+     "style": "photo"
+    },
+    {
+     "text": "Log the weekend badly rather than not at all. That is the whole trick.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Track the days that actually move the number.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Weekday food is repeatable so it is easy to log. Weekend food is social, unmeasured, and cooked by someone else, which is exactly why it goes untracked and exactly why the week stops making sense. Log it roughly rather than not at all.",
+   "pinned_comment": "save this for saturday",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "c7595b5fa78f4c16b38a37feb1fa8e8b",
+    "request_id": "3f589b4bed8f4fc580bc2a64cb776709",
+    "scheduled_local": "2026-08-04T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-05-morning",
+   "date": "2026-08-05",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "oneoff",
+   "persona": "P4",
+   "hook_family": "OUTCOME",
+   "visual_recipe": "PHOTO-FACT",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "One photo, four foods, 42g protein",
+   "slides": [
+    {
+     "text": "One photo. Four foods. 42 grams of protein.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Protein is the number most people track worst.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Salmon fillet, 28g.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Crab cake, 10g. Green beans, 2g.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Watermelon, 3g. Nothing estimated by hand.",
+     "role": "VALUE"
+    },
+    {
+     "text": "42g of protein toward a 135g daily minimum.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-impact-today.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Photograph the plate, read the protein. No weighing, no lookup.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "See your protein without doing the maths.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Protein is the macro people misjudge most, usually downward. One photo of this plate itemised it at 42 grams across four foods, against a 135 gram daily target. No scale, no database lookup, no mental arithmetic.",
+   "pinned_comment": "save this if you never know your protein number",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "30a4631d708347a2992826e1696ab9ad",
+    "request_id": "009c2987df124b8ba7599fc0e8ac9d4b",
+    "scheduled_local": "2026-08-05T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-05-midday",
+   "date": "2026-08-05",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "MISTAKE",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The log of shame spiral",
+   "slides": [
+    {
+     "text": "The log of shame is why people quit.",
+     "role": "HOOK"
+    },
+    {
+     "text": "It goes in a specific order, every time.",
+     "role": "STAKE"
+    },
+    {
+     "text": "You eat something you did not plan.",
+     "role": "VALUE"
+    },
+    {
+     "text": "You decide to log it later, which means never.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Now the day is incomplete, so the week is pointless, so you stop.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The log does not judge. It itemises and moves on.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-items-detail.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Log the meal you do not want to log. That is the one that matters.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "A log, not a verdict.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Nobody quits because the food was bad. They quit because one unlogged meal made the day incomplete, and an incomplete day makes the week feel pointless. The meal you do not want to log is the exact one worth logging.",
+   "pinned_comment": "be honest. what is the meal you skip logging",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "e6d572fb373048cfac522f1b51d5d06c",
+    "request_id": "e8c0ee6f2ab24ae3b0f372c150857473",
+    "scheduled_local": "2026-08-05T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-05-afternoon",
+   "date": "2026-08-05",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P5",
+   "hook_family": "POV",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "POV: you stopped estimating",
+   "slides": [
+    {
+     "text": "POV: you stopped estimating your food.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Not weighing. Not measuring. Just stopped guessing.",
+     "role": "STAKE"
+    },
+    {
+     "text": "You used to think that plate was maybe 700.",
+     "role": "VALUE"
+    },
+    {
+     "text": "You used to round protein up because it felt high.",
+     "role": "VALUE"
+    },
+    {
+     "text": "You used to log nothing on the days it mattered.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Now you take a photo and read the actual number.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-result.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "The number was 485, not 700. Guessing is the part that was wrong.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Stop estimating. Start reading.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "The plate looked like 700 calories. It was 485. Nothing about the meal changed, only whether the number came from a guess or from the app. That gap is the entire reason estimating by eye does not work.",
+   "pinned_comment": "how far off do you think your guesses are",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "304a58b2b76f44bfa1661f2e4007896f",
+    "request_id": "49a6bdf01497480794461e42232c0585",
+    "scheduled_local": "2026-08-05T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-05-evening",
+   "date": "2026-08-05",
+   "time_local": "20:00",
+   "slot": "evening",
+   "series": "S1",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "visual_recipe": "QUIZ-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Guess the protein, not the calories",
+   "slides": [
+    {
+     "text": "Everyone guesses calories. Guess the protein.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Same plate. Harder question. Comment before you swipe.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Salmon fillet, green beans, crab cake, watermelon.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Most people guess protein low by a wide margin.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Especially when a plate looks light.",
+     "role": "VALUE"
+    },
+    {
+     "text": "42 grams.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-result.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Salmon 28g. Crab cake 10g. Watermelon 3g. Green beans 2g.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Read the protein, do not guess it.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Calories get all the attention and protein is the number people actually misjudge. Same plate as always, harder question. Comment your protein guess before you swipe to the answer.",
+   "pinned_comment": "protein guesses in the comments. no scrolling ahead.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "2a27b3a3deed4a4698a81a3450c4c776",
+    "request_id": "4bc52233d00745d2bf4daa8f112f8e64",
+    "scheduled_local": "2026-08-05T20:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-06-morning",
+   "date": "2026-08-06",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Tracking is not a diet, it is a receipt",
+   "slides": [
+    {
+     "text": "Tracking is not a diet. It is a receipt.",
+     "role": "HOOK"
+    },
+    {
+     "text": "A receipt does not tell you off. It tells you what happened.",
+     "role": "STAKE"
+    },
+    {
+     "text": "You do not argue with a bank statement.",
+     "role": "VALUE"
+    },
+    {
+     "text": "You read it, and next month you spend differently.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Food is the same, and it works the same way.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Here is what the receipt looks like.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-impact-today.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Read it, do not grade it. That is the difference that lasts.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Get the receipt, not the verdict.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "A receipt does not tell you off, it tells you what happened. People who last at tracking read the number the way they read a bank statement, then adjust. People who quit treat it as a grade.",
+   "pinned_comment": "save this if tracking has ever felt like being graded",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "9bde2dae70564930a1b953bf76f96876",
+    "request_id": "ca12b7f86dd44f318234f9937e629f86",
+    "scheduled_local": "2026-08-06T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-06-midday",
+   "date": "2026-08-06",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "oneoff",
+   "persona": "P3",
+   "hook_family": "RIGHTWRONG",
+   "visual_recipe": "BUILD-STEP",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Three ways to log a meal badly and still win",
+   "slides": [
+    {
+     "text": "Three ways to log a meal badly and still win.",
+     "role": "HOOK"
+    },
+    {
+     "text": "All three beat the thing most people do, which is nothing.",
+     "role": "STAKE"
+    },
+    {
+     "text": "One: photograph it and fix the details later.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Two: log the closest thing and move on.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Three: log half of it now rather than all of it never.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Every one of these is editable after the fact.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-use-photo.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Badly logged is logged. Perfect is the enemy here.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Log it imperfectly. Log it anyway.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "There is no version of logging so sloppy that it loses to not logging. Photograph and fix later, log the closest match, or log half of it now. All three keep the week readable.",
+   "pinned_comment": "which of the three would actually work for you",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "e73845a3f6c3459d90b8a2c955c1cebf",
+    "request_id": "d22771ab14b44b29b1a2fef0e3d49992",
+    "scheduled_local": "2026-08-06T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-06-afternoon",
+   "date": "2026-08-06",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P4",
+   "hook_family": "OUTCOME",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "FOLLOW",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The number is an estimate, that is the point",
+   "slides": [
+    {
+     "text": "The number is an estimate. That is the point.",
+     "role": "HOOK"
+    },
+    {
+     "text": "People treat that like a weakness. It is the feature.",
+     "role": "STAKE"
+    },
+    {
+     "text": "A precise number you never log is worth nothing.",
+     "role": "VALUE"
+    },
+    {
+     "text": "An estimate you log every day is a trend.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Trends are the only thing that has ever changed anyone's eating.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Every item stays editable before it logs.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-items-detail.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Consistency is the goal. Precision was never the goal.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Follow for the honest version of tracking.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Estimates get treated as a weakness in this category. They are the feature. A precise number you never write down is worth nothing next to a rough one you log daily, because only the trend has ever changed how anyone eats.",
+   "pinned_comment": "follow if you want the honest version of this",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "42055b0919b74aae99d59e71c702fdc1",
+    "request_id": "636943bd497446cca37f715fae0b2960",
+    "scheduled_local": "2026-08-06T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-07-morning",
+   "date": "2026-08-07",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "visual_recipe": "PHOTO-FACT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The oil the pan drank",
+   "slides": [
+    {
+     "text": "The oil the pan drank is not in your log.",
+     "role": "HOOK"
+    },
+    {
+     "text": "It is the most common invisible number in home cooking.",
+     "role": "STAKE"
+    },
+    {
+     "text": "You did not eat it out of a spoon, so it does not feel like food.",
+     "role": "VALUE"
+    },
+    {
+     "text": "It went in before the food did.",
+     "role": "VALUE"
+    },
+    {
+     "text": "It is on the plate now.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Photograph the plate, not the recipe.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-plate.jpg",
+     "style": "photo"
+    },
+    {
+     "text": "Log the plate as it looks, not as you planned it.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Catch what the recipe left out.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Cooking oil is the most commonly missed number in home cooking, because it goes in before the food and never feels like eating. Photographing the finished plate catches what the recipe in your head did not.",
+   "pinned_comment": "what else disappears between the pan and the plate",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "754cfb423e8f422084837002e86c5288",
+    "request_id": "ea740929d0f841ed896fac71d11ac76f",
+    "scheduled_local": "2026-08-07T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-07-midday",
+   "date": "2026-08-07",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "oneoff",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "visual_recipe": "COMPARE-SPLIT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Watermelon versus crab cake",
+   "slides": [
+    {
+     "text": "Watermelon or crab cake. Which is more calories?",
+     "role": "HOOK"
+    },
+    {
+     "text": "One weighs more. The other is the answer.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Watermelon, 80 grams.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Crab cake, 60 grams.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Same plate, same meal, same photo.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Watermelon 60. Crab cake 140.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-items.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Heavier is not bigger. Weight and calories are different questions.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Stop sizing food by eye.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "One of these weighs more and one of these is more than double the calories, and they are not the same item. Comment your answer before you swipe. Both numbers come from the same real scan.",
+   "pinned_comment": "answer in the comments first",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "d8a864648e3f45ed83a4e2f862b4caf0",
+    "request_id": "a8c0cb735c464364bd5bc6249770a500",
+    "scheduled_local": "2026-08-07T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-07-afternoon",
+   "date": "2026-08-07",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P1",
+   "hook_family": "HABIT",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Friday decides your week",
+   "slides": [
+    {
+     "text": "Friday decides your week. Not Monday.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Monday is where people start. Friday is where it holds or does not.",
+     "role": "STAKE"
+    },
+    {
+     "text": "By Friday the novelty is gone.",
+     "role": "VALUE"
+    },
+    {
+     "text": "By Friday there is a plan you did not make.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Whatever you do on Friday, you do again next Friday.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Five seconds, one photo, even on Friday.",
+     "role": "PROOF",
+     "image": "UI-Library/03-scan-capture/01-scan-home.png",
+     "style": "phone"
+    },
+    {
+     "text": "Protect Friday. The rest of the week takes care of itself.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Make Friday take five seconds.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Monday is where habits start and Friday is where they hold or fall over. The novelty is gone, the plan is someone else's, and whatever you do this Friday is what you will do next Friday.",
+   "pinned_comment": "save this and read it on friday",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "eb788530ecdc47ceb819499189df8b29",
+    "request_id": "1a2fd08f7c724f57b3acdf2a8f516150",
+    "scheduled_local": "2026-08-07T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-07-evening",
+   "date": "2026-08-07",
+   "time_local": "20:00",
+   "slot": "evening",
+   "series": "oneoff",
+   "persona": "P4",
+   "hook_family": "POV",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "APP",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Photograph it before you eat it",
+   "slides": [
+    {
+     "text": "Photograph it before you eat it.",
+     "role": "HOOK"
+    },
+    {
+     "text": "That is the whole method. There is not a second step.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Not weighing. Not searching a database.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Not remembering it three hours later.",
+     "role": "VALUE"
+    },
+    {
+     "text": "One photo, at the table, before the first bite.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Point, shoot, review.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-camera-aimed.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Before you eat it. After, you are reconstructing from memory.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Know the number before you eat it. Search 'BiteBuddy: Ai calorie scanner'",
+     "role": "CTA"
+    }
+   ],
+   "caption": "One photo at the table before the first bite. No weighing, no database search, no reconstructing the meal from memory three hours later. That is the entire method.",
+   "pinned_comment": "the trick is doing it before, not after",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "e467660430f8442fa02ca4fb35d882dc",
+    "request_id": "673eff967963458b990947a2de09a7cd",
+    "scheduled_local": "2026-08-07T20:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-08-morning",
+   "date": "2026-08-08",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "MISTAKE",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "You did not fall off, you stopped measuring",
+   "slides": [
+    {
+     "text": "You did not fall off. You stopped measuring.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Those feel identical from the inside. They are not.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Falling off means the eating changed.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Stopping means only the record changed.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Most people who think they failed simply went quiet.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Picking it back up costs one photo.",
+     "role": "PROOF",
+     "image": "UI-Library/03-scan-capture/01-scan-home.png",
+     "style": "phone"
+    },
+    {
+     "text": "Going quiet is not failing. Start the record again today.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Start the record again.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "There is a difference between the eating changing and the record stopping, and from the inside they feel the same. Most people who think they failed just went quiet. Restarting costs one photo.",
+   "pinned_comment": "how long was your longest gap",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "92d7461663af47e4b3ec667491e7f737",
+    "request_id": "619ac7652e1042b5bc21604a61609cca",
+    "scheduled_local": "2026-08-08T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-08-midday",
+   "date": "2026-08-08",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "oneoff",
+   "persona": "P5",
+   "hook_family": "OUTCOME",
+   "visual_recipe": "PHOTO-FACT",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "What 485 calories actually looks like",
+   "slides": [
+    {
+     "text": "This is what 485 calories looks like.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Not a diagram. Not a stock photo. An actual dinner.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Salmon fillet, green beans, crab cake, watermelon.",
+     "role": "VALUE"
+    },
+    {
+     "text": "It looks like a full plate because it is a full plate.",
+     "role": "VALUE"
+    },
+    {
+     "text": "485 calories, 42 grams of protein.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Straight from the scan, itemised.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-salmon-result.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Full plates and low numbers are not opposites.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "See what your plate actually is.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "A real dinner, not a diagram. Salmon, green beans, crab cake and watermelon came to 485 calories and 42 grams of protein. Full plates and modest numbers are not opposites, which is easier to believe when you can see both.",
+   "pinned_comment": "does this look like more or fewer calories than you expected",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "7813373c6de2446bb9b31981c9240288",
+    "request_id": "e4fd9147aac84528b353c6b4ebcb2a29",
+    "scheduled_local": "2026-08-08T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-08-afternoon",
+   "date": "2026-08-08",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P3",
+   "hook_family": "HABIT",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "SAVE",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "The weekend gap",
+   "slides": [
+    {
+     "text": "Two unlogged days is not a small gap.",
+     "role": "HOOK"
+    },
+    {
+     "text": "It is thirty percent of your week, missing.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Monday to Friday tells you about work.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Saturday and Sunday tell you about you.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The second one is where the pattern actually lives.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Same photo, same five seconds, on a Saturday.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-use-photo.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Log the weekend and the week finally makes sense.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Close the weekend gap.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Skipping Saturday and Sunday removes thirty percent of the week, and it is the thirty percent that describes you rather than your work schedule. Same photo, same five seconds.",
+   "pinned_comment": "save this if your weekends are a black hole",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "639b91e158424cdda4d40dfe9db69ef4",
+    "request_id": "f104d520a1d44c1791afbddacf7e9b90",
+    "scheduled_local": "2026-08-08T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-09-morning",
+   "date": "2026-08-09",
+   "time_local": "08:00",
+   "slot": "morning",
+   "series": "S3",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Sunday is a data point, not a reset",
+   "slides": [
+    {
+     "text": "Sunday is a data point. Not a reset.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Reset thinking is what makes the next seven days fragile.",
+     "role": "STAKE"
+    },
+    {
+     "text": "A reset means last week did not count.",
+     "role": "VALUE"
+    },
+    {
+     "text": "If last week did not count, this week can also not count.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Nothing that resets weekly ever compounds.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The week reads as one continuous record.",
+     "role": "PROOF",
+     "image": "UI-Library/07-reports/01-weekly-report.png",
+     "style": "phone"
+    },
+    {
+     "text": "Do not restart. Continue. That is the only version that works.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Continue the week, do not restart it.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "Treating Sunday as a reset is what makes every following week fragile, because if last week can be written off then so can this one. Nothing that resets weekly ever compounds.",
+   "pinned_comment": "reset on sunday, or just keep going",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "9b0c268dfee548249985036656d8a178",
+    "request_id": "79b08bb420174eba828c54f426411c62",
+    "scheduled_local": "2026-08-09T08:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-09-midday",
+   "date": "2026-08-09",
+   "time_local": "12:00",
+   "slot": "midday",
+   "series": "oneoff",
+   "persona": "P4",
+   "hook_family": "RIGHTWRONG",
+   "visual_recipe": "TYPE-CARD",
+   "cta_type": "FOLLOW",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Consistency beats precision",
+   "slides": [
+    {
+     "text": "Consistency beats precision. Not close.",
+     "role": "HOOK"
+    },
+    {
+     "text": "This is the one thing the whole category gets backwards.",
+     "role": "STAKE"
+    },
+    {
+     "text": "A 10 percent error, logged daily, still shows the trend.",
+     "role": "VALUE"
+    },
+    {
+     "text": "A perfect number, logged twice a week, shows nothing.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Trends move behaviour. Single numbers never have.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Every estimate stays editable, so precision is optional.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-items-detail.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "Aim for every day. Do not aim for exactly right.",
+     "role": "SAVE"
+    },
+    {
+     "text": "The app shows its work and lets you change it. Consistency beats precision.",
+     "role": "HONEST"
+    },
+    {
+     "text": "Follow for tracking that survives real life.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "A ten percent error logged every day still shows you the trend. A perfect number logged twice a week shows you nothing. The category obsesses over precision and it is the wrong variable.",
+   "pinned_comment": "follow if you want the version that survives real life",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "efc6ee1f0d944b66b1ae623165a9e8fc",
+    "request_id": "c215d8466e1c4da69c7ba9fb40e056e8",
+    "scheduled_local": "2026-08-09T12:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-09-afternoon",
+   "date": "2026-08-09",
+   "time_local": "16:00",
+   "slot": "afternoon",
+   "series": "oneoff",
+   "persona": "P5",
+   "hook_family": "GUESS",
+   "visual_recipe": "QUIZ-CARD",
+   "cta_type": "COMMENT",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "Guess what this adds to your day",
+   "slides": [
+    {
+     "text": "You logged 680 calories. Then you ate this.",
+     "role": "HOOK"
+    },
+    {
+     "text": "Guess where the day lands. Comment before you swipe.",
+     "role": "STAKE"
+    },
+    {
+     "text": "The plate is 485.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The day started at 680 logged.",
+     "role": "VALUE"
+    },
+    {
+     "text": "The app adds them together instead of making you do it.",
+     "role": "VALUE"
+    },
+    {
+     "text": "680 + 485 = 1,165.",
+     "role": "PROOF",
+     "image": "UI-Library/Recordings/stills/2026-07-20-impact-today.jpg",
+     "style": "phone"
+    },
+    {
+     "text": "One dinner rarely ends a day. It usually just shows you the room left.",
+     "role": "SAVE"
+    },
+    {
+     "text": "Every number here is an AI estimate you review and can edit before it logs.",
+     "role": "HONEST"
+    },
+    {
+     "text": "See where the day actually lands.",
+     "role": "CTA"
+    }
+   ],
+   "caption": "680 calories already logged, then a 485 calorie dinner. Guess where the day lands before you swipe. The app does the addition and shows the running total against your targets, so a full plate stops feeling like a guess about the rest of the day.",
+   "pinned_comment": "guess the total before swiping",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "c4501a7ef2124acc8ecec73a4d99c1b5",
+    "request_id": "93ad5d3e23444e908d466a31cd5f4cd9",
+    "scheduled_local": "2026-08-09T16:00:00",
+    "timezone": "America/Chicago"
+   }
+  },
+  {
+   "id": "2026-08-09-evening",
+   "date": "2026-08-09",
+   "time_local": "20:00",
+   "slot": "evening",
+   "series": "oneoff",
+   "persona": "P1",
+   "hook_family": "OUTCOME",
+   "visual_recipe": "STORY-BEAT",
+   "cta_type": "APP",
+   "platform_plan": [
+    "tiktok"
+   ],
+   "title": "One week of not guessing",
+   "slides": [
+    {
+     "text": "One week of not guessing.",
+     "role": "HOOK"
+    },
+    {
+     "text": "No diet. No rules. Only a record.",
+     "role": "STAKE"
+    },
+    {
+     "text": "Every plate photographed before the first bite.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Every number read instead of estimated.",
+     "role": "VALUE"
+    },
+    {
+     "text": "Nothing forbidden, nothing weighed.",
+     "role": "VALUE"
+    },
+    {
+     "text": "By the end of it you have a week you can actually read.",
+     "role": "PROOF",
+     "image": "UI-Library/07-reports/01-weekly-report--next-steps.png",
+     "style": "phone"
+    },
+    {
+     "text": "A week of data beats a month of intentions.",
+     "role": "SAVE"
+    },
+    {
+     "text": "These are estimates you approve, not verdicts handed to you.",
+     "role": "HONEST"
+    },
+    {
+     "text": "One week of not guessing. Search 'BiteBuddy: Ai calorie scanner'",
+     "role": "CTA"
+    }
+   ],
+   "caption": "No diet and no rules, only a record. Photograph the plate before the first bite, read the number instead of estimating it, and at the end of seven days you have a week you can actually read. That is the whole thing.",
+   "pinned_comment": "one week. no rules. just the record.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "973973e1a5c64727bd80bebca114c7f0",
+    "request_id": "4d42d30c9b4d48159590be2fa271ce34",
+    "scheduled_local": "2026-08-09T20:00:00",
+    "timezone": "America/Chicago"
+   }
+  }
+ ],
+ "films": [
+  {
+   "id": "2026-08-04-evening",
+   "date": "2026-08-04",
+   "time_local": "20:00",
+   "slot": "evening",
+   "kind": "brand-film",
+   "series": "FILM",
+   "persona": "P4",
+   "hook_family": "OUTCOME",
+   "visual_recipe": "BRAND-FILM",
+   "cta_type": "APP",
+   "platform_plan": [
+    "tiktok",
+    "youtube"
+   ],
+   "media": "Posts/Brand-Films/2026-08-04-it-knows-what-you-ate/post.mp4",
+   "title": "It knows what you ate",
+   "caption": "It knows what you ate. One photo of the plate and every calorie and macro is itemised, estimated by AI and editable before it logs. Free on the App Store.",
+   "pinned_comment": "one photo. that is the whole app.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieTracking",
+    "#FoodTracker",
+    "#AICalorieCounter"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "02cb5479592a44498629a68a3be9c78f",
+    "request_id": "ef075459ddb2485182e5e5724c5cc14c",
+    "scheduled_local": "2026-08-04T20:00:00",
+    "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
+   }
+  },
+  {
+   "id": "2026-08-06-evening",
+   "date": "2026-08-06",
+   "time_local": "20:00",
+   "slot": "evening",
+   "kind": "brand-film",
+   "series": "FILM",
+   "persona": "P1",
+   "hook_family": "TRACKED",
+   "visual_recipe": "BRAND-FILM",
+   "cta_type": "APP",
+   "platform_plan": [
+    "tiktok",
+    "youtube"
+   ],
+   "media": "Posts/Brand-Films/2026-08-06-every-tracker-dies/post.mp4",
+   "title": "Every tracker dies in week one",
+   "caption": "Every tracker dies in week one. Usually on day four, when one meal is too awkward to enter and skipping it is easier. One snap, every macro, editable before it logs. Free on the App Store.",
+   "pinned_comment": "day four is where they all die. what day did yours?",
+   "hashtags": [
+    "#BiteBuddy",
+    "#TrackingFood",
+    "#HealthyHabits",
+    "#CalorieTracker"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "9381b8e08be24827b8794e576dba0f4a",
+    "request_id": "e40da07d02d8435ab68237d1f18cbb21",
+    "scheduled_local": "2026-08-06T20:00:00",
+    "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
+   }
+  },
+  {
+   "id": "2026-08-08-evening",
+   "date": "2026-08-08",
+   "time_local": "20:00",
+   "slot": "evening",
+   "kind": "brand-film",
+   "series": "FILM",
+   "persona": "P5",
+   "hook_family": "POV",
+   "visual_recipe": "BRAND-FILM",
+   "cta_type": "APP",
+   "platform_plan": [
+    "tiktok",
+    "youtube"
+   ],
+   "media": "Posts/Brand-Films/2026-08-08-meet-your-buddy/post.mp4",
+   "title": "Meet your buddy",
+   "caption": "Your food has a witness, and he is friendlier than that sounds. Buddy reacts to every meal you log, so the record has a personality instead of a scoreboard. Free on the App Store.",
+   "pinned_comment": "he reacts to every meal. yes, every meal.",
+   "hashtags": [
+    "#BiteBuddy",
+    "#CalorieDeficit",
+    "#MacroTracking",
+    "#FoodDiary"
+   ],
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "add50118cc6b4acda2263dc8a4f0d4d8",
+    "request_id": "b2f32db24a60448590119a0541f8f90d",
+    "scheduled_local": "2026-08-08T20:00:00",
+    "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
+   }
+  }
+ ],
+ "scheduled_at": "2026-08-02T21:20:00Z",
+ "served_from_sha": "c89362bfb3689d4b74b961dfe2a85be370dad00d"
+}

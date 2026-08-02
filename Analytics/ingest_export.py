@@ -39,7 +39,16 @@ TIKTOK_COLS = {
 
 
 def parse_tiktok(path, year):
-    rows = []
+    """Rows in file order, with years assigned by walking backwards from the end.
+
+    TikTok's Date column is a bare "July 21" with no year, and a full-range export
+    spans twelve months, so it wraps: it can open on "August 2" of one year and close
+    on "August 1" of the next. Stamping every row with a single year puts 150-odd
+    future-dated rows into an append-only log, which is a lie the log can never shed.
+    So `year` means **the year of the last row**, and the year decrements each time the
+    month jumps up as we walk backwards past a December-to-January boundary.
+    """
+    raw_rows = []
     # TikTok writes a UTF-8 BOM; without utf-8-sig the first header becomes
     # "﻿Date" and every row silently parses as empty.
     with open(path, newline="", encoding="utf-8-sig") as fh:
@@ -48,22 +57,56 @@ def parse_tiktok(path, year):
             if not raw:
                 continue
             try:
-                d = datetime.strptime(f"{raw} {year}", "%B %d %Y").date()
+                md = datetime.strptime(raw, "%B %d")
             except ValueError:
-                sys.exit(f"unparseable date {raw!r} — pass the right --year, "
-                         "or teach this script the format")
-            row = {
-                "post_id": "ACCOUNT-DAILY",
-                "platform": "tiktok",
-                "date": d.isoformat(),
-                "source": "tiktok-export",
-                "saves": None,
-            }
-            for col, key in TIKTOK_COLS.items():
-                v = (r.get(col) or "").strip().replace(",", "")
-                row[key] = int(v) if v.isdigit() else None
-            rows.append(row)
+                sys.exit(f"unparseable date {raw!r} — teach this script the format")
+            raw_rows.append((md.month, md.day, r))
+
+    years, y, prev_month = [], year, None
+    for month, _, _ in reversed(raw_rows):
+        if prev_month is not None and month > prev_month:
+            y -= 1
+        years.append(y)
+        prev_month = month
+    years.reverse()
+
+    rows = []
+    today = datetime.now().date()
+    for (month, day, r), yr in zip(raw_rows, years):
+        try:
+            d = datetime(yr, month, day).date()
+        except ValueError:      # Feb 29 landing on the wrong year
+            sys.exit(f"{month}/{day} is not a date in {yr} — check --year")
+        if d > today:
+            sys.exit(f"refusing to log {d.isoformat()}, which is in the future. "
+                     f"--year should be the year of the export's LAST row, got {year}")
+        row = {
+            "post_id": "ACCOUNT-DAILY",
+            "platform": "tiktok",
+            "date": d.isoformat(),
+            "source": "tiktok-export",
+            "saves": None,
+        }
+        for col, key in TIKTOK_COLS.items():
+            v = (r.get(col) or "").strip().replace(",", "")
+            row[key] = int(v) if v.isdigit() else None
+        rows.append(row)
     return rows
+
+
+def trim_leading_zeros(rows):
+    """Drop the dead run before the account's first recorded activity.
+
+    A year-long export is mostly days that predate the account having any content.
+    Those are real reported zeros, but logging 350 of them buries the days that carry
+    signal. Zeros *after* first activity are kept: a day that genuinely went to zero is
+    exactly the kind of thing worth seeing.
+    """
+    metrics = ("views", "likes", "comments", "shares", "profileViews")
+    for i, r in enumerate(rows):
+        if any(r.get(m) for m in metrics):
+            return rows[i:], i
+    return rows, 0
 
 
 def existing_keys():
@@ -87,13 +130,24 @@ def existing_keys():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--tiktok", required=True, help="path to TikTok Studio Overview.csv")
-    ap.add_argument("--year", type=int, default=datetime.now().year)
+    ap.add_argument("--year", type=int, default=datetime.now().year,
+                    help="year of the export's LAST row; earlier rows roll back "
+                         "automatically when the range wraps a new year")
+    ap.add_argument("--all-rows", action="store_true",
+                    help="keep the all-zero run before the account's first activity")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
 
     rows = parse_tiktok(a.tiktok, a.year)
     if not rows:
         sys.exit("no rows parsed")
+    if not a.all_rows:
+        rows, dropped = trim_leading_zeros(rows)
+        if dropped:
+            print(f"skipped {dropped} all-zero rows before first activity "
+                  f"(--all-rows keeps them)")
+    if not rows:
+        sys.exit("every row is zero; nothing to log")
     seen = existing_keys()
     new = [r for r in rows if (r["platform"], r["date"]) not in seen]
     captured = datetime.now().astimezone().isoformat(timespec="seconds")

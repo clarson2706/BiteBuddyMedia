@@ -13,7 +13,7 @@ Upload-Post's upload_photos as public URLs.
 
 Usage:  python3 Content-Engine/render_slides.py Posts/2026-W30/manifest.json
 """
-import json, os, sys, textwrap
+import json, os, sys, textwrap, zlib
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1350
@@ -32,8 +32,9 @@ POSE_DIR = os.path.join(ROOT, "Brand-Assets", "buddy-poses", "transparent")
 # this screenshot inside a phone silhouette, never a text-only "it's on the App Store".
 TODAY_SHOT = os.path.join(ROOT, "UI-Library", "02-today-home", "01-today-home.png")
 
-# Which Buddy pose hosts the cover and the CTA, by post id. Chosen to match the
-# emotional beat (see Brand-Assets/buddy-poses/README.md).
+# Which Buddy pose hosts the cover and the CTA, by post id. Hand-picked for the posts
+# that shipped before pose selection was automated; kept so those decks keep the poses
+# they were published with. New posts need no entry here (see pick_poses).
 POSES = {
     "2026-07-25-slot1": ("buddy_thinking", "buddy_level_up"),
     "2026-07-25-slot2": ("buddy_warning_check", "buddy_fiber_shield"),
@@ -42,7 +43,71 @@ POSES = {
     "2026-07-25-flex1": ("buddy_thinking", "buddy_goal_celebration"),
 }
 BADGES = {"S3": "WHY TRACKING FAILS", "S1": "GUESS THE CALORIES",
-          "S2": "PROTEIN PER DOLLAR", "oneoff": ""}
+          "S2": "PROTEIN PER DOLLAR", "DEMO": "", "oneoff": ""}
+
+# Automatic pose selection, so a generated post renders without anyone hand-mapping it.
+# Cover pose = the question the hook asks; CTA pose = the payoff. Both are real app
+# renders from Brand-Assets/buddy-poses/transparent/, never generated. The legacy map
+# above still wins for the posts it names, so their hand-picked poses are preserved.
+POSE_BY_HOOK = {
+    "GUESS": "buddy_thinking", "QUIZ": "buddy_thinking",
+    "LIST": "buddy_idle", "CHEAT": "buddy_idle", "ORDER": "buddy_idle",
+    "TRACKED": "buddy_sugar_crash", "RIGHTWRONG": "buddy_warning_check",
+    "HABIT": "buddy_thinking", "OUTCOME": "buddy_balanced_glow",
+    "POV": "buddy_idle", "MISTAKE": "buddy_warning_check",
+}
+POSE_BY_SERIES = {          # (cover fallback, CTA payoff)
+    "S1": ("buddy_thinking", "buddy_goal_celebration"),
+    "S2": ("buddy_idle", "buddy_protein_powerup"),
+    "S3": ("buddy_sugar_crash", "buddy_level_up"),
+    "DEMO": ("buddy_thinking", "buddy_balanced_glow"),
+}
+DEFAULT_POSES = ("buddy_idle", "buddy_happy")
+
+# Slide roles from CAROUSEL-CONVERSION-SPEC.md §2. Roles are optional: a manifest that
+# names none falls back to cover-first / CTA-last, which is how the pre-spec decks work.
+COVER_ROLES = {"HOOK", "COVER"}
+CTA_ROLES = {"CTA"}
+PHONE_ROLES = {"PROOF"}     # the receipts slide always renders the screen as a phone
+
+
+def pick_poses(post):
+    """(cover_pose, cta_pose), derived rather than hand-mapped.
+
+    Order of precedence: explicit poses on the post, the legacy per-id map, then the
+    series/hook derivation. Every branch returns real canonical poses.
+    """
+    explicit = post.get("poses")
+    if isinstance(explicit, (list, tuple)) and len(explicit) == 2:
+        return tuple(explicit)
+    if post["id"] in POSES:
+        return POSES[post["id"]]
+    cover, cta = POSE_BY_SERIES.get(post.get("series"), DEFAULT_POSES)
+    hook_pose = POSE_BY_HOOK.get(post.get("hook_family"), cover)
+    # the cover asks and the CTA pays off, so they should not be the same pose
+    return (cover if hook_pose == cta else hook_pose), cta
+
+
+VARIANTS = 5   # raised from 3 on 2026-08-02, when TikTok went to 4 posts/day
+
+
+def variant_of(post):
+    """Which of the five layout looks this deck wears, 0 to 4.
+
+    The anti-slop rule in DESIGN-SYSTEM.md requires consecutive posts not to share an
+    identical layout. Derived from the post id so it is stable across re-renders and
+    spreads without anyone choosing it. Five rather than three because at 4 posts/day
+    a three-look rotation repeats twice within a single day's grid, which is exactly
+    the templated read TikTok's 2026 crackdown penalises.
+    """
+    if isinstance(post.get("variant"), int):
+        return post["variant"] % VARIANTS
+    # crc32, not a character sum: post ids within a week differ by only a word or two
+    # ("...-morning" vs "...-midday"), and a plain sum maps those to the same bucket,
+    # which put three identical layouts in one day the first time this ran. Generation
+    # should still set "variant" explicitly so a day is guaranteed four distinct looks;
+    # this is the fallback for manifests that do not.
+    return zlib.crc32(post["id"].encode()) % VARIANTS
 
 
 def font(path, size, weight=None):
@@ -129,15 +194,75 @@ def image_block(rel_path, style, max_w, max_h):
     return out
 
 
-def badge(draw, img, text):
+def badge(draw, img, text, right=False):
     if not text:
         return
     f = font("Baloo2.ttf", 30, 700)
     tw = draw.textlength(text, font=f)
     pad_x, pad_y, h = 26, 12, 56
-    draw.rounded_rectangle([MARGIN, MARGIN, MARGIN + tw + pad_x * 2, MARGIN + h],
+    x = W - MARGIN - tw - pad_x * 2 if right else MARGIN
+    draw.rounded_rectangle([x, MARGIN, x + tw + pad_x * 2, MARGIN + h],
                            radius=h // 2, fill=LAVENDER)
-    draw.text((MARGIN + pad_x, MARGIN + pad_y - 2), text, font=f, fill=CHARCOAL)
+    draw.text((x + pad_x, MARGIN + pad_y - 2), text, font=f, fill=CHARCOAL)
+
+
+def accents(d, variant, idx):
+    """The soft background shapes. Three looks, rotated per deck by variant_of().
+
+    DESIGN-SYSTEM.md's anti-slop rule: consecutive posts must not share an identical
+    layout. Variant 0 is the original look, so decks that hash to it are unchanged.
+    """
+    if variant == 0:
+        if idx % 3 == 0:
+            d.ellipse([W - 210, -110, W + 150, 250], fill=PEACH)
+        elif idx % 3 == 1:
+            d.rounded_rectangle([-90, H - 240, 190, H + 90], radius=70, fill=LAVENDER)
+        else:
+            d.ellipse([-130, H - 200, 150, H + 110], fill=SAGE)
+    elif variant == 1:
+        if idx % 3 == 0:
+            d.ellipse([-160, -140, 220, 240], fill=LAVENDER)
+        elif idx % 3 == 1:
+            d.rounded_rectangle([W - 200, H - 260, W + 110, H + 80], radius=70, fill=PEACH)
+        else:
+            d.rounded_rectangle([W - 230, -120, W + 90, 180], radius=70, fill=SAGE)
+    elif variant == 2:
+        # a quiet vertical bar plus one corner arc: the most typographic of the five
+        bar = PEACH if idx % 2 == 0 else SAGE
+        d.rounded_rectangle([0, 210, 26, H - 210], radius=13, fill=bar)
+        if idx % 3 == 2:
+            d.ellipse([W - 190, H - 190, W + 130, H + 130], fill=LAVENDER)
+    elif variant == 3:
+        # horizontal rails top and bottom: reads as a card, holds a grid together
+        rail = [PEACH, SAGE, LAVENDER][idx % 3]
+        d.rectangle([0, 0, W, 22], fill=rail)
+        d.rectangle([0, H - 22, W, H], fill=rail)
+        if idx % 3 == 1:
+            d.ellipse([W - 150, H - 250, W + 120, H + 20], fill=LAVENDER)
+    else:
+        # inset outline plus one solid corner block: the most graphic of the five
+        block = [SAGE, PEACH, LAVENDER][idx % 3]
+        d.rounded_rectangle([40, 40, W - 40, H - 40], radius=54,
+                            outline=block, width=10)
+        if idx % 2 == 0:
+            d.rounded_rectangle([W - 300, -80, W + 80, 120], radius=48, fill=block)
+        else:
+            d.rounded_rectangle([-80, H - 120, 300, H + 80], radius=48, fill=block)
+
+
+def slide_role(slide, idx, total):
+    """The slide's job, per CAROUSEL-CONVERSION-SPEC.md §2.
+
+    Manifests may name roles explicitly. Older ones do not, so fall back to the shape
+    every deck has had since the start: first slide covers, last slide asks.
+    """
+    if isinstance(slide, dict) and slide.get("role"):
+        return slide["role"].upper()
+    if idx == 0:
+        return "HOOK"
+    if idx == total - 1:
+        return "CTA"
+    return "VALUE"
 
 
 def render_cta(post, img, d, text, cta_pose):
@@ -170,28 +295,49 @@ def render_cta(post, img, d, text, cta_pose):
     return img
 
 
+def draw_lines(d, lines, f, y, lh, colour, left=False):
+    for line in lines:
+        x = MARGIN + 34 if left else (W - d.textlength(line, font=f)) / 2
+        d.text((x, y), line, font=f, fill=colour)
+        y += lh
+    return y
+
+
+def save_chip(d):
+    """The screenshot-me marker on the SAVE slide. Its own visual so the save ask is
+    not just a sentence competing with the content."""
+    f = font("Baloo2.ttf", 30, 700)
+    text = "SAVE THIS"
+    tw = d.textlength(text, font=f)
+    x0, y0 = W - MARGIN - tw - 52, H - 148
+    d.rounded_rectangle([x0, y0, x0 + tw + 52, y0 + 56], radius=28, fill=ORANGE)
+    d.text((x0 + 26, y0 + 10), text, font=f, fill=CREAM)
+
+
 def render_slide(post, idx, total, slide):
-    # a slide is either a string or {"text", "image", "style"} when it carries a
-    # real photo or screenshot
+    # a slide is either a string or {"text", "image", "style", "role"} when it carries a
+    # real photo or screenshot, or fills a named role from the conversion spec
     if isinstance(slide, dict):
         text, image, style = slide["text"], slide.get("image"), slide.get("style", "photo")
     else:
         text, image, style = slide, None, "photo"
 
+    role = slide_role(slide, idx, total)
+    is_cover, is_cta = role in COVER_ROLES, role in CTA_ROLES
+    if role in PHONE_ROLES and image:
+        style = "phone"          # receipts always read as the app, never as a loose photo
+
     img = Image.new("RGB", (W, H), CREAM)
     d = ImageDraw.Draw(img)
-    is_cover, is_cta = idx == 0, idx == total - 1
-    cover_pose, cta_pose = POSES.get(post["id"], ("buddy_idle", "buddy_happy"))
+    cover_pose, cta_pose = pick_poses(post)
+    var = variant_of(post)
+    left = var in (2, 4) and not is_cover and not is_cta
 
-    # soft accent shapes, varied per slide so the deck does not look stamped
-    if idx % 3 == 0:
-        d.ellipse([W - 210, -110, W + 150, 250], fill=PEACH)
-    elif idx % 3 == 1:
-        d.rounded_rectangle([-90, H - 240, 190, H + 90], radius=70, fill=LAVENDER)
-    else:
-        d.ellipse([-130, H - 200, 150, H + 110], fill=SAGE)
-
-    badge(d, img, BADGES.get(post.get("series"), ""))
+    accents(d, var, idx)
+    # the closer is already branded by the phone and the download line; a series chip
+    # there only competes with the headline
+    badge_text = "" if is_cta else BADGES.get(post.get("series"), "")
+    badge(d, img, badge_text, right=(var == 1))
 
     if is_cta:
         return render_cta(post, img, d, text, cta_pose)
@@ -200,11 +346,9 @@ def render_slide(post, idx, total, slide):
         # headline on top, the real thing underneath, filling the slide
         f, lines, lh = fit_text(d, text, "Baloo2.ttf", 74 if is_cover else 60, 34,
                                 W - MARGIN * 2, 250, 700)
-        y = MARGIN + 40
-        for line in lines:
-            d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f,
-                   fill=ORANGE if is_cover else CHARCOAL)
-            y += lh
+        # clear the series chip rather than running the headline through it
+        y = draw_lines(d, lines, f, MARGIN + (110 if badge_text else 40), lh,
+                       ORANGE if is_cover else CHARCOAL, left)
 
         block = image_block(image, style, W - MARGIN * 2, H - y - 120)
         img.paste(block, ((W - block.width) // 2, y + 34), block)
@@ -225,22 +369,34 @@ def render_slide(post, idx, total, slide):
         pose = None
         box_h = 780
 
-    colour = ORANGE if (is_cover or is_cta) else CHARCOAL
-    max_size = 92 if is_cover else (78 if is_cta else 72)
+    if role == "SAVE":
+        # the dense, saveable slide sits on a card so it reads as a reference, not prose
+        d.rounded_rectangle([MARGIN - 30, 300, W - MARGIN + 30, H - 300],
+                            radius=56, fill=LAVENDER)
+        box_h = 620
+
+    colour = ORANGE if is_cover else (SAGE if role == "HONEST" else CHARCOAL)
+    max_size = 92 if is_cover else (56 if role == "HONEST" else 72)
     f, lines, lh = fit_text(d, text, "Baloo2.ttf", max_size, 34,
                             W - MARGIN * 2, box_h, 700)
 
     block_h = len(lines) * lh
-    y = MARGIN + 130 if (is_cover or is_cta) else (H - block_h) // 2 - 40
-    for line in lines:
-        d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=colour)
-        y += lh
+    if is_cover:
+        y = MARGIN + 130
+    elif role == "SAVE":
+        y = (H - block_h) // 2          # centred in the card, not offset above it
+    else:
+        y = (H - block_h) // 2 - 40
+    draw_lines(d, lines, f, y, lh, colour, left)
 
     if pose is not None:
         img.paste(pose, ((W - pose.width) // 2, H - pose.height - 40), pose)
 
+    if role == "SAVE":
+        save_chip(d)
+
     # slide counter, quiet, bottom-left; skipped on the branded cover and CTA
-    if not is_cover and not is_cta:
+    if not is_cover:
         fs = font("Inter.ttf", 26, 500)
         d.text((MARGIN, H - 78), f"{idx + 1}/{total}", font=fs, fill=SAGE)
     return img
