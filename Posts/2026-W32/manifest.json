@@ -80,8 +80,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 0
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "6dde036dfb60413aac5eab028ab3ffe9",
+    "request_id": "85b6e447b4b04151b90d15eeb5bf6a32",
+    "scheduled_local": "2026-08-03T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-03-midday",
@@ -145,8 +151,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 1
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "eb80e9cf586f43fb9fc8f68dcaf6e6f0",
+    "request_id": "97aaaf7361324e4db041e463b2cf640f",
+    "scheduled_local": "2026-08-03T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-03-afternoon",
@@ -210,8 +222,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 2
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "43829b4e990e4361910072360a189853",
+    "request_id": "6eecdf49a4144fbdbfa07104e21d73fc",
+    "scheduled_local": "2026-08-03T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-03-evening",
@@ -275,8 +293,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 3
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "122ed374282b47acbe3f293410e02956",
+    "request_id": "e4665bda34864ca2846ebaa80c19c970",
+    "scheduled_local": "2026-08-03T20:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-04-morning",
@@ -340,8 +364,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 4
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "8ad088f0f2e6444ca2513763a4d14aad",
+    "request_id": "0a4bcc922b744e35ae1f69e5a83fbe3a",
+    "scheduled_local": "2026-08-04T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-04-midday",
@@ -405,8 +435,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 0
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "93273ac6b3e945409f672cd4592aa8a4",
+    "request_id": "b5d4d063d84c47bc8b20b3345da7933c",
+    "scheduled_local": "2026-08-04T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-04-afternoon",
@@ -470,8 +506,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 1
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "c7595b5fa78f4c16b38a37feb1fa8e8b",
+    "request_id": "3f589b4bed8f4fc580bc2a64cb776709",
+    "scheduled_local": "2026-08-04T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-05-morning",
@@ -535,8 +577,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 2
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "30a4631d708347a2992826e1696ab9ad",
+    "request_id": "009c2987df124b8ba7599fc0e8ac9d4b",
+    "scheduled_local": "2026-08-05T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-05-midday",
@@ -600,8 +648,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 3
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "e6d572fb373048cfac522f1b51d5d06c",
+    "request_id": "e8c0ee6f2ab24ae3b0f372c150857473",
+    "scheduled_local": "2026-08-05T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-05-afternoon",
@@ -665,8 +719,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 4
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "304a58b2b76f44bfa1661f2e4007896f",
+    "request_id": "49a6bdf01497480794461e42232c0585",
+    "scheduled_local": "2026-08-05T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-05-evening",
@@ -730,8 +790,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 0
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "2a27b3a3deed4a4698a81a3450c4c776",
+    "request_id": "4bc52233d00745d2bf4daa8f112f8e64",
+    "scheduled_local": "2026-08-05T20:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-06-morning",
@@ -795,8 +861,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 1
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "9bde2dae70564930a1b953bf76f96876",
+    "request_id": "ca12b7f86dd44f318234f9937e629f86",
+    "scheduled_local": "2026-08-06T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-06-midday",
@@ -860,8 +932,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 2
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "e73845a3f6c3459d90b8a2c955c1cebf",
+    "request_id": "d22771ab14b44b29b1a2fef0e3d49992",
+    "scheduled_local": "2026-08-06T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-06-afternoon",
@@ -925,8 +1003,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 3
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "42055b0919b74aae99d59e71c702fdc1",
+    "request_id": "636943bd497446cca37f715fae0b2960",
+    "scheduled_local": "2026-08-06T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-07-morning",
@@ -990,8 +1074,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 4
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "754cfb423e8f422084837002e86c5288",
+    "request_id": "ea740929d0f841ed896fac71d11ac76f",
+    "scheduled_local": "2026-08-07T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-07-midday",
@@ -1055,8 +1145,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 0
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "d8a864648e3f45ed83a4e2f862b4caf0",
+    "request_id": "a8c0cb735c464364bd5bc6249770a500",
+    "scheduled_local": "2026-08-07T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-07-afternoon",
@@ -1120,8 +1216,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 1
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "eb788530ecdc47ceb819499189df8b29",
+    "request_id": "1a2fd08f7c724f57b3acdf2a8f516150",
+    "scheduled_local": "2026-08-07T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-07-evening",
@@ -1185,8 +1287,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 2
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "e467660430f8442fa02ca4fb35d882dc",
+    "request_id": "673eff967963458b990947a2de09a7cd",
+    "scheduled_local": "2026-08-07T20:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-08-morning",
@@ -1250,8 +1358,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 3
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "92d7461663af47e4b3ec667491e7f737",
+    "request_id": "619ac7652e1042b5bc21604a61609cca",
+    "scheduled_local": "2026-08-08T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-08-midday",
@@ -1315,8 +1429,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 4
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "7813373c6de2446bb9b31981c9240288",
+    "request_id": "e4fd9147aac84528b353c6b4ebcb2a29",
+    "scheduled_local": "2026-08-08T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-08-afternoon",
@@ -1380,8 +1500,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 0
+   "status": "scheduled",
+   "variant": 0,
+   "scheduled_job": {
+    "job_id": "639b91e158424cdda4d40dfe9db69ef4",
+    "request_id": "f104d520a1d44c1791afbddacf7e9b90",
+    "scheduled_local": "2026-08-08T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-09-morning",
@@ -1445,8 +1571,14 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated",
-   "variant": 1
+   "status": "scheduled",
+   "variant": 1,
+   "scheduled_job": {
+    "job_id": "9b0c268dfee548249985036656d8a178",
+    "request_id": "79b08bb420174eba828c54f426411c62",
+    "scheduled_local": "2026-08-09T08:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-09-midday",
@@ -1510,8 +1642,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 2
+   "status": "scheduled",
+   "variant": 2,
+   "scheduled_job": {
+    "job_id": "efc6ee1f0d944b66b1ae623165a9e8fc",
+    "request_id": "c215d8466e1c4da69c7ba9fb40e056e8",
+    "scheduled_local": "2026-08-09T12:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-09-afternoon",
@@ -1575,8 +1713,14 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated",
-   "variant": 3
+   "status": "scheduled",
+   "variant": 3,
+   "scheduled_job": {
+    "job_id": "c4501a7ef2124acc8ecec73a4d99c1b5",
+    "request_id": "93ad5d3e23444e908d466a31cd5f4cd9",
+    "scheduled_local": "2026-08-09T16:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-09-evening",
@@ -1640,8 +1784,14 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated",
-   "variant": 4
+   "status": "scheduled",
+   "variant": 4,
+   "scheduled_job": {
+    "job_id": "973973e1a5c64727bd80bebca114c7f0",
+    "request_id": "4d42d30c9b4d48159590be2fa271ce34",
+    "scheduled_local": "2026-08-09T20:00:00",
+    "timezone": "America/Chicago"
+   }
   }
  ],
  "films": [
@@ -1670,7 +1820,13 @@
     "#FoodTracker",
     "#AICalorieCounter"
    ],
-   "status": "generated"
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "02cb5479592a44498629a68a3be9c78f",
+    "request_id": "ef075459ddb2485182e5e5724c5cc14c",
+    "scheduled_local": "2026-08-04T20:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-06-evening",
@@ -1697,7 +1853,13 @@
     "#HealthyHabits",
     "#CalorieTracker"
    ],
-   "status": "generated"
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "9381b8e08be24827b8794e576dba0f4a",
+    "request_id": "e40da07d02d8435ab68237d1f18cbb21",
+    "scheduled_local": "2026-08-06T20:00:00",
+    "timezone": "America/Chicago"
+   }
   },
   {
    "id": "2026-08-08-evening",
@@ -1724,7 +1886,15 @@
     "#MacroTracking",
     "#FoodDiary"
    ],
-   "status": "generated"
+   "status": "scheduled",
+   "scheduled_job": {
+    "job_id": "add50118cc6b4acda2263dc8a4f0d4d8",
+    "request_id": "b2f32db24a60448590119a0541f8f90d",
+    "scheduled_local": "2026-08-08T20:00:00",
+    "timezone": "America/Chicago"
+   }
   }
- ]
+ ],
+ "scheduled_at": "2026-08-02T21:20:00Z",
+ "served_from_sha": "c89362bfb3689d4b74b961dfe2a85be370dad00d"
 }
