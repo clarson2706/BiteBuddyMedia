@@ -13,7 +13,7 @@ Upload-Post's upload_photos as public URLs.
 
 Usage:  python3 Content-Engine/render_slides.py Posts/2026-W30/manifest.json
 """
-import json, os, sys, textwrap
+import json, os, sys, textwrap, zlib
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1350
@@ -88,16 +88,26 @@ def pick_poses(post):
     return (cover if hook_pose == cta else hook_pose), cta
 
 
+VARIANTS = 5   # raised from 3 on 2026-08-02, when TikTok went to 4 posts/day
+
+
 def variant_of(post):
-    """0, 1 or 2. Which of the three layout looks this deck wears.
+    """Which of the five layout looks this deck wears, 0 to 4.
 
     The anti-slop rule in DESIGN-SYSTEM.md requires consecutive posts not to share an
     identical layout. Derived from the post id so it is stable across re-renders and
-    spreads evenly without anyone choosing it.
+    spreads without anyone choosing it. Five rather than three because at 4 posts/day
+    a three-look rotation repeats twice within a single day's grid, which is exactly
+    the templated read TikTok's 2026 crackdown penalises.
     """
     if isinstance(post.get("variant"), int):
-        return post["variant"] % 3
-    return sum(ord(c) for c in post["id"]) % 3
+        return post["variant"] % VARIANTS
+    # crc32, not a character sum: post ids within a week differ by only a word or two
+    # ("...-morning" vs "...-midday"), and a plain sum maps those to the same bucket,
+    # which put three identical layouts in one day the first time this ran. Generation
+    # should still set "variant" explicitly so a day is guaranteed four distinct looks;
+    # this is the fallback for manifests that do not.
+    return zlib.crc32(post["id"].encode()) % VARIANTS
 
 
 def font(path, size, weight=None):
@@ -216,12 +226,28 @@ def accents(d, variant, idx):
             d.rounded_rectangle([W - 200, H - 260, W + 110, H + 80], radius=70, fill=PEACH)
         else:
             d.rounded_rectangle([W - 230, -120, W + 90, 180], radius=70, fill=SAGE)
-    else:
-        # a quiet vertical bar plus one corner arc: the most typographic of the three
+    elif variant == 2:
+        # a quiet vertical bar plus one corner arc: the most typographic of the five
         bar = PEACH if idx % 2 == 0 else SAGE
         d.rounded_rectangle([0, 210, 26, H - 210], radius=13, fill=bar)
         if idx % 3 == 2:
             d.ellipse([W - 190, H - 190, W + 130, H + 130], fill=LAVENDER)
+    elif variant == 3:
+        # horizontal rails top and bottom: reads as a card, holds a grid together
+        rail = [PEACH, SAGE, LAVENDER][idx % 3]
+        d.rectangle([0, 0, W, 22], fill=rail)
+        d.rectangle([0, H - 22, W, H], fill=rail)
+        if idx % 3 == 1:
+            d.ellipse([W - 150, H - 250, W + 120, H + 20], fill=LAVENDER)
+    else:
+        # inset outline plus one solid corner block: the most graphic of the five
+        block = [SAGE, PEACH, LAVENDER][idx % 3]
+        d.rounded_rectangle([40, 40, W - 40, H - 40], radius=54,
+                            outline=block, width=10)
+        if idx % 2 == 0:
+            d.rounded_rectangle([W - 300, -80, W + 80, 120], radius=48, fill=block)
+        else:
+            d.rounded_rectangle([-80, H - 120, 300, H + 80], radius=48, fill=block)
 
 
 def slide_role(slide, idx, total):
@@ -305,7 +331,7 @@ def render_slide(post, idx, total, slide):
     d = ImageDraw.Draw(img)
     cover_pose, cta_pose = pick_poses(post)
     var = variant_of(post)
-    left = var == 2 and not is_cover and not is_cta
+    left = var in (2, 4) and not is_cover and not is_cta
 
     accents(d, var, idx)
     # the closer is already branded by the phone and the download line; a series chip

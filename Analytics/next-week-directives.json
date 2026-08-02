@@ -1,25 +1,83 @@
 {
-  "generated_at": "2026-07-25T07:20:00Z",
-  "week_analyzed": "2026-W30-baseline",
+  "generated_at": "2026-08-02T21:05:30Z",
+  "week_analyzed": "2026-W31",
+  "week_opened": "2026-W32",
   "confidence": "low",
-  "basis": "Account-level aggregates only (get_history returns 400, so no per-post rows). Directives below are traceable to the baseline report but rest on a small, coarse sample.",
+  "basis": "Account-level only. TikTok Studio export is ground truth through Aug 1; Upload-Post aggregates fill Aug 2. No per-post rows exist for this account, so no directive below may claim a specific post caused anything.",
   "lean_into": {
-    "series": ["S1", "S2"],
-    "hook_families": ["GUESS", "LIST", "RIGHTWRONG", "COMPARE"],
-    "personas": ["P5", "P3", "P1", "P4"],
-    "topics": ["restaurant-macros", "protein-per-dollar", "tracking-friction", "same-calorie-comparison"],
-    "slots": ["08:00", "19:00"]
+    "series": [
+      "S3",
+      "S1"
+    ],
+    "hook_families": [
+      "TRACKED",
+      "RIGHTWRONG",
+      "GUESS",
+      "HABIT",
+      "MISTAKE"
+    ],
+    "personas": [
+      "P1",
+      "P5",
+      "P4"
+    ],
+    "topics": [
+      "tracking-friction",
+      "quitting-and-restarting",
+      "guess-the-calories",
+      "under-counting",
+      "portion-reality"
+    ],
+    "slots": [
+      "08:00",
+      "12:00",
+      "16:00",
+      "20:00"
+    ]
   },
   "dial_back": {
-    "series": [],
-    "hook_families": [],
-    "topics": ["generic-nutrition-trivia"]
+    "series": [
+      "S2"
+    ],
+    "hook_families": [
+      "LIST",
+      "ORDER",
+      "CHEAT"
+    ],
+    "topics": [
+      "numeric-chain-claims",
+      "protein-per-dollar",
+      "generic-nutrition-trivia"
+    ],
+    "why": "S2 depends on verified chain numbers and the network policy still returns 403 for every chain and USDA source. Generating it would mean guessing numbers, which the guardrails forbid."
   },
   "recut_winners": [],
+  "recut_note": "No winners can be named: per-post data does not exist. The 3 re-cut slots become experiments this week, per WEEKLY-LOOP.md Phase 2.",
   "experiments": [
-    "Comment-first CTAs on the majority of posts until comment count is non-zero",
-    "COMPARE-SPLIT same-calorie post as the save/share test"
+    "Comment-first CTAs on the majority of posts until the comment count is non-zero. Zero comments on ~6,900 views is the single clearest failure in the W31 report.",
+    "Three brand-film videos in the 20:00 slot: does production value convert reach that carousels are not converting?",
+    "Five rotating layout templates at 4 posts/day, watching for any reach penalty that would suggest the grid reads as templated."
   ],
-  "series_verdicts": { "S1": "hold", "S2": "hold", "S3": "hold" },
-  "notes": "Baseline: TikTok 668 views / 17 posts / 2 likes / 0 comments / 0 shares; YouTube 433 views / 3 likes / 0 comments. Zero comments across 17 posts is the headline problem and it is a content signal, not an algorithm signal, so weight this batch toward comment-earning formats (GUESS quizzes, ranking debates). Both platforms show a hard distribution collapse right after five simultaneous posts on 22 July, so hold cadence at 2 posts/day with wide spacing and do not chase volume. Instagram and Facebook are unlinked, so this batch is TikTok plus YouTube only."
+  "series_verdicts": {
+    "S1": "hold",
+    "S2": "hold-blocked",
+    "S3": "hold"
+  },
+  "verdict_note": "No series has the 2-week minimum sample with per-post data, so no scale/iterate/kill verdict is honest yet. S2 is blocked on network access rather than performance.",
+  "cadence": {
+    "tiktok_per_day": 4,
+    "tiktok_slots": [
+      "08:00",
+      "12:00",
+      "16:00",
+      "20:00"
+    ],
+    "youtube_per_day": 1,
+    "youtube_slot": "17:00",
+    "instagram_per_day": 0,
+    "facebook_per_day": 0,
+    "note": "Raised from 3/day to 4/day by Connor on 2026-08-02, overriding the ceiling in CLAUDE.md. Spacing held at 4h, which is what the Jul 22 incident actually punished. Instagram and Facebook are 0 because they are not linked in Upload-Post, not by choice.",
+    "timezone": "America/Chicago"
+  },
+  "notes": "Every entry traces to a number in Analytics/2026-W31-report.md. The headline: reach recovered and is compounding, action did not follow, so this week attacks the ask rather than the hook."
 }
