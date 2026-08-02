@@ -7,8 +7,14 @@ two ways to render it: **Route A — Canva Bulk Create** (template + CSV merge) 
 direct 1080×1350 image generation). Same visual language either way, so the account
 looks consistent no matter which route produced a given week.*
 
+**Read `CAROUSEL-CONVERSION-SPEC.md` alongside this file.** That one defines what a deck
+has to *do* (the nine slide roles, the CTA ladder, the benchmarks we are measured
+against) and it governs when the two disagree. This file defines what a slide *looks
+like*.
+
 Approval gate (unchanged, from `CLAUDE.md`): anything published is Connor's call —
 draft, show, then post. Both routes end at a review step, never at auto-publish.
+The weekly loop's carousels are the standing exception, authorized 2026-07-25.
 
 ---
 
@@ -31,14 +37,20 @@ draft, show, then post. Both routes end at a review step, never at auto-publish.
   with light letterboxing; a 9:16 variant set is an optional later upgrade.)
 - **Safe margins:** 90 px all sides; nothing critical in the bottom 180 px (platform UI
   overlays).
-- **Buddy:** appears on the **cover and CTA slide only** (transparent-PNG poses from
+- **Buddy:** appears on the **cover and CTA slide only**, and which pose hosts each is
+  derived automatically from the post's series and hook family by `pick_poses()` in
+  `render_slides.py`, so a generated post needs no hand-mapping (transparent-PNG poses from
   `Brand-Assets/buddy-poses/transparent/` — the 13 canonical app renders; never
   generate Buddy with an image model, that is what made him drift. The MASTER STYLE
   BLOCK in `Brand-Assets/MASCOT_IMAGE_GEN_PROMPTS.md` is only for a genuinely new
   pose, and match the existing framing). Body slides are
   content-forward. Buddy is small (lower third), a host — never filling the frame. No
   drawn effects; composite sparkles/confetti in the editor if ever needed.
-- **App UI:** real screenshots only, from `UI-Library/` — the standard is the Today-home
+- **App UI:** real screenshots only, from `UI-Library/` **or frames harvested from a
+  screen recording into `UI-Library/Recordings/stills/`** by
+  `Content-Engine/harvest_frames.py`. Recordings are the better source: one clip carries
+  every screen in the flow and stays current with the app. Either way the rule is the
+  same, and it is why generation never has to ask Connor for a screenshot. The standard is the Today-home
   hero (`UI-Library/02-today-home/01-today-home.png`) in a simple phone silhouette, and
   the scan-result screen (`UI-Library/04-food-result/01-food-result.png`) when a post
   uses the scan as receipts. Never redraw, mock, or invent UI or numbers.
@@ -50,9 +62,10 @@ risk profile. Countermeasures, mandatory on both routes:
 
 1. **Real food photography** on food slides (Canva stock / real photos), never AI-rendered
    food. AI renders of food are the fastest "slop" tell.
-2. **Rotate at least 3 template variants** (§4) so consecutive posts don't share an
-   identical layout. Vary background accent shapes, photo crops, and headline placement
-   week to week.
+2. **Rotate at least 3 template variants** so consecutive posts don't share an identical
+   layout. `render_slides.py` does this automatically: `variant_of()` derives one of three
+   looks from the post id, changing the accent shapes, the series-chip side and the
+   headline alignment. Override with `"variant": 0|1|2` on a post only for a reason.
 3. Vary crops/captions **between platforms** (IG now penalizes identical cross-posted
    media).
 4. The account must look human-operated: pinned comments, replies, occasional native

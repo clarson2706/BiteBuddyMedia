@@ -102,6 +102,9 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
    the dedupe memory) + the persona/hook/series docs.
 3. Generate **21 posts** (3/day × 7): copy, caption, pinned comment, hashtags,
    persona, hook family, visual recipe, series slot, platform plan, time slot.
+   Deck shape is fixed by `Content-Engine/CAROUSEL-CONVERSION-SPEC.md`: nine slides,
+   each with a named role (`HOOK · STAKE · VALUE ×3 · PROOF · SAVE · HONEST · CTA`),
+   and the CTA drawn from the ladder in §3 of that spec rather than picked per post.
    Slot template per week (adjustable by directives, never by whim):
    - 12 series posts: 4 × each active series (see `Content-Engine/SERIES.md`)
    - 3 re-cuts of last week's winners (fresh cover, same skeleton) — only when
@@ -115,7 +118,11 @@ outputs this run** — that rule is the entire fix for the last system's fatal f
 
 ### Phase 3 — RENDER (`Content-Engine/render_slides.py`)
 1. Run the renderer over the week's manifest. It composes 1080×1350 slides from the
-   brand palette, the Baloo 2 brand font, and the real Buddy cutouts.
+   brand palette, the Baloo 2 brand font, and the real Buddy cutouts. Poses and layout
+   variant are derived from each post, so there is nothing to hand-map per post.
+   **Generation never asks Connor for a screenshot**: app imagery comes from
+   `UI-Library/**` or from frames harvested out of a screen recording by
+   `Content-Engine/harvest_frames.py` (asset autonomy, conversion spec §5).
 2. Canva is **not** the batch render path: `generate-design` emits one page per call so
    it cannot build a carousel, and this environment cannot download Canva exports. Canva
    stays available for one-off polish and manual edits.

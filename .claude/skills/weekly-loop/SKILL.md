@@ -77,11 +77,17 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
    Seven of the 21 fill the TikTok-only 13:00 flex slot; draw those from the
    experiment pool first, since a demo video displaces that slot.
 2. Every post gets: persona (P1–P8), hook family (the 20 codes), visual recipe (the 8
-   archetypes), series or `oneoff`, slide-by-slide copy (hook → value slides → CTA),
-   caption with one natural search keyword, pinned first comment, 3–5 hashtags,
-   platform plan + time slot. Copy rules = MASTER-PROMPT-V5 §4–9; guardrails =
-   `CLAUDE.md` (no medical/outcome claims, no Meal Advisor, no precision claims,
-   food-positive always).
+   archetypes), series or `oneoff`, slide-by-slide copy, caption with one natural search
+   keyword, pinned first comment, 3–5 hashtags, platform plan + time slot. Copy rules =
+   MASTER-PROMPT-V5 §4–9; guardrails = `CLAUDE.md` (no medical/outcome claims, no Meal
+   Advisor, no precision claims, food-positive always).
+2a. **Deck shape is fixed by `Content-Engine/CAROUSEL-CONVERSION-SPEC.md`, not chosen
+   per post.** Nine slides, each carrying an explicit `role` in the manifest:
+   `HOOK · STAKE · VALUE · VALUE · VALUE · PROOF · SAVE · HONEST · CTA`. Value must land
+   by slide 3. `PROOF`, `SAVE`, `HONEST` and `CTA` are never dropped; a shorter deck
+   drops `VALUE-3` then `STAKE`, to a floor of 7. The CTA ladder in §3 of that spec sets
+   which ask each post carries, including the cap of at most 2 `APP` CTAs in any 7
+   consecutive posts.
 3. Freshness: check `registry.jsonl` — no topic repeat within 90 days, no chain+angle
    repeat within 14, no hook ever reused verbatim. CTA mix per week: ~5 follow,
    ~3 comment, ~3 save/share, ~3 app (exact App Store line only on app CTAs:
@@ -111,9 +117,11 @@ and this environment cannot download Canva exports (`export-download.canva.com` 
 blocked at the proxy). Canva remains useful for one-off polish and for Connor editing a
 deck by hand; it is not the batch render path.
 
-1. Add the post's Buddy poses to the `POSES` map in the script (cover pose, CTA pose),
-   choosing by emotional beat from `Brand-Assets/buddy-poses/README.md`. Add a badge
-   string for any new series in `BADGES`.
+1. **Nothing to wire up per post.** Buddy poses are derived from the post's series and
+   hook family by `pick_poses()`, and the layout variant (one of three, so consecutive
+   posts do not look stamped) comes from the post id. Override either only when there is
+   a reason: `"poses": ["buddy_thinking", "buddy_level_up"]` or `"variant": 2` on the
+   post. Add a badge string for any genuinely new series in `BADGES`.
 2. Run the script. Eyeball at least one deck by compositing a contact sheet before
    scheduling; never schedule slides you have not looked at.
 3. **Commit and push the PNGs before scheduling.** The repo is public, so each slide is
@@ -126,10 +134,27 @@ deck by hand; it is not the batch render path.
    App Store close. Verify it on every deck before scheduling.
 5. A post that fails to render is dropped from the schedule and named in the report.
 
+**Never ask Connor for a screenshot.** Asset autonomy is a rule of the system
+(`CAROUSEL-CONVERSION-SPEC.md` §5): every image comes from `UI-Library/**`,
+`UI-Library/Recordings/stills/`, or `Brand-Assets/buddy-poses/transparent/`. Before
+rendering, check whether any recording in `UI-Library/Recordings/` holds a screen this
+week's `PROOF` slides need and has not been harvested yet:
+
+```bash
+python3 Content-Engine/harvest_frames.py --input <clip> --sheet /tmp/sheet.jpg
+python3 Content-Engine/harvest_frames.py --input <clip> --at 9.5:<date>-<subject>-result
+```
+
+Clips in `Recordings/_USED/` are archived, not spent: re-harvesting stills from them is
+normal and costs nothing. Look at every frame before using it (privacy scrub,
+`DEMO-EDIT-SPEC.md`).
+
 **Food photography:** the design system forbids AI-generated food, and this environment
-has no licensed photo source, so keep food-photo recipes for weeks when Connor supplies
-images. Typographic recipes (STORY-BEAT, TYPE-CARD, RANK-CARD, QUIZ-CARD) need no
-photography and are the default.
+has no licensed photo source. A recording still of the real scanned plate is the
+preferred substitute, since it is the plate the app actually read. Failing that,
+typographic recipes (STORY-BEAT, TYPE-CARD, RANK-CARD, QUIZ-CARD) need no photography
+and are the default. **A post is never delayed waiting on an asset and never solves a
+missing one by generating a fake.**
 
 ## Phase 4 — Schedule via the Upload-Post REST API
 

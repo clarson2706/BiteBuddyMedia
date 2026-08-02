@@ -44,8 +44,10 @@ git lfs ls-files         # confirm it's tracked by LFS (not raw in git)
 
 | Folder | What lives here |
 |---|---|
-| [`_INBOX/`](./_INBOX/) | **Drop zone** for raw full-walkthrough recordings (any names). |
+| [`_INBOX/`](./_INBOX/) | **Drop zone** for raw full-walkthrough recordings (any names). If a file is here, it still needs an edit. |
 | [`clips/`](./clips/) | Per-screen clips I segment out of the raw recordings, named to match the screen (e.g. `03-scan-capture__scan-flow.mov`). |
+| [`_USED/`](./_USED/) | **Already posted from.** A clip moves here in the same run that schedules a post from it, with a line in `_USED/used.jsonl` saying which posts consumed it. Still re-harvestable for stills, never re-cut into a second demo by default. |
+| [`stills/`](./stills/) | Frames pulled out of recordings by `Content-Engine/harvest_frames.py`. These are real app screens and can go straight onto a carousel slide, which is why the carousel track never has to ask for a screenshot. |
 
 ---
 

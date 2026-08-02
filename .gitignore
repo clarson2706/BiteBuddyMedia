@@ -1,0 +1,3 @@
+# Python bytecode from the render/harvest scripts. Nothing here is an asset.
+__pycache__/
+*.pyc
