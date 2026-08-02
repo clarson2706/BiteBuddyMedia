@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-02T21:05:30Z",
+  "generated_at": "2026-08-02T21:35:06Z",
   "week_analyzed": "2026-W31",
   "week_opened": "2026-W32",
-  "confidence": "low",
-  "basis": "Account-level only. TikTok Studio export is ground truth through Aug 1; Upload-Post aggregates fill Aug 2. No per-post rows exist for this account, so no directive below may claim a specific post caused anything.",
+  "confidence": "medium-on-format, low-on-content",
+  "basis": "Corrected 2026-08-02: per-post data IS available via get_post_analytics and get_cached_post_analytics (only get_history 400s). 13 real per-post rows now in performance-log.jsonl. See Analytics/2026-08-02-per-post-analysis.md.",
   "lean_into": {
     "series": [
       "S3",
@@ -49,7 +49,14 @@
       "protein-per-dollar",
       "generic-nutrition-trivia"
     ],
-    "why": "S2 depends on verified chain numbers and the network policy still returns 403 for every chain and USDA source. Generating it would mean guessing numbers, which the guardrails forbid."
+    "why": "S2 depends on verified chain numbers and the network policy still returns 403 for every chain and USDA source. Generating it would mean guessing numbers, which the guardrails forbid.",
+    "formats": [
+      "DEMO-VIDEO",
+      "BRAND-FILM"
+    ],
+    "hook_angles": [
+      "product-harms-user framing"
+    ]
   },
   "recut_winners": [],
   "recut_note": "No winners can be named: per-post data does not exist. The 3 re-cut slots become experiments this week, per WEEKLY-LOOP.md Phase 2.",
@@ -79,5 +86,11 @@
     "note": "Raised from 3/day to 4/day by Connor on 2026-08-02, overriding the ceiling in CLAUDE.md. Spacing held at 4h, which is what the Jul 22 incident actually punished. Instagram and Facebook are 0 because they are not linked in Upload-Post, not by choice.",
     "timezone": "America/Chicago"
   },
-  "notes": "Every entry traces to a number in Analytics/2026-W31-report.md. The headline: reach recovered and is compounding, action did not follow, so this week attacks the ask rather than the hook."
+  "notes": "Corrects the W31 report's claim that per-post rows were unavailable and its claim that the reach recovery was back-catalogue compounding. Neither was true.",
+  "format_findings": {
+    "video_vs_photo": "TikTok video n=1 got 1 view; photo n=9 median 287. Strong direction, weak sample.",
+    "reach_is_flat": "8 of 9 photo posts landed 104-462, six in a 281-305 band. Reach is near-fixed at this account size, so views will not discriminate between posts. Judge on likes-per-view and comments.",
+    "hard_zero": "'POV: the app made you feel worse than the food did' took 0 views on TikTok while the same concept took 34 on YouTube. Read as suppression of a hook that leads with the product harming the user. Do not write those.",
+    "untracked_posts": "5 of 10 TikTok posts are not in this repo; video_count went 17 to 36 since Jul 25. A second system is posting to the account. Attribution is unreliable until that is identified."
+  }
 }
