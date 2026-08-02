@@ -16,7 +16,7 @@
   "instagram": "not linked in Upload-Post",
   "facebook": "not linked in Upload-Post"
  },
- "note": "25 carousels + 3 brand films = 28 TikTok posts, 4/day. Cadence raised from the 3/day ceiling by Connor on 2026-08-02; spacing held at 4h. S2 is absent because chain and USDA sources are still 403 from this environment and the guardrails forbid guessing a number. Every figure quoted in a deck is legible in the real screenshot on that deck's PROOF slide.",
+ "note": "25 carousels + 3 brand films = 28 TikTok posts, 4/day. Cadence raised from the 3/day ceiling by Connor on 2026-08-02; spacing held at 4h. S2 is absent because chain and USDA sources are still 403 from this environment and the guardrails forbid guessing a number. Every figure quoted in a deck is legible in the real screenshot on that deck's PROOF slide. Films run as a stated experiment against a 287-view photo median and a 1-view video sample; see Analytics/2026-08-02-per-post-analysis.md.",
  "posts": [
   {
    "id": "2026-08-03-morning",
@@ -1826,6 +1826,13 @@
     "request_id": "ef075459ddb2485182e5e5724c5cc14c",
     "scheduled_local": "2026-08-04T20:00:00",
     "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
    }
   },
   {
@@ -1859,6 +1866,13 @@
     "request_id": "e40da07d02d8435ab68237d1f18cbb21",
     "scheduled_local": "2026-08-06T20:00:00",
     "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
    }
   },
   {
@@ -1892,6 +1906,13 @@
     "request_id": "b2f32db24a60448590119a0541f8f90d",
     "scheduled_local": "2026-08-08T20:00:00",
     "timezone": "America/Chicago"
+   },
+   "experiment": {
+    "question": "Does a produced brand film reach differently from the raw demo video that took 1 view?",
+    "baseline_photo_median_views": 287,
+    "baseline_video_n1_views": 1,
+    "decided_by": "Connor, 2026-08-02, on n=1 evidence",
+    "read_on": "views first, then likes-per-view if all three land in the photo band"
    }
   }
  ],

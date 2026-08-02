@@ -113,3 +113,18 @@ reading.
 The alternative, running all three, costs about 870 expected views against the carousel
 baseline. That is a real but survivable price for testing three films at once, and if
 Connor wants the films to run as a set, that is a defensible read of n=1 evidence.
+
+**Decided 2026-08-02: run all three, unchanged.** Connor's call on n=1 evidence, and the
+schedule stands. This converts the films from a risk into a stated experiment, so next
+week's report must read it as one rather than reopening the question:
+
+- **Hypothesis under test:** produced brand film behaves differently on this account from
+  the raw screen-recording demo that took 1 view.
+- **Prediction if video is simply throttled here:** all three land under ~20 views.
+- **Prediction if the demo's 1 view was about that specific asset:** the films land in the
+  photo band, roughly 100 to 460.
+- **What settles it:** three readings instead of one. Anything in between, or a split
+  across the three, means the variable is the asset and not the format, and the next test
+  is publishing natively from the app rather than through the API.
+- **What does not settle it:** views alone if all three land near 290. At that point the
+  format question is answered and the read moves to likes-per-view, same as the carousels.
