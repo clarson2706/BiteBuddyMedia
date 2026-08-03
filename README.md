@@ -24,6 +24,8 @@ WEEKLY-LOOP.md                the autonomous system, twice weekly: Sunday full r
                               outreach -> report) + Wednesday mini-run. Source of truth.
 SPRINT-AUG25.md               the 31-day push: checkpoints, levers, $0-ads rule
 Outreach/                     creator engine: DM playbook, terms, pipeline + payout ledgers
+Paid/                         paid-acquisition specs. Drafts only — nothing here is
+                              authorized to spend until Connor says so (sprint lever 4)
 .claude/skills/weekly-loop/   the executable procedure the Routine fires
 Analytics/                    append-only performance log + weekly reports + directives
 Research/
