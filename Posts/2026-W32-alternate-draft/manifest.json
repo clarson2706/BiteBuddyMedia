@@ -1,0 +1,743 @@
+{
+  "week": "2026-W32",
+  "batch": "sunday-full-2026-08-02",
+  "batch_type": "full",
+  "timezone": "America/Chicago",
+  "generated_at": "2026-08-02T23:09:30Z",
+  "directives_used": "Analytics/next-week-directives.json",
+  "constraint_note": "Restaurant-chain nutrition calculators (Chipotle, Chick-fil-A) are JS-rendered apps that returned only marketing copy to a static fetch this run, and guessed retail product URLs for exact grocery prices returned 404s or wrong products, so per-item chain and price data could not be verified this run. S2 'Protein Per Dollar' is therefore run this week as 'protein per 100 calories' using generic whole-food and pantry-staple values (USDA FoodData Central reference figures, cross-checked against the handful of live API lookups that returned before the public DEMO_KEY rate-limited), never a live-fetched chain or branded number. S1 quiz plates are original combinations of the same generic whole foods, not tied to any chain. Price-verified protein-per-dollar rankings resume once a stable nutrition-API key or a working chain-calculator fetch path exists; noted in the weekly report.",
+  "posts": [
+    {
+      "id": "2026-08-03-slot1",
+      "date": "2026-08-03",
+      "time_local": "08:00",
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "TRACKED",
+      "visual_recipe": "STORY-BEAT",
+      "title": "The app said your sandwich was 1,200 calories",
+      "slides": [
+        "The app said your sandwich was 1,200 calories. That's the moment most people quit tracking.",
+        "Not because the number was high. Because it felt wrong, and now nothing in the log feels trustworthy.",
+        "One bad entry doesn't break the data. It breaks your confidence in the data. Those are different problems.",
+        "A wrong guess is a guess. It's supposed to be editable, not memorized.",
+        "The fix isn't a better database. It's treating every number as a draft you correct, not a fact you accept.",
+        "The people who stick with tracking aren't the ones with perfect logs. They're the ones who keep correcting theirs.",
+        "Estimates you can edit beat guesses you can't check.",
+        "Comment the number that made you stop trusting an app."
+      ],
+      "caption": "One wrong-looking number is enough to make a whole calorie tracker app feel unreliable, and that's usually where people quit, not from the number being high. An AI calorie counter that lets you edit every estimate treats the number as a starting point, not a verdict. What number made you stop trusting an app?",
+      "pinned_comment": "mine was a sandwich that was apparently 1,200 calories",
+      "hashtags": [
+        "#BiteBuddy",
+        "#CalorieTracking",
+        "#FoodTracker",
+        "#TrackingHonestly"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Comment the number that made you stop trusting an app.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-03-flex1",
+      "date": "2026-08-03",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P2",
+      "hook_family": "CALLOUT",
+      "visual_recipe": "BUILD-STEP",
+      "title": "Four small meals that still hit 90g of protein",
+      "slides": [
+        "If your appetite is smaller than your protein goal, this is four mini meals that still add up.",
+        "Two eggs and half a cup of cottage cheese. 25g protein, 255 calories. Running total: 25g.",
+        "A cup of plain Greek yogurt with a few berries. About 20g more protein. Running total: 45g.",
+        "One can of tuna, no bread needed. About 32g more protein. Running total: 77g.",
+        "A string cheese and one more egg. About 13g more protein. Running total: 90g.",
+        "90 grams of protein, four small meals, nothing that requires much appetite at once.",
+        "Small and steady beats three big meals you can't finish.",
+        "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "Hitting a protein goal on a small appetite usually means more small meals, not bigger ones: four easy stops here add up to about 90 grams of protein without a single large plate. An AI calorie scanner logs each mini meal in a few seconds, which matters more on days when cooking a full meal isn't realistic.",
+      "pinned_comment": "four small meals, zero big plates, still 90g",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#SmallMeals",
+        "#Macros"
+      ],
+      "cta_type": "APP",
+      "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-03-slot2",
+      "date": "2026-08-03",
+      "time_local": "19:00",
+      "series": "S1",
+      "persona": "P5",
+      "hook_family": "GUESS",
+      "visual_recipe": "QUIZ-CARD",
+      "title": "Guess the calories: avocado toast, eggs, turkey bacon, OJ",
+      "slides": [
+        "Guess the calories: avocado toast, two fried eggs, turkey bacon, a glass of orange juice.",
+        "Comment your number before you swipe. One guess.",
+        "One slice avocado toast. Two eggs, fried. Two strips of turkey bacon. Eight ounces of orange juice.",
+        "It looks light. Most people guess low on a plate this color.",
+        "About 580 calories total.",
+        "The avocado toast alone is close to half of it. Fat calories are dense and easy to undercount.",
+        "Not a bad plate. Just a bigger number than the plate suggests.",
+        "Comment the plate you want us to guess next."
+      ],
+      "caption": "Avocado toast with eggs looks light, but the numbers usually land higher than people expect from an AI calorie counter's actual estimate, because avocado's fat calories are easy to undercount by eye. What's your real guess for this plate, before you see the breakdown above?",
+      "pinned_comment": "guess before you swipe, no cheating",
+      "hashtags": [
+        "#BiteBuddy",
+        "#GuessTheCalories",
+        "#CalorieTracking",
+        "#FoodFacts"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Comment the plate you want us to guess next.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-04-slot1",
+      "date": "2026-08-04",
+      "time_local": "08:00",
+      "series": "S2",
+      "persona": "P3",
+      "hook_family": "LIST",
+      "visual_recipe": "RANK-CARD",
+      "title": "6 breakfast proteins, ranked by protein per 100 calories",
+      "slides": [
+        "6 breakfast proteins, ranked by protein per 100 calories.",
+        "#1 Plain nonfat Greek yogurt, 100g: 10g protein, 59 calories. The single most protein-efficient thing on this list.",
+        "#2 Smoked salmon, 100g: 18g protein, 117 calories. High protein and high efficiency.",
+        "#3 Low-fat cottage cheese, 100g: 11g protein, 90 calories. The classic bodybuilder breakfast, for a reason.",
+        "#4 Egg, cooked, 100g (about 2 eggs): 13g protein, 155 calories. Solid, not a standout on this metric.",
+        "#5 Turkey bacon, cooked, 100g: 12g protein, 150 calories. Leaner than pork bacon, still mid-pack here.",
+        "#6 Oatmeal made with milk, 100g: 5g protein, 110 calories. Good breakfast, just not a protein play alone.",
+        "Follow BiteBuddy for daily macro rankings."
+      ],
+      "caption": "Ranked by grams of protein per 100 calories, not overall nutrition, plain Greek yogurt and smoked salmon lead this list by a wide margin. This is one cut a calorie tracker app can show automatically once a meal is logged, so the ranking updates with whatever is actually in your kitchen.",
+      "pinned_comment": "greek yogurt winning this one isn't close",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#Macros",
+        "#FoodFacts"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy for daily macro rankings.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://fdc.nal.usda.gov/ (USDA FoodData Central, generic reference values)"
+      ]
+    },
+    {
+      "id": "2026-08-04-flex1",
+      "date": "2026-08-04",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P5",
+      "hook_family": "COMPARE",
+      "visual_recipe": "COMPARE-SPLIT",
+      "title": "Both close to 480 calories, double the protein on one side",
+      "slides": [
+        "These are both close to 480 calories. One has more than double the protein of the other.",
+        "Left: a bagel with cream cheese and a small orange juice. About 490 calories, 14 grams of protein.",
+        "Right: a three-egg veggie omelet with cheese and one slice of toast. About 460 calories, 30 grams of protein.",
+        "Same calorie range. More than double the protein on the omelet side.",
+        "Protein and fiber are what make a meal hold you over. Refined carbs alone burn through faster.",
+        "Neither breakfast is 'bad.' One just keeps you full longer for the same calorie cost.",
+        "Same number on the label, different morning.",
+        "Save this before your next breakfast."
+      ],
+      "caption": "Both breakfasts land around 480 calories, but the three-egg veggie omelet carries more than double the protein of the bagel and cream cheese, which is usually why one holds you over past 10am and the other doesn't. A calorie tracker app makes swaps like this visible instead of theoretical.",
+      "pinned_comment": "same calories, more than double the protein on the omelet",
+      "hashtags": [
+        "#BiteBuddy",
+        "#Macros",
+        "#HighProtein",
+        "#FoodFacts"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next breakfast.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-04-slot2",
+      "date": "2026-08-04",
+      "time_local": "19:00",
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "RIGHTWRONG",
+      "visual_recipe": "STORY-BEAT",
+      "title": "You're not behind, you're comparing day 3 to someone's day 300",
+      "slides": [
+        "You're not behind. You're comparing your day 3 to someone else's day 300.",
+        "Their feed only shows the version of tracking that's already working.",
+        "Nobody posts the week they forgot to log four days in a row. That week still happened to them too.",
+        "So you see their finished version next to your messy start and decide you're doing it wrong.",
+        "You're not doing it wrong. You're just earlier.",
+        "The only log worth comparing yours to is the one you kept last week.",
+        "Progress against yourself is the only fair fight.",
+        "Follow BiteBuddy. No guilt, just numbers."
+      ],
+      "caption": "Comparing a brand new food tracker app log to someone else's year-three highlight reel is one of the quieter reasons people quit in week one. The only useful comparison is your own log against your own log from last week, because that's the only version of 'behind' that's actually true.",
+      "pinned_comment": "day 3 versus day 300 is not a fair fight and never was",
+      "hashtags": [
+        "#BiteBuddy",
+        "#FoodTracker",
+        "#TrackingHonestly",
+        "#HabitBuilding"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy. No guilt, just numbers.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-05-slot1",
+      "date": "2026-08-05",
+      "time_local": "08:00",
+      "series": "S1",
+      "persona": "P5",
+      "hook_family": "GUESS",
+      "visual_recipe": "QUIZ-CARD",
+      "title": "Guess the calories: chicken thigh, mashed potatoes, green beans, roll",
+      "slides": [
+        "Guess the calories: one chicken thigh, mashed potatoes, green beans, a dinner roll.",
+        "This is the plate most people call 'a normal dinner.' Guess before you swipe.",
+        "One roasted chicken thigh, skin on. A cup of mashed potatoes. A cup of green beans. One roll.",
+        "Nothing fried, nothing fast food. Just a regular home-cooked plate.",
+        "About 690 calories total.",
+        "The chicken thigh and the potatoes are close, calorie for calorie. The skin and the butter do more work than people guess.",
+        "A normal dinner isn't a small number. That's not a bad thing, it's just the actual number.",
+        "Save this before your next home-cooked plate."
+      ],
+      "caption": "A home-cooked chicken thigh dinner reads as 'healthy' and gets under-guessed for it, but the skin and the butter in the mashed potatoes add up fast. An AI calorie counter scans the whole plate at once instead of guessing ingredient by ingredient, which is where a normal dinner like this usually gets missed.",
+      "pinned_comment": "the roll and the butter are doing more than people think",
+      "hashtags": [
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#CalorieTracking",
+        "#FoodFacts"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next home-cooked plate.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-05-flex1",
+      "date": "2026-08-05",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P1",
+      "hook_family": "TRACKED",
+      "visual_recipe": "STORY-BEAT",
+      "title": "I thought home meals and restaurant meals were about the same",
+      "slides": [
+        "I thought I ate about the same whether I cooked or ordered out. Then I tracked a month.",
+        "Home meals were close to what I expected. Restaurant meals were not.",
+        "Research on this is consistent: people underestimate restaurant meals by around 20% on average.",
+        "It's not one dish. Oil in the pan, sauce on the side, bread before the meal even starts. None of it looks like 'extra.'",
+        "92% of restaurant meals studied came in over a typical per-meal calorie target. Not fast food only, restaurants generally.",
+        "None of this means don't eat out. It means the guess and the plate are further apart than they feel.",
+        "A photo closes that gap faster than a mental estimate ever will.",
+        "Scan it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "The research on this is fairly consistent: people underestimate restaurant meals by roughly 20% on average, and it's rarely one obvious thing, it's the oil, the sauce, and the bread that never register as 'extra.' An AI calorie scanner reads the whole plate at once, which is the part memory is worst at.",
+      "pinned_comment": "the 92% number is the one that got me",
+      "hashtags": [
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#RestaurantNutrition",
+        "#FoodTracker"
+      ],
+      "cta_type": "APP",
+      "cta": "Scan it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "Research/TARGET-USER-PROFILES.md (P4: time.com, ers.usda.gov, pubmed 23704170 restaurant-calorie sources)"
+      ]
+    },
+    {
+      "id": "2026-08-05-slot2",
+      "date": "2026-08-05",
+      "time_local": "19:00",
+      "series": "S2",
+      "persona": "P4",
+      "hook_family": "CHEAT",
+      "visual_recipe": "RANK-CARD",
+      "title": "6 pantry proteins, ranked by protein per 100 calories",
+      "slides": [
+        "6 pantry proteins, ranked by protein per 100 calories. Save this before your next grocery run.",
+        "#1 Canned tuna in water, 100g: 26g protein, 116 calories. Hard to beat from a shelf-stable can.",
+        "#2 Canned chicken breast, 100g: 25g protein, 113 calories. Basically tied with tuna, more mixable.",
+        "#3 Lentils, cooked, 100g: 9g protein, 116 calories. The best plant option here, not close to the canned proteins.",
+        "#4 Black beans, canned, 100g: 6g protein, 91 calories. Fiber-heavy, lighter on protein than people assume.",
+        "#5 Chickpeas, canned, 100g: 7g protein, 139 calories. Great texture, mid-pack on this specific metric.",
+        "#6 Peanut butter, 100g (about 6 tbsp): 25g protein, 588 calories. High total protein, just calorie-dense to get there.",
+        "Save this before your next grocery run."
+      ],
+      "caption": "Same shelf, same budget, very different protein-per-calorie math: canned tuna and canned chicken breast both land above 20 grams of protein per 100 calories, while peanut butter needs almost 600 calories to hit similar total protein. A food tracker app makes this kind of side-by-side automatic once a few pantry items are logged.",
+      "pinned_comment": "tuna and canned chicken are basically tied, and it's not close for anything else",
+      "hashtags": [
+        "#BiteBuddy",
+        "#Macros",
+        "#HighProtein",
+        "#GroceryFinds"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next grocery run.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://fdc.nal.usda.gov/ (USDA FoodData Central, generic reference values)"
+      ]
+    },
+    {
+      "id": "2026-08-06-slot1",
+      "date": "2026-08-06",
+      "time_local": "08:00",
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "TRACKED",
+      "visual_recipe": "STORY-BEAT",
+      "title": "I ate perfectly for two days, then quit again",
+      "slides": [
+        "I ate 'perfectly' for two days, then quit again. This time I tracked why.",
+        "Day 1 and 2 were easy because I picked easy food on purpose.",
+        "Day 3 was a normal day. Takeout, a snack I didn't plan, dinner with someone else choosing the restaurant.",
+        "Normal days are the actual test. I'd only been tracking the easy version of my life.",
+        "So I scanned the takeout instead of skipping it. It wasn't perfect. It was logged.",
+        "A normal week, logged imperfectly, teaches you more than a perfect weekend ever will.",
+        "Track the days you'd rather not, not just the ones that make the log look good.",
+        "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "Most restart attempts fail on the first normal day, not the first hard one, because people only test tracking on food they'd already planned to eat clean. Photographing a real takeout order with a calorie scanner app takes the same one second as photographing a salad, which is the only way the log survives an actual week.",
+      "pinned_comment": "day 3 is always the real test, not day 1",
+      "hashtags": [
+        "#BiteBuddy",
+        "#AICalorieCounter",
+        "#CalorieTracking",
+        "#FoodTracker"
+      ],
+      "cta_type": "APP",
+      "cta": "Track it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-06-flex1",
+      "date": "2026-08-06",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P3",
+      "hook_family": "CONTRARIAN",
+      "visual_recipe": "TYPE-CARD",
+      "title": "High protein hurts your kidneys: mostly false",
+      "slides": [
+        "'High protein hurts your kidneys.' For someone with healthy kidneys, that's mostly false.",
+        "Verdict: mostly false, for people without existing kidney disease.",
+        "The worry started from studies on people who already had impaired kidney function, not healthy lifters.",
+        "In healthy adults, higher protein intake hasn't been shown to damage kidney function in the research reviews on this.",
+        "The real ceiling for most lifters isn't kidney safety. It's whether you can actually eat that much food.",
+        "If you have an existing kidney condition, this is between you and your doctor, not a slide.",
+        "What actually matters: consistent protein, spread through the day, hit through real food.",
+        "Follow BiteBuddy for food facts worth saving."
+      ],
+      "caption": "The high-protein-hurts-your-kidneys claim traces back to research on people who already had kidney disease, not healthy lifters, and reviews in healthy adults haven't shown that link. If you have an existing kidney condition, talk to your doctor, not a slide, but for most lifters the real limiting factor is just getting enough food in.",
+      "pinned_comment": "the studies people cite for this were never done on healthy lifters",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#FoodFacts",
+        "#Macros"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy for food facts worth saving.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "ISSN position stand on dietary protein (established sports-nutrition consensus); NIH/NKF consumer guidance on protein and kidney health in people without pre-existing renal disease"
+      ]
+    },
+    {
+      "id": "2026-08-06-slot2",
+      "date": "2026-08-06",
+      "time_local": "19:00",
+      "series": "S1",
+      "persona": "P4",
+      "hook_family": "OUTCOME",
+      "visual_recipe": "QUIZ-CARD",
+      "title": "This 'better for you' teriyaki bowl is 650 calories",
+      "slides": [
+        "This 'better for you' teriyaki bowl comes in around 650 calories, 62 grams of protein.",
+        "Grilled chicken breast, white rice, steamed broccoli, teriyaki sauce. The lunch that looks like the responsible choice.",
+        "Most of the calories aren't from the chicken. They're from the rice and the sauce.",
+        "Three tablespoons of teriyaki sauce carries more sugar than people expect from something that isn't dessert.",
+        "None of that makes it a bad order. 62 grams of protein for 650 calories is a solid ratio.",
+        "It just isn't the 'light' lunch it gets treated as. Numbers, not labels.",
+        "Same bowl, same protein, now you know what it actually costs.",
+        "Save this before your next bowl order."
+      ],
+      "caption": "A teriyaki chicken bowl gets treated as the safe order, and the protein number backs that up at 62 grams, but most of its roughly 650 calories come from the rice and the sauce, not the chicken. Saving the real numbers from a calorie tracker app before you order is faster than recalculating them at the counter.",
+      "pinned_comment": "62g protein for 650 cal is actually solid, just know what you're ordering",
+      "hashtags": [
+        "#BiteBuddy",
+        "#Macros",
+        "#HighProtein",
+        "#FoodFacts"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next bowl order.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-07-slot1",
+      "date": "2026-08-07",
+      "time_local": "08:00",
+      "series": "S2",
+      "persona": "P3",
+      "hook_family": "ORDER",
+      "visual_recipe": "RANK-CARD",
+      "title": "6 lean proteins, ranked by protein per 100 calories",
+      "slides": [
+        "6 lean proteins, ranked by protein per 100 calories. #1 isn't the one most people pick first.",
+        "#1 Tilapia, cooked, 100g: 26g protein, 128 calories. The most protein-efficient meat on this list.",
+        "#2 Chicken breast, skinless, 100g: 31g protein, 165 calories. The highest total protein here.",
+        "#3 Pork tenderloin, roasted, 100g: 26g protein, 143 calories. About as lean as chicken breast, less popular for it.",
+        "#4 90% lean ground beef, cooked, 100g: 25g protein, 184 calories. Solid, just less efficient than the leaner cuts.",
+        "#5 93% lean ground turkey, cooked, 100g: 22g protein, 176 calories. Similar story to the ground beef.",
+        "#6 Salmon, cooked, 100g: 22g protein, 206 calories. Lower here because the fat that makes it salmon also adds calories.",
+        "Comment the protein you thought would win."
+      ],
+      "caption": "Tilapia edges out chicken breast on protein per 100 calories, and salmon lands last on this specific list, not because it's a worse food, but because the same fat that makes salmon salmon also adds calories. Which one did you think would win?",
+      "pinned_comment": "tilapia winning this one surprises almost everyone",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#Macros",
+        "#FoodFacts"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Comment the protein you thought would win.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://fdc.nal.usda.gov/ (USDA FoodData Central, generic reference values)"
+      ]
+    },
+    {
+      "id": "2026-08-07-flex1",
+      "date": "2026-08-07",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P5",
+      "hook_family": "CONTRARIAN",
+      "visual_recipe": "PHOTO-FACT",
+      "title": "This fruit smoothie has more sugar than 3 glazed donuts",
+      "slides": [
+        "This fruit smoothie has more sugar than 3 glazed donuts. Here's the math.",
+        "Verdict: true, for a large all-fruit smoothie made with juice.",
+        "Banana, strawberries, orange juice, a spoon of honey. All real food, nothing processed.",
+        "Banana: about 14g sugar. Strawberries: about 7g. Orange juice: about 21g. Honey: about 17g. Total: about 59g.",
+        "Three glazed donuts: about 36g of sugar combined. The smoothie wins by a wide margin.",
+        "Whole fruit and juice aren't the same. Juice removes the fiber that usually slows sugar down.",
+        "Not a reason to fear smoothies. A reason to know the number instead of assuming 'fruit' means low sugar.",
+        "Save this before your next smoothie order."
+      ],
+      "caption": "A large all-fruit smoothie made with juice and honey can carry more sugar than three glazed donuts, close to 59 grams versus about 36, mostly because juice strips out the fiber that whole fruit has. Neither food is 'bad,' but a food tracker app is a faster way to know the real number than assuming 'fruit' means low sugar.",
+      "pinned_comment": "juice losing the fiber is the whole story here",
+      "hashtags": [
+        "#BiteBuddy",
+        "#FoodFacts",
+        "#HiddenSugar",
+        "#FoodTracker"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Save this before your next smoothie order.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://fdc.nal.usda.gov/ (USDA FoodData Central, generic reference values for banana, strawberries, orange juice, honey, glazed donut)"
+      ]
+    },
+    {
+      "id": "2026-08-07-slot2",
+      "date": "2026-08-07",
+      "time_local": "19:00",
+      "series": "oneoff",
+      "persona": "P1",
+      "hook_family": "TRACKED",
+      "visual_recipe": "STORY-BEAT",
+      "title": "I stopped quitting my food tracker",
+      "slides": [
+        "I stopped quitting my food tracker. One change did most of the work.",
+        "Every other time, I quit the same way: missed a day, felt behind, deleted the app.",
+        "The change wasn't more willpower. It was lowering the bar for what counted as 'still tracking.'",
+        "A blurry photo of a gas station sandwich still counts. A rough guess still counts.",
+        "The goal stopped being a perfect log. It became: don't go two days with nothing logged.",
+        "That one rule survived a family trip, a bad week, and a birthday, when 'perfect' never had.",
+        "Consistency beats precision, especially when precision is the reason you quit last time.",
+        "Scan it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "The habit that actually stuck wasn't a stricter rule, it was a lower bar: a rough photo still counts, a guess still counts, the only failure is two days with nothing logged at all. That's why an AI calorie counter should feel fast and forgiving instead of exact, because exact is what people quit over.",
+      "pinned_comment": "lowering the bar is what finally made it stick",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HabitBuilding",
+        "#TrackingHonestly",
+        "#FoodTracker"
+      ],
+      "cta_type": "APP",
+      "cta": "Scan it with BiteBuddy. Search 'BiteBuddy: Ai calorie scanner'.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-08-slot1",
+      "date": "2026-08-08",
+      "time_local": "08:00",
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "HABIT",
+      "visual_recipe": "STORY-BEAT",
+      "title": "I stopped needing the app to tell me a meal was okay",
+      "slides": [
+        "I stopped needing the app to tell me a meal was okay. One change did most of it.",
+        "For a while, every meal waited on the number before I decided how I felt about it.",
+        "That's backwards. The number is supposed to inform you, not sentence you.",
+        "The change: log it, then close the app. Read the number tomorrow, not mid-bite.",
+        "Same tracking. Same accuracy. Just less of my day spent waiting on a verdict.",
+        "A tool that runs your mood is a different problem than a tool that misses a mood entirely.",
+        "Gentle accountability means the app works for you between meals, not during them.",
+        "Follow BiteBuddy for tracking that sticks."
+      ],
+      "caption": "Some people don't quit tracking because they gave up, they quit because it started running their day. Logging a meal and then closing the app is a small change that turns a food tracker app back into a tool instead of a verdict machine. This is exactly why estimates here stay editable and quiet until you want them.",
+      "pinned_comment": "logging it and closing the app changed more than i expected",
+      "hashtags": [
+        "#BiteBuddy",
+        "#FoodFreedom",
+        "#TrackingHonestly",
+        "#HabitBuilding"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy for tracking that sticks.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-08-flex1",
+      "date": "2026-08-08",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "CALLOUT",
+      "visual_recipe": "BUILD-STEP",
+      "title": "A 15-minute desk lunch that hits 42g of protein",
+      "slides": [
+        "If lunch is eaten at your desk in under 15 minutes, this build hits 42g of protein without a single dish to cook.",
+        "Step 1: pre-cooked grilled chicken breast, 4oz. 35g protein, 187 calories. Running total: 35g.",
+        "Step 2: a cup of microwave rice. About 4g more protein. Running total: 39g.",
+        "Step 3: a cup of steamed frozen veggies. About 3g more protein. Running total: 42g.",
+        "Step 4: a drizzle of olive oil and seasoning to taste. Total holds at 42g protein, 532 calories.",
+        "Nothing here required a stove. Pre-cooked and frozen aren't downgrades, they're what actually gets eaten on a busy day.",
+        "42 grams of protein, one bowl, no dishes.",
+        "Send this to your usual lunch partner."
+      ],
+      "caption": "Pre-cooked chicken, microwave rice, and frozen vegetables build a 42-gram-protein desk lunch in about the time it takes to heat it up, no stove required. A calorie scanner app logs the whole bowl in one photo, which matters more than the recipe on a day with fifteen minutes to spare.",
+      "pinned_comment": "no stove, no dishes, still 42g protein",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#Macros",
+        "#DeskLunch"
+      ],
+      "cta_type": "SAVE_OR_SHARE",
+      "cta": "Send this to your usual lunch partner.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-08-slot2",
+      "date": "2026-08-08",
+      "time_local": "19:00",
+      "series": "S1",
+      "persona": "P3",
+      "hook_family": "OUTCOME",
+      "visual_recipe": "QUIZ-CARD",
+      "title": "This 'light' protein breakfast is 550 calories",
+      "slides": [
+        "This 'light' protein breakfast is 550 calories and 36 grams of protein before the syrup.",
+        "Protein pancakes, half a cup of Greek yogurt, blueberries, two tablespoons of real maple syrup.",
+        "It looks like a light plate because it's not fried and nothing's breaded.",
+        "Protein pancakes aren't automatically low calorie. The batter still has calories, the syrup still has sugar.",
+        "36 grams of protein before 9am is genuinely good for a lifting goal.",
+        "The plate isn't wrong. The 'light' label on it is.",
+        "Know the real number, then decide if it fits the day.",
+        "Follow BiteBuddy for food facts worth saving."
+      ],
+      "caption": "A protein pancake breakfast reads as light because nothing on the plate is fried, but the batter and two tablespoons of real syrup still add up, landing around 550 calories for 36 grams of protein. That ratio is genuinely good for a lifting goal, a calorie tracker app just keeps the 'light' label honest.",
+      "pinned_comment": "36g protein before 9am is the actual win here",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#Macros",
+        "#FoodFacts"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy for food facts worth saving.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    },
+    {
+      "id": "2026-08-09-slot1",
+      "date": "2026-08-09",
+      "time_local": "08:00",
+      "series": "S2",
+      "persona": "P4",
+      "hook_family": "LIST",
+      "visual_recipe": "RANK-CARD",
+      "title": "6 plant proteins, ranked by protein per 100 calories",
+      "slides": [
+        "6 plant proteins, ranked by protein per 100 calories.",
+        "#1 Tempeh, 100g: 20g protein, 192 calories. The densest plant protein on this list.",
+        "#2 Firm tofu, 100g: 15g protein, 144 calories. Nearly as efficient, much milder taste.",
+        "#3 Edamame, cooked, 100g: 12g protein, 121 calories. Close behind, and easier to find pre-cooked.",
+        "#4 Lentils, cooked, 100g: 9g protein, 116 calories. Strong fiber, solid protein, not the top of this list.",
+        "#5 Black beans, canned, 100g: 6g protein, 91 calories. Great food, just lighter on protein per calorie.",
+        "#6 Quinoa, cooked, 100g: 4g protein, 120 calories. More of a carb source here than a protein source.",
+        "Comment the plant protein you eat most."
+      ],
+      "caption": "Tempeh and firm tofu lead this plant-protein list, both well ahead of quinoa, which reads as a protein food but scores closer to a whole grain on this specific metric. Ranked by protein per 100 calories, not overall nutrition, since fiber and micronutrients matter too. Which one do you eat most?",
+      "pinned_comment": "quinoa is a great grain, just not really a protein play",
+      "hashtags": [
+        "#BiteBuddy",
+        "#PlantProtein",
+        "#Macros",
+        "#HighProtein"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Comment the plant protein you eat most.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "https://fdc.nal.usda.gov/ (USDA FoodData Central, generic reference values)"
+      ]
+    },
+    {
+      "id": "2026-08-09-flex1",
+      "date": "2026-08-09",
+      "time_local": "13:00",
+      "series": "oneoff",
+      "persona": "P3",
+      "hook_family": "CALLOUT",
+      "visual_recipe": "TYPE-CARD",
+      "title": "If you started lifting this summer, here's the simple protein number",
+      "slides": [
+        "If you started lifting this summer and don't know your protein number, here's the simple version.",
+        "The common sports-nutrition range: roughly 0.7 to 1 gram of protein per pound of bodyweight, for people trying to build muscle.",
+        "That's a range, not a rule. More isn't automatically better past that point for most people.",
+        "For a 160lb lifter, that's about 110 to 160 grams of protein a day.",
+        "Spreading it across 3 to 4 meals matters more than hitting it in one sitting.",
+        "You don't need a spreadsheet for this. You need a rough daily number and a way to check it.",
+        "Know your number, then just get close most days.",
+        "Follow BiteBuddy for daily macro rankings."
+      ],
+      "caption": "A common sports-nutrition range for building muscle is roughly 0.7 to 1 gram of protein per pound of bodyweight, which lands around 110 to 160 grams a day for a 160-pound lifter, spread across meals rather than hit in one sitting. A macro tracking app makes it easy to see how close a normal day actually gets.",
+      "pinned_comment": "110 to 160g a day is the range for most new lifters around 160lb",
+      "hashtags": [
+        "#BiteBuddy",
+        "#HighProtein",
+        "#NewLifter",
+        "#Macros"
+      ],
+      "cta_type": "FOLLOW",
+      "cta": "Follow BiteBuddy for daily macro rankings.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": [
+        "ISSN position stand on protein and exercise (established sports-nutrition consensus range)"
+      ]
+    },
+    {
+      "id": "2026-08-09-slot2",
+      "date": "2026-08-09",
+      "time_local": "19:00",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "NUMBER",
+      "visual_recipe": "PHOTO-FACT",
+      "title": "One daily swap saves about 1,680 calories a week",
+      "slides": [
+        "One daily swap saves about 1,680 calories a week. The math is on slide 6.",
+        "A 20oz regular soda is about 240 calories, all from sugar, most days without much notice.",
+        "Swap it for a zero-sugar version or water and that number drops to close to zero.",
+        "240 calories a day, times 7 days, is 1,680 calories over a week.",
+        "That's not a diet. It's one drink, changed once, repeated.",
+        "1,680 calories a week, from a swap that takes zero extra time.",
+        "Small, boring, repeatable swaps are the ones that actually last.",
+        "Comment the swap that actually stuck for you."
+      ],
+      "caption": "One 20oz regular soda a day runs about 240 calories, entirely from sugar, and swapping it for water or a zero-sugar version for a week adds up to roughly 1,680 calories, without changing a single meal. What's the swap that actually stuck for you?",
+      "pinned_comment": "1,680 calories a week from one swap is not nothing",
+      "hashtags": [
+        "#BiteBuddy",
+        "#FoodFacts",
+        "#HabitBuilding",
+        "#CalorieTracking"
+      ],
+      "cta_type": "COMMENT",
+      "cta": "Comment the swap that actually stuck for you.",
+      "platform_plan": [
+        "tiktok"
+      ],
+      "sources": []
+    }
+  ],
+  "status": "PREPARED, NOT SCHEDULED",
+  "status_note": "2026-W32 is already scheduled live via unmerged draft PR #10 (claude/inspiring-davinci-yinl04): 28 TikTok/YouTube posts + 25 Pinterest pins, TikTok at 4/day. This manifest was drafted independently before that was discovered mid-run (see Analytics/2026-W31-report.md). It was deliberately never rendered or scheduled to avoid creating a second live schedule for the same week. Kept as a fallback option only if Connor decides to replace PR #10's version rather than amend it forward. All content in it stays within the 3/day TikTok ceiling and uses only Instagram-unlinked-safe (TikTok-only, some +YouTube) platform assignments."
+}
