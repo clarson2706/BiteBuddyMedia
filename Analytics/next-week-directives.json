@@ -1,25 +1,30 @@
 {
-  "generated_at": "2026-07-25T07:20:00Z",
-  "week_analyzed": "2026-W30-baseline",
+  "generated_at": "2026-08-03T00:25:00Z",
+  "week_analyzed": "2026-W31",
   "confidence": "low",
-  "basis": "Account-level aggregates only (get_history returns 400, so no per-post rows). Directives below are traceable to the baseline report but rest on a small, coarse sample.",
+  "basis": "33 real per-post rows pulled live via get_post_analytics, 2026-07-25 to 2026-08-03. Series/persona/hook_family could not be joined because the manifests that tag those posts live on unmerged branches (PR #6, #7, #8, and the unmerged claude/bitebuddy-media-analysis-qamvrd), not in this repo's registry.jsonl. Confidence is low because of that missing join, not because the underlying view/like/comment numbers are unreliable.",
+  "generation_held": true,
+  "generation_held_reason": "2026-W32, the week these directives would steer, is already scheduled live via unmerged draft PR #10 (28 TikTok/YouTube posts + 25 Pinterest pins, TikTok at 4/day). Generating a competing batch from these directives would create a second live schedule for the same week. See Analytics/2026-W31-report.md. Re-run generation from these directives once the branch/schedule question is resolved.",
   "lean_into": {
-    "series": ["S1", "S2"],
-    "hook_families": ["GUESS", "LIST", "RIGHTWRONG", "COMPARE"],
-    "personas": ["P5", "P3", "P1", "P4"],
-    "topics": ["restaurant-macros", "protein-per-dollar", "tracking-friction", "same-calorie-comparison"],
-    "slots": ["08:00", "19:00"]
+    "series": [],
+    "hook_families": [],
+    "personas": ["P2", "P3"],
+    "topics": ["chain-protein-ranking", "reality-check-verdict"],
+    "slots": []
   },
   "dial_back": {
     "series": [],
     "hook_families": [],
-    "topics": ["generic-nutrition-trivia"]
+    "topics": []
   },
-  "recut_winners": [],
-  "experiments": [
-    "Comment-first CTAs on the majority of posts until comment count is non-zero",
-    "COMPARE-SPLIT same-calorie post as the save/share test"
+  "recut_winners": [
+    {"post_id": "upload-post-request:7b75b8313b9346b19d5e6591f4ea243a", "why": "829 views / 21 likes, ~3x TikTok median (265) and the highest like count pulled this run", "change_only": "cover"},
+    {"post_id": "upload-post-request:37db814c2dbe4e1c8529e6e7178f84a1", "why": "818 views / 11 likes, second-highest of the window, same chain-ranking format", "change_only": "cover"}
   ],
-  "series_verdicts": { "S1": "hold", "S2": "hold", "S3": "hold" },
-  "notes": "Baseline: TikTok 668 views / 17 posts / 2 likes / 0 comments / 0 shares; YouTube 433 views / 3 likes / 0 comments. Zero comments across 17 posts is the headline problem and it is a content signal, not an algorithm signal, so weight this batch toward comment-earning formats (GUESS quizzes, ranking debates). Both platforms show a hard distribution collapse right after five simultaneous posts on 22 July, so hold cadence at 2 posts/day with wide spacing and do not chase volume. Instagram and Facebook are unlinked, so this batch is TikTok plus YouTube only."
+  "experiments": [
+    "A TikTok comment-bait variant of the winning chain-ranking format, since comments are 0 across every pulled TikTok post regardless of view count",
+    "Check whether the three 2026-07-26 near-zero-view posts (1, 0, 0 views) coincided with a simultaneous cross-platform publish, the same failure mode as the 2026-07-22 incident"
+  ],
+  "series_verdicts": {"S1": "not scored - registry unavailable", "S2": "not scored - registry unavailable", "S3": "not scored - registry unavailable"},
+  "notes": "Every entry above traces to a number in this week's report. The two recut_winners use upload-post request_ids, not registry post_ids, because the originating registry entries are not on this branch. Chain-ranking / reality-check format (both Chick-fil-A posts) is the one directional signal strong enough to act on despite the missing series join: it beat TikTok median views by ~3x and had by far the highest like counts of the 33 posts pulled."
 }
