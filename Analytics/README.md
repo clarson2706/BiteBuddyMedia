@@ -34,8 +34,41 @@ number should name its source.
 | `installs.jsonl` | **Connor, by hand** | optional, ~10 seconds/week — see below |
 | `report.py` | the analysis engine both of the above call | per-post joins + cuts by series/persona/hook/recipe/CTA/platform/slot |
 | `<date>-media-report.md` | media-report skill | any time it is run |
-| `platform-exports/*.csv` | **Connor, by hand** | raw native exports, committed verbatim for provenance |
+| `platform-exports/*` | **Connor, by hand** | raw native exports, committed verbatim for provenance |
 | `ingest_export.py` | normalises an export into the log | run whenever Connor drops one |
+| `paid-ads.jsonl` | `ingest_meta_ads.py` | one row per ad per day — append-only, never edited |
+| `ingest_meta_ads.py` | normalises a Meta Ads hourly export | run whenever Connor drops one |
+
+## Paid ads live in their own log
+
+`performance-log.jsonl` holds organic per-post snapshots keyed on Upload-Post's
+`request_id`. Paid rows share almost none of those fields, and mixing them would
+silently corrupt every cut in `report.py`. So paid goes to `paid-ads.jsonl`:
+
+```bash
+python3 Analytics/ingest_meta_ads.py --xlsx <View_Report.xlsx>
+python3 Analytics/ingest_meta_ads.py --xlsx <file> --force   # re-log a date
+```
+
+Ads Manager → the ad → View report → export. The script copies the raw file into
+`platform-exports/`, re-derives daily totals from the hourly rows (so they cannot
+drift from Meta's own totals row), and keeps the 24-hour impression and spend
+shape on each row — day 1 delivered 68% of its impressions in the last four
+hours, and a daily total alone hides that.
+
+Two null rules matter here and are easy to get wrong:
+
+- **CPC and cost-per-conversion are null when there were no clicks/conversions.**
+  Meta writes `0.00`, which reads as "clicks are free" in any average.
+- **Conversions stay 0**, because Meta reported them as none. But SKAdNetwork
+  postbacks lag 24–72h, so every fresh row carries `skan_provisional: true`.
+  Re-ingest the date with `--force` a few days later before treating a zero as
+  final.
+
+**RevenueCat is the attribution-independent check.** It sees every app open
+whether or not SKAN attributes it, so new-customers-per-day against the organic
+baseline (~1.2/day as of 2026-08-04) answers "is paid doing anything" without
+trusting Meta's reporting at all.
 
 ### Platform exports
 
