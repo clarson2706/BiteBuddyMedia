@@ -102,7 +102,29 @@ TikTok deprioritises duplicate and re-uploaded content, and a high-volume,
 1-follower, API-posted account recycling assets is close to a textbook spam
 signature.
 
-**c. Volume across the account roughly doubled.** `video_count` went 23 → 47 in
+**c. A paid TikTok ad account was attached to the same identity and began
+spending.** *(Added after the paid exports arrived — see
+`2026-08-04-paid-ads-day1.md`.)*
+
+Every creative in campaign `1872465614907521` carries `Created on: 2026-08-03`,
+running under the identity "BiteBuddy: AI Calorie Scanner", and two of the six
+are Spark Ads promoting our own organic posts (`7668475351898623262` from Jul 31,
+`7668305595577011487` from Jul 30). So Aug 3 carries three simultaneous changes,
+not two.
+
+Recorded as coincidence in time, not mechanism. Running ads is not a documented
+cause of organic suppression. But a new ad account opening on a 1-follower
+profile that is simultaneously posting 4×/day with recycled creative is a
+plausible trigger for automated review, and it is now at least as good a
+candidate as the cadence bump or the repost.
+
+**This does sharpen the suppression read.** Paid delivered normally on Aug 4
+(1,061 impressions at an ordinary $7.19 CPM) while organic sat at zero. TikTok is
+willing to show BiteBuddy content to people, just not organically — which is what
+a reach restriction looks like, and not what a whole-account ban looks like.
+First independent evidence for the hypothesis.
+
+**d. Volume across the account roughly doubled.** `video_count` went 23 → 47 in
 about a week. Pinterest was also added and now interleaves with TikTok every two
 hours, taking total output to ~8 posts/day. Pinterest appears nowhere in
 `CLAUDE.md`'s platform set.

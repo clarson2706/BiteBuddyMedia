@@ -36,34 +36,55 @@ number should name its source.
 | `<date>-media-report.md` | media-report skill | any time it is run |
 | `platform-exports/*` | **Connor, by hand** | raw native exports, committed verbatim for provenance |
 | `ingest_export.py` | normalises an export into the log | run whenever Connor drops one |
-| `paid-ads.jsonl` | `ingest_meta_ads.py` | one row per ad per day — append-only, never edited |
-| `ingest_meta_ads.py` | normalises a Meta Ads hourly export | run whenever Connor drops one |
+| `paid-ads.jsonl` | `ingest_tiktok_ads.py --hourly` | one row per ad per day — append-only, never edited |
+| `paid-ads-creatives.jsonl` | `ingest_tiktok_ads.py --creatives` | one row per creative per day — append-only |
+| `ingest_tiktok_ads.py` | normalises TikTok Ads exports | run whenever Connor drops one |
 
 ## Paid ads live in their own log
 
 `performance-log.jsonl` holds organic per-post snapshots keyed on Upload-Post's
 `request_id`. Paid rows share almost none of those fields, and mixing them would
-silently corrupt every cut in `report.py`. So paid goes to `paid-ads.jsonl`:
+silently corrupt every cut in `report.py`. So paid goes to its own two logs:
 
 ```bash
-python3 Analytics/ingest_meta_ads.py --xlsx <View_Report.xlsx>
-python3 Analytics/ingest_meta_ads.py --xlsx <file> --force   # re-log a date
+python3 Analytics/ingest_tiktok_ads.py --hourly <View_Report.xlsx>
+python3 Analytics/ingest_tiktok_ads.py --creatives <...CreativesTable.xlsx>
+python3 Analytics/ingest_tiktok_ads.py --hourly A.xlsx --creatives B.xlsx
+python3 Analytics/ingest_tiktok_ads.py --hourly A.xlsx --force   # re-log a date
 ```
 
-Ads Manager → the ad → View report → export. The script copies the raw file into
-`platform-exports/`, re-derives daily totals from the hourly rows (so they cannot
-drift from Meta's own totals row), and keeps the 24-hour impression and spend
-shape on each row — day 1 delivered 68% of its impressions in the last four
-hours, and a daily total alone hides that.
+TikTok Ads Manager → the ad → View report → export (and the Creatives tab for the
+second file). The script copies raw files into `platform-exports/`, re-derives
+daily totals from the hourly rows so they cannot drift from TikTok's own totals
+row, and keeps the 24-hour impression and spend shape on each row — day 1
+delivered 68% of its impressions in the last four hours, and a daily total alone
+hides that.
 
-Two null rules matter here and are easy to get wrong:
+**Check the platform before naming anything.** The first ingest of these exports
+was written as Meta and had to be renamed. TikTok Ads Manager is identifiable by
+`Sound clicks`, `Paid follows`, `Paid profile visits`, `6-second focused views`,
+`Related ad groups`, `Identity`, and `Secondary source: TikTok account`. Meta
+says "ad set" where TikTok says "ad group".
+
+**Spark Ads join back to organic.** A creative row promoting an existing post
+carries that post's organic `post_id` and `is_spark_ad: true`, so it joins
+straight to `performance-log.jsonl`. That join is the only way to see a post's
+paid and organic reach side by side — and it is how we know the paid account and
+the suppressed organic account are the same identity.
+
+Null rules that matter here and are easy to get wrong:
 
 - **CPC and cost-per-conversion are null when there were no clicks/conversions.**
-  Meta writes `0.00`, which reads as "clicks are free" in any average.
-- **Conversions stay 0**, because Meta reported them as none. But SKAdNetwork
+  TikTok writes `0.00`, which reads as "clicks are free" in any average.
+- **Conversions stay 0**, because TikTok reported them as none. But SKAdNetwork
   postbacks lag 24–72h, so every fresh row carries `skan_provisional: true`.
   Re-ingest the date with `--force` a few days later before treating a zero as
   final.
+- **Retention rates are null for carousels**, which have no video. Zero would
+  read as "nobody finished it".
+- **Rate columns in the export are fractions** (`0.0033` = 0.33%). Every rate in
+  the log is recomputed from raw counts and stored as a percent, so nothing
+  depends on which convention a future export uses.
 
 **RevenueCat is the attribution-independent check.** It sees every app open
 whether or not SKAN attributes it, so new-customers-per-day against the organic
