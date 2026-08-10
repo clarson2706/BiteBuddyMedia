@@ -24,8 +24,8 @@ decision per `CLAUDE.md`'s approval gates.
 ## What's here
 
 - **`generated/`** — 10 rendered 10-second, 9:16, 720p videos (concepts +
-  hook variants + hype teasers). Drop zone + manifest; see its README for the
-  full list, links, and status of getting the actual video files into the repo.
+  hook variants + hype teasers), committed as Git LFS files. See its README
+  for the full manifest with source links and notes per video.
 - **`concepts/`** — the 5 original video-concept scripts (hook, beat sheet,
   screenshot map) that seeded the videos, ported from `BiteBuddyMVP`.
 

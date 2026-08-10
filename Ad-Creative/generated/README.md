@@ -1,30 +1,14 @@
 # Generated videos — drop zone
 
 Final rendered ad videos from Higgsfield (Seedance 2.0 Mini / Kling 3.0), tracked
-via **Git LFS** (see repo-root `.gitattributes`). All 10 exist and are playable at
-the links below — **the actual video bytes are not yet in this repo.**
+via **Git LFS** (see repo-root `.gitattributes`). **All 10 `.mp4` files are
+committed in this folder** — pull with `git lfs pull` if your clone shows
+pointer stubs instead of playable video.
 
-The session that produced these could not download them automatically: Higgsfield's
-CDN (`*.cloudfront.net`) returned a 403 from the sandboxed environment's outbound
-network policy on every fetch path tried (direct curl and Anthropic's own WebFetch
-tool both blocked). Same restriction, same fix needed as any future session hitting
-this — see options below.
-
-## How to get the actual files in (pick one)
-
-**Option A — download + commit manually (works from any normal machine, no settings
-changes):**
-1. Open each link below, save the video.
-2. Rename to the "Target filename" listed.
-3. Drop into this folder (`Ad-Creative/generated/`).
-4. `git lfs install` once per machine, then
-   `git add Ad-Creative/generated/*.mp4 && git commit -m "..." && git push`
-
-**Option B — allowlist the CDN in the Claude Code environment, then a session
-pulls them in:**
-Add `cloudfront.net` (or specifically `d8j0ntlcm91z4.cloudfront.net` and
-`d2ol7oe51mr4n9.cloudfront.net`) to the environment's allowed outbound domains,
-then ask a session to fetch and commit all 10.
+*(2026-08-10: the network policy that initially blocked downloading these from
+Higgsfield's CDN cleared partway through this PR's review; the files were
+fetched and committed then. The links below still work if you want the
+originals or need to regenerate any of these.)*
 
 ---
 
