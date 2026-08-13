@@ -20,7 +20,9 @@ this run's analytics directives were just written. Contract: `WEEKLY-LOOP.md`.
 Procedure: `.claude/skills/weekly-loop/SKILL.md`. Series: `Content-Engine/SERIES.md`.
 Analytics schemas: `Analytics/README.md`. Dedupe: `Content-Engine/registry.jsonl`.
 On-demand performance read (read-only, any time): the **media-report** skill +
-`Analytics/report.py`. Video track: Connor drops app screen recordings in
+`Analytics/report.py`. Full-business read (funnel, revenue, product usage,
+projections; runs on Opus 5): the **growth-report** skill + `Analytics/growth.py`,
+dated reports in `Reports/`; activation = paying subscriber, testers excluded. Video track: Connor drops app screen recordings in
 `UI-Library/Recordings/_INBOX/`, the **demo-drop** skill edits and schedules them
 (one per platform per day, as many days as there are clips); the editing standard
 is `Content-Engine/DEMO-EDIT-SPEC.md`.

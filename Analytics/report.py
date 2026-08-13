@@ -155,6 +155,21 @@ def prior_snapshot(platform):
     return best
 
 
+def append_log(rows, result, now, to_stderr=False):
+    with open(LOG, "a") as f:
+        for r in rows:
+            f.write(json.dumps({**r, "captured_at": now,
+                                "source": "media-report"}) + "\n")
+        for plat, d in result["accounts"].items():
+            f.write(json.dumps({"post_id": "ACCOUNT-SNAPSHOT", "platform": plat,
+                                "captured_at": now, "source": "media-report",
+                                **{("views" if k == "impressions" else k): val
+                                   for k, val in d["current"].items()}}) + "\n")
+    print(f"\nappended {len(rows)} post rows + {len(result['accounts'])} snapshots to "
+          f"{os.path.relpath(LOG, ROOT)}",
+          file=sys.stderr if to_stderr else sys.stdout)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=14)
@@ -215,6 +230,11 @@ def main():
         "wrong conclusion (2026-07-25).")
 
     if a.json:
+        # --no-write is the only way to skip the log append; machine-readable
+        # output still grows the record (the append note goes to stderr so
+        # stdout stays valid JSON)
+        if not a.no_write:
+            append_log(rows, result, now, to_stderr=True)
         print(json.dumps(result, indent=2))
         return
 
@@ -243,17 +263,7 @@ def main():
                       f"v/post={v['views_per_post']:.0f}")
 
     if not a.no_write:
-        with open(LOG, "a") as f:
-            for r in rows:
-                f.write(json.dumps({**r, "captured_at": now,
-                                    "source": "media-report"}) + "\n")
-            for plat, d in result["accounts"].items():
-                f.write(json.dumps({"post_id": "ACCOUNT-SNAPSHOT", "platform": plat,
-                                    "captured_at": now, "source": "media-report",
-                                    **{("views" if k == "impressions" else k): val
-                                       for k, val in d["current"].items()}}) + "\n")
-        print(f"\nappended {len(rows)} post rows + {len(result['accounts'])} snapshots to "
-              f"{os.path.relpath(LOG, ROOT)}")
+        append_log(rows, result, now)
 
 
 if __name__ == "__main__":
