@@ -40,6 +40,10 @@ POSES = {
     "2026-07-26-slot1": ("buddy_thinking", "buddy_balanced_glow"),
     "2026-07-26-slot2": ("buddy_warning_check", "buddy_goal_celebration"),
     "2026-07-25-flex1": ("buddy_thinking", "buddy_goal_celebration"),
+    "2026-W33-restart": ("buddy_thinking", "buddy_level_up"),
+    "2026-W33-small-meals": ("buddy_idle", "buddy_protein_powerup"),
+    "2026-W33-ordered": ("buddy_warning_check", "buddy_balanced_glow"),
+    "2026-W33-fiber": ("buddy_thinking", "buddy_fiber_shield"),
 }
 BADGES = {"S3": "WHY TRACKING FAILS", "S1": "GUESS THE CALORIES",
           "S2": "PROTEIN PER DOLLAR", "oneoff": ""}
@@ -129,6 +133,19 @@ def image_block(rel_path, style, max_w, max_h):
     return out
 
 
+def counter(draw, idx, total, y):
+    """Slide counter, quiet, bottom corner.
+
+    It used to sit bottom-left in sage on every slide, which made it invisible on
+    the two thirds of slides whose accent shape is the bottom-left blob (a sage
+    counter drawn inside the sage circle). When the blob is there, it goes right.
+    """
+    f = font("Inter.ttf", 26, 500)
+    text = f"{idx + 1}/{total}"
+    x = W - MARGIN - draw.textlength(text, font=f) if idx % 3 in (1, 2) else MARGIN
+    draw.text((x, y), text, font=f, fill=SAGE)
+
+
 def badge(draw, img, text):
     if not text:
         return
@@ -140,19 +157,26 @@ def badge(draw, img, text):
     draw.text((MARGIN + pad_x, MARGIN + pad_y - 2), text, font=f, fill=CHARCOAL)
 
 
-def render_cta(post, img, d, text, cta_pose):
+def render_cta(post, img, d, text, cta_pose, has_badge=False):
     """Final slide: topic CTA + the real Today dashboard in a phone + download line."""
     # the App Store search line lives at the bottom of this slide, so strip it from the
     # headline when the post's CTA text already carries it
     headline = text.split("Search '")[0].strip() if "Search '" in text else text
     f, lines, lh = fit_text(d, headline, "Baloo2.ttf", 62, 34, W - MARGIN * 2, 210, 700)
-    y = 128
+    # a series chip occupies MARGIN..MARGIN+56; without this the headline was drawn
+    # straight through it on any post carrying a badge
+    y = 186 if has_badge else 128
     for line in lines:
         d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=ORANGE)
         y += lh
 
+    # centre the phone in whatever space is left between the headline and the download
+    # line, rather than hanging it off the headline. A one-line CTA used to leave a
+    # quarter of the slide empty below the phone.
     phone = phone_mock(690)
-    px, py = (W - phone.width) // 2 - 96, y + 34
+    top, bottom = y + 34, H - 190
+    px = (W - phone.width) // 2 - 96
+    py = top + max(0, (bottom - top - phone.height) // 2)
     img.paste(phone, (px, py), phone)
 
     buddy = load_pose(cta_pose, 360)
@@ -183,18 +207,23 @@ def render_slide(post, idx, total, slide):
     is_cover, is_cta = idx == 0, idx == total - 1
     cover_pose, cta_pose = POSES.get(post["id"], ("buddy_idle", "buddy_happy"))
 
-    # soft accent shapes, varied per slide so the deck does not look stamped
-    if idx % 3 == 0:
+    # soft accent shapes, varied per slide so the deck does not look stamped. The CTA
+    # gets none: it already carries the phone, Buddy and two text lines, and the
+    # top-right circle sat underneath the end of the headline.
+    if is_cta:
+        pass
+    elif idx % 3 == 0:
         d.ellipse([W - 210, -110, W + 150, 250], fill=PEACH)
     elif idx % 3 == 1:
         d.rounded_rectangle([-90, H - 240, 190, H + 90], radius=70, fill=LAVENDER)
     else:
         d.ellipse([-130, H - 200, 150, H + 110], fill=SAGE)
 
-    badge(d, img, BADGES.get(post.get("series"), ""))
+    badge_text = BADGES.get(post.get("series"), "")
+    badge(d, img, badge_text)
 
     if is_cta:
-        return render_cta(post, img, d, text, cta_pose)
+        return render_cta(post, img, d, text, cta_pose, bool(badge_text))
 
     if image:
         # headline on top, the real thing underneath, filling the slide
@@ -214,8 +243,7 @@ def render_slide(post, idx, total, slide):
             if pose is not None:
                 img.paste(pose, (W - pose.width - 30, H - pose.height - 20), pose)
         else:
-            fs = font("Inter.ttf", 26, 500)
-            d.text((MARGIN, H - 60), f"{idx + 1}/{total}", font=fs, fill=SAGE)
+            counter(d, idx, total, H - 60)
         return img
 
     if is_cover:
@@ -239,10 +267,9 @@ def render_slide(post, idx, total, slide):
     if pose is not None:
         img.paste(pose, ((W - pose.width) // 2, H - pose.height - 40), pose)
 
-    # slide counter, quiet, bottom-left; skipped on the branded cover and CTA
+    # slide counter, quiet; skipped on the branded cover and CTA
     if not is_cover and not is_cta:
-        fs = font("Inter.ttf", 26, 500)
-        d.text((MARGIN, H - 78), f"{idx + 1}/{total}", font=fs, fill=SAGE)
+        counter(d, idx, total, H - 78)
     return img
 
 
