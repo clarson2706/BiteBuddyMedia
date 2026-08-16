@@ -1,0 +1,115 @@
+{
+  "week": "2026-W33",
+  "batch": "drafts-2026-08-16",
+  "batch_type": "draft",
+  "timezone": "America/Chicago",
+  "generated_at": "2026-08-16T00:00:00Z",
+  "requested_by": "Connor, 2026-08-16: four more decks at the quality of the W30 set, 7 slides each (1 hook, 5 content, 1 app interface), delivered as files.",
+  "directives_used": "Analytics/next-week-directives.json (generated_at 2026-07-25T07:20:00Z) — stale by three weeks, so treated as a prior, not a gate. These are drafts, not a weekly-loop run.",
+  "not_scheduled": "Nothing here is scheduled or published. The weekly loop's standing publish authorization covers its own carousels; these were produced on request and sit outside it until Connor says otherwise.",
+  "slide_shape": "7 slides: 1 hook, 5 content, 1 CTA showing the real Today dashboard.",
+  "posts": [
+    {
+      "id": "2026-W33-restart",
+      "series": "S3",
+      "persona": "P1",
+      "hook_family": "HABIT",
+      "visual_recipe": "TYPE-CARD",
+      "title": "You are not bad at tracking, you are always starting from zero",
+      "slides": [
+        "You are not bad at tracking. You are just always starting from zero.",
+        "Every restart looks the same. New app, clean slate, day one energy.",
+        "Then a gap appears. A day off, a trip, a week you did not feel like it.",
+        "A log with a gap in it feels ruined, so the next attempt starts over from scratch.",
+        "That is the actual cycle. Not overeating, not willpower. Just resetting to zero.",
+        "The version that works is uglier. You keep the gap and log the next meal anyway.",
+        "How many times have you started over? Drop the number below."
+      ],
+      "caption": "The thing that ends most calorie tracking attempts is not a bad week, it is the decision to start over clean afterwards. Every reset throws away the history that would have shown you anything. A log with holes in it is still a log. Keeping it running through the messy stretch is the whole skill. How many restarts are you on?",
+      "pinned_comment": "genuinely curious how many restarts everyone is on. i will go first: a lot",
+      "hashtags": ["#BiteBuddy", "#CalorieTracking", "#FoodTracker", "#HabitBuilding", "#TrackingHonestly"],
+      "cta_type": "COMMENT",
+      "cta": "How many times have you started over? Drop the number below.",
+      "status": "draft"
+    },
+    {
+      "id": "2026-W33-small-meals",
+      "series": "oneoff",
+      "persona": "P2",
+      "hook_family": "DEMOGRAPHIC",
+      "visual_recipe": "TYPE-CARD",
+      "title": "If your appetite got smaller but your protein goal did not",
+      "slides": [
+        "If your appetite got smaller but your protein goal did not, this one is for you.",
+        "Eating less does not make protein easier. It makes it harder to reach.",
+        "The meals get small and odd. Half a bowl. A few bites. Two spoonfuls of yogurt.",
+        "Those are exactly the meals nobody wants to stop and type into an app.",
+        "So they go unlogged, and by Friday the protein number is a guess.",
+        "A photo takes about a second, which is roughly what a four bite meal deserves.",
+        "Track the small meals too. Search 'BiteBuddy: Ai calorie scanner'."
+      ],
+      "caption": "When portions shrink, protein gets harder to reach, not easier, and the meals become small and awkward to log. Half a bowl, a few bites, a yogurt. Those are the ones that quietly go unrecorded, which is exactly why the weekly protein number ends up being a guess. Photo logging exists for meals that are not worth typing out. Estimates are editable, so you stay in control of the number.",
+      "pinned_comment": "the two spoonfuls of yogurt meal is real and nobody logs it",
+      "hashtags": ["#BiteBuddy", "#ProteinGoals", "#SmallPortions", "#FoodTracker", "#AICalorieCounter"],
+      "cta_type": "APP",
+      "cta": "Track the small meals too. Search 'BiteBuddy: Ai calorie scanner'.",
+      "status": "draft"
+    },
+    {
+      "id": "2026-W33-ordered",
+      "series": "oneoff",
+      "persona": "P4",
+      "hook_family": "RIGHTWRONG",
+      "visual_recipe": "TYPE-CARD",
+      "title": "You can estimate what you cooked, what you ordered is a different problem",
+      "slides": [
+        "You can estimate what you cooked. What you ordered is a different problem.",
+        "At home you saw the oil go in. You saw the portion. Your guess lands close.",
+        "At a restaurant you get a finished plate and none of the steps that made it.",
+        "In a study of nearly 3,400 people, adults underestimated fast food meals by about 20 percent.",
+        "One in four participants missed by more than 500 calories on a single meal.",
+        "That gap is not discipline. It is missing information, and it only closes when you look.",
+        "Which chain should I break down next? Name it below."
+      ],
+      "caption": "Home cooking gives you the whole process, so your estimate lands close. A restaurant gives you a finished plate and nothing else, which is why the research keeps finding the same thing: in a BMJ study of nearly 3,400 people, adults underestimated fast food meals by around 20 percent, and one in four missed by more than 500 calories. That is an information gap, not a willpower one. Which chain should I break down next?",
+      "pinned_comment": "name a chain and i will run the numbers on it",
+      "hashtags": ["#BiteBuddy", "#RestaurantCalories", "#EatingOut", "#CalorieCounting", "#FoodTracker"],
+      "cta_type": "COMMENT",
+      "cta": "Which chain should I break down next? Name it below.",
+      "status": "draft",
+      "sources": [
+        "Block JP et al., BMJ 2013 — 'Consumers' estimation of calorie content at fast food restaurants: cross sectional observational study', https://pubmed.ncbi.nlm.nih.gov/23704170/ (adults underestimated by ~175 kcal / ~20%; one quarter of all participants underestimated by 500+ kcal; n = nearly 3,400 across 89 restaurants)"
+      ]
+    },
+    {
+      "id": "2026-W33-fiber",
+      "series": "oneoff",
+      "persona": "P5",
+      "hook_family": "CONTRARIAN",
+      "visual_recipe": "TYPE-CARD",
+      "title": "Everyone is counting protein, almost nobody has a number for fiber",
+      "slides": [
+        "Everyone is counting protein. Almost nobody has a number for fiber.",
+        "Ask someone their protein target and they answer instantly. Ask about fiber and it goes quiet.",
+        "It sits on almost every label, one line under the carbs, and gets read by nobody.",
+        "You can hit protein perfectly all week and still have no idea where fiber landed.",
+        "Not because it is difficult. Because nothing was counting it.",
+        "You cannot spot a pattern in a number you have never once looked at.",
+        "Do you know your fiber number? Honest answers only."
+      ],
+      "caption": "Protein has a whole culture around it and fiber has almost none, which is strange given it is printed on nearly every label. Most people can name their protein target instantly and have never once looked at the other number. It is not a hard thing to track, it is just an untracked thing. Do you actually know yours? Honest answers only.",
+      "pinned_comment": "be honest, did you know your fiber number before reading this",
+      "hashtags": ["#BiteBuddy", "#Fiber", "#Macros", "#FoodTracker", "#NutritionBasics"],
+      "cta_type": "COMMENT",
+      "cta": "Do you know your fiber number? Honest answers only.",
+      "status": "draft"
+    }
+  ],
+  "render": {
+    "method": "Content-Engine/render_slides.py",
+    "size": "1080x1350",
+    "font": "Baloo 2 / Inter",
+    "note": "Rendered locally rather than in Canva. Canva's generate-design emits one page per call and export-download.canva.com is blocked at this environment's proxy (Content-Engine/TEMPLATES.md), so the local renderer is the only route that produces files that can actually be handed over."
+  },
+  "cta_slide_rule": "HARD REQUIREMENT from 2026-07-25: the final slide of every carousel shows the real Today dashboard inside a phone silhouette, never a text-only App Store mention. Honoured on all four decks."
+}
