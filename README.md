@@ -33,27 +33,27 @@ scheduler wiring, and no analytics. Building those is the next strategy's job.
 
 ## Where the old system went
 
-**Everything is preserved on the branch `claude/bitebuddy-media-backup-p3jgng`**, which
+**Everything is preserved on the branch `archive/pre-reset-2026-08-16`**, which
 sits at commit `930c273` — the exact state of `main` immediately before this reset. It is
 also in `main`'s own git history, which was not rewritten.
 
 To read a file from the old system without restoring it:
 
 ```
-git show claude/bitebuddy-media-backup-p3jgng:WEEKLY-LOOP.md
-git show claude/bitebuddy-media-backup-p3jgng:Research/TARGET-USER-PROFILES.md
+git show archive/pre-reset-2026-08-16:WEEKLY-LOOP.md
+git show archive/pre-reset-2026-08-16:Research/TARGET-USER-PROFILES.md
 ```
 
 To restore a file or folder into a working branch:
 
 ```
-git checkout claude/bitebuddy-media-backup-p3jgng -- Research/HOOK-INTELLIGENCE-2026.md
+git checkout archive/pre-reset-2026-08-16 -- Research/HOOK-INTELLIGENCE-2026.md
 ```
 
 To browse the whole thing:
 
 ```
-git checkout claude/bitebuddy-media-backup-p3jgng
+git checkout archive/pre-reset-2026-08-16
 ```
 
 ### What was removed

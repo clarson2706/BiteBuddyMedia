@@ -17,7 +17,7 @@ pipeline, and every rendered post — was removed so a completely new content st
 could be designed from scratch.
 
 None of it is lost. The full pre-reset repo is preserved on the branch
-`claude/bitebuddy-media-backup-p3jgng` and in `main`'s own git history. See `README.md`
+`archive/pre-reset-2026-08-16` and in `main`'s own git history. See `README.md`
 for what was removed and how to get any of it back.
 
 What is left is deliberately just the raw material:
