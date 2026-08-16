@@ -1,6 +1,6 @@
 # BiteBuddy Slide Design System
 
-*The graphics layer of the content engine. `MASTER-PROMPT-V5.md` produces a CSV where
+*The graphics layer of the content engine. `MASTER-PROMPT-V6.md` produces a CSV where
 every post names a `Visual_Recipe`; this doc defines what each recipe looks like and the
 two ways to render it: **Route A — Canva Bulk Create** (template + CSV merge) and
 **Route B — Claude-designed slides** (Claude builds each deck via the Canva MCP tools or
@@ -103,24 +103,32 @@ re-serves carousels when viewers reach slide 3+).
 
 ## 3. Route A — Canva Bulk Create
 
-The CSV from `MASTER-PROMPT-V5.md` is built to feed Canva's Bulk Create (Apps → Bulk
+The CSV from `MASTER-PROMPT-V6.md` is built to feed Canva's Bulk Create (Apps → Bulk
 Create → upload CSV → connect fields to text placeholders → generate one design per
 row).
 
+**Decks are 7 pages as of v6:** page 1 = COVER, pages 2–6 = that recipe's body layout,
+page 7 = CTA. Five body slides, not eight. The constraint is deliberate: `MASTER-PROMPT-V6.md`
+requires those five to form a narrative arc with a turn, and eight slides diluted it.
+
 **One-time setup (Connor or Claude-via-Canva-MCP):**
-1. Build one **master template per recipe family** — minimum four to start:
-   `RANK-CARD` (10 pages), `QUIZ-CARD` (10 pages), `PHOTO-FACT` (10 pages),
-   `COMPARE-SPLIT`/`BUILD-STEP` as needed. Each template: page 1 = COVER, pages 2–9 =
-   that recipe's body layout, page 10 = CTA.
-2. Name text placeholders to match CSV columns: `S1_Hook`, `S2_Content` …
-   `S10_CTA`. Bulk Create maps column → placeholder; one CSV run yields every post in
-   that family.
-3. Lock brand colors/fonts as Canva Brand Kit so drops stay on-palette.
+1. The base template is built: **`BiteBuddy Carousel Template - 7 page (1080x1350)`**, in the
+   Canva folder `bitebuddy carosel content`. Its body layout is the recipe-agnostic
+   PHOTO-FACT shape. Fork it per recipe family for `RANK-CARD`, `QUIZ-CARD` and
+   `COMPARE-SPLIT`/`BUILD-STEP`, changing only the body grid.
+2. Placeholders already match the CSV columns: `{{SERIES_CHIP}}`, `{{S1_Hook}}`,
+   `{{S1_Subhead}}`, `{{S2_Content}}`…`{{S6_Content}}`, `{{S2_Stat}}`…`{{S6_Stat}}`,
+   `{{S7_CTA}}`. Bulk Create maps column → placeholder; one CSV run yields every post in
+   that family. Do not rename them on either side.
+3. Lock brand colors/fonts as a Canva Brand Kit so drops stay on-palette. **Not yet done** —
+   no brand kit exists on the account, and the template's typeface is still Canva's default
+   sans rather than the locked rounded bold this doc specifies.
 
 **Per-batch flow:** filter the CSV by `Visual_Recipe` → run Bulk Create against the
-matching template → swap in food photos per slide (Canva stock; this is the manual step
-Bulk Create can't do from text) → export PNGs 1080×1350 → drop into the post folders /
-hand to `carousel-publish`.
+matching template → fill the visual layer per slide (real food photos from Canva stock for
+RANK-CARD / CHEAT-GRID / COMPARE-SPLIT / QUIZ-CARD rows; illustrated scenes per
+`ILLUSTRATED-SCENES.md` for narrative rows) → export PNGs 1080×1350 → drop into the post
+folders / hand to `carousel-publish`.
 
 **Honest limitation:** Bulk Create fills *text*; photos still need a human pass
 (~2–3 min/post with the template doing the layout). The 3-variant rotation = build a

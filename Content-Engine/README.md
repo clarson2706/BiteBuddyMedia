@@ -8,7 +8,8 @@ all together.*
 
 | File | What it is |
 |---|---|
-| `MASTER-PROMPT-V5.md` | The 50-post CSV generation prompt (v5, persona-targeted). Paste into a web-browsing model → get a verified, bulk-creation-ready CSV. Supersedes the v4 prompt. |
+| `MASTER-PROMPT-V6.md` | The 7-slide narrative carousel engine. Paste into a web-browsing model → get a verified, bulk-creation-ready CSV whose slide columns map 1:1 onto the Canva template placeholders. Replaces v5 (10-slide, 50-row) and is not backward compatible. |
+| `ILLUSTRATED-SCENES.md` | The art layer for narrative rows: locked style block, character lock, and the DAY-ARC reference sequence that `Scene_Brief` fields append to. |
 | `DESIGN-SYSTEM.md` | The graphics layer: brand tokens, 8 slide archetypes, and the two render routes — Canva Bulk Create (CSV → template merge) and Claude-designed slides. |
 | `../Research/TARGET-USER-PROFILES.md` | The 8 personas (+1 anti-persona) every post targets. The `Audience` column comes from here. |
 | `../Research/HOOK-INTELLIGENCE-2026.md` | The researched hook library, carousel mechanics, cadence limits, and anti-patterns. The `Hook_Family` vocabulary comes from here. |
@@ -19,7 +20,7 @@ all together.*
 TARGET-USER-PROFILES + HOOK-INTELLIGENCE     (research: updated occasionally)
                  │
                  ▼
-        MASTER-PROMPT-V5  ──►  50-post CSV   (run per batch; feed it
+        MASTER-PROMPT-V6  ──►  21-post CSV   (run per batch; feed it
                  │                            PLATFORM_PERFORMANCE_HISTORY
                  │                            once analytics exist)
                  ▼

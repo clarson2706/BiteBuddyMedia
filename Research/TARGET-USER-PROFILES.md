@@ -10,7 +10,7 @@ Connor spending 30 minutes in r/Mommit, r/GLP1, and competitor App Store reviews
 treating those two as settled.*
 
 **How to use this doc:** every piece of content the engine produces names one primary
-persona from this list. `Content-Engine/MASTER-PROMPT-V5.md` enforces that via its
+persona from this list. `Content-Engine/MASTER-PROMPT-V6.md` enforces that via its
 `Audience` column; hook selection per persona comes from
 `Research/HOOK-INTELLIGENCE-2026.md`.
 

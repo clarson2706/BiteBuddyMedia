@@ -22,7 +22,7 @@ description: >-
 Read `WEEKLY-LOOP.md` first — it is the contract; this file is the procedure.
 Then read, in order: `Analytics/README.md` (schemas), `Content-Engine/SERIES.md`,
 `Research/TARGET-USER-PROFILES.md`, `Research/HOOK-INTELLIGENCE-2026.md`,
-`Content-Engine/MASTER-PROMPT-V5.md` (sections 4–9 are the copy rules; the CSV
+`Content-Engine/MASTER-PROMPT-V6.md` (sections 4–9 are the copy rules; the CSV
 contract does not apply here), `Content-Engine/DESIGN-SYSTEM.md`,
 `Outreach/DM-PLAYBOOK.md`, and `SPRINT-AUG25.md` while the sprint is live.
 
@@ -79,7 +79,7 @@ stop and fix Phase 1. Do not generate from memory of old numbers.
 2. Every post gets: persona (P1–P8), hook family (the 20 codes), visual recipe (the 8
    archetypes), series or `oneoff`, slide-by-slide copy (hook → value slides → CTA),
    caption with one natural search keyword, pinned first comment, 3–5 hashtags,
-   platform plan + time slot. Copy rules = MASTER-PROMPT-V5 §4–9; guardrails =
+   platform plan + time slot. Copy rules = MASTER-PROMPT-V6 §4–9; guardrails =
    `CLAUDE.md` (no medical/outcome claims, no Meal Advisor, no precision claims,
    food-positive always).
 3. Freshness: check `registry.jsonl` — no topic repeat within 90 days, no chain+angle
@@ -106,7 +106,7 @@ brand palette, the Baloo 2 rounded brand font in `Brand-Assets/fonts/`, and the 
 Buddy cutouts from `Brand-Assets/buddy-poses/transparent/`.
 
 Why not Canva, despite the connector being attached (learned 2026-07-25): Canva's
-`generate-design` emits **one page per call**, so it cannot build an 8-slide carousel,
+`generate-design` emits **one page per call**, so it cannot build a 7-slide carousel,
 and this environment cannot download Canva exports (`export-download.canva.com` is
 blocked at the proxy). Canva remains useful for one-off polish and for Connor editing a
 deck by hand; it is not the batch render path.

@@ -3,8 +3,8 @@
 
 Produces 1080x1350 PNGs per the archetypes in DESIGN-SYSTEM.md, using the brand
 palette, the rounded brand font, and the real Buddy cutouts. Written because
-Canva's generate-design only emits one page per call, which cannot build an
-8-slide carousel, and this environment cannot download Canva exports anyway
+Canva's generate-design only emits one page per call, which cannot build a
+7-slide carousel, and this environment cannot download Canva exports anyway
 (see Content-Engine/TEMPLATES.md).
 
 Output goes to Posts/<week>/<post-id>/NN.png. The repo is public, so those files

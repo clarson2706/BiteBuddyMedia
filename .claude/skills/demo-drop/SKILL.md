@@ -114,7 +114,7 @@ shipping a weak demo to fill a slot.
 
 ## 4. Write the copy
 
-Same rules as everything else: `MASTER-PROMPT-V5.md` sections 4 to 9, guardrails
+Same rules as everything else: `MASTER-PROMPT-V6.md` sections 4 to 9, guardrails
 in `CLAUDE.md`, and **no em dashes anywhere**.
 
 The hook lives on the video, so it must be legible in half a second and true to

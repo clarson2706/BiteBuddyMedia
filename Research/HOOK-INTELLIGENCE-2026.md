@@ -2,7 +2,7 @@
 
 *Compiled 2026-07-25 from ~22 live web searches across hook studies, carousel-algorithm
 analyses, food-niche trend reporting, and app-marketing case studies. This is the
-hook/format layer of the content engine: `Content-Engine/MASTER-PROMPT-V5.md` and the
+hook/format layer of the content engine: `Content-Engine/MASTER-PROMPT-V6.md` and the
 weekly generator draw their hook patterns from here. Companion docs:
 `Research/TARGET-USER-PROFILES.md` (who we're talking to),
 `Research/CAROUSEL-MARKETING-PLAYBOOK.md` (the base format system).*

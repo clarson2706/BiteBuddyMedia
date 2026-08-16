@@ -36,7 +36,8 @@ work, what slides should look like, and the prompt that generates batches:
 - `Research/TARGET-USER-PROFILES.md` — 8 personas + 1 anti-persona. Every post names one.
 - `Research/HOOK-INTELLIGENCE-2026.md` — hook library, carousel mechanics, per-platform
   cadence limits, 2026 anti-patterns.
-- `Content-Engine/MASTER-PROMPT-V5.md` — the 50-post CSV generation prompt.
+- `Content-Engine/MASTER-PROMPT-V6.md` — the 7-slide narrative carousel engine (CSV
+  generation prompt). Replaces v5; slide columns map 1:1 onto the Canva template.
 - `Content-Engine/DESIGN-SYSTEM.md` — brand tokens, 8 slide archetypes, render routes.
 - `UI-Library/` — 19 real app screenshots.
 

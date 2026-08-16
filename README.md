@@ -31,7 +31,8 @@ Research/
   HOOK-INTELLIGENCE-2026.md   20-formula hook library, carousel mechanics, cadence
                               limits, 2026 anti-patterns. All sourced.
 Content-Engine/
-  MASTER-PROMPT-V5.md         the 50-post CSV generation prompt (persona-targeted)
+  MASTER-PROMPT-V6.md         the 7-slide narrative carousel engine (persona-targeted)
+  ILLUSTRATED-SCENES.md       locked style/character blocks for illustrated scene rows
   DESIGN-SYSTEM.md            brand tokens, 8 slide archetypes, render routes
   README.md                   how the pieces fit together
 Brand-Assets/
